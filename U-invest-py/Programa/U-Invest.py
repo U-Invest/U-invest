@@ -15,12 +15,14 @@ while (saida != 0):
     if (opcao == 1):
         nome = input("Nome e Sobrenome: ")
         user = input("Crie um UserName: ")
+        email = input("Digite seu E-Mail: ")
         idade = int(input("Idade: "))
         endereco = input("Endereço: ")
         cpf = int(input("CPF(Apenas Números): "))
+        numCelular = int(input("Digite seu número de telefone: "))
         senha = input("Crie uma senha: ")
-        uInvest[user] = {'nome': nome, 'user': user, 'idade': idade, 'endereco': endereco,
-                          'cpf': cpf, 'senha': senha}
+        uInvest[user] = {'nome': nome, 'user': user, 'email': email, 'idade': idade, 'endereco': endereco,
+                          'cpf': cpf, 'celular': numCelular, 'senha': senha}
     elif (opcao == 2):
         user = input("Digite seu UserName: ")
         if (user in uInvest):
@@ -33,9 +35,11 @@ while (saida != 0):
         user = input("Digite seu User: ")
         if (user in uInvest):
             uInvest[user]['nome'] = input("Edite seu Nome e Sobrenome: ")
+            uInvest[user]['email'] = input("Edite seu E-Mail:")
             uInvest[user]['idade'] = int(input("Edite sua Idade: "))
             uInvest[user]['endereco'] = input("Edite seu Endereço: ")
             uInvest[user]['cpf'] = int(input("Edite seu CPF: "))
+            uInvest[user]['celular'] = int(input("Edite seu número de telefone: "))
             uInvest[user]['senha'] = input("Edite sua Senha: ")
         else:
             print("User não encontrado.")
