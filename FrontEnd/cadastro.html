@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Página de cadastro</title>
+
+    <link rel="stylesheet" href="CSS/estilos.css">
+
+</head>
+
+<body>
+
+
+    <!--Criando o container (a seperação da imagem com o forms)-->
+    <div class="container">
+            <div class="form-image">
+                <img src="imagem perfeita.svg" alt="">
+             </div>
+        
+             <div class="formulario">
+                <form action="">
+                <div class="form-header">
+                    <div class="titulo">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                </div>
+
+                <!-- Div primeiro nome com a class que agrupa todos os forms-->
+                <div class="grupo-input">
+                    <div class="caixa-input">
+                        <label for="primeironome">Nome</label>
+                        <input id="primeironome" type="text" name="primeironome" placeholder="Digite seu nome" required>
+                    </div>
+
+                    <div class="caixa-input">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input id="sobrenome" type="email" name="sobrenome" placeholder="Digite seu sobrenome" required>
+                    </div>
+
+
+                    <div class="caixa-input">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="e-mail" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+
+                    <div class="caixa-input">
+                        <label for="number">Celular</label>
+                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" minlength="9">
+                    </div>
+
+                    <div class="caixa-input">
+                        <label for="senha">Senha</label>
+                        <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required minlength="8">
+                    </div>
+
+
+                    <div class="caixa-input">
+                        <label for="confirmarSenha">Confirme sua Senha</label>
+                        <input id="confirmarSenha" type="password" name="confirmarSenha" placeholder="Confirme senha" required>
+                    </div>
+
+                </div>
+
+                <!-- Div para criação de botão continuar -->
+                <div class="botao-continuar">
+                    <button><a href="">Continuar</a> </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
