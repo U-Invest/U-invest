@@ -39,7 +39,7 @@ h1{
 
 /* Editando o tamanho da imagem */
 .form-image img {
-    width: 548px;
+    width: 500px;
 }
 
 /* Estilizando o flex do formulário */
@@ -57,17 +57,19 @@ h1{
 /* Posicionando o cadastre-se */
 .form-header {
     margin-bottom: 79px;
-    display: flex;
+    display: inline-flex;
+    flex-direction:unset;
+    margin-left: 220px;
 }
 
-/* Linha em baixo do cadastre-se */
+/* Linha em baixo do Login */
 .form-header h1::after {
     content: ' ';
-    display: flex;
+    display:flex;
     width: 260px;
     height: 7px;
     background-color: #04b4fc;
-    margin: 0 auto;
+    margin-right: 250px 0;
     position:static;
     border-radius: 12px;
 }
@@ -75,9 +77,11 @@ h1{
 /* Espaçamento entre os forms */
 .grupo-input {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 4px ;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    margin-left: 250px;
+    margin-right: 350px;
+    padding: 8px ;
 }
 
 /* Alinhamento dos inputs forms*/
@@ -93,8 +97,6 @@ h1{
     margin: 0.6rem 0;
     padding: 0.8rem 1.2rem;
     border: none;
-    border-radius: 10px;
-    box-shadow: 1px 1px 6px #0000001c;
     font-size: 12px;
 }
 
@@ -112,7 +114,7 @@ h1{
 .caixa-input label, h6 {
     font-size: 17px;
     font-weight: 600;
-    color: black;
+    color: #747383;
 }
 
 /* Aprendi como estilizar o placeholder*/
@@ -133,6 +135,8 @@ h1{
     border-radius: 18px;
 }
 
+
+
 /* Fonte botao continuar */
 .botao-continuar button a {
     text-decoration: none;
@@ -140,31 +144,17 @@ h1{
     color: #fff;
 }
 
+/* Esqueci-senha */
 
-/*
-@media screen and (max-width: 1330px) {
-    .form-image {
-        display: none;
-    }
-    .container {
-        width: 50%;
-    }
-    .form {
-        width: 100%;
-    }
+.esqueci-senha {
+    color: rgb(255, 255, 255);
+    width: 45%;
+    text-decoration: underline;
+    margin-top: 12px;
+    margin-left: 175px;
+    text-decoration: none;
+    font-size: 16px;
+    
 }
 
-@media screen and (max-width: 1064px) {
-    .container {
-        width: 90%;
-        height: auto;
-    }
-    .input-group {
-        flex-direction: column;
-        z-index: 5;
-        padding-right: 5rem;
-        max-height: 10rem;
-        overflow-y: scroll;
-        flex-wrap: nowrap;
-    }
-}*/
+

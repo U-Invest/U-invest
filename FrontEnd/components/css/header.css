@@ -55,4 +55,18 @@ h1{
         font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* Espaço da logo */
+.logo{
+    background-image: url(imgs/logooo.png);
+    background-position: center;
+    height: 55px;
+    width: 55px;
+    background-color: rgb(126, 126, 126);
+    border-radius: 35px;
+    margin-left: 30px;
+    margin-top: 6px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
 
