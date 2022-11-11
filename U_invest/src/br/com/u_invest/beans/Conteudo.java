@@ -2,14 +2,22 @@ package br.com.u_invest.beans;
 
 public class Conteudo {
 
+    private String cursos;
     private String noticias;
-    private String descricao;
 
-    public Conteudo(){}
+    public Conteudo() {}
 
-    public Conteudo(String noticias, String descricao) {
+    public Conteudo(String cursos, String noticias) {
+        this.cursos = cursos;
         this.noticias = noticias;
-        this.descricao = descricao;
+    }
+
+    public String getCursos() {
+        return cursos;
+    }
+
+    public void setCursos(String cursos) {
+        this.cursos = cursos;
     }
 
     public String getNoticias() {
@@ -18,13 +26,5 @@ public class Conteudo {
 
     public void setNoticias(String noticias) {
         this.noticias = noticias;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
     }
 }

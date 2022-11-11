@@ -1,16 +1,19 @@
 package br.com.u_invest.beans;
 
 public class Feedback extends Cursos {
+
     private int data;
     private String avaliacao;
-    private String nomeAvaliador;
+    private String comentario;
+
     public Feedback() {}
 
-    public Feedback(String receberNomeCurso, int receberCargaHoraria, int data, String avaliacao, String nomeAvaliador) {
-        super(receberNomeCurso, receberCargaHoraria);
+    public Feedback(String nomeProfessor, String nomeUsuario, int dataCurso, String nomeCurso, int cargaHoraria,
+            String descricaoCurso, int data, String avaliacao, String comentario) {
+        super(nomeProfessor, nomeUsuario, dataCurso, nomeCurso, cargaHoraria, descricaoCurso);
         this.data = data;
         this.avaliacao = avaliacao;
-        this.nomeAvaliador = nomeAvaliador;
+        this.comentario = comentario;
     }
 
     public int getData() {
@@ -29,11 +32,11 @@ public class Feedback extends Cursos {
         this.avaliacao = avaliacao;
     }
 
-    public String getNomeAvaliador() {
-        return nomeAvaliador;
+    public String getComentario() {
+        return comentario;
     }
 
-    public void setNomeAvaliador(String nomeAvaliador) {
-        this.nomeAvaliador = nomeAvaliador;
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
     }
 }

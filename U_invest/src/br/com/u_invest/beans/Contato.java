@@ -2,40 +2,33 @@ package br.com.u_invest.beans;
 
 public class Contato {
 
-    private String contato;
-    private int telefone;
-    private String redeSocial;
+    private String assunto;
+    private String mensagem;
 
-    public Contato(){
+    public Contato() {}
+
+    public Contato(String assunto, String mensagem) {
+        this.assunto = assunto;
+        this.mensagem = mensagem;
     }
 
-    public Contato(String contato, int telefone, String redeSocial) {
-        this.contato = contato;
-        this.telefone = telefone;
-        this.redeSocial = redeSocial;
+    public String getAssunto() {
+        return assunto;
     }
 
-    public String getContato() {
-        return contato;
+    public void setAssunto(String assunto) {
+        this.assunto = assunto;
     }
 
-    public void setContato(String contato) {
-        this.contato = contato;
+    public String getMensagem() {
+        return mensagem;
     }
 
-    public int getTelefone() {
-        return telefone;
+    public void setMensagem(String mensagem) {
+        this.mensagem = mensagem;
     }
 
-    public void setTelefone(int telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getRedeSocial() {
-        return redeSocial;
-    }
-
-    public void setRedeSocial(String redeSocial) {
-        this.redeSocial = redeSocial;
+    public void enviarMensagem() {
+        System.out.println("Método para enviar a mensagem do usuario.");
     }
 }

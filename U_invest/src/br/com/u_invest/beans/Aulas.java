@@ -1,29 +1,42 @@
 package br.com.u_invest.beans;
 
 public class Aulas extends Cursos {
-    private String materia;
-    private int tempo;
-    public Aulas(){}
+    
+    private String nomeAula;
+    private int duracao;
+    private String descricaoAula;
 
-    public Aulas(String nomeCurso, int cargaHoraria, String materia, int tempo) {
-        super(nomeCurso, cargaHoraria);
-        this.materia = materia;
-        this.tempo = tempo;
+    public Aulas() {}
+
+    public Aulas(String nomeProfessor, String nomeUsuario, int dataCurso, String nomeCurso, int cargaHoraria,
+            String descricaoCurso, String nomeAula, int duracao, String descricaoAula) {
+        super(nomeProfessor, nomeUsuario, dataCurso, nomeCurso, cargaHoraria, descricaoCurso);
+        this.nomeAula = nomeAula;
+        this.duracao = duracao;
+        this.descricaoAula = descricaoAula;
     }
 
-    public String getMateria() {
-        return materia;
+    public String getNomeAula() {
+        return nomeAula;
     }
 
-    public void setMateria(String materia) {
-        this.materia = materia;
+    public void setNomeAula(String nomeAula) {
+        this.nomeAula = nomeAula;
     }
 
-    public int getTempo() {
-        return tempo;
+    public int getDuracao() {
+        return duracao;
     }
 
-    public void setTempo(int tempo) {
-        this.tempo = tempo;
+    public void setDuracao(int duracao) {
+        this.duracao = duracao;
+    }
+
+    public String getDescricaoAula() {
+        return descricaoAula;
+    }
+
+    public void setDescricaoAula(String descricaoAula) {
+        this.descricaoAula = descricaoAula;
     }
 }
