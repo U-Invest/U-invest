@@ -10,21 +10,25 @@
     font-family: 'Poppins', serif;
 }
 
+/* Configurando o container*/
 .container{
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 4%;
 }
 
+/* Configurando o body */
 body{
     min-height: 100vh;
     background-color:rgb(7, 19, 43) ;
 }
 
+/* Editando a logo */
 .logo{
     width: px
 }
 
+/* Configurando o header */
 nav{
     padding-top: 20px;
     display: flex;
@@ -32,10 +36,13 @@ nav{
     justify-content: space-between;
 
 }
+
+/* Logo no header */
 nav .logo{
     width: 90px;
 }
 
+/* Fazendo o flex do header */
 nav ul{
     list-style: none;
     display: flex;
@@ -43,10 +50,12 @@ nav ul{
     justify-content: space-between;
 }
 
+/* Modificando a lista */
 nav ul li{
     padding: 20px;
 }
 
+/* Hover arrasta */
 nav ul li:not(.login)::after{
     display: block;
     content: "";
@@ -57,61 +66,95 @@ nav ul li:not(.login)::after{
 
 }
 
+/* Hover arrasta */
 nav ul li:hover::after{
     width: 100%;
 }
 
-nav ul li.lg{
+/* Configurando o botão de login */
+nav ul li.login{
     border: 1px solid white;
     border-radius: 30px;
     padding: 5px 40px;
-    margin-left: 30px;
+    margin-right: 20px;
 
 }
 
+
+
+/* Botao cadastro */
+nav button{
+    background-color: #04b4fc;
+    border-radius: 30px;
+    padding: 5px 40px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    border: 1px solid transparent;
+    transition: all 0.5s;
+    margin-right: -50px;
+}
+
+
+/* Editando o text decoration do botão de cadastro*/
+nav button a {
+    text-decoration: none;
+    color: rgb(255, 255, 255) ;
+}
+
+
+/* Texto do header */
 nav ul li a{
     color: white;
     text-decoration: none;
     font-size: 17px;
 }
 
+/* Espaçamento e flex dos itens */
 main{
     display: flex;
     align-items: center;
-    margin-top: 60px;
+    margin-top: 45px;
 }
 
+/* Conteudo da main */
 main .texto-main{
     width: 50%;
 }
 
+/* Editando título h1 */
 main .texto-main h1{
-    font-size: 64px;
+    font-size: 60px;
 }
 
+/* Jogando o texto pra baixo do título */
 main .texto-main strong{
     display: block;
     font-weight: normal;
 }
 
+/* Editando o negrito */
 main .texto-main h1 b{
-    background-color: black;
-    color: white;
+    background-color:  #04b4fc;
+    color: rgb(0, 0, 0);
     padding: 5px 0px;
     font-size: 5rem;
 }
 
+/* Editando o texto */
 main .texto-main p{
-    color: red;
-    margin: 20px 0 40px;
+    color: rgb(255, 255, 255);
+    margin: 10px 0 10px;
     width: 90%;
 }
 
+/* Editando o botão simule agora! */
 main .texto-main button{
     background-color: #04b4fc;
-    color: white ;
-    border-radius: 15px;
-    padding: 30px 60px;
+    color: rgb(255, 255, 255) ;
+    border-radius: 25px;
+    padding: 20px 50px;
     outline: none;
     border: none;
     cursor: pointer;
@@ -120,14 +163,22 @@ main .texto-main button{
     transition: all 0.5s;
 }
 
+main .texto-main button a {
+    text-decoration: none;
+    color: rgb(255, 255, 255) ;
+}
+
+/* Hover do botão(botão vai pra trás) */
 main .texto-main button:hover{
     transform: scale(0.9);
 }
 
+/* Configurando a posição da imagem na main */
 main .imagem-main{
     width: 50%;
 }
 
+/* Configurando a posição da imagem na main */
 main .imagem-main img{
     width: 100%;
 }
