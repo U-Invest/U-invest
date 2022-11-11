@@ -1,0 +1,124 @@
+body{
+    background-color: rgb(7,19,43);
+}
+/*3 Imagens de Noticias*/
+.noticia1{
+    position: absolute;
+    width: 630px;
+    height: 500px;
+    top: 100px;
+    right: 650px;
+    border: solid;
+    border-width: 3px;
+    border-color: black;
+}
+.noticia2{
+    position: absolute;
+    width: 500px;
+    height: 220px;
+    top: 100px;
+    right: 70px;
+    border: solid;
+    border-width: 3px;
+    border-color: black;
+}
+.noticia3{
+    position: absolute;
+    width: 500px;
+    height: 220px;
+    top: 380px;
+    right: 70px;
+    border: solid;
+    border-width: 3px;
+    border-color: black;
+}
+/*Titulo da noticia*/
+.font1{
+    position: absolute;
+    color: white;
+    font-weight: 600;
+    font-size: 33px;
+    top: 80px;
+    right: 700px;
+    text-align: center;
+}
+.font2{
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    top: 80px;
+    right: 80px;
+    text-align: center;
+}
+.font3{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    top: 360px;
+    right: 150px;
+    font-weight: 600;
+    text-align: center;
+}
+/*resumo notica*/
+.resumo1{
+    position: absolute;
+    font-size: 23px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    top: 200px;
+    right: 700px    
+}
+.resumo2{
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    top: 170px;
+    right:110px   
+}
+.resumo3{
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+    top: 430px;
+    right: 80px  
+}
+/*Link para materia*/
+.link1{
+    position: absolute;
+    border-radius: 3px;
+    border: 10px;
+    top: 580px;
+    right: 670px;
+    color: white;
+    font-size: 17px;
+    font-weight: 1000;
+    text-decoration: none;
+}
+.link2{
+    position: absolute;
+    border-radius: 3px;
+    border: 10px;
+    top: 300px;
+    right: 80px;
+    color: white;
+    font-size: 17px;
+    font-weight: 1000;
+    text-decoration: none;
+}
+.link3{
+    position: absolute;
+    border-radius: 3px;
+    border: 10px;
+    top: 580px;
+    right: 90px;
+    color: white;
+    font-size: 17px;
+    font-weight: 1000;
+    text-decoration: none;
+}
