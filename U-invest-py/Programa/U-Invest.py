@@ -4,14 +4,15 @@ v0.1
 
 saida = 1
 
+saidaLogin = 1
+
 uInvest = {}
 
 while (saida != 0):
-    print("1 - Cadastrar")
-    print("2 - Logar")
-    print("3 - Editar Perfil do Usuario")
-    print("4 - Exibir Usuarios Cadastrados")
-    opcao = int(input("Digite a opcao desejada: "))
+    print("1 - Cadastro de Usuario")
+    print("2 - Login Usuario")
+    print("3 - Login Admin")
+    opcao = int(input("Digite a opção desejada: "))
     if (opcao == 1):
         nome = input("Nome e Sobrenome: ")
         user = input("Crie um UserName: ")
@@ -31,20 +32,28 @@ while (saida != 0):
                 print("Você esta logado!")
             else:
                 print("Senha errada! Tente novamente")
+            while (saidaLogin != 0):
+                print("1 - Editar usuario")
+                print("2 - ")
+                opcaoLogin = int(input("Digite a opção desejada: "))
+                if (opcaoLogin == 1):
+                    user = input("Digite seu User: ")
+                    if (user in uInvest):
+                        uInvest[user]['nome'] = input("Edite seu Nome e Sobrenome: ")
+                        uInvest[user]['email'] = input("Edite seu E-Mail:")
+                        uInvest[user]['idade'] = int(input("Edite sua Idade: "))
+                        uInvest[user]['endereco'] = input("Edite seu Endereço: ")
+                        uInvest[user]['cpf'] = int(input("Edite seu CPF: "))
+                        uInvest[user]['celular'] = int(input("Edite seu número de telefone: "))
+                        uInvest[user]['senha'] = input("Edite sua Senha: ")
+                saidaLogin = int(input("Deseja Continuar Logado? (1-SIM / 0-NÃO): "))
     elif (opcao == 3):
-        user = input("Digite seu User: ")
-        if (user in uInvest):
-            uInvest[user]['nome'] = input("Edite seu Nome e Sobrenome: ")
-            uInvest[user]['email'] = input("Edite seu E-Mail:")
-            uInvest[user]['idade'] = int(input("Edite sua Idade: "))
-            uInvest[user]['endereco'] = input("Edite seu Endereço: ")
-            uInvest[user]['cpf'] = int(input("Edite seu CPF: "))
-            uInvest[user]['celular'] = int(input("Edite seu número de telefone: "))
-            uInvest[user]['senha'] = input("Edite sua Senha: ")
+        user = input("Digite seu User Administrador: ")
+        if (0):
+            print("Teste")
         else:
-            print("User não encontrado.")
-    elif (opcao == 4):
-        print(uInvest)
+            print("User errado, ou você não é um Admin.")
 
-    saida = int(input("Deseja Continuar (1-SIM / 0-NÃO): "))
+    saida = int(input("Deseja Continuar? (1-SIM / 0-NÃO): "))
+
 
