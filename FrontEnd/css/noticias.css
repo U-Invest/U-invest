@@ -123,18 +123,4 @@ body{
     text-decoration: none;
 }
 
-/* Hover arrasta */
-.hover-noticia a .link1:hover::after{
-    display: block;
-    content: "";
-    width: 0%;
-    background-color: white;
-    transition: 0.5s;
-    height: 3px;
 
-}
-
-/* Hover arrasta */
-hover-noticia a:hover::after{
-    width: 100%;
-}
