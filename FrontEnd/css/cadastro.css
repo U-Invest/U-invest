@@ -16,7 +16,13 @@ body {
     justify-content: center;
     align-items: center;
     background: #0c0ce94d;
+    font-family: 'Poppins', serif;
 }
+
+.fonte{
+    font-family: 'Poppins', serif;
+}
+
 
 h1{
     color:white ; 

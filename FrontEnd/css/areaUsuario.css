@@ -10,12 +10,13 @@
 }
 
 body{
-    background-color: rgb(18, 22, 37);
+    background-color: rgb(7, 19, 43);
     width: 100%;
     height: 100vh;
     display:-ms-flexbox;
     align-items: center;
     justify-content: center;
+    font-family: " Inter ", sans-serif;
 }
 /* Deixar as barras de navegações limpas*/
 .menu{
@@ -72,7 +73,7 @@ body{
     height: 178px;
     left: 25px;
     top: 260px;
-    background: rgb(18, 22, 37);
+    background-color:rgb(7, 19, 43);
     box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
 
@@ -83,7 +84,7 @@ body{
     height: 178px;
     left: 375px;
     top: 260px;
-    background: rgb(18, 22, 37);
+    background-color:rgb(7, 19, 43);
     box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
 
@@ -94,7 +95,7 @@ body{
     height: 178px;
     left: 725px;
     top: 260px;
-    background-color:rgb(18, 22, 37);
+    background-color:rgb(7, 19, 43);
     box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
 
@@ -105,7 +106,7 @@ body{
     height: 178px;
     left: 1075px;
     top: 260px;
-    background: rgb(18, 22, 37);
+    background-color:rgb(7, 19, 43);
     box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
 
@@ -133,7 +134,7 @@ body{
   width: 500px;
    background-image: url(/FrontEnd/imgs/2270806-fundo-tecnologia-azul-moderno-gratis-vetor.jpg);
   height: 260px;
-  top: 450px;
+  top: 500px;
   left: 650px;
   border-radius: 100px;
   opacity: 50%;
@@ -232,7 +233,7 @@ body{
 }
 .font2{
     position: absolute;
-    font-family: Poppins;
+    font-family: 'Poppins';
     font-size: 32px;
     font-weight: 800;
     line-height: 48px;
