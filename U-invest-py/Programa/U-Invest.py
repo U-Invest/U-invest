@@ -3,10 +3,7 @@ v0.1
 '''
 
 saida = 1
-
 saidaLogin = 1
-
-saidaAdm = 1
 
 uInvest = {}
 
@@ -70,4 +67,3 @@ while (saida != 0):
 
     saida = int(input("Deseja Continuar? (1-SIM / 0-NÃO): "))
     saidaLogin = 1
-    saidaAdm = 1
