@@ -24,8 +24,8 @@ body{
 }
 
 /* Editando a logo */
-.logo{
-    width: px
+nav a img{
+    width: 50px;
 }
 
 /* Configurando o header */
@@ -79,9 +79,14 @@ nav ul li.login{
     margin-right: 20px;
 
 }
+/* Configurando o botão de cadastro */
+nav ul li.cadastro{
+    background-color: #04b4fc;
+    border-radius: 30px;
+    padding: 5px 40px;
+    margin-right: 20px;
 
-
-
+}
 /* Botao cadastro */
 nav button{
     background-color: #04b4fc;
@@ -149,12 +154,20 @@ main .texto-main p{
     width: 90%;
 }
 
-/* Editando o botão simule agora! */
-main .texto-main button{
+/* Fazendo o flex do header */
+main .texto-main li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+main .texto-main li {
+    width: 50%;
     background-color: #04b4fc;
+    text-decoration: none;
     color: rgb(255, 255, 255) ;
     border-radius: 25px;
-    padding: 20px 50px;
+    padding: 20px 90px;
     outline: none;
     border: none;
     cursor: pointer;
@@ -163,13 +176,14 @@ main .texto-main button{
     transition: all 0.5s;
 }
 
-main .texto-main button a {
+main .texto-main li a{
     text-decoration: none;
     color: rgb(255, 255, 255) ;
 }
 
+
 /* Hover do botão(botão vai pra trás) */
-main .texto-main button:hover{
+main .texto-main li a:hover{
     transform: scale(0.9);
 }
 

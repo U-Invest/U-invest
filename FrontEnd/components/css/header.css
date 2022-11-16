@@ -1,72 +1,116 @@
-/*Importando a font Inter*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Lora&family=Merriweather:wght@300&family=Poppins:wght@300&family=Roboto+Mono:wght@300&display=swap');
+
 
 /*Resetando o CSS*/
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     font-family: 'Poppins', serif;
 }
 
-/* Ediçaõ da barra Header */
-header{
+/* Configurando o container*/
+.container{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+/* Configurando o body */
+body{
+    min-height: 100vh;
+    background-color:rgb(7, 19, 43) ;
+}
+
+/* Editando a logo */
+nav a img{
+    width: 50px;
+}
+
+/* Configurando o header */
+nav{
+    padding-top: 20px;
     display: flex;
-    width: 100%;
-    height: 90px;
-    background-color: rgb(7, 19, 43);
-    justify-content: space-between;
     align-items: center;
-}
-
-/* U-Invest */
-h1{
-    color: white;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 30px;
-}
-
-/* CSS das abas de nav*/
-.menu li a{
-    color: rgb(207, 198, 198);
-    text-decoration: none;
-    margin-left: 70px;
-    margin-right: 110px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-/* Hover = flutuar, faz a interação com o texto*/
-.menu li a:hover{
-    color: rgb(14, 167, 214);
-    text-decoration: none;
+    justify-content: space-between;
 
 }
 
-/* Botão de login */
-.login{
-    display: flex;
+/* Logo no header */
+nav .logo{
+    width: 90px;
+}
+
+/* Fazendo o flex do header */
+nav ul{
     list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* CSS do login */
-.login li a{
-        color: white;
-        margin-right: 40px;
-        text-decoration: none;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+/* Modificando a lista */
+nav ul li{
+    padding: 20px;
 }
 
-/* Espaço da logo */
-.logo{
-    background-image: url(imgs/logooo.png);
-    background-position: center;
-    height: 55px;
-    width: 55px;
-    background-color: rgb(126, 126, 126);
-    border-radius: 35px;
-    margin-left: 30px;
-    margin-top: 6px;
-    padding-top: 10px;
-    padding-left: 10px;
+/* Hover arrasta */
+nav ul li:not(.login)::after{
+    display: block;
+    content: "";
+    width: 0%;
+    background-color: white;
+    transition: 0.5s;
+    height: 3px;
+
+}
+
+/* Hover arrasta */
+nav ul li:hover::after{
+    width: 100%;
+}
+
+/* Configurando o botão de login */
+nav ul li.login{
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 5px 40px;
+    margin-right: 20px;
+
+}
+/* Configurando o botão de cadastro */
+nav ul li.cadastro{
+    background-color: #04b4fc;
+    border-radius: 30px;
+    padding: 5px 40px;
+    margin-right: 20px;
+
+}
+/* Botao cadastro */
+nav button{
+    background-color: #04b4fc;
+    border-radius: 30px;
+    padding: 5px 40px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+    border: 1px solid transparent;
+    transition: all 0.5s;
+    margin-right: -50px;
 }
 
 
+/* Editando o text decoration do botão de cadastro*/
+nav button a {
+    text-decoration: none;
+    color: rgb(255, 255, 255) ;
+}
+
+
+/* Texto do header */
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}

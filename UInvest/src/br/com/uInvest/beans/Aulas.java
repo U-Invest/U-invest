@@ -1,4 +1,4 @@
-package br.com.u_invest.beans;
+package br.com.uInvest.beans;
 
 public class Aulas extends Cursos {
     
