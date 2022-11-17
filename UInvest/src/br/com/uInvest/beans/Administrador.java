@@ -6,10 +6,10 @@ public class Administrador extends Usuario{
 
     public Administrador() {}
 
-    public Administrador(String nomeUsuario, String email, String telefone, String senha, String genero,
-            String dataNascimento, int cep, String logradouro, String bairro, String cidade, String estado, int cpf,
+    public Administrador(String nome, String email, String telefone, String senha, String genero,
+            String dataNascimento, int cep, String logradouro, String bairro, String cidade, String estado, String cpf,
             String admId) {
-        super(nomeUsuario, email, telefone, senha, genero, dataNascimento, cep, logradouro, bairro, cidade, estado,
+        super(nome, email, telefone, senha, genero, dataNascimento, cep, logradouro, bairro, cidade, estado,
                 cpf);
         this.admId = admId;
     }

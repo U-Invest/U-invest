@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Lora&family=Merriweather:wght@300&family=Poppins:wght@300&family=Roboto+Mono:wght@300&display=swap');
 
-
 /*Resetando o CSS*/
+
 * {
     padding: 0;
     margin: 0;
@@ -9,85 +9,107 @@
     font-family: 'Poppins', serif;
 }
 
+
 /* Configurando o container*/
-.container{
+
+.container {
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 4%;
 }
 
+
 /* Configurando o body */
-body{
+
+body {
     min-height: 100vh;
-    background-color:rgb(7, 19, 43) ;
+    background-color: rgb(7, 19, 43);
 }
 
+
 /* Editando a logo */
-nav a img{
+
+nav a img {
     width: 50px;
 }
 
+
 /* Configurando o header */
-nav{
+
+nav {
     padding-top: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
+
 /* Logo no header */
-nav .logo{
+
+nav .logo {
     width: 90px;
 }
 
+
 /* Fazendo o flex do header */
-nav ul{
+
+nav ul {
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+
 /* Modificando a lista */
-nav ul li{
+
+nav ul li {
     padding: 20px;
 }
 
+
 /* Hover arrasta */
-nav ul li:not(.login)::after{
+
+nav ul li:not(.login)::after {
     display: block;
     content: "";
     width: 0%;
     background-color: white;
     transition: 0.5s;
     height: 3px;
-
 }
 
+
 /* Hover arrasta */
-nav ul li:hover::after{
+
+nav ul li:hover::after {
     width: 100%;
 }
 
+
 /* Configurando o botão de login */
-nav ul li.login{
+
+nav ul li.login {
     border: 1px solid white;
     border-radius: 30px;
     padding: 5px 40px;
     margin-right: 20px;
-
 }
+
+
 /* Configurando o botão de cadastro */
-nav ul li.cadastro{
+
+nav ul li.cadastro {
     background-color: #04b4fc;
     border-radius: 30px;
     padding: 5px 40px;
     margin-right: 20px;
-
 }
+
+
 /* Botao cadastro */
-nav button{
+
+nav button {
     background-color: #04b4fc;
     border-radius: 30px;
     padding: 5px 40px;
@@ -102,14 +124,16 @@ nav button{
 
 
 /* Editando o text decoration do botão de cadastro*/
+
 nav button a {
     text-decoration: none;
-    color: rgb(255, 255, 255) ;
+    color: rgb(255, 255, 255);
 }
 
 
 /* Texto do header */
-nav ul li a{
+
+nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 17px;

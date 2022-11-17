@@ -1,8 +1,15 @@
 package br.com.uInvest.beans;
 
-public class Usuario {
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-    private String nomeUsuario;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Usuario implements Serializable {
+    private String nome;
     private String email;
     private String telefone;
     private String senha;
@@ -14,13 +21,14 @@ public class Usuario {
     private String cidade;
     private String estado;
     
-    private int cpf;
+    private String cpf;
 
     public Usuario() {}
 
-    public Usuario(String nomeUsuario, String email, String telefone, String senha, String genero, String dataNascimento,
-            int cep, String logradouro, String bairro, String cidade, String estado, int cpf) {
-        this.nomeUsuario = nomeUsuario;
+    public Usuario(String nome, String email, String telefone, String senha, String genero, String dataNascimento,
+            int cep, String logradouro, String bairro, String cidade, String estado, String cpf) {
+        super();
+        this.nome = nome;
         this.email = email;
         this.telefone = telefone;
         this.senha = senha;
@@ -34,12 +42,12 @@ public class Usuario {
         this.cpf = cpf;
     }
 
-    public String getNomeUsuario() {
-        return nomeUsuario;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNomeUsuario(String nomeUsuario) {
-        this.nomeUsuario = nomeUsuario;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getEmail() {
@@ -122,16 +130,38 @@ public class Usuario {
         this.estado = estado;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
     public void cadastrar(){
-        System.out.println("Método de cadastro de usuário");
+        List<Usuario> usuarios = new ArrayList<Usuario>();
+        usuarios.add(new Usuario(getNome(), getEmail(), getTelefone(), getSenha(), getGenero(), getDataNascimento(), getCep(), getLogradouro(), getBairro(), getCidade(), getEstado(), getCpf()));
+
+        for (Usuario usuario : usuarios){
+            System.out.println(usuario);
+        }
+
+        String filename = "Usuarios.json";
+
+        try{
+
+            Usuarios listaUsuario = new Usuarios(usuarios);
+            FileOutputStream fos = new FileOutputStream(filename);
+            
+            ObjectMapper mapper = new ObjectMapper();
+            String jsonStr = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(listaUsuario);
+            fos.write(jsonStr.getBytes());
+
+            fos.close();
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     public void alterarDados(){

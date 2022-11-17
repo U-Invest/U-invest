@@ -1,43 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/contato.css">
+    <link rel="stylesheet" href="/FrontEnd/components/css/header.css">
     <title>Página de Contato</title>
 </head>
+
 <body>
+
+    <nav class="containerHeader">
+        <div class="logo">
+            <a href="index.html"> <img src="imgs/logo.png" alt=""></a>
+        </div>
+        <!-- Header -->
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="noticias.html">Notícias</a></li>
+            <li><a href="areaUsuario.html">Ações</a></li>
+            <li><a href="contato.html">Contato</a></li>
+            <!-- "botão" Login -->
+            <li class="login"> <a href="login.html">Login</a></li>
+            <li class="cadastro"> <a href="cadastro.html">Cadastro</a></li>
+        </ul>
+    </nav>
+
     <!--Div primaria-->
-   <div class="contatofundo"></div>
+    <div class="contatofundo"></div>
     <!--forms -->
     <form action="">
-        <label for = "txtNome">
+        <label for="txtNome">
         </label>
-        <input type ="text" id = "txtNome"  placeholder=" Digite seu nome">
-        
+        <input type="text" id="txtNome" placeholder=" Digite seu nome">
 
-    <label for = "txtEmail">
-        </label>
-        <input type ="email" id = "txtEmail"  placeholder=" Digite seu email">
-    
-    <label for = "txtEndereco">
-        </label>
-        <input type ="text" id = "txtEndereco"  placeholder="Digite seu endereço">
 
-    <label for = "txtMensagem"></label>
-        <textarea name="" id = "txtMensagem"  cols="30" rows="10" placeholder=" Digite seu texto"> </textarea>
+        <label for="txtEmail">
+        </label>
+        <input type="email" id="txtEmail" placeholder=" Digite seu email">
+
+        <label for="txtEndereco">
+        </label>
+        <input type="text" id="txtEndereco" placeholder="Digite seu endereço">
+
+        <label for="txtMensagem"></label>
+        <textarea name="" id="txtMensagem" cols="30" rows="10" placeholder=" Digite seu texto"> </textarea>
     </form>
     <button class="botao">ENVIAR</button>
-     
-  
+
+
     <!--4 divs pretas-->
-    <div class="fundo1"></div>  
+    <div class="fundo1"></div>
     <div class="fundo2"></div>
     <div class="fundo3"></div>
     <div class="fundo4"></div>
 
-   
+
     <!--Imagem das Divs pretas-->
     <img class="email" src="imgs/email.png" alt="email">
     <img class="telefone" src="imgs/telefone.png" alt="telefone">
@@ -45,18 +65,19 @@
     <img class="instagram" src="imgs/instagram.png" alt="Instagram">
 
     <!--Texto das Divs pretas-->
-   <h3 class="fontEmail">EMAIL</h3>
-   <h3 class="fontTelefone">TELEFONE</h3>
-   <h3 class="fontlocalização">LOCALIZAÇÃO</h3>
-   <h3 class="fontInstagram">INSTAGRAM</h3>
-           
+    <h3 class="fontEmail">EMAIL</h3>
+    <h3 class="fontTelefone">TELEFONE</h3>
+    <h3 class="fontlocalização">LOCALIZAÇÃO</h3>
+    <h3 class="fontInstagram">INSTAGRAM</h3>
+
     <!--Texto com informações das Divs pretas-->
-        <pre class="Email">U_Invest@gmail.com</pre>
-        <pre class="tel">(55) 11 557336921</pre>
-        <pre class="cep">Av. Paulista, 1106</pre>
-        <pre class="Insta">@U-Invest</pre>
-   
+    <pre class="Email">U_Invest@gmail.com</pre>
+    <pre class="tel">(55) 11 557336921</pre>
+    <pre class="cep">Av. Paulista, 1106</pre>
+    <pre class="Insta">@U-Invest</pre>
+
 
 
 </body>
+
 </html>
