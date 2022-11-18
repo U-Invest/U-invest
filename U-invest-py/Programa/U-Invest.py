@@ -3,7 +3,6 @@ v0.1
 '''
 
 saida = 1
-
 saidaLogin = 1
 
 uInvest = {}
@@ -11,8 +10,9 @@ uInvest = {}
 while (saida != 0):
     print("1 - Cadastro de Usuario")
     print("2 - Login Usuario")
-    print("3 - Login Admin")
+    print("3 - Exibir Usuarios")
     print("4 - Deletar Minha Conta")
+    print("5 - Simulador de Investimentos (Em Breve)")
     opcao = int(input("Digite a opção desejada: "))
     if (opcao == 1):
         nome = input("Nome e Sobrenome: ")
@@ -32,30 +32,26 @@ while (saida != 0):
         else:
             print("User não encontrado, Tente novamente")
         if (senha in uInvest[user]['senha']):
-                print("Você esta logado!")
-        else:
-            print("Senha errada! Tente novamente")
-        while (saidaLogin != 0):
-            print("1 - Editar usuario")
-            print("2 - ")
-            opcaoLogin = int(input("Digite a opção desejada: "))
-            if (opcaoLogin == 1):
-                user = input("Digite seu User: ")
-                if (user in uInvest):
-                    uInvest[user]['nome'] = input("Edite seu Nome e Sobrenome: ")
-                    uInvest[user]['email'] = input("Edite seu E-Mail:")
-                    uInvest[user]['idade'] = int(input("Edite sua Idade: "))
-                    uInvest[user]['endereco'] = input("Edite seu Endereço: ")
-                    uInvest[user]['cpf'] = int(input("Edite seu CPF: "))
-                    uInvest[user]['celular'] = int(input("Edite seu número de telefone: "))
-                    uInvest[user]['senha'] = input("Edite sua Senha: ")
-            saidaLogin = int(input("Deseja Continuar Logado? (1-SIM / 0-NÃO): "))
+            print("Você esta logado!")
+            while (saidaLogin != 0):
+                print("1 - Editar usuario")
+                print("2 - Ver meu perfil")
+                opcaoLogin = int(input("Digite a opção desejada: "))
+                if (opcaoLogin == 1):
+                    user = input("Digite seu User: ")
+                    if (user in uInvest):
+                        uInvest[user]['nome'] = input("Edite seu Nome e Sobrenome: ")
+                        uInvest[user]['email'] = input("Edite seu E-Mail:")
+                        uInvest[user]['idade'] = int(input("Edite sua Idade: "))
+                        uInvest[user]['endereco'] = input("Edite seu Endereço: ")
+                        uInvest[user]['cpf'] = int(input("Edite seu CPF: "))
+                        uInvest[user]['celular'] = int(input("Edite seu número de telefone: "))
+                        uInvest[user]['senha'] = input("Edite sua Senha: ")
+                if (opcaoLogin == 2):
+                    print(uInvest[user])
+                saidaLogin = int(input("Deseja Continuar Logado? (1-SIM / 0-NÃO): "))
     elif (opcao == 3):
-        user = input("Digite seu User Administrador: ")
-        if (0):
-            print("Teste")
-        else:
-            print("User errado.")
+        print(uInvest)
     elif (opcao == 4):
         user = input("Digite seu User: ")
         if (user in uInvest):
@@ -66,7 +62,18 @@ while (saida != 0):
                 if (opcaoDelete == "Sim") or (opcaoDelete == "s") or (opcaoDelete == "sim"):
                     user = input("Digite seu User para deletar sua conta: ")
                     del uInvest[user]
+                    print("Sua conta foi deletada com sucesso")
                 else:
-                    print("Você cancelou a operação ou errou seu User, tente novamente caso deseje excluir sua conta.") 
+                    print("Você cancelou a operação ou errou seu User, tente novamente caso deseje excluir sua conta.")
+    elif (opcao == 5):
+        print("No momento estamos contrução, como uma ação sobe e desce todos os dias e a taxa da bolsa tambem, " "\n"
+              "para realizarmos o calculo teriamos que ter api's que deixem nosso sistema conectado em tempo real com a B3. " "\n"
+              "Mas, temos a ideia de como fazer, tudo planejado.")
+        #qntInvestir = float(input("Quanto você irá investir? "))
+        #tempoEstimado = int(input("Qual é o tempo desejado? (Digite o/os meses em numeros)"))
+        #investimentoMensal = input("Deseja investir mensalmente? Se deseja, digite quanto investira mensalmente:")
+        #resultadoInvestimento =
+
 
     saida = int(input("Deseja Continuar? (1-SIM / 0-NÃO): "))
+    saidaLogin = 1
