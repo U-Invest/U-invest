@@ -67,8 +67,7 @@ while (saida != 0):
                     print("Você cancelou a operação ou errou seu User, tente novamente caso deseje excluir sua conta.")
     elif (opcao == 5):
         print("No momento estamos contrução, como uma ação sobe e desce todos os dias e a taxa da bolsa tambem, " "\n"
-              "para realizarmos o calculo teriamos que ter api's que deixem nosso sistema conectado em tempo real com a B3. " "\n"
-              "Mas, temos a ideia de como fazer, tudo planejado.")
+              "para realizarmos o calculo teriamos que ter api's que deixem nosso sistema conectado em tempo real com a B3. " "\n")
         #qntInvestir = float(input("Quanto você irá investir? "))
         #tempoEstimado = int(input("Qual é o tempo desejado? (Digite o/os meses em numeros)"))
         #investimentoMensal = input("Deseja investir mensalmente? Se deseja, digite quanto investira mensalmente:")
