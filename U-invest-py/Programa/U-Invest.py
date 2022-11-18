@@ -12,6 +12,7 @@ while (saida != 0):
     print("2 - Login Usuario")
     print("3 - Exibir Usuarios")
     print("4 - Deletar Minha Conta")
+    print("5 - Simulador de Investimentos (Em Breve)")
     opcao = int(input("Digite a opção desejada: "))
     if (opcao == 1):
         nome = input("Nome e Sobrenome: ")
@@ -63,7 +64,16 @@ while (saida != 0):
                     del uInvest[user]
                     print("Sua conta foi deletada com sucesso")
                 else:
-                    print("Você cancelou a operação ou errou seu User, tente novamente caso deseje excluir sua conta.") 
+                    print("Você cancelou a operação ou errou seu User, tente novamente caso deseje excluir sua conta.")
+    elif (opcao == 5):
+        print("No momento estamos contrução, como uma ação sobe e desce todos os dias e a taxa da bolsa tambem, " "\n"
+              "para realizarmos o calculo teriamos que ter api's que deixem nosso sistema conectado em tempo real com a B3. " "\n"
+              "Mas, temos a ideia de como fazer, tudo planejado.")
+        #qntInvestir = float(input("Quanto você irá investir? "))
+        #tempoEstimado = int(input("Qual é o tempo desejado? (Digite o/os meses em numeros)"))
+        #investimentoMensal = input("Deseja investir mensalmente? Se deseja, digite quanto investira mensalmente:")
+        #resultadoInvestimento =
+
 
     saida = int(input("Deseja Continuar? (1-SIM / 0-NÃO): "))
     saidaLogin = 1
