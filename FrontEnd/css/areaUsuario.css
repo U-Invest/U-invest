@@ -13,9 +13,6 @@ body{
     background-color: rgb(7, 19, 43);
     width: 100%;
     height: 100vh;
-    display:-ms-flexbox;
-    align-items: center;
-    justify-content: center;
     font-family: " Inter ", sans-serif;
 }
 /* Deixar as barras de navegações limpas*/
