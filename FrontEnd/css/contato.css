@@ -5,7 +5,6 @@
 body{
     background-color:  rgb(7, 19, 43); 
     width: 100%;
-    
     font-family: "Popins", sans-serif;
 
 }
@@ -16,7 +15,7 @@ body{
     width: 600px;
     height: 470px;
     left: 50px;
-    top: 80px;
+    top: 110px;
     background:  #04b4fc;
     opacity: 40%;
     border-radius: 15px;
@@ -27,7 +26,7 @@ body{
     position: absolute;
     width: 230px;
     height: 30px;
-    top: 120px;
+    top: 150px;
     left: 100px;
     border-radius: 5px;
     background-color: rgb(0, 0, 0);
@@ -42,7 +41,7 @@ body{
     position: absolute;
     width: 230px;
     height: 30px;
-    top: 120px;
+    top: 150px;
     left: 370px;
     border-radius: 5px; 
     background-color: rgb(0, 0, 0);
@@ -55,7 +54,7 @@ body{
 }
 #txtEndereco{
     position: absolute;
-    top: 180px;
+    top: 210px;
     width: 500px;
     height: 30px;
     right: 760px;
@@ -72,7 +71,7 @@ body{
 #txtMensagem{
     position: absolute;
     width: 500px;
-    top: 240px;
+    top: 270px;
     left: 100px;
     border-radius: 5px; 
     background-color: rgb(0, 0, 0);
@@ -86,7 +85,7 @@ body{
 /*4 Botão*/ 
 .botao{
     position: absolute;
-    top: 460px;
+    top: 490px;
     right: 770px;
     width: 500px;
     background-color: rgb(0, 0, 0);
@@ -106,7 +105,7 @@ body{
     width: 200px;
     height: 220px;
     border-radius: 20px;
-    top: 80px;
+    top: 110px;
     right: 430px;
     opacity: 40%;
 }
@@ -116,7 +115,7 @@ body{
     width: 200px;
     height: 220px;
     border-radius: 20px;
-    top: 330px;
+    top: 360px;
     right: 430px;
     opacity: 40%;
 
@@ -127,7 +126,7 @@ body{
     width: 200px;
     height: 220px;
     border-radius: 20px;
-    top: 330px;
+    top: 360px;
     right: 150px;
     opacity: 40%;
 
@@ -138,7 +137,7 @@ body{
     width: 200px;
     height: 220px;
     border-radius: 20px;
-    top: 80px;
+    top: 110px;
     right: 150px;
     opacity: 40%;
 
@@ -146,28 +145,28 @@ body{
 /*Imagem das Divs pretas*/ 
 .email{
     position: absolute;
-    top: 85px;
+    top: 115px;
     width: 8%;
     right: 485px;
     width: 6%;
 }
 .telefone{
     position: absolute;
-    top: 340px;
+    top: 370px;
     width: 8%;
     right: 485px;
     width: 6%;
 }
 .localizacao{
     position: absolute;
-    top: 90px;
+    top: 120px;
     width: 8%;
     right: 210px;
     width: 5%;
 }
 .instagram{
     position: absolute;
-    top: 340px;;
+    top: 370px;
     width: 8%;
     right: 215px; 
     width: 6%;
@@ -176,7 +175,7 @@ body{
 .fontEmail{
     color: white;
     position: absolute;
-    top: 150px;
+    top: 195px;
     width: 8%;
     right: 450px;
     font-family: "Inter"
@@ -184,7 +183,7 @@ body{
 .fontTelefone{
     color: white;
     position: absolute;
-    top: 410px;
+    top: 460px;
     width: 8%;
     right: 470px;
     font-family: "Inter"
@@ -192,7 +191,7 @@ body{
 .fontlocalização{
     color: white;
     position: absolute;
-    top: 150px;
+    top: 195px;
     width: 8%;
     right: 210px;
     font-family: "Inter"
@@ -200,7 +199,7 @@ body{
 .fontInstagram{
     color: white;
     position: absolute;
-    top: 410px;;
+    top: 460px;;
     width: 8%;
     right: 200px; 
     font-family: "Inter"
@@ -212,7 +211,7 @@ body{
     color: white;
     position: absolute;
     font-size: 19px;
-    top: 200px;
+    top: 240px;
     width: 8%;
     right: 510px;
     font-family: "Inter"
@@ -221,7 +220,7 @@ body{
     color: white;
     position: absolute;
     position: absolute;
-    top: 450px;
+    top: 500px;
     width: 8%;
     right: 515px;
     font-size: 19px;
@@ -230,7 +229,7 @@ body{
 .cep{
     color: white;
     position: absolute;
-    top: 200px;
+    top: 240px;
     width: 8%;
     right: 230px;
     font-size: 19px;
@@ -241,7 +240,7 @@ body{
     position: absolute;
     position: absolute;
     font-size: 19px;
-    top: 450px;;
+    top: 500px;;
     width: 8%;
     right: 200px; 
     font-family: "Inter"

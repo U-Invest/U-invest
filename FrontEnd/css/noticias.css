@@ -1,145 +1,6 @@
 body{
     background-color: rgb(7,19,43);
 }
-/*Resetando o CSS*/
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', serif;
-}
-
-
-/* Configurando o container*/
-
-.container {
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 0 4%;
-}
-
-
-/* Configurando o body */
-
-body {
-    min-height: 100vh;
-    background-color: rgb(7, 19, 43);
-}
-
-
-/* Editando a logo */
-
-nav a img {
-    width: 50px;
-}
-
-
-/* Configurando o header */
-
-nav {
-    padding-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-/* Logo no header */
-
-nav .logo {
-    width: 90px;
-}
-
-
-/* Fazendo o flex do header */
-
-nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-/* Modificando a lista */
-
-nav ul li {
-    padding: 20px;
-}
-
-
-/* Hover arrasta */
-
-nav ul li:not(.login)::after {
-    display: block;
-    content: "";
-    width: 0%;
-    background-color: white;
-    transition: 0.5s;
-    height: 3px;
-}
-
-
-/* Hover arrasta */
-
-nav ul li:hover::after {
-    width: 100%;
-}
-
-
-/* Configurando o botão de login */
-
-nav ul li.login {
-    border: 1px solid white;
-    border-radius: 30px;
-    padding: 5px 40px;
-    margin-right: 20px;
-}
-
-
-/* Configurando o botão de cadastro */
-
-nav ul li.cadastro {
-    background-color: #04b4fc;
-    border-radius: 30px;
-    padding: 5px 40px;
-    margin-right: 20px;
-}
-
-
-/* Botao cadastro */
-
-nav button {
-    background-color: #04b4fc;
-    border-radius: 30px;
-    padding: 5px 40px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    font-size: 17px;
-    border: 1px solid transparent;
-    transition: all 0.5s;
-    margin-right: -50px;
-}
-
-
-/* Editando o text decoration do botão de cadastro*/
-
-nav button a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-}
-
-
-/* Texto do header */
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 17px;
-}
-/*............................................................................................................................*/
 /*3 Imagens de Noticias*/
 .noticia1{
     position: absolute;
@@ -176,7 +37,7 @@ nav ul li a {
     position: absolute;
     color: white;
     font-weight: 600;
-    font-size: 33px;
+    font-size: 28px;
     top: 110px;
     right: 700px;
     text-align: center;
@@ -184,7 +45,7 @@ nav ul li a {
 .font2{
     position: absolute;
     color: white;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 600;
     top: 105px;
     right: 80px;
@@ -193,7 +54,7 @@ nav ul li a {
 .font3{
     position: absolute;
     color: rgb(255, 255, 255);
-    font-size: 30px;
+    font-size: 25px;
     top: 380px;
     right: 150px;
     font-weight: 600;
@@ -202,7 +63,7 @@ nav ul li a {
 /*resumo notica*/
 .resumo1{
     position: absolute;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: 600;
     text-align: center;
     color: white;
@@ -211,7 +72,7 @@ nav ul li a {
 }
 .resumo2{
     position: absolute;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     text-align: center;
     color: white;
@@ -220,7 +81,7 @@ nav ul li a {
 }
 .resumo3{
     position: absolute;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     text-align: center;
     color: white;
@@ -232,7 +93,7 @@ nav ul li a {
     position: absolute;
     border-radius: 3px;
     border: 10px;
-    top: 580px;
+    top: 575px;
     right: 670px;
     color: white;
     font-size: 17px;
@@ -243,7 +104,7 @@ nav ul li a {
     position: absolute;
     border-radius: 3px;
     border: 10px;
-    top: 300px;
+    top: 295px;
     right: 80px;
     color: white;
     font-size: 17px;
@@ -254,7 +115,7 @@ nav ul li a {
     position: absolute;
     border-radius: 3px;
     border: 10px;
-    top: 580px;
+    top: 575px;
     right: 90px;
     color: white;
     font-size: 17px;
