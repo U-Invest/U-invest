@@ -16,7 +16,6 @@
 body {
     width: 100%;
     height: 100vh;
-    /* display: flex; */
     justify-content: center;
     align-items: center;
     background: #0c0ce94d;
@@ -201,6 +200,7 @@ h6 {
         flex-wrap: nowrap;
     }
 }*/
+/*Ajustando footer*/
 footer{
     width: 100%;
     height: 100px;

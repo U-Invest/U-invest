@@ -8,7 +8,6 @@
     box-sizing: border-box;
     font-family: " Inter ", sans-serif;
 }
-
 body{
     background-color: rgb(7, 19, 43);
     width: 100%;
@@ -16,17 +15,7 @@ body{
     font-family: " Inter ", sans-serif;
     overflow-y: none;
 }
-/* Deixar as barras de navegações limpas*/
-.menu{
-    display: flex;
-    list-style:none;
-
-}
 /* Imagens*/
-.imagens{
-    justify-content: center;
-    display: flexbox;
-}
 .img1{
     position: absolute;
     width: 224px;
@@ -74,7 +63,6 @@ body{
     background-color:rgb(7, 19, 43);
     box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
-
 }
 .fundo2{
     position: absolute;
@@ -85,7 +73,6 @@ body{
     background-color:rgb(7, 19, 43);
     box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
-
 }
 .fundo3{
     position: absolute;
@@ -96,7 +83,6 @@ body{
     background-color:rgb(7, 19, 43);
     box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
-
 }
 .fundo4{
     position: absolute;
@@ -107,16 +93,27 @@ body{
     background-color:rgb(7, 19, 43);
     box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
-
 }
-.fonte, h6{
+/*Alinhando e centralizando texto*/
+.fonte{
+    position: absolute;
     text-align: center;
     font-weight: 600;
-    font-size: 16px;
+    top: 37px;
+    font-size: 15px;
     padding-top: 30px;
     color: white;
 }
-/* Texto com sombra*/
+h6{
+    position: absolute;
+    font-weight: 600;
+    top: -11px;
+    right: 33%;
+    font-size: 17px;
+    padding-top: 30px;
+    color: white; 
+}
+/* Texto com sombra - cartão*/
 .cartao{
     position: absolute;
     width: 35%;
@@ -124,27 +121,23 @@ body{
     background-image: url(/FrontEnd/imgs/cart╞o.jpg);
     top: 475px;
     opacity: 80%;
-    
 }
 /* Simulador Investimentos*/
 .Simulador{
-  position: absolute;
-  width: 500px;
-   background-image: url(/FrontEnd/imgs/2270806-fundo-tecnologia-azul-moderno-gratis-vetor.jpg);
-  height: 260px;
-  top: 500px;
-  left: 650px;
-  border-radius: 100px;
-  opacity: 50%;
+    position: absolute;
+    width: 500px;
+    height: 260px;
+    top: 475px;
+    left: 650px;
+    border-radius: 100px;
+    background-color: #008080;
 }
 .Simulador-font{
     position: absolute;
     font-size: 19px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     top: -114px;
     right: 90px;
-    
-
 }
 .espaço1{
     position: absolute;
@@ -153,7 +146,7 @@ body{
     left: 50px;
     top: 125px;
     border-radius: 100px;
-    background:  rgb(18, 22, 37);;
+    background:  rgb(27, 102, 116);
 }
 .espaço2{
     position: absolute;
@@ -162,7 +155,7 @@ body{
     left: 50px;
     top: 200px;
     border-radius: 100px;
-    background:  rgb(18, 22, 37);;
+    background:  rgb(27, 102, 116);
 }
 .espaço3{
     position: absolute;
@@ -171,12 +164,12 @@ body{
     left: 50px;
     top: 50px;
     border-radius: 100px;
-    background:  rgb(18, 22, 37);;
+    background:  rgb(27, 102, 116);
     align-items: center;
 }
 .fonteDiv{
     position: absolute;
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
     font-weight: 600;
     font-size: 15px;
@@ -194,7 +187,6 @@ body{
     left: -13px;
     top: 778px;
     background: #0137A3;
-
 }
 .misão{
     height: 14px;
@@ -226,8 +218,6 @@ body{
     top: 790px;
     font-weight: 800;
     right: 1095px;
-  
-
 }
 .font2{
     position: absolute;
@@ -240,7 +230,6 @@ body{
     top: 790px;
     font-weight: 800;
     right: 640px;
-
 }
 .font3{
     position: absolute;
@@ -263,7 +252,7 @@ body{
     line-height: 30px;
     color: white;
     top: 840px;
-    right: 1025px;
+    right: 1100px;
 }
 .texto2{
     position: absolute;
@@ -285,17 +274,12 @@ body{
     top: 840px;
     right: 30px;
 }
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    }
-
-    footer{
+/*Posicionando Footer*/
+footer{
     width: 100%;
     height: 100px;
     position: absolute;
     bottom: 0;
     left: 0;
     top: -60px;
-    }
+}
