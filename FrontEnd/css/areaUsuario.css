@@ -14,6 +14,7 @@ body{
     width: 100%;
     height: 100vh;
     font-family: " Inter ", sans-serif;
+    overflow-y: none;
 }
 /* Deixar as barras de navegações limpas*/
 .menu{

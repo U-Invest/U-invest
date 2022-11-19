@@ -1,0 +1,99 @@
+/* Imagem do footer */
+.footer-img{
+    position: absolute;
+    top:1065px;
+    right: 1120px;
+
+}
+.footer-col1{
+    position: absolute;
+    top: 950px;
+    font-size: 18px;
+    right: 720px;
+    color: #ffffff;
+    padding: 100px;
+}
+.footer-col2{
+    position: absolute;
+    color: white;
+    top: 1050px;
+    right: 460px;
+    font-size: 18px;
+    
+}
+.footer-col3{
+    position: absolute;
+    top: 1050px;
+    right: 30px;
+    color: white;
+    font-size: 18px;
+}
+/*Imagens das redes e texto redes sociais*/
+.footer-col4{
+    position: absolute;
+    top:1230px;
+    right: 1160px;
+    color: white;
+
+}
+/*Editando foother*/
+li a {
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    color: #bbbbbb;
+    display: block;
+}
+li {
+    padding: 6px;
+}
+h4{
+   padding: 15px; 
+}
+ul {
+    list-style:none;
+    padding-left:0;
+}
+
+/*div azul*/
+.footer-col1 h4::before{
+    content: "";
+    position: absolute;
+    top: 150px;
+    bottom: -10px;
+    background-color: #04b4fc;;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+    text-align: center;
+}
+.footer-col2 h4::before{
+    content: "";
+    position: absolute;
+    top: 50px;
+    bottom: -10px;
+    background-color: #04b4fc;;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer-col3 h4::before{
+    content: "";
+    position: absolute;
+    top: 50px;
+    bottom: -10px;
+    background-color: #04b4fc;;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+.footer-col4 h4::before{
+    content: "";
+    position: absolute;
+    top: 45px;
+    bottom: -10px;
+    background-color: #04b4fc;;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
