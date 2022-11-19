@@ -1,0 +1,16 @@
+{
+  "usuario" : [ {
+    "nome" : "Matheus",
+    "email" : "mat@mail.com",
+    "telefone" : "961065956",
+    "senha" : "1234321",
+    "genero" : "masc",
+    "dataNascimento" : "080903",
+    "cep" : 4685000,
+    "logradouro" : "teste",
+    "bairro" : "teste",
+    "cidade" : "teste",
+    "estado" : "teste",
+    "cpf" : "52867130840"
+  } ]
+}
