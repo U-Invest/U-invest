@@ -29,8 +29,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package demo;
-
 import java.util.*;
 import java.net.*;
 import javax.mail.*;

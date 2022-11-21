@@ -29,80 +29,25 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package demo;
-
-import java.util.*;
-import javax.mail.*;
-import javax.mail.internet.*;
 import javax.servlet.jsp.*;
 import javax.servlet.jsp.tagext.*;
 
 /**
- * Custom tag for retrieving a message.
+ * Extra information class to support the scripting variable created by the
+ * MessagesTag class. The variable exists outside of the tag.
+ * 
  */
-public class MessageTag extends TagSupport {
-    private String folder;
-    private String session;
-    private int num = 1;
-
-    /**
-     * folder attribute setter method.
-     */
-    public String getFolder() {
-	return folder;
+public class MessageTEI extends TagExtraInfo {
+    
+    public MessageTEI() {
+	super();
     }
     
-    /**
-     * num attribute getter method.
-     */
-    public String getNum() {
-	return Integer.toString(num);
+    public VariableInfo[] getVariableInfo(TagData data) {
+	VariableInfo info = new VariableInfo(data.getId(),"MessageInfo",
+	    true, VariableInfo.AT_END);
+	VariableInfo[] varInfo = { info };
+	return varInfo;
     }
-    
-    /**
-     * session attribute getter method.
-     */
-    public String getSession() {
-	return session;
-    }
-    
-    /**
-     * folder setter method.
-     */
-    public void setFolder(String folder) {
-	this.folder = folder;
-    }
-
-    /**
-     * num attribute setter method.
-     */
-    public void setNum(String num) {
-	this.num = Integer.parseInt(num);
-    }
-    
-    /**
-     * session attribute setter method.
-     */
-    public void setSession(String session) {
-	this.session = session;
-    }
-
-    /**
-     * Method for processing the start of the tag.
-     */
-    public int doStartTag() throws JspException {
-	MessageInfo messageinfo = new MessageInfo();
-	try {
-	    Folder f = (Folder)pageContext.getAttribute(
-		getFolder(), PageContext.SESSION_SCOPE);
-	    Message message = f.getMessage(num);
-	    messageinfo.setMessage(message);
-	    pageContext.setAttribute(getId(), messageinfo);
-	} catch (Exception ex) {
-	    throw new JspException(ex.getMessage());
-	}
- 
-	return SKIP_BODY;
-   }
 }
 
