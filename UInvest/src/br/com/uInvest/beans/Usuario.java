@@ -1,7 +1,8 @@
 package br.com.uInvest.beans;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+// import com.fasterxml.jackson.databind.ObjectMapper;
 
+import javax.swing.*;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.Serializable;
@@ -20,13 +21,13 @@ public class Usuario implements Serializable {
     private String bairro;
     private String cidade;
     private String estado;
-    
     private String cpf;
 
-    public Usuario() {}
+    public Usuario() {
+    }
 
     public Usuario(String nome, String email, String telefone, String senha, String genero, String dataNascimento,
-            int cep, String logradouro, String bairro, String cidade, String estado, String cpf) {
+                   int cep, String logradouro, String bairro, String cidade, String estado, String cpf) {
         super();
         this.nome = nome;
         this.email = email;
@@ -138,41 +139,80 @@ public class Usuario implements Serializable {
         this.cpf = cpf;
     }
 
-    public void cadastrar(){
-        List<Usuario> usuarios = new ArrayList<Usuario>();
-        usuarios.add(new Usuario(getNome(), getEmail(), getTelefone(), getSenha(), getGenero(), getDataNascimento(), getCep(), getLogradouro(), getBairro(), getCidade(), getEstado(), getCpf()));
-
-        for (Usuario usuario : usuarios){
-            System.out.println(usuario);
-        }
-
-        String filename = "Usuarios.json";
-
-        try{
-
-            Usuarios listaUsuario = new Usuarios(usuarios);
-            FileOutputStream fos = new FileOutputStream(filename);
-            
-            ObjectMapper mapper = new ObjectMapper();
-            String jsonStr = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(listaUsuario);
-            fos.write(jsonStr.getBytes());
-
-            fos.close();
-
-        }catch (IOException e){
-            e.printStackTrace();
-        }
+    public String toString() {
+        return nome + "\n" + email + "\n" + telefone + "\n" + senha + "\n" + genero + "\n" + dataNascimento + "\n" + cep + "\n" + logradouro + "\n" + bairro + "\n" + cidade + "\n" + estado + "\n" + cpf;
     }
 
-    public void alterarDados(){
+    public void cadastrar(Usuario usuario) {
+
+        ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+
+        usuario.setNome(JOptionPane.showInputDialog("Cadastre seu nome"));
+        usuario.setEmail(JOptionPane.showInputDialog("Cadastre seu E-mail"));
+        usuario.setTelefone(JOptionPane.showInputDialog("Cadastre seu telefone"));
+        usuario.setSenha(JOptionPane.showInputDialog("Cadastre sua senha"));
+        usuario.setGenero(JOptionPane.showInputDialog("Cadastre seu gênero"));
+        usuario.setDataNascimento(JOptionPane.showInputDialog("Cadastre sua data de nascimento"));
+        usuario.setCep(Integer.parseInt(JOptionPane.showInputDialog("Cadastre seu CEP")));
+        usuario.setLogradouro(JOptionPane.showInputDialog("Cadastre seu logradouro"));
+        usuario.setBairro(JOptionPane.showInputDialog("Cadastre seu bairro"));
+        usuario.setCidade(JOptionPane.showInputDialog("Cadastre sua cidade"));
+        usuario.setEstado(JOptionPane.showInputDialog("Cadastre seu estado"));
+        usuario.setCpf(JOptionPane.showInputDialog("Cadastre seu CPF"));
+
+        usuario.nome = getNome();
+        usuario.email = getEmail();
+        usuario.telefone = getTelefone();
+        usuario.senha = getSenha();
+        usuario.genero = getGenero();
+        usuario.dataNascimento = getDataNascimento();
+        usuario.cep = getCep();
+        usuario.logradouro = getLogradouro();
+        usuario.bairro = getBairro();
+        usuario.cidade = getCidade();
+        usuario.estado = getEstado();
+        usuario.cpf = getCpf();
+        usuarios.add(usuario);
+
+
+        System.out.println(usuarios);
+
+//        Tentativa de salvar usuario no json usuarios.json na pasta resources
+
+//        List<Usuario> usuarios = new ArrayList<Usuario>();
+//        usuarios.add(new Usuario(getNome(), getEmail(), getTelefone(), getSenha(), getGenero(), getDataNascimento(), getCep(), getLogradouro(), getBairro(), getCidade(), getEstado(), getCpf()));
+
+        // for (Usuario usuario : usuarios){
+        //     System.out.println(usuario);
+        // }
+
+        // String filename = "Usuarios.json";
+
+        // try{
+
+        //     Usuarios listaUsuario = new Usuarios(usuarios);
+        //     FileOutputStream fos = new FileOutputStream(filename);
+
+        //     ObjectMapper mapper = new ObjectMapper();
+        //     String jsonStr = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(listaUsuario);
+        //     fos.write(jsonStr.getBytes());
+
+        //     fos.close();
+
+        // }catch (IOException e){
+        //     e.printStackTrace();
+        // }
+    }
+
+    public void alterarDados() {
         System.out.println("Método de alterar dados do usuário");
     }
 
-    public void excluirConta(){
+    public void excluirConta() {
         System.out.println("Método de excluir conta");
     }
 
-    public void loginUser(){
+    public void loginUser() {
         System.out.println("Método de login do usuário");
     }
 }

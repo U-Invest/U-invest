@@ -4,7 +4,7 @@ public class Administrador extends Usuario{
     
     private String admId;
 
-    public Administrador() {}
+    public Administrador(){}
 
     public Administrador(String nome, String email, String telefone, String senha, String genero,
             String dataNascimento, int cep, String logradouro, String bairro, String cidade, String estado, String cpf,
