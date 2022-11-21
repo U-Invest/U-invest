@@ -9,7 +9,7 @@ public class salvarUsuario {
 
         Usuario usuario = new Usuario();
 
-        int nUsuarios = 3;
+        int nUsuarios = 1;
         for (int i = 0; i < nUsuarios; i++) {
             usuario.cadastrar(usuario);
         }

@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/jackson-databind-2.14.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/src/libs/javamail-1.4.7/mail.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -19,7 +19,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/jackson-core-2.14.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/src/libs/activation.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -28,7 +28,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/jackson-annotations-2.14.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/src/libs/jackson-annotations-2.14.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -37,7 +37,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/activation.jar!/" />
+          <root url="jar://$MODULE_DIR$/src/libs/jackson-core-2.14.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -46,7 +46,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/javamail-1.4.7/mail.jar!/" />
+          <root url="jar://$MODULE_DIR$/src/libs/jackson-databind-2.14.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

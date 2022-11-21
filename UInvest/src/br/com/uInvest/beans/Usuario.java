@@ -163,7 +163,7 @@ public class Usuario implements Serializable {
         usuario.nome = getNome();
         usuario.email = getEmail();
         usuario.telefone = getTelefone();
-        usuario.senha = getSenha();
+        usuario.senha = Criptografia.encriptacao(getSenha());
         usuario.genero = getGenero();
         usuario.dataNascimento = getDataNascimento();
         usuario.cep = getCep();
