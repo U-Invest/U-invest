@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- All CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <title>Login</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand text-light" href="./"
+          ><!-- <img src="" alt="" class="d-inline-block align-top">--><span
+            class="text-primary"
+            >U</span
+          >invest</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="./">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="./#about">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="./#services">Serviços</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="./#team">Time</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="./contato.html">Contato</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="./login.html">Login</a>
+            </li>
+            <li>
+              <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle text-light"
+                      id="navbarDarkDropdownMenuLink"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Opções
+                    </a>
+                    <ul
+                      class="dropdown-menu dropdown-menu-dark"
+                      aria-labelledby="navbarDarkDropdownMenuLink"
+                    >
+                      <li>
+                        <div class="form-check form-switch">
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            id="checkbox"
+                            onclick="lightMode()"
+                          />
+                          <label for="checkbox" class="form-check-label"
+                            >Light mode</label
+                          >
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="containerLogin">
+      <div class="wrapper">
+        <div class="form-wrapper sign-in">
+          <form action="">
+            <h2>Login</h2>
+            <div class="input-group">
+              <input type="text" id="usernameDefined" required />
+              <label for="">Username</label>
+            </div>
+            <div class="input-group">
+              <input type="password" id="passwordDefined" required />
+              <label for="">Senha</label>
+            </div>
+            <div class="remember">
+              <label><input type="checkbox" /> Lembrar de mim</label>
+            </div>
+            <button onclick="logarUsuario()" id="logar" type="button">
+              Login
+            </button>
+            <div class="signUp-link">
+              <p>
+                Não possui uma conta?
+                <a href="#" class="signUpBtn-link">Cadastre-se</a>
+              </p>
+            </div>
+            <div class="social-platform">
+              <p>Ou faça login com</p>
+              <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-google"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="form-wrapper sign-up">
+          <form action="">
+            <h2>Cadastre-se</h2>
+            <div class="input-group">
+              <input type="text" id="username" name="username" required />
+              <label for="">Username</label>
+            </div>
+            <div class="input-group">
+              <input type="email" id="email" name="email" required />
+              <label for="">Email</label>
+            </div>
+            <div class="input-group">
+              <input type="password" id="password" name="password" required />
+              <label for="">Senha</label>
+            </div>
+            <div class="remember">
+              <label
+                ><input type="checkbox" id="terms" name="terms" /> Eu concordo
+                com os termos e condições</label
+              >
+            </div>
+            <button onclick="cadastraUsuario()" id="cadastrar">
+              Cadastrar
+            </button>
+            <div class="signUp-link">
+              <p>
+                Já possui uma conta?
+                <a href="#" class="signInBtn-link">Login</a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer starts -->
+    <footer class="bg-dark p-2 text-center">
+      <div class="container">
+        <p class="text-light">All Right Reserved By @website Name</p>
+      </div>
+    </footer>
+    <!-- footer ends -->
+    <script>
+      let username = document.getElementById("username");
+      let email = document.getElementById("email");
+      let password = document.getElementById("password");
+      let terms = document.getElementById("terms");
+
+      function cadastraUsuario() {
+        if (username && email && password && terms) {
+          let listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]");
+
+          listaUser.push({
+            usernameCad: username.value,
+            emailCad: email.value,
+            passwordCad: password.value,
+            termsCad: terms.value,
+          });
+
+          localStorage.setItem("listaUser", JSON.stringify(listaUser));
+        } else {
+          console.log("Algo deu errado");
+        }
+      }
+
+      let usernameDefined = document.getElementById("usernameDefined");
+      let passwordDefined = document.getElementById("passwordDefined");
+
+      function logarUsuario() {
+        let listaUser = [];
+
+        let userValid = {
+          username: "",
+          password: "",
+        };
+
+        listaUser = JSON.parse(localStorage.getItem("listaUser"));
+
+        listaUser.forEach((item) => {
+          if (
+            usernameDefined.value == item.usernameCad &&
+            passwordDefined.value == item.passwordCad
+          ) {
+            userValid = {
+              username: item.usernameCad,
+              password: item.passwordCad,
+            };
+          } else {
+            console.log("Deu erro aqui (Primeiro If)");
+            console.log(usernameDefined.value, item.usernameCad);
+            console.log(usernameDefined.value, item.usernameCad);
+          }
+        });
+
+        if (
+          usernameDefined.value == userValid.username &&
+          passwordDefined.value == userValid.password
+        ) {
+          let mathRandom = Math.random().toString(16).substr(2);
+          let token = mathRandom + mathRandom;
+          localStorage.setItem("token", token);
+          localStorage.setItem("userLogado", JSON.stringify(userValid));
+          console.log("Você logou! Sua sessão foi criada com sucesso.");
+          window.alert("Você logou! Sua sessão foi criada com sucesso.");
+        } else {
+          console.log("Usuário ou senha incorretos");
+          window.alert("Usuário ou senha incorretos");
+        }
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
