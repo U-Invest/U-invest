@@ -12,7 +12,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/login.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -52,7 +57,13 @@
               <a class="nav-link text-light" href="./contato.html">Contato</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="./login.html">Login</a>
+              <a
+                class="nav-link text-light"
+                href=""
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                >Login</a
+              >
             </li>
             <li>
               <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
@@ -93,6 +104,103 @@
         </div>
       </div>
     </nav>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            -->
+            <div class="containerLogin">
+              <div class="wrapper">
+                <div class="form-wrapper sign-in">
+                  <form action="">
+                    <h2>Login</h2>
+                    <div class="input-group">
+                      <input type="text" id="usernameDefined" required />
+                      <label for="">Username</label>
+                    </div>
+                    <div class="input-group">
+                      <input type="password" id="passwordDefined" required />
+                      <label for="">Senha</label>
+                    </div>
+                    <div class="remember">
+                      <label><input type="checkbox" /> Lembrar de mim</label>
+                    </div>
+                    <button onclick="logarUsuario()" id="logar" type="button">
+                      Login
+                    </button>
+                    <div class="signUp-link">
+                      <p>
+                        Não possui uma conta?
+                        <a href="#" class="signUpBtn-link">Cadastre-se</a>
+                      </p>
+                    </div>
+                    <div class="social-platform">
+                      <p>Ou faça login com</p>
+                      <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-google"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="form-wrapper sign-up">
+                  <form action="">
+                    <h2>Cadastre-se</h2>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        required
+                      />
+                      <label for="">Username</label>
+                    </div>
+                    <div class="input-group">
+                      <input type="email" id="email" name="email" required />
+                      <label for="">Email</label>
+                    </div>
+                    <div class="input-group">
+                      <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        required
+                      />
+                      <label for="">Senha</label>
+                    </div>
+                    <div class="remember">
+                      <label
+                        ><input type="checkbox" id="terms" name="terms" /> Eu
+                        concordo com os termos e condições</label
+                      >
+                    </div>
+                    <button onclick="cadastraUsuario()" id="cadastrar">
+                      Cadastrar
+                    </button>
+                    <div class="signUp-link">
+                      <p>
+                        Já possui uma conta?
+                        <a href="#" class="signInBtn-link">Login</a>
+                      </p>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div
       id="carouselExampleIndicators"
@@ -443,6 +551,74 @@
     <!-- footer ends -->
 
     <!-- All Js -->
+    <script>
+      let username = document.getElementById("username");
+      let email = document.getElementById("email");
+      let password = document.getElementById("password");
+      let terms = document.getElementById("terms");
+
+      function cadastraUsuario() {
+        if (username && email && password && terms) {
+          let listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]");
+
+          listaUser.push({
+            usernameCad: username.value,
+            emailCad: email.value,
+            passwordCad: password.value,
+            termsCad: terms.value,
+          });
+
+          localStorage.setItem("listaUser", JSON.stringify(listaUser));
+        } else {
+          console.log("Algo deu errado");
+        }
+      }
+
+      let usernameDefined = document.getElementById("usernameDefined");
+      let passwordDefined = document.getElementById("passwordDefined");
+
+      function logarUsuario() {
+        let listaUser = [];
+
+        let userValid = {
+          username: "",
+          password: "",
+        };
+
+        listaUser = JSON.parse(localStorage.getItem("listaUser"));
+
+        listaUser.forEach((item) => {
+          if (
+            usernameDefined.value == item.usernameCad &&
+            passwordDefined.value == item.passwordCad
+          ) {
+            userValid = {
+              username: item.usernameCad,
+              password: item.passwordCad,
+            };
+          } else {
+            console.log("Deu erro aqui (Primeiro If)");
+            console.log(usernameDefined.value, item.usernameCad);
+            console.log(usernameDefined.value, item.usernameCad);
+          }
+        });
+
+        if (
+          usernameDefined.value == userValid.username &&
+          passwordDefined.value == userValid.password
+        ) {
+          let mathRandom = Math.random().toString(16).substr(2);
+          let token = mathRandom + mathRandom;
+          localStorage.setItem("token", token);
+          localStorage.setItem("userLogado", JSON.stringify(userValid));
+          console.log("Você logou! Sua sessão foi criada com sucesso.");
+          window.alert("Você logou! Sua sessão foi criada com sucesso.");
+        } else {
+          console.log("Usuário ou senha incorretos");
+          window.alert("Usuário ou senha incorretos");
+        }
+      }
+    </script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
   </body>
