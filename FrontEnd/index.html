@@ -45,13 +45,10 @@
               <a class="nav-link text-light" href="./">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="./#about">Sobre</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link text-light" href="./#services">Serviços</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="./#team">Time</a>
+              <a class="nav-link text-light" href="./noticias.html">Notícias</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-light" href="./contato.html">Contato</a>
@@ -116,24 +113,28 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-body">
-            -->
             <div class="containerLogin">
-              <div class="wrapper">
-                <div class="form-wrapper sign-in">
+              <div class="wrapperLogin">
+                <div class="form-wrapper-login sign-in">
                   <form action="">
-                    <h2>Login</h2>
-                    <div class="input-group">
+                    <h2 class="titulo-login">Login</h2>
+                    <div class="input-group-login">
                       <input type="text" id="usernameDefined" required />
                       <label for="">Username</label>
                     </div>
-                    <div class="input-group">
+                    <div class="input-group-login">
                       <input type="password" id="passwordDefined" required />
                       <label for="">Senha</label>
                     </div>
-                    <div class="remember">
+                    <div class="remember-login">
                       <label><input type="checkbox" /> Lembrar de mim</label>
                     </div>
-                    <button onclick="logarUsuario()" id="logar" type="button">
+                    <button
+                      class="btnLogin"
+                      onclick="logarUsuario()"
+                      id="logar"
+                      type="button"
+                    >
                       Login
                     </button>
                     <div class="signUp-link">
@@ -153,10 +154,10 @@
                   </form>
                 </div>
 
-                <div class="form-wrapper sign-up">
+                <div class="form-wrapper-login sign-up">
                   <form action="">
-                    <h2>Cadastre-se</h2>
-                    <div class="input-group">
+                    <h2 class="titulo-login">Cadastre-se</h2>
+                    <div class="input-group-login">
                       <input
                         type="text"
                         id="username"
@@ -165,11 +166,11 @@
                       />
                       <label for="">Username</label>
                     </div>
-                    <div class="input-group">
+                    <div class="input-group-login">
                       <input type="email" id="email" name="email" required />
                       <label for="">Email</label>
                     </div>
-                    <div class="input-group">
+                    <div class="input-group-login">
                       <input
                         type="password"
                         id="password"
@@ -178,13 +179,17 @@
                       />
                       <label for="">Senha</label>
                     </div>
-                    <div class="remember">
+                    <div class="remember-login">
                       <label
                         ><input type="checkbox" id="terms" name="terms" /> Eu
                         concordo com os termos e condições</label
                       >
                     </div>
-                    <button onclick="cadastraUsuario()" id="cadastrar">
+                    <button
+                      class="btnLogin"
+                      onclick="cadastraUsuario()"
+                      id="cadastrar"
+                    >
                       Cadastrar
                     </button>
                     <div class="signUp-link">
@@ -329,9 +334,9 @@
           <div class="col-12 col-md-12 col-lg-4">
             <div class="card text-white text-center bg-dark pb-2">
               <div class="card-body">
-                <i class="bi bi-laptop"></i>
-                <h3 class="card-title">Melhor qualidade</h3>
-                <p class="lead">
+                <i class="bi bi-laptop text-light"></i>
+                <h3 class="card-title text-light">Melhor qualidade</h3>
+                <p class="lead text-light">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Adipisci eligendi modi temporibus alias iste. Accusantium?
                 </p>
@@ -342,9 +347,9 @@
           <div class="col-12 col-md-12 col-lg-4">
             <div class="card text-white text-center bg-dark pb-2">
               <div class="card-body">
-                <i class="bi bi-journal"></i>
-                <h3 class="card-title">Sustentabilidade</h3>
-                <p class="lead">
+                <i class="bi bi-journal text-light"></i>
+                <h3 class="card-title text-light">Sustentabilidade</h3>
+                <p class="lead text-light">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Adipisci eligendi modi temporibus alias iste. Accusantium?
                 </p>
@@ -355,13 +360,13 @@
           <div class="col-12 col-md-12 col-lg-4">
             <div class="card text-white text-center bg-dark pb-2">
               <div class="card-body">
-                <i class="bi bi-intersect"></i>
-                <h3 class="card-title">Integridade</h3>
-                <p class="lead">
+                <i class="bi bi-intersect text-light"></i>
+                <h3 class="card-title text-light">Integridade</h3>
+                <p class="lead text-light">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Adipisci eligendi modi temporibus alias iste. Accusantium?
                 </p>
-                <button class="btn bg-primary text-light">Read More</button>
+                <button class="btn bg-primary text-light">Ler mais</button>
               </div>
             </div>
           </div>
@@ -440,7 +445,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="section-header text-center pb-5 text-light">
-              <h2>Our Team</h2>
+              <h2>Nosso time</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur <br />adipisicing elit.
                 Non, quo.
@@ -543,85 +548,142 @@
     </section>
     <!-- team ends -->
     <!-- footer starts -->
-    <footer class="bg-dark p-2 text-center">
-      <div class="container">
-        <p class="text-white">All Right Reserved By @website Name</p>
+    <footer class="bg-dark text-light pt-5 pb-4">
+      <div class="container text-center text-md-left">
+        <div class="row text-center text-md-left">
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-primary">
+              Company Name
+            </h5>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem,
+              ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum
+              dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-primary">
+              Products
+            </h5>
+            <p>
+              <a href="#" class="text-light" style="text-decoration: none"
+                >The Providers</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-light" style="text-decoration: none"
+                >Creativity</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-light" style="text-decoration: none"
+                >Source Files</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-light" style="text-decoration: none"
+                >BootsTrap</a
+              >
+            </p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-primary">
+              Useful links
+            </h5>
+            <p>
+              <a href="#" class="text-light" style="text-decoration: none"
+                >Your Account</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-light" style="text-decoration: none"
+                >Become an affiliates</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-light" style="text-decoration: none"
+                >Shippings rates</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-light" style="text-decoration: none"
+                >Help</a
+              >
+            </p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-primary">
+              Contact
+            </h5>
+            <p><i class="fas fa-home mr-3"></i> New York, NY 2333, US</p>
+            <p><i class="fas fa-envelope mr-3"></i> teste@mail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> +92 826493163</p>
+            <p><i class="fas fa-print mr-3"></i> +01 335 633 77</p>
+          </div>
+        </div>
+        <hr class="mb-4" />
+        <div class="row align-items-center">
+          <div class="col-md-7 col-lg-8">
+            <p>
+              Copyright @2023 All Right Reserved By
+              <a href="#" style="text-decoration: none">
+                <strong class="text-primary">@website Name</strong>
+              </a>
+            </p>
+          </div>
+          <div class="col-md-5 col-lg-4">
+            <div class="text-center text-md-right">
+              <ul class="list-unstyled list-inline">
+                <li class="list-inline-item">
+                  <a
+                    href="#"
+                    class="btn-floating btn-sm text-light"
+                    style="font-size: 23px"
+                    ><i class="fab fa-facebook"></i
+                  ></a>
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    href="#"
+                    class="btn-floating btn-sm text-light"
+                    style="font-size: 23px"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    href="#"
+                    class="btn-floating btn-sm text-light"
+                    style="font-size: 23px"
+                    ><i class="fab fa-google-plus"></i
+                  ></a>
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    href="#"
+                    class="btn-floating btn-sm text-light"
+                    style="font-size: 23px"
+                    ><i class="fab fa-linkedin"></i
+                  ></a>
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    href="#"
+                    class="btn-floating btn-sm text-light"
+                    style="font-size: 23px"
+                    ><i class="fab fa-youtube"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
     <!-- footer ends -->
 
     <!-- All Js -->
-    <script>
-      let username = document.getElementById("username");
-      let email = document.getElementById("email");
-      let password = document.getElementById("password");
-      let terms = document.getElementById("terms");
-
-      function cadastraUsuario() {
-        if (username && email && password && terms) {
-          let listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]");
-
-          listaUser.push({
-            usernameCad: username.value,
-            emailCad: email.value,
-            passwordCad: password.value,
-            termsCad: terms.value,
-          });
-
-          localStorage.setItem("listaUser", JSON.stringify(listaUser));
-        } else {
-          console.log("Algo deu errado");
-        }
-      }
-
-      let usernameDefined = document.getElementById("usernameDefined");
-      let passwordDefined = document.getElementById("passwordDefined");
-
-      function logarUsuario() {
-        let listaUser = [];
-
-        let userValid = {
-          username: "",
-          password: "",
-        };
-
-        listaUser = JSON.parse(localStorage.getItem("listaUser"));
-
-        listaUser.forEach((item) => {
-          if (
-            usernameDefined.value == item.usernameCad &&
-            passwordDefined.value == item.passwordCad
-          ) {
-            userValid = {
-              username: item.usernameCad,
-              password: item.passwordCad,
-            };
-          } else {
-            console.log("Deu erro aqui (Primeiro If)");
-            console.log(usernameDefined.value, item.usernameCad);
-            console.log(usernameDefined.value, item.usernameCad);
-          }
-        });
-
-        if (
-          usernameDefined.value == userValid.username &&
-          passwordDefined.value == userValid.password
-        ) {
-          let mathRandom = Math.random().toString(16).substr(2);
-          let token = mathRandom + mathRandom;
-          localStorage.setItem("token", token);
-          localStorage.setItem("userLogado", JSON.stringify(userValid));
-          console.log("Você logou! Sua sessão foi criada com sucesso.");
-          window.alert("Você logou! Sua sessão foi criada com sucesso.");
-        } else {
-          console.log("Usuário ou senha incorretos");
-          window.alert("Usuário ou senha incorretos");
-        }
-      }
-    </script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
-
-<!--for getting the form download the code from download button-->

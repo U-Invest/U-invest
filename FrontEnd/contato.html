@@ -11,7 +11,12 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/login.css" />
     <title>Contate-nos</title>
   </head>
 
@@ -41,19 +46,22 @@
               <a class="nav-link text-light" href="./">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="./#about">Sobre</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link text-light" href="./#services">Serviços</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="./#team">Time</a>
+              <a class="nav-link text-light" href="./noticias.html">Notícias</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-light" href="./contato.html">Contato</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="./login.html">Login</a>
+              <a
+                class="nav-link text-light"
+                href=""
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                >Login</a
+              >
             </li>
             <li>
               <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
@@ -94,13 +102,119 @@
         </div>
       </div>
     </nav>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="containerLogin">
+              <div class="wrapperLogin">
+                <div class="form-wrapper-login sign-in">
+                  <form action="">
+                    <h2 class="titulo-login">Login</h2>
+                    <div class="input-group-login">
+                      <input type="text" id="usernameDefined" required />
+                      <label for="">Username</label>
+                    </div>
+                    <div class="input-group-login">
+                      <input type="password" id="passwordDefined" required />
+                      <label for="">Senha</label>
+                    </div>
+                    <div class="remember-login">
+                      <label><input type="checkbox" /> Lembrar de mim</label>
+                    </div>
+                    <button
+                      class="btnLogin"
+                      onclick="logarUsuario()"
+                      id="logar"
+                      type="button"
+                    >
+                      Login
+                    </button>
+                    <div class="signUp-link">
+                      <p>
+                        Não possui uma conta?
+                        <a href="#" class="signUpBtn-link">Cadastre-se</a>
+                      </p>
+                    </div>
+                    <div class="social-platform">
+                      <p>Ou faça login com</p>
+                      <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-google"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="form-wrapper-login sign-up">
+                  <form action="">
+                    <h2 class="titulo-login">Cadastre-se</h2>
+                    <div class="input-group-login">
+                      <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        required
+                      />
+                      <label for="">Username</label>
+                    </div>
+                    <div class="input-group-login">
+                      <input type="email" id="email" name="email" required />
+                      <label for="">Email</label>
+                    </div>
+                    <div class="input-group-login">
+                      <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        required
+                      />
+                      <label for="">Senha</label>
+                    </div>
+                    <div class="remember-login">
+                      <label
+                        ><input type="checkbox" id="terms" name="terms" /> Eu
+                        concordo com os termos e condições</label
+                      >
+                    </div>
+                    <button
+                      class="btnLogin"
+                      onclick="cadastraUsuario()"
+                      id="cadastrar"
+                    >
+                      Cadastrar
+                    </button>
+                    <div class="signUp-link">
+                      <p>
+                        Já possui uma conta?
+                        <a href="#" class="signInBtn-link">Login</a>
+                      </p>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Contact starts -->
     <section id="contact" class="contact section-padding bg-dark">
       <div class="container mt-5 mb-5">
         <div class="row">
           <div class="col-md-12">
             <div class="section-header text-center text-light pb-5">
-              <h2>Contact Us</h2>
+              <h2>Contate-nos</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur <br />adipisicing elit.
                 Non, quo.
@@ -110,12 +224,19 @@
         </div>
         <div class="row m-0">
           <div class="col-md-12 p-0 pt-4 pb-4">
-            <form action="#" class="bg-dark p-4 m-auto">
+            <!-- Integração com essa plataforma para envio de emails corporativos -->
+            <!-- https://formspree.io/forms/xeqwapwb/integration -->
+            <form
+              action="https://formspree.io/f/xeqwapwb"
+              method="post"
+              class="bg-dark p-4 m-auto"
+            >
               <div class="row">
                 <div class="col-md-12">
                   <div class="mb-3">
                     <input
-                      class="form-control bg-dark"
+                      name="nomeCompleto"
+                      class="form-control bg-dark text-light"
                       placeholder="Nome completo"
                       required=""
                       type="text"
@@ -125,7 +246,8 @@
                 <div class="col-md-12">
                   <div class="mb-3">
                     <input
-                      class="form-control bg-dark"
+                      name="email"
+                      class="form-control bg-dark text-light"
                       placeholder="Email"
                       required=""
                       type="email"
@@ -135,7 +257,8 @@
                 <div class="col-md-12">
                   <div class="mb-3">
                     <textarea
-                      class="form-control bg-dark"
+                      name="mensagem"
+                      class="form-control bg-dark text-light"
                       placeholder="Mensagem"
                       required=""
                       rows="3"
@@ -144,7 +267,7 @@
                 </div>
                 <button
                   class="btn btn-primary btn-lg btn-block mt-3"
-                  type="button"
+                  type="submit"
                 >
                   Enviar agora
                 </button>
@@ -156,9 +279,136 @@
     </section>
     <!-- contact ends -->
     <!-- footer starts -->
-    <footer class="bg-dark p-2 text-center">
-      <div class="container">
-        <p class="text-light">All Right Reserved By @website Name</p>
+    <footer class="bg-dark text-light pt-5 pb-4">
+      <div class="container text-center text-md-left">
+        <div class="row text-center text-md-left">
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-primary">
+              Company Name
+            </h5>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.Lorem,
+              ipsum dolor sit amet consectetur adipisicing elit.Lorem, ipsum
+              dolor sit amet consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-primary">
+              Products
+            </h5>
+            <p>
+              <a href="#" class="text-light" style="text-decoration: none"
+                >The Providers</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-light" style="text-decoration: none"
+                >Creativity</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-light" style="text-decoration: none"
+                >Source Files</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-light" style="text-decoration: none"
+                >BootsTrap</a
+              >
+            </p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-primary">
+              Useful links
+            </h5>
+            <p>
+              <a href="#" class="text-light" style="text-decoration: none"
+                >Your Account</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-light" style="text-decoration: none"
+                >Become an affiliates</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-light" style="text-decoration: none"
+                >Shippings rates</a
+              >
+            </p>
+            <p>
+              <a href="#" class="text-light" style="text-decoration: none"
+                >Help</a
+              >
+            </p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h5 class="text-uppercase mb-4 font-weight-bold text-primary">
+              Contact
+            </h5>
+            <p><i class="fas fa-home mr-3"></i> New York, NY 2333, US</p>
+            <p><i class="fas fa-envelope mr-3"></i> teste@mail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> +92 826493163</p>
+            <p><i class="fas fa-print mr-3"></i> +01 335 633 77</p>
+          </div>
+        </div>
+        <hr class="mb-4" />
+        <div class="row align-items-center">
+          <div class="col-md-7 col-lg-8">
+            <p>
+              Copyright @2023 All Right Reserved By
+              <a href="#" style="text-decoration: none">
+                <strong class="text-primary">@website Name</strong>
+              </a>
+            </p>
+          </div>
+          <div class="col-md-5 col-lg-4">
+            <div class="text-center text-md-right">
+              <ul class="list-unstyled list-inline">
+                <li class="list-inline-item">
+                  <a
+                    href="#"
+                    class="btn-floating btn-sm text-light"
+                    style="font-size: 23px"
+                    ><i class="fab fa-facebook"></i
+                  ></a>
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    href="#"
+                    class="btn-floating btn-sm text-light"
+                    style="font-size: 23px"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    href="#"
+                    class="btn-floating btn-sm text-light"
+                    style="font-size: 23px"
+                    ><i class="fab fa-google-plus"></i
+                  ></a>
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    href="#"
+                    class="btn-floating btn-sm text-light"
+                    style="font-size: 23px"
+                    ><i class="fab fa-linkedin"></i
+                  ></a>
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    href="#"
+                    class="btn-floating btn-sm text-light"
+                    style="font-size: 23px"
+                    ><i class="fab fa-youtube"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
     <!-- footer ends -->
