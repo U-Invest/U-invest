@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&amp;display=swap');
+	
+/* Resetando o CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'PT Sans', sans-serif;
+}
+
+/* Nossos serviços */
+.service_heading {
+  text-transform: uppercase;
+  position: relative;
+}
+
+/* Linha nossos serviços */
+.service_heading:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: auto;
+  border-bottom: 3px solid #3e4555;
+  transition: all 0.3s linear;
+}
+
+/* Hover Nossos serviços */
+.service_heading:hover:after {
+  width: 20%
+}
+
+
+.service {
+  color: #8d97ad;
+  font-weight: 300;
+}
+
+.service h1, .service h2, .service h3, .service h4, .service h5, .service h6 {
+  color: #3e4555;
+}
+
+.service h6 {
+  line-height: 22px;
+  font-size: 18px;
+  color: #8d97ad;
+}
+
+.service .font-weight-medium {
+  font-weight: 500;
+  color: #3e4555;
+}
+
+.service .badge {
+  line-height: 15px;
+}
+
+.service .badge-info {
+  background: #043df9;
+}
+
+.service .subtitle {
+  color: #8d97ad;
+  line-height: 24px;
+}
+
+.service .img-shadow {
+	box-shadow: 0 0 30px rgba(115, 128, 157, 0.3);
+}
+
+.service .wrap-service .img-hover {
+	transition: all 0.2s ease-in;
+}
+
+.service .wrap-service .img-hover:hover {
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.service .wrap-service .uneven-box {
+	margin-top: 100px;
+}
+
+.service .btn-sm {
+	padding: 6px 14px;
+	font-size: 16px;
+	background: #188ef4;
+}
+
+.service .btn-sm:hover {
+	color: #043df9;
+	background: #fff;
+	border: 1px solid #188ef4;
+}
+
+@media(max-width:768px) {
+	.service .wrap-service .uneven-box {
+		margin-top: 10px;
+	}
+
+}
