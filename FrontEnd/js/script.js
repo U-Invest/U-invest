@@ -26,14 +26,14 @@ function lightMode() {
   }
 }
 
-const signUpBtnLink = document.querySelector(".signUpBtn-link");
-const signInBtnLink = document.querySelector(".signInBtn-link");
-const wrapper = document.querySelector(".wrapperLogin");
+const sign_in_btn = document.querySelector("#sign-in-btn");
+const sign_up_btn = document.querySelector("#sign-up-btn");
+const container = document.querySelector(".container-login");
 
-signUpBtnLink.addEventListener("click", () => {
-  wrapper.classList.toggle("active");
+sign_up_btn.addEventListener("click", () => {
+  container.classList.add("sign-up-mode");
 });
 
-signInBtnLink.addEventListener("click", () => {
-  wrapper.classList.toggle("active");
+sign_in_btn.addEventListener("click", () => {
+  container.classList.remove("sign-up-mode");
 });
