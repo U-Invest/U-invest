@@ -141,10 +141,3 @@ body {
     margin-bottom: 30px;
   }
 }
-
-.span-required {
-  font-size: 12px;
-  margin: 3px 0 0 1px;
-  color: #e63636;
-  display: none;
-}

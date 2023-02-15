@@ -1,0 +1,157 @@
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="containerLogin">
+          <div class="wrapperLogin">
+            <div class="form-wrapper-login sign-in">
+              <form action="" id="form-login">
+                <h2 class="titulo-login">Login</h2>
+                <div class="input-group-login">
+                  <input
+                    type="text"
+                    id="usernameDefined"
+                    onchange="validateFields()"
+                    required
+                  />
+                  <label for="">E-mail ou Usuário</label>
+                </div>
+                <div class="input-group-login">
+                  <input type="password" id="passwordDefined" required />
+                  <label for="">Senha</label>
+                </div>
+                <div class="remember-login">
+                  <label><input type="checkbox" /> Lembrar de mim</label>
+                </div>
+                <button
+                  class="btnLogin"
+                  onclick="logarUsuario()"
+                  id="logar"
+                  type="button"
+                  disabled="true"
+                >
+                  Login
+                </button>
+                <div class="signUp-link">
+                  <p>
+                    Não possui uma conta?
+                    <a href="#" class="signUpBtn-link">Cadastre-se</a>
+                  </p>
+                </div>
+                <div class="signUp-link">
+                  <a
+                    href="./recuperacao.html"
+                    style="text-decoration: none"
+                    id="recuperarSenhaLink"
+                    >Recuperar senha</a
+                  >
+                </div>
+                <div class="social-platform">
+                  <p>Ou faça login com</p>
+                  <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-google"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="form-wrapper-login sign-up">
+              <form action="" id="form-cadastro">
+                <h2 class="titulo-login">Cadastre-se</h2>
+                <div class="input-group-login">
+                  <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    required
+                    class="campo-cadastro"
+                  />
+                  <label for="">Nome de Usuário</label>
+                  <!-- <span class="span-required-cadastro"
+                  >Nome deve ter no mínimo 3 caracteres</span
+                > -->
+                </div>
+                <div class="input-group-login">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="campo-cadastro"
+                  />
+                  <label for="">Email</label>
+                  <!-- <span class="span-required-cadastro"
+                  >Digite um email válido</span
+                > -->
+                </div>
+                <div class="input-group-login">
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                    class="campo-cadastro"
+                  />
+                  <label for="">Senha</label>
+                  <!-- <span class="span-required-cadastro"
+                  >Digite uma senha com no mínimo 8 caracteres</span
+                > -->
+                </div>
+                <div class="input-group-login">
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                    class="campo-cadastro"
+                  />
+                  <label for="">Repita a sua senha</label>
+                  <!-- <span class="span-required-cadastro"
+                  >As senhas devem ser compatíveis</span
+                > -->
+                </div>
+                <div class="remember-login">
+                  <label
+                    ><input
+                      type="checkbox"
+                      id="terms"
+                      name="terms"
+                      required
+                      class="campo-cadastro"
+                    />
+                    Eu concordo com os termos e condições</label
+                  >
+                  <!-- <span class="span-required-cadastro"
+                  >Campo obrigatório</span
+                > -->
+                </div>
+                <button
+                  class="btnLogin"
+                  onclick="cadastraUsuario()"
+                  id="cadastrar"
+                >
+                  Cadastrar
+                </button>
+                <div class="signUp-link">
+                  <p>
+                    Já possui uma conta?
+                    <a href="#" class="signInBtn-link">Login</a>
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
