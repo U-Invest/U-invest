@@ -96,8 +96,8 @@ def recebeDadosUsuario():
 
 
 def cadastraUsuario(usuario, usuarios):
-    usuarios[usuario] = {'nome': usuario['nome'], 'user': usuario['user'], 'email': usuario['email'], 'idade': usuario['idade'],
-                         'endereco': usuario['endereco'], 'cpf': usuario['cpf'], 'celular': usuario['numCelular'], 'senha': usuario['senha']}
+    usuarios[usuario['user']] = {'nome': usuario['nome'], 'user': usuario['user'], 'email': usuario['email'], 'idade': usuario['idade'],
+                                 'endereco': usuario['endereco'], 'cpf': usuario['cpf'], 'celular': usuario['numCelular'], 'senha': usuario['senha']}
 
 
 if (__name__ == "__main__"):
