@@ -1,20 +1,19 @@
-CREATE TABLE usuario (
-    email VARCHAR2(50),
-    nome  VARCHAR2(50),
-    senha VARCHAR2(20),
-    cpf   CHAR(11)
-        CONSTRAINT user_cpf_pk PRIMARY KEY
+
+create table usuario
+(cpf char(11) constraint id_cpf_nn primary key,
+email varchar(50) constraint email_pk not null,
+nome varchar(50) constraint nome_pk_nn not null,
+senha varchar(30) constraint senha_ck_nn unique);
+
+create table progresso_curso
+(id_progresso number(5) constraint id_progresso_pk primary key,
+experiencia number(7) constraint exp_curso,
 );
 
-CREATE TABLE progresso_curso (
-    id_progresso number(3),
-    experiencia number(4),
-    porcentagem number(2)
-);
 
-create table login (
-email,
-senha
-);
 
-create table login
+
+
+
+
+
