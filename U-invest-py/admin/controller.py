@@ -119,3 +119,38 @@ def mostraDados():
         criaBarra()
         print('\033[1;31m''Erro! Login ou senha invalidos''\033[0; 0m')
         criaBarra()
+
+
+def usuariosCadastrados():
+    limpaTerminal()
+    print('=== Usuarios Cadastrados ===')
+    logins = open('usuarios.txt', 'r')
+    for linha in logins.readlines():
+        l = linha.split('-')
+        print('\033[1;92m'f'{l[0]} | {l[1]}''\033[0;0m')
+    criaBarra()
+    return
+
+def relatorio():
+    countUsers = 0
+    nomess = []
+    
+    logins = open('usuarios.txt', 'r')
+    for linhas in logins.readlines():
+        l = linhas.split('-')
+        nomess.append(l[0])
+        countUsers += 1
+        
+    limpaTerminal()
+    arquivo = open('relatorio.txt', 'w+')
+    arquivo.write('Relatorio de Usuarios \n')
+    arquivo.write('\n')
+    arquivo.write(f'A U-Invest possui {countUsers} usuarios \n')
+    for i in range(len(nomess)):
+        arquivo.write(str(f'{i + 1}.{nomess[i].split(":")[1]} \n'))
+    arquivo.write(f'{dia}/{mes}/{ano}')
+    criaBarra( )
+    print('\033[1;32m'"Relatorio gerado em 'relatorio.txt'"'\033[0;0m')
+    criaBarra()
+    arquivo.close()
+    return
