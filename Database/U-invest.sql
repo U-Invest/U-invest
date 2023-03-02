@@ -19,6 +19,9 @@ experiencia number(7),
 porcentagem number(4,2));
 
 
+
+
+
 /*Relacionamento Usuario e contato*/
 
 /*create table usuario

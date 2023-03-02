@@ -1,0 +1,285 @@
+/* Importando fontes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
+/* Resetando o CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: " Inter ", sans-serif;
+}
+body{
+    background-color: rgb(7, 19, 43);
+    width: 100%;
+    height: 100vh;
+    font-family: " Inter ", sans-serif;
+    overflow-y: none;
+}
+/* Imagens*/
+.img1{
+    position: absolute;
+    width: 224px;
+    height: 119px;
+    left: 25px;
+    top: 120px;
+    background-image: url(/FrontEnd/imgs/div\ 1.png);
+    border-radius: 100px;
+}
+.img2{
+    position: absolute;
+    width: 224px;
+    height: 119px;
+    left: 375px;
+    top: 120px;
+    background-image: url(/FrontEnd/imgs/div2.png);
+    border-radius: 100px;
+}
+.img3{
+    position: absolute;
+    width: 224px;
+    height: 118px;
+    left: 725px;
+    top: 120px;
+    background-image: url(/FrontEnd/imgs/div\ 3.png);
+    border-radius: 100px;
+}
+.img4{
+    position: absolute;
+    width: 249px;
+    height: 118px;
+    left: 1075px;
+    top: 120px;
+    background: url(/FrontEnd/imgs/div\ 4.png);
+    border-radius: 100px;
+   
+}
+/* Texto com sombra*/
+.fundo1{
+    position: absolute;
+    width: 258px;
+    height: 178px;
+    left: 25px;
+    top: 260px;
+    background-color:rgb(7, 19, 43);
+    box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+.fundo2{
+    position: absolute;
+    width: 258px;
+    height: 178px;
+    left: 375px;
+    top: 260px;
+    background-color:rgb(7, 19, 43);
+    box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+.fundo3{
+    position: absolute;
+    width: 258px;
+    height: 178px;
+    left: 725px;
+    top: 260px;
+    background-color:rgb(7, 19, 43);
+    box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+.fundo4{
+    position: absolute;
+    width: 258px;
+    height: 178px;
+    left: 1075px;
+    top: 260px;
+    background-color:rgb(7, 19, 43);
+    box-shadow: inset 0px 6px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+/*Alinhando e centralizando texto*/
+.fonte{
+    position: absolute;
+    text-align: center;
+    font-weight: 600;
+    top: 37px;
+    font-size: 15px;
+    padding-top: 30px;
+    color: white;
+}
+h6{
+    position: absolute;
+    font-weight: 600;
+    top: -11px;
+    right: 33%;
+    font-size: 17px;
+    padding-top: 30px;
+    color: white; 
+}
+/* Texto com sombra - cartão*/
+.cartao{
+    position: absolute;
+    width: 35%;
+    height: 220px;
+    background-image: url(/FrontEnd/imgs/cart╞o.jpg);
+    top: 475px;
+    opacity: 80%;
+}
+/* Simulador Investimentos*/
+.Simulador{
+    position: absolute;
+    width: 500px;
+    height: 260px;
+    top: 475px;
+    left: 650px;
+    border-radius: 100px;
+    background-color: #008080;
+}
+.Simulador-font{
+    position: absolute;
+    font-size: 19px;
+    color: rgb(0, 0, 0);
+    top: -114px;
+    right: 90px;
+}
+.espaço1{
+    position: absolute;
+    height: 45px;
+    width: 400px;
+    left: 50px;
+    top: 125px;
+    border-radius: 100px;
+    background:  rgb(27, 102, 116);
+}
+.espaço2{
+    position: absolute;
+    height: 45px;
+    width: 400px;
+    left: 50px;
+    top: 200px;
+    border-radius: 100px;
+    background:  rgb(27, 102, 116);
+}
+.espaço3{
+    position: absolute;
+    height: 45px;
+    width: 400px;
+    left: 50px;
+    top: 50px;
+    border-radius: 100px;
+    background:  rgb(27, 102, 116);
+    align-items: center;
+}
+.fonteDiv{
+    position: absolute;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    top: 10px;
+    left: 15px;
+    opacity: 70%;
+}
+/* Misão Visão Quem somos*/
+.Quem-somos{
+    height: 14px;
+    width: 326px;
+    position: absolute;
+    width: 326px;
+    height: 14px;
+    left: -13px;
+    top: 778px;
+    background: #0137A3;
+}
+.misão{
+    height: 14px;
+    width: 326px;
+    position: absolute;
+    left: 500px;
+    top: 778px;
+    background: #2F6AEA;
+}
+.visão{
+    height: 14px;
+    width: 326px;
+    position: absolute;
+    width: 326px;
+    height: 14px;
+    left: 1025px;
+    top: 778px;
+    background: #6B9AF4;
+}
+/*Misão Visão Quem somos-Texto*/
+.font1{
+    position: absolute;
+    font-family: Poppins;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 48px;
+    letter-spacing: 0em;
+    color: #0137A3;
+    top: 790px;
+    font-weight: 800;
+    right: 1095px;
+}
+.font2{
+    position: absolute;
+    font-family: 'Poppins';
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 48px;
+    letter-spacing: 0em;
+    color:  #2F6AEA;
+    top: 790px;
+    font-weight: 800;
+    right: 640px;
+}
+.font3{
+    position: absolute;
+    font-family: Poppins;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 48px;
+    letter-spacing: 0em;
+    color: #6B9AF4;
+    top: 790px;
+    font-weight: 800;
+    right: 150px;
+}
+/*isão Visão Quem somos-Explicação*/
+.texto1{
+    position: absolute;
+    font-family: Poppins;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 30px;
+    color: white;
+    top: 840px;
+    right: 1100px;
+}
+.texto2{
+    position: absolute;
+    font-family: Poppins;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 30px;
+    color: white;
+    top: 840px;
+    right: 550px;
+}
+.texto3{
+    position: absolute;
+    font-family: Poppins;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 30px;
+    color: white;
+    top: 840px;
+    right: 30px;
+}
+/*Posicionando Footer*/
+footer{
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: -60px;
+}
