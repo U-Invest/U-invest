@@ -78,7 +78,7 @@ def Endereco():
 
 
 def Data():
-    while True
+    while True:
         data = input('Nascimento (dd/mm/aaaa): ')
         if data == '':
             print('Error! Entrada vazia.')

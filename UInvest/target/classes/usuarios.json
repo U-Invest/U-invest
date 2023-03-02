@@ -1,0 +1,17 @@
+[
+  {
+    "senha": "senha123",
+    "nome": "João",
+    "login": "joao123"
+  },
+  {
+    "senha": "senha456",
+    "nome": "Maria",
+    "login": "maria456"
+  },
+  {
+    "senha": "senha789",
+    "nome": "Pedro",
+    "login": "pedro789"
+  }
+]

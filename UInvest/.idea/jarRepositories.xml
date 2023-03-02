@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="maven-hortonworks-proxy" />
+      <option name="name" value="maven-hortonworks-proxy" />
+      <option name="url" value="https://nexus-devrocks.eisa.corp.com/repository/maven-hortonworks-proxy/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="oms-releases" />
+      <option name="name" value="oms-releases" />
+      <option name="url" value="http://maven.eisa.corp.com:8081/oms-releases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="cloudera-repo-repository" />
+      <option name="name" value="Cloudera Repo" />
+      <option name="url" value="https://repository.cloudera.com/artifactory/cloudera-repos/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Nexus" />
+      <option name="name" value="Nexus" />
+      <option name="url" value="http://nexus-devrocks.eisa.corp.com/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven-central-proxy" />
+      <option name="name" value="maven-central-proxy" />
+      <option name="url" value="https://nexus-devrocks.eisa.corp.com/repository/maven-central-proxy/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven-cloudera-libs-release" />
+      <option name="name" value="maven-cloudera-libs-release" />
+      <option name="url" value="https://repository.cloudera.com/artifactory/libs-release-local" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven-condor-eisa" />
+      <option name="name" value="maven-condor-eisa" />
+      <option name="url" value="https://nexus-devrocks.eisa.corp.com/repository/maven-condor-eisa/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven-eisa" />
+      <option name="name" value="maven-eisa" />
+      <option name="url" value="https://nexus-devrocks.eisa.corp.com/repository/maven-eisa/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven-cloudera-libs-release-local-proxy" />
+      <option name="name" value="maven-cloudera-libs-release-local-proxy" />
+      <option name="url" value="https://nexus-devrocks.eisa.corp.com/repository/maven-cloudera-libs-release-local-proxy/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven-condor" />
+      <option name="name" value="maven-condor" />
+      <option name="url" value="https://nexus-devrocks.eisa.corp.com/repository/maven-condor/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven-condor-manual-external" />
+      <option name="name" value="maven-condor-manual-external" />
+      <option name="url" value="https://nexus-devrocks.eisa.corp.com/repository/maven-condor-manual-external/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven-eisa-bigdata" />
+      <option name="name" value="maven-eisa-bigdata" />
+      <option name="url" value="https://nexus-devrocks.eisa.corp.com/repository/maven-eisa-bigdata/" />
+    </remote-repository>
+  </component>
+</project>
