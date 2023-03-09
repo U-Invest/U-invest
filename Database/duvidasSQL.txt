@@ -1,3 +1,0 @@
-1 usuario possui diversos progressos de curso mas 1 progresso possui apenas 1 usuario, ou seja possui não é uma tabela associativa| confirmar com o professor
-
-1 usuario pra 1 login e 1 login pra varios usuarios. pra que serve a tabela login? Se as inforamções salva estao na tabla usuario | confirmar com o professor
