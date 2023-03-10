@@ -1,6 +1,10 @@
 import service
 import datetime
 import os
+from time import sleep
+import tempfile
+import shutil
+
 
 
 def limpaTerminal():
@@ -20,14 +24,14 @@ ano = data.year
 def menu():
     print('====== <<< ''\033[1;96m''U-Invest''\033[0;0m'' >>> ======')
     print(
-        '|  [''\033[1;36m''1''\033[0;0m''] Cadastrar Usuário Cadastrado com sucesso!     |')
+        '|  [''\033[1;36m''1''\033[0;0m''] Cadastrar Usuário     |')
     print(
-        '|  [''\033[1;36m''2''\033[0;0m''] Dados do Usuário Cadastrado com sucesso!      |')
+        '|  [''\033[1;36m''2''\033[0;0m''] Dados do Usuário      |')
     print(
-        '|  [''\033[1;36m''3''\033[0;0m''] Mostrar Usuário Cadastrado com sucesso!s      |')
+        '|  [''\033[1;36m''3''\033[0;0m''] Mostrar Usuários      |')
     print('|  [''\033[1;36m''4''\033[0;0m''] Gerar Relatório       |')
     print(
-        '|  [''\033[1;36m''5''\033[0;0m''] Remover Usuário Cadastrado com sucesso!       |')
+        '|  [''\033[1;36m''5''\033[0;0m''] Remover Usuário       |')
     print('|  [''\033[1;36m''0''\033[0;0m''] Sair                  |')
     print('------------------------------')
     x = input('\033[1;36m''Insira a opção: ''\033[0;0m')
@@ -45,7 +49,7 @@ def cadastro():
     login = service.Login()  # Retorna o login validado
 
     # --> Conferir se já existe o login cadastrado
-    lerLogins = open('logins.txt', 'r')
+    lerLogins = open('usuarios.txt', 'r')
     for linha in lerLogins.readlines():
         valores = linha.split('-')
         # Cria lista com valores da linha
@@ -154,3 +158,86 @@ def relatorio():
     criaBarra()
     arquivo.close()
     return
+
+def removerUsuario():
+    # Cria um arquivo temporário para armazenar as linhas que não correspondem ao usuário e senha fornecidos
+    with tempfile.NamedTemporaryFile(mode='w', delete=False) as temp:
+        with open(usuarios, 'r') as logins:
+        # Copia todas as linhas que não correspondem ao usuário e senha fornecidos para o arquivo temporário
+            for linha in logins:
+                valores = linha.split('-')
+                if userLogin != valores[1].split(':')[1].strip() or userSenha not in valores[2].split(':')[1].strip():
+                    temp.write(linha)
+
+    # Substitui o arquivo original pelo arquivo temporário
+    shutil.move(temp.name, usuarios)
+
+    # Verifica se pelo menos uma linha correspondeu ao usuário e senha fornecidos
+    if not valida:
+        limpaTerminal()
+        criaBarra()
+        print('\033[1;31m''Usuario ou senha invalidos! ''\033[0; 0m')
+    criaBarra()
+    sleep(5)
+else:
+    limpaTerminal()
+    criaBarra()
+    print('\033[1;32m''Usuario Logado e excluido com sucesso! ''\033[0; 0m')
+    criaBarra()
+    sleep(5)
+
+
+
+
+
+
+# Nome: matheus -Login: matpierro -Senha: 123 -Email: mat@mail.com -Data de Nascimento: 08/09/2003 -Numero de Celular: 11961065956 -Endereco: {'Rua': '', 'Numero': '', 'Complemento': '', 'Bairro': '', 'CEP': '', 'Cidade': '', 'Referencia': ''} 
+# Nome: thiago -Login: castro -Senha: 1234 -Email: cast@gmail.com -Data de Nascimento: 20/01/2003 -Numero de Celular: 1196253623 -Endereco: {'Rua': '', 'Numero': '', 'Complemento': '', 'Bairro': '', 'CEP': '', 'Cidade': '', 'Referencia': ''} 
+
+
+
+
+
+
+
+
+
+
+
+
+    # limpaTerminal()
+    # print('=== << ''\033[1; 33m''Dados do Usuario''\033[0;0m'' >> ===')
+    # criaBarra()
+    # print('\033[1;33m''Logue para excluir seu usuario!''\033[0; 0m')
+    # criaBarra()
+    # userLogin = input('Login: ')
+    # userSenha = input('Senha: ')
+
+    # # Variavel de validação do login
+    # valida = False
+
+    # logins = open('usuarios.txt', 'r')
+    # for linha in logins.readlines():
+    #     valores = linha.split('-')
+    #     if userLogin == valores[1].split(':')[1].strip() and userSenha in valores[2].split(':')[1].strip():
+    #         limpaTerminal()
+    #         criaBarra()
+    #         print('\033[1;32m''Usuario Logado! Excluindo... ''\033[0; 0m')
+    #         criaBarra()
+    #         sleep(5)
+
+    #         logins = open('usuarios.txt', 'w')
+    #         del linha
+    #         logins.close()
+            
+    #         print('\033[1;32m''Usuario Excluido! ''\033[0; 0m')
+    #         criaBarra()
+    #         valida = True
+    #         logins.close()
+    #         break
+
+    # if not valida:
+    #     limpaTerminal()
+    #     criaBarra()
+    #     print('\033[1;31m''Erro! Login ou senha invalidos''\033[0; 0m')
+    #     criaBarra()
