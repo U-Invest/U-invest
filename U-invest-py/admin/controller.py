@@ -20,22 +20,67 @@ dia = data.day
 mes = data.month
 ano = data.year
 
-
-def menu():
-    print('====== <<< ''\033[1;96m''U-Invest''\033[0;0m'' >>> ======')
-    print(
-        '|  [''\033[1;36m''1''\033[0;0m''] Cadastrar Usuário     |')
-    print(
-        '|  [''\033[1;36m''2''\033[0;0m''] Dados do Usuário      |')
-    print(
-        '|  [''\033[1;36m''3''\033[0;0m''] Mostrar Usuários      |')
-    print('|  [''\033[1;36m''4''\033[0;0m''] Gerar Relatório       |')
-    print(
-        '|  [''\033[1;36m''5''\033[0;0m''] Remover Usuário       |')
-    print('|  [''\033[1;36m''0''\033[0;0m''] Sair                  |')
-    print('------------------------------')
+def menuInicial():
+    limpaTerminal()
+    print('=============== <<< ''\033[1;96m''U-Invest''\033[0;0m'' >>> ===============')
+    print('|  [''\033[1;36m''1''\033[0;0m''] Usuários                                |')
+    print('|  [''\033[1;36m''2''\033[0;0m''] Cursos e Aulas                          |')
+    print('|  [''\033[1;36m''3''\033[0;0m''] Documentação Técnica da Plataforma      |')
+    print('|  [''\033[1;36m''0''\033[0;0m''] Sair                                    |')
+    print('------------------------------------------------')
     x = input('\033[1;36m''Insira a opção: ''\033[0;0m')
-    print('------------------------------')
+    print('------------------------------------------------')
+    return x
+
+def subMenuUsuarios():
+    limpaTerminal()
+    print('========== <<< ''\033[1;96m''U-Invest''\033[0;0m'' >>> ==========')
+    print(
+        '|  [''\033[1;36m''1''\033[0;0m''] Cadastrar Usuário             |')
+    print(
+        '|  [''\033[1;36m''2''\033[0;0m''] Dados do Usuário              |')
+    print(
+        '|  [''\033[1;36m''3''\033[0;0m''] Mostrar Usuários              |')
+    print('|  [''\033[1;36m''4''\033[0;0m''] Gerar Relatório de Usuarios   |')
+    print(
+        '|  [''\033[1;36m''5''\033[0;0m''] Remover Usuário               |')
+    print('|  [''\033[1;36m''0''\033[0;0m''] Voltar                        |')
+    print('--------------------------------------')
+    x = input('\033[1;36m''Insira a opção: ''\033[0;0m')
+    print('--------------------------------------')
+    return x
+
+def subMenuCursos():
+    limpaTerminal()
+    print('========== <<< ''\033[1;96m''U-Invest''\033[0;0m'' >>> ==========')
+    print(
+        '|  [''\033[1;36m''1''\033[0;0m''] Cadastrar Curso               |')
+    print(
+        '|  [''\033[1;36m''2''\033[0;0m''] Dados do Curso                |')
+    print(
+        '|  [''\033[1;36m''3''\033[0;0m''] Mostrar Curso                 |')
+    print('|  [''\033[1;36m''4''\033[0;0m''] Gerar Relatorio de Cursos     |')
+    print(
+        '|  [''\033[1;36m''5''\033[0;0m''] Remover Curso                 |')
+    print(
+        '|  [''\033[1;36m''6''\033[0;0m''] Gerenciar Curso               |')
+    print('|  [''\033[1;36m''0''\033[0;0m''] Voltar                        |')
+    print('--------------------------------------')
+    x = input('\033[1;36m''Insira a opção: ''\033[0;0m')
+    print('--------------------------------------')
+    return x
+
+def subMenuDocs():
+    limpaTerminal()
+    print('============== <<< ''\033[1;96m''U-Invest''\033[0;0m'' >>> ==============')
+    print('|  [''\033[1;36m''1''\033[0;0m''] Gerar Documentaçao                    |')
+    print('|  [''\033[1;36m''2''\033[0;0m''] Imprimir Documentaçao                 |')
+    print('|  [''\033[1;36m''3''\033[0;0m''] Visualizar Documentaçao na Web        |')
+    print('|  [''\033[1;36m''4''\033[0;0m''] Acessar Protótipo da Plataforma Web   |')
+    print('|  [''\033[1;36m''0''\033[0;0m''] Voltar                                |')
+    print('----------------------------------------------')
+    x = input('\033[1;36m''Insira a opção: ''\033[0;0m')
+    print('----------------------------------------------')
     return x
 
 
@@ -174,7 +219,6 @@ def removerUsuario():
     logins = open('usuarios.txt', 'r')
     for linha in logins.readlines():
         valores = linha.split('-')
-        print(valores)
         if userLogin == valores[1].split(':')[1].strip() and userSenha in valores[2].split(':')[1].strip():
             limpaTerminal()
             criaBarra()
@@ -201,3 +245,34 @@ def removerUsuario():
         print('\033[1;31m''Erro! Login ou senha invalidos''\033[0; 0m')
         criaBarra()
     
+def userAdminValidate():
+    limpaTerminal()
+    criaBarra()
+    print('\033[1;96m''Logue com o user e senha do administrador para administrar a plataforma''\033[0;0m')
+    criaBarra()
+    userLogin = input('Login: ')
+    userSenha = input('Senha: ')
+
+    # Variavel de validação do login
+    valida = False
+
+    logins = open('adminUser.txt', 'r')
+    for linha in logins.readlines():
+        valores = linha.split('-')
+        print(valores)
+        if userLogin == valores[0].split(':')[1].strip() and userSenha in valores[1].split(':')[1].strip():
+            limpaTerminal()
+            criaBarra()
+            print('\033[1;32m''Administrador Logado! Carregando dados...''\033[0; 0m')
+            criaBarra()
+            sleep(3)
+            valida = True
+            break
+
+    if not valida:
+        limpaTerminal()
+        criaBarra()
+        print('\033[1;31m''Erro! Login ou senha invalidos''\033[0; 0m')
+        criaBarra()
+
+    return valida
