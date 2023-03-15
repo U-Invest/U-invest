@@ -1,5 +1,5 @@
 create table pg_curso
-(id_curso char(4) constraint pg_id_pk primary key,
+(id_curso char(8) constraint pg_id_pk primary key,
 progresso_user number(3),
 ultimo_acesso data,
 u_coins number(5));
@@ -15,10 +15,10 @@ insert into pg_curso (id_curso, progresso_user, ultimo_acesso, u_coins) values (
 insert into pg_curso (id_curso, progresso_user, ultimo_acesso, u_coins) values ('c009', 20, '2022-09-20', 600);
 insert into pg_curso (id_curso, progresso_user, ultimo_acesso, u_coins) values ('c010', 100, '2022-10-31', 5000);
 
-// relacionamento entre pg_curso e usuario // erro
+// relacionamento entre pg_curso e usuario 
 CREATE TABLE possui (                     
     fk_usuario_cpf CHAR(11),
-    fk_pg_curso_id_curso CHAR(4),
+    fk_pg_curso_id_curso CHAR(8),
     FOREIGN KEY (fk_usuario_cpf) REFERENCES usuario(cpf),
     FOREIGN KEY (fk_pg_curso_id_curso) REFERENCES pg_curso(id_curso)
 );
@@ -58,7 +58,7 @@ insert into usuario (cpf, email, celular, nome, saldo, senha, perfil_investidor)
 // relacionamento entre pg_curso e curso
 CREATE TABLE gera (
     fk_curso_id_curso CHAR(8),
-    fk_pg_curso_id_curso CHAR(4),
+    fk_pg_curso_id_curso CHAR(8),
     FOREIGN KEY (fk_curso_id_curso) REFERENCES curso(id_curso),
     FOREIGN KEY (fk_pg_curso_id_curso) REFERENCES pg_curso(id_curso)
 );
@@ -74,10 +74,10 @@ INSERT INTO gera (fk_curso_id_curso, fk_pg_curso_id_curso) VALUES ('unity1', 'c0
 INSERT INTO gera (fk_curso_id_curso, fk_pg_curso_id_curso) VALUES ('react1', 'c009');
 INSERT INTO gera (fk_curso_id_curso, fk_pg_curso_id_curso) VALUES ('prm1', 'c010');
 
-// relacionamento entre usuario e curso//  insert dando erro  
+// relacionamento entre usuario e curso
 CREATE TABLE faz (
     fk_usuario_cpf CHAR(11),
-    fk_curso_id_curso CHAR(4),
+    fk_curso_id_curso CHAR(8),
     FOREIGN KEY (fk_usuario_cpf) REFERENCES usuario(cpf),
     FOREIGN KEY (fk_curso_id_curso) REFERENCES curso(id_curso)
 );
@@ -210,6 +210,25 @@ insert into aula (tipo_contendo, duracao, nome_aula, id_aula, conteudo, avaliaca
 values ('Texto', TO_DATE('2022-03-09', 'YYYY-MM-DD'), 'Interfaces', 'aula009', 'Contratos e implementações', 80);
 insert into aula (tipo_contendo, duracao, nome_aula, id_aula, conteudo, avaliacao)
 values ('Texto', TO_DATE('2024-05-09', 'YYYY-MM-DD'), 'Interfaces', 'aula010', 'Interpretação da linguagem', 70);
+
+// Relacionamento entre aula e modulo
+CREATE TABLE tem (
+    fk_modulo_id_modulo CHAR(8),
+    fk_aula_id_aula CHAR(8),
+    FOREIGN KEY (fk_modulo_id_modulo) REFERENCES modulo(id_modulo),
+    FOREIGN KEY (fk_aula_id_aula) REFERENCES aula(id_aula)
+);
+
+INSERT INTO tem (fk_modulo_id_modulo, fk_aula_id_aula) VALUES ('mod001', 'aula001');
+INSERT INTO tem (fk_modulo_id_modulo, fk_aula_id_aula) VALUES ('mod002', 'aula002');
+INSERT INTO tem (fk_modulo_id_modulo, fk_aula_id_aula) VALUES ('mod003', 'aula003');
+INSERT INTO tem (fk_modulo_id_modulo, fk_aula_id_aula) VALUES ('mod004', 'aula004');
+INSERT INTO tem (fk_modulo_id_modulo, fk_aula_id_aula) VALUES ('mod005', 'aula005');
+INSERT INTO tem (fk_modulo_id_modulo, fk_aula_id_aula) VALUES ('mod006', 'aula006');
+INSERT INTO tem (fk_modulo_id_modulo, fk_aula_id_aula) VALUES ('mod007', 'aula007');
+INSERT INTO tem (fk_modulo_id_modulo, fk_aula_id_aula) VALUES ('mod008', 'aula008');
+INSERT INTO tem (fk_modulo_id_modulo, fk_aula_id_aula) VALUES ('mod009', 'aula009');
+INSERT INTO tem (fk_modulo_id_modulo, fk_aula_id_aula) VALUES ('mod010', 'aula010');
 
 CREATE TABLE certificado (
   nome_curso VARCHAR(50),
