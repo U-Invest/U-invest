@@ -1,9 +1,5 @@
 Relatorio de Usuarios 
 
-A U-Invest possui 5 usuarios 
-1. Lucas Ramos de Pierro  
-2. matheus  
-3. thiago  
-4. Eduarda Serodio  
-5. Yuri kimimoto  
-10/3/2023
+A U-Invest possui 1 usuarios 
+1. Thiago Castro  
+15/3/2023

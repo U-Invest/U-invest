@@ -1,5 +1,30 @@
-import controller
+from prettytable import PrettyTable
 
+def PerfilInvestidor():
+    tabela = PrettyTable()
+    tabela.field_names = ["Iniciante", "Conservador", "Experiente"]
+    # Adiciona linhas à tabela
+    tabela.add_row(["CDB", "CDB", "Ações e Fundos de Ações"])
+    tabela.add_row(["Tesouro Direto", "Tesouro Direto", "CDB e Tesouro Direto"])
+    tabela.add_row(["Fundos de Renda Fixa", "Fundos de Renda Fixa e Fundos Multimercado", "Fundos Imobiliários e Fundos Multimercado"])
+    tabela.add_row([" "," ","Fundos Cambiais e Fundos de Renda Fixa"])
+    print(tabela)
+    while True:
+        print('Qual perfil de investidor você se identificou?')
+        try:
+            perfil = int(input("1 - Iniciante \n2 - Conservador \n3 - Experiente\n"))
+            if (perfil > 0) and (perfil < 4):
+                if(perfil == 1):
+                    perfil = "Iniciante"
+                elif (perfil == 2):
+                    perfil = "Conservador"
+                else:
+                    perfil = "Experiente"
+                return perfil
+            else: 
+                print("Error! Digite um perfil de investidor válido.")
+        except :
+            print("Error! Digite um perfil de investidor válido.")
 
 def Nome():
     while True:
@@ -36,14 +61,13 @@ def Email():
             print('Email Inválido! Deve conter "@" e ".com"')
 
 
-def Login():
+def User():
     while True:
-        login = input('Login: ')
+        login = input('User: ')
         if login == '':
             print('Error! Entrada vazia.')
             continue
         return login.strip(' ')
-
 
 def Celular():
     while True:
@@ -59,23 +83,6 @@ def Celular():
                 return celular
             else:
                 print('O número deve ter entre 9 - 11 dígitos.')
-
-
-def Endereco():
-    while True:
-        print('=== < ''\033[1;32m''Seu Endereço Completo!''\033[0;0m'' > ===')
-        dados = {
-            'Rua': input('Rua: '),
-            'Numero': input('Numero: '),
-            'Complemento': input('Complemento: '),
-            'Bairro': input('Bairro: '),
-            'CEP': input('CEP: '),
-            'Cidade': input('Cidade: '),
-            'Referencia': input('Referencia: '),
-        }
-
-        return dados
-
 
 def Data():
     while True:
@@ -96,3 +103,17 @@ def Data():
                 print('Dia/Mes/Ano Inválido(s)')
         else:
             print('A data deve seguir o padrão dd/mm/aaa')
+
+def Cpf():
+    while True:
+        try:
+            cpf = input('CPF (Apenas Números): ')
+            if len(cpf) == 11:
+                return cpf
+            else:
+                print("Error! Quantidade de caracteres incorreta.")
+        except ValueError:
+           print("Error! Digite valores válidos!")
+
+def Saldo():
+    return 0
