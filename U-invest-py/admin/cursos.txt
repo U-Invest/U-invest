@@ -1,0 +1,1 @@
+Curso: React -Professor: Luiz tadeu -Dura��o: 40 -Resumo: Components -Pontua��o: 50.0 -Avalia��o: 4.0 -Identitifica��o: 8887

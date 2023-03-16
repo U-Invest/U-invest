@@ -99,17 +99,12 @@ def subMenuUsuarios():
 
 def subMenuCursos():
     print('========== <<< ''\033[1;96m''U-Invest''\033[0;0m'' >>> ==========')
-    print(
-        '|  [''\033[1;36m''1''\033[0;0m''] Cadastrar Curso               |')
-    print(
-        '|  [''\033[1;36m''2''\033[0;0m''] Dados do Curso                |')
-    print(
-        '|  [''\033[1;36m''3''\033[0;0m''] Mostrar Curso                 |')
+    print('|  [''\033[1;36m''1''\033[0;0m''] Cadastrar Curso               |')
+    print('|  [''\033[1;36m''2''\033[0;0m''] Dados do Curso                |')
+    print('|  [''\033[1;36m''3''\033[0;0m''] Mostrar Cursos                |')
     print('|  [''\033[1;36m''4''\033[0;0m''] Gerar Relatorio de Cursos     |')
-    print(
-        '|  [''\033[1;36m''5''\033[0;0m''] Gerenciar Curso                 |')
-    print(
-        '|  [''\033[1;36m''6''\033[0;0m''] Remover Curso               |')
+    print('|  [''\033[1;36m''5''\033[0;0m''] Gerenciar Curso               |')
+    print('|  [''\033[1;36m''6''\033[0;0m''] Remover Curso                 |')
     print('|  [''\033[1;36m''0''\033[0;0m''] Voltar                        |')
     print('--------------------------------------')
     try:
@@ -127,7 +122,7 @@ def subMenuCursos():
     elif escolha == 2:
         dadosCurso()
     elif escolha == 3:
-        mostrarCurso()
+        mostrarCursos()
     elif escolha == 4:
         relatorioCurso()
     elif escolha == 5:
@@ -352,132 +347,117 @@ def userAdminValidate():
 def cadastroCurso():
     limpaTerminal()
     print('====== < ''\033[1;92m''Cadastrar Curso''\033[0;0m'' > ======')
-    nome = service.Nome() 
-    login = service.User()  
-
-    # --> Conferir se já existe o login cadastrado
-    lerLogins = open('usuarios.txt', 'r')
-    for linha in lerLogins.readlines():
-        valores = linha.split('-')
-        # Cria lista com valores da linha
-        if login == valores[1].split(':')[1].strip():
-            # Confere se o login cadastrado é igual ao login da linha
-            limpaTerminal()
-            criaBarra()
-            print('\033[1;31m''Login ja existente!''\033[0;0m')
-            criaBarra()
-            return
-    lerLogins.close()
-
-    # Retornando valores validados
-    senha = service.Senha()
-    email = service.Email()
-    cpf = service.Cpf()
-    data = service.Data()
-    celular = service.Celular()
-    perfilInvestidor = service.PerfilInvestidor()
-    saldo = service.Saldo()
+    nome = service.NomeCurso()
+    nomeProfessor = service.Professor() 
+    duracao = service.DuracaoCurso()
+    resumo = service.ResumoCurso()
+    pontuacao = service.PontuacaoCurso(duracao)
+    avaliacao = service.AvaliacaoCurso([5, 4, 3, 5, 2, 5, 6, 7, -1])
+    cdCurso = service.CdCurso()  
 
     limpaTerminal()
     criaBarra()
-    print('\033[1;32m''Usuario Cadastrado com sucesso!''\033[0;0m')
+    print('\033[1;32m''Curso Cadastrado com sucesso!''\033[0;0m')
     criaBarra()
 
-    # --> Adiciona usuário no banco de dados usuarios.txt
-    logins = open('usuarios.txt', 'a')
-    logins.write(
-        f'Nome: {nome} -Login: {login} -Senha: {senha} -Email: {email} -Cpf: {cpf} -Data de Nascimento: {data} -Numero de Celular: {celular} -Perfil de Investidor: {perfilInvestidor} -Saldo: {saldo}\n')
-    logins.close()
-    return
+    Cursos = open('cursos.txt', 'a')
+    Cursos.write(
+        f'Curso: {nome} -Professor: {nomeProfessor} -Duração: {duracao} -Resumo: {resumo} -Pontuação: {pontuacao} -Avaliação: {avaliacao} -Identitificação: {cdCurso}\n')
+    Cursos.close()
+    subMenuCursos()
 
 def dadosCurso():
-    return ""
-
-def mostrarCurso():
     limpaTerminal()
-    print('=== << ''\033[1; 33m''Dados do Usuario''\033[0;0m'' >> ===')
+    print('=== << ''\033[1; 33m''Dados do Curso''\033[0;0m'' >> ===')
     criaBarra()
-    print('\033[1;33m''Logue para acessar seus dados!''\033[0; 0m')
+    print('\033[1;33m''Digite o código do Curso para ver dados!''\033[0; 0m')
     criaBarra()
-    userLogin = input('Login: ')
-    userSenha = input('Senha: ')
+    codigo = input('Código: ')
 
-    # Variavel de validação do login
+    # Variavel de validação do codigo
     valida = False
     
-    logins = open('usuarios.txt', 'r')
-    for linha in logins. readlines():
+    cursos = open('cursos.txt', 'r')
+    for linha in cursos. readlines():
         valores = linha.split('-')
-        if userLogin == valores[1].split(':')[1].strip() and userSenha in valores[2].split(':')[1].strip():
+        if codigo == valores[6].split(':')[1].strip():
             limpaTerminal()
             criaBarra()
-            print('\033[1;32m''Usuario Logado! Dados do usuário: ''\033[0; 0m')
+            print('\033[1;32m''Curso encontrado! Dados do Curso: ''\033[0; 0m')
             criaBarra()
             for percorre in range(len(valores)):
                 print(valores[percorre])
             criaBarra()
             valida = True
-            logins.close()
-            break
+            cursos.close()
+            subMenuCursos()
 
     if not valida:
         limpaTerminal()
         criaBarra()
-        print('\033[1;31m''Erro! Login ou senha invalidos''\033[0; 0m')
+        print('\033[1;31m''Erro! Código não encontrado ou inexistente.''\033[0; 0m')
         criaBarra()
-        subMenuUsuarios()
+        subMenuCursos()
+
+def mostrarCursos():
+    limpaTerminal()
+    print('=== Cursos Cadastrados ===')
+    cursos = open('cursos.txt', 'r')
+    for linha in cursos.readlines():
+        l = linha.split('-')
+        print('\033[1;92m'f'{l[0]} | {l[1]}''\033[0;0m')
+    criaBarra()
+    subMenuCursos()
 
 def relatorioCurso():
     countUsers = 0
     nomess = []
     
-    logins = open('usuarios.txt', 'r')
-    for linhas in logins.readlines():
+    cursos = open('cursos.txt', 'r')
+    for linhas in cursos.readlines():
         l = linhas.split('-')
         nomess.append(l[0])
         countUsers += 1
         
     limpaTerminal()
-    arquivo = open('relatorio.txt', 'w+')
-    arquivo.write('Relatorio de Usuarios \n')
+    arquivo = open('relatorioCursos.txt', 'w+')
+    arquivo.write('Relatorio de Cursos \n')
     arquivo.write('\n')
-    arquivo.write(f'A U-Invest possui {countUsers} usuarios \n')
+    arquivo.write(f'A U-Invest possui {countUsers} cursos \n')
     for i in range(len(nomess)):
         arquivo.write(str(f'{i + 1}.{nomess[i].split(":")[1]} \n'))
-    arquivo.write(f'{dia}/{mes}/{ano}')
     criaBarra( )
-    print('\033[1;32m'"Relatorio gerado em 'relatorio.txt'"'\033[0;0m')
+    print('\033[1;32m'"Relatorio gerado em 'relatorioCursos.txt'"'\033[0;0m')
     criaBarra()
     arquivo.close()
-    return
+    subMenuCursos()
 
 def gerenciarCurso():
+    limpaTerminal()
     print("Em desenvolvimento!")
     subMenuCursos()
 
 def removeCurso():
     limpaTerminal()
-    print('=== << ''\033[1; 33m''Dados do Usuario''\033[0;0m'' >> ===')
+    print('=== << ''\033[1; 33m''Dados do Curso''\033[0;0m'' >> ===')
     criaBarra()
-    print('\033[1;33m''Logue para excluir seu usuario!''\033[0; 0m')
+    print('\033[1;33m''Digite o código do Curso para excluir''\033[0; 0m')
     criaBarra()
-    userLogin = input('Login: ')
-    userSenha = input('Senha: ')
-
-    # Variavel de validação do login
+    codigo = input('Código: ')
+    
     valida = False
 
-    logins = open('usuarios.txt', 'r')
-    for linha in logins.readlines():
+    cursos = open('cursos.txt', 'r')
+    for linha in cursos.readlines():
         valores = linha.split('-')
-        if userLogin == valores[1].split(':')[1].strip() and userSenha in valores[2].split(':')[1].strip():
+        if codigo == valores[6].split(':')[1].strip():
             limpaTerminal()
             criaBarra()
-            print('\033[1;32m''Usuario Logado! Excluindo... ''\033[0; 0m')
+            print('\033[1;32m''Curso encontrado! Excluindo... ''\033[0; 0m')
             criaBarra()
             sleep(5)
             
-            with open('usuarios.txt', 'r+') as arquivo:
+            with open('cursos.txt', 'r+') as arquivo:
                 newLinhas = arquivo.readlines()
                 arquivo.seek(0)
                 for newLinha in newLinhas:
@@ -485,14 +465,14 @@ def removeCurso():
                         arquivo.write(newLinha)
                 arquivo.truncate()
 
-            print('\033[1;32m''Usuario Excluido! ''\033[0; 0m')
+            print('\033[1;32m''Curso Excluido! ''\033[0; 0m')
             criaBarra()
             valida = True
-            break
+            subMenuCursos()
 
     if not valida:
         limpaTerminal()
         criaBarra()
-        print('\033[1;31m''Erro! Login ou senha invalidos''\033[0; 0m')
+        print('\033[1;31m''Erro! Código não encontrado ou inexistente.''\033[0; 0m')
         criaBarra()
-        subMenuUsuarios()
+        subMenuCursos()

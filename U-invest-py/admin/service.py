@@ -1,4 +1,5 @@
 from prettytable import PrettyTable
+import random
 
 def PerfilInvestidor():
     tabela = PrettyTable()
@@ -117,3 +118,91 @@ def Cpf():
 
 def Saldo():
     return 0
+
+def Professor():
+    while True:
+        try:
+            nome = input('Nome e Sobrenome do Professor que ministra as aulas: ')
+            temp = ''.join(nome.split(' '))
+            for i in temp:
+                if i.isdigit():
+                    print('Digite um nome válido.')
+                    break
+            else:
+                return nome.strip(' ')
+        except ValueError:
+            print('Digite um nome válido.')
+
+def CdCurso():
+    codigo = random.randint(0, 9999)
+    while len(str(codigo)) < 4:
+        codigo = '0' + str(codigo)
+    return int(codigo)
+
+def DuracaoCurso():
+    while True:
+        duracao = input("Qual é a duração do curso? (em horas) ")
+        try:
+            duracao = int(duracao)
+            if duracao <= 0:
+                print("A duração do curso deve ser maior do que zero. Tente novamente.")
+            elif duracao > 100:
+                print("A duração do curso não pode exceder 100 horas. Tente novamente.")
+            else:
+                return duracao
+        except ValueError:
+            print("Por favor, insira um número inteiro válido para a duração do curso. Tente novamente.")
+
+def NomeCurso():
+    while True:
+        try:
+            nomeCurso = input('Digite o Nome do Curso: ')
+            temp = ''.join(nomeCurso.split(' '))
+            for i in temp:
+                if i.isdigit():
+                    print('Digite um nome válido.')
+                    break
+            else:
+                return nomeCurso.strip(' ')
+        except ValueError:
+            print('Error! Digite valores válidos!')
+
+def PontuacaoCurso(duracaoCurso):
+    if duracaoCurso < 10:
+        pontuacao = duracaoCurso * 0.5
+    elif duracaoCurso < 20:
+        pontuacao = duracaoCurso * 0.75
+    elif duracaoCurso < 30:
+        pontuacao = duracaoCurso * 1.0
+    else:
+        pontuacao = duracaoCurso * 1.25
+    return round(pontuacao, 1)
+
+def AvaliacaoCurso(avaliacoes):
+    if not avaliacoes:
+        return 0
+    
+    avaliacoesFiltradas = [nota for nota in avaliacoes if nota >= 0 and nota <= 5]
+    
+    if not avaliacoesFiltradas:
+        return 0
+    
+    totalAvaliacoes = sum(avaliacoesFiltradas)
+    mediaAvaliacoes = totalAvaliacoes / len(avaliacoesFiltradas)
+    
+    return round(mediaAvaliacoes, 1)
+
+def ResumoCurso():
+    while True:
+        try:
+            print("Faça um breve resumo com relação ao Curso.")
+            resumo = input("Digite sua descrição:\n")
+            temp = ''.join(resumo.split(' '))
+            for i in temp:
+                if i.isdigit():
+                    print('Digite uma descrição válida.')
+                    break
+            else:
+                return resumo.strip(' ')
+        except ValueError:
+            print('Error! Digite valores válidos!')
