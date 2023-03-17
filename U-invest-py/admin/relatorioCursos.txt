@@ -1,4 +1,5 @@
 Relatorio de Cursos 
 
-A U-Invest possui 1 cursos 
+A U-Invest possui 2 cursos 
 1. React  
+2. Python  

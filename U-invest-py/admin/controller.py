@@ -78,14 +78,19 @@ def subMenuUsuarios():
     print('--------------------------------------')
     if escolha == 1:
         cadastro()
+        subMenuUsuarios()
     elif escolha == 2:
         mostraDados()
+        subMenuUsuarios()
     elif escolha == 3:
         usuariosCadastrados()
+        subMenuUsuarios()
     elif escolha == 4:
         relatorio()
+        subMenuUsuarios()
     elif escolha == 5:
         removerUsuario()
+        subMenuUsuarios()
     elif escolha == 0:
         sleep(1)
         limpaTerminal()
@@ -119,16 +124,22 @@ def subMenuCursos():
     print('--------------------------------------')
     if escolha == 1:
         cadastroCurso()
+        subMenuCursos()
     elif escolha == 2:
         dadosCurso()
+        subMenuCursos()
     elif escolha == 3:
         mostrarCursos()
+        subMenuCursos()
     elif escolha == 4:
         relatorioCurso()
+        subMenuCursos()
     elif escolha == 5:
         gerenciarCurso()
+        subMenuCursos()
     elif escolha == 6:
         removeCurso()
+        subMenuCursos()
     elif escolha == 0:
         sleep(1)
         limpaTerminal()
