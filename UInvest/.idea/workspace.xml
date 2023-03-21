@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d14542d0-1f53-4216-85cc-60b835b30ca4" name="Changes" comment="" />
+    <list default="true" id="4975ac42-f16b-4c9a-a389-f915efc6a6cc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Administrador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Aulas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Certificado.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Contato.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Conteudo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Criptografia.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Cursos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Feedback.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Instituicao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Simulador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/teste/carregarUsuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/teste/salvarUsuario.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +36,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -33,7 +52,10 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectId" id="2M4V3gEFToOMl5K4DJgnZi7w0rT" />
+  <component name="ProjectId" id="2NHajds2OTSzmiyI5eQoyDQlXWa" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -47,44 +69,18 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunAnythingCache">
-    <option name="myCommands">
-      <command value="mvn clean install -DskipTests -U" />
-    </option>
-  </component>
-  <component name="RunManager">
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.Test" />
-      <module name="UInvest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Test" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d14542d0-1f53-4216-85cc-60b835b30ca4" name="Changes" comment="" />
-      <created>1677026644197</created>
+      <changelist id="4975ac42-f16b-4c9a-a389-f915efc6a6cc" name="Changes" comment="" />
+      <created>1679323601888</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1677026644197</updated>
-      <workItem from="1677026645681" duration="5622000" />
+      <updated>1679323601888</updated>
+      <workItem from="1679323604852" duration="6425000" />
     </task>
     <servers />
   </component>
