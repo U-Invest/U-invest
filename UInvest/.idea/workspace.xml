@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4975ac42-f16b-4c9a-a389-f915efc6a6cc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Administrador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Aulas.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Certificado.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Contato.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Conteudo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Criptografia.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Cursos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Feedback.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Instituicao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Simulador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/beans/Usuario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/teste/carregarUsuario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../out/production/U-invest/br/com/uInvest/teste/salvarUsuario.class" beforeDir="false" />
-    </list>
+    <list default="true" id="4975ac42-f16b-4c9a-a389-f915efc6a6cc" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +64,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679323601888</updated>
-      <workItem from="1679323604852" duration="6425000" />
+      <workItem from="1679323604852" duration="6952000" />
     </task>
     <servers />
   </component>
