@@ -4,6 +4,7 @@ import { HiMenuAlt1, HiX } from "react-icons/hi";
 import MobileNavLinks from "./MobileNavLinks";
 import NavLink from "./NavLink";
 import { motion } from "framer-motion";
+import UInvest from "../../assets/UInvest.png";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [active, setActive] = useState(null);
@@ -32,7 +33,7 @@ const Navbar = () => {
               onClick={() => setToggle(true)}
             />
             <div className="text-xl text-Teal uppercase tracking-wide font-bold">
-              U Invest
+              <img src={UInvest} alt="Logo"/>
             </div>
           </div>
           <div className="sm:flex items-center hidden">
