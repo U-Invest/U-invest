@@ -5,7 +5,7 @@ const Contact = () => {
     <div className="section" id="contato">
       <div className="text-center max-w-[600px] mx-auto">
         <div className="sm:text-3xl text-2xl font-bold mb-5">
-          Se inscreva no nosso mewsletter
+          Se inscreva no nosso newsletter
         </div>
         <p className="text-sm leading-7 text-gray">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum autem
