@@ -3,24 +3,21 @@ import about from "../../assets/About.jpg";
 
 const About = () => {
   return (
-    <div className="section" id="about">
+    <div className="section" id="sobre">
       <div className="grid md:grid-cols-2 gap-8 place-items-center">
         <div className="border-[3px] border-solid border-Teal rounded-lg">
           <img src={about} alt="" className="p-4" />
         </div>
         <div>
           <div className="font-bold sm:text-[1.875rem] text-[1.5rem] mb-5">
-            We provide the <br /> best{" "}
-            <span className="text-Teal">online courses</span>
+            Vamos proporcionar os<br /> melhores{" "}
+            <span className="text-Teal">cursos onlines!</span>
           </div>
           <p className="text-sm text-gray leading-7 mb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Repudiandae, totam earum. Minus deleniti repellat id! Ratione quia
-            eum, explicabo quos eos magni vel corporis voluptatibus, inventore
-            doloremque aliquam pariatur recusandae.
+            A U Invest chegou no mercado para mudar o cenário de investimento!, com uma proposta inovadora unindo tecnnologia e investimento, com a proposta de multiplicar os acionistas brasileiros, venha nos conhecer melhor! Veja nossos cursos do catálogo ou até mesmo converse com o “Droid” nosso chatbot inteligente pronto pra sanar as suas dúvidas, e te ensinar muito, vale a pena ver. Eai, Bora Investir?
           </p>
           <button className="py-3 px-6 text-sm border border-solid border-gray rounded-lg font-bold">
-            Know More
+            Saiba mais
           </button>
         </div>
       </div>

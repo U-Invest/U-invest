@@ -32,7 +32,7 @@ const Navbar = () => {
               onClick={() => setToggle(true)}
             />
             <div className="text-xl text-Teal uppercase tracking-wide font-bold">
-              Skillex
+              U Invest
             </div>
           </div>
           <div className="sm:flex items-center hidden">
@@ -41,7 +41,7 @@ const Navbar = () => {
             })}
           </div>
           <button className="py-3 px-6 font-bold text-sm border border-solid rounded-lg border-gray">
-            Sign Up
+            Cadastre-se
           </button>
           {toggle && (
             <motion.div

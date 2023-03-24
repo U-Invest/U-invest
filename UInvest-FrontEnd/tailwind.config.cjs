@@ -10,10 +10,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        Teal: "#2F6C6D",
+        Teal: "#19BCFE", 
         HummingBird: "#d1f1ee",
-        yellow: "#e4d63b",
-        Solitude: "#e9e9ea",
+        yellow: "#e4d63b", 
+        Solitude: "#fff", 
         gray: "#4B4B4C"
       },
       animation: {

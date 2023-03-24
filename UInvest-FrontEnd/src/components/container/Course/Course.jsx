@@ -20,7 +20,6 @@ const Course = ({ image, category, title, participants, rating, price }) => {
           </div>
           <div className="text-sm font-bold">{rating}</div>
         </div>
-        <div className="text-sm font-bold">${price}</div>
       </div>
     </div>
   );

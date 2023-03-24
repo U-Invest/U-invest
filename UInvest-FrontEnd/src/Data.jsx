@@ -1,7 +1,8 @@
-import { FiPenTool } from "react-icons/fi";
-import { FaLaptopCode } from "react-icons/fa";
+import { AiFillBank } from "react-icons/ai";
+import { AiFillGold } from "react-icons/ai";
 import { BsBarChartLine } from "react-icons/bs";
-import { MdOutlineScience } from "react-icons/md";
+import { AiFillReconciliation } from "react-icons/ai";
+
 
 import courses1 from "./assets/courses1.jpg";
 import courses2 from "./assets/courses2.jpg";
@@ -22,51 +23,51 @@ import logo6 from "./assets/logo6.png";
 export const navLinks = [
   {
     id: 1,
-    href: "home",
-    link: "Home",
+    href: "inicio",
+    link: "Página Inicial",
   },
   {
     id: 2,
-    href: "about",
-    link: "About",
+    href: "sobre",
+    link: "Sobre",
   },
   {
     id: 3,
-    href: "courses",
-    link: "Courses",
+    href: "cursos",
+    link: "Cursos",
   },
   {
     id: 4,
-    href: "teacher",
-    link: "Teacher",
+    href: "droid",
+    link: "Droid",
   },
   {
     id: 5,
-    href: "contact",
-    link: "Contact",
+    href: "contato",
+    link: "Contato",
   },
 ];
 
 export const categories = [
   {
     id: 1,
-    icon: <FiPenTool />,
-    category: "Design",
+    icon: <AiFillBank />,
+    category: "Ações",
   },
   {
     id: 2,
-    icon: <FaLaptopCode />,
-    category: "Development",
+    icon: <BsBarChartLine />,
+    category: "Fundos Imobiliários",
   },
   {
     id: 3,
-    icon: <BsBarChartLine />,
-    category: "Business",
+    icon: <AiFillReconciliation />,
+    category: "IPO",
   },
   {
     id: 4,
-    icon: <MdOutlineScience />,
-    category: "Science",
+    icon: <AiFillGold />,
+    category: "Criptos",
   },
 ];
 
@@ -74,74 +75,66 @@ export const courses = [
   {
     id: 1,
     image: courses1,
-    category: "Web Design",
-    title: "The Complete Web Design Course",
+    category: "Criptoativos",
+    title: "Criptomoedas: tudo o que você precisa saber sobre elas",
     rating: 4.9,
     participants: 500,
-    price: 105,
   },
   {
     id: 2,
     image: courses2,
-    category: "Web Development",
-    title: "FullStack Web Development Course",
+    category: "Fundos de Investimento",
+    title: "Investindo em Fundos Imobiliários - Do Básico ao Avançado",
     rating: 4.8,
     participants: 700,
-    price: 125,
   },
   {
     id: 3,
     image: courses3,
-    category: "Web Development",
-    title: "Python Beginner to Advanced Course",
+    category: "Ações",
+    title: "Aprenda a investir em ações",
     rating: 4.9,
     participants: 300,
-    price: 99,
   },
   {
     id: 4,
     image: courses4,
-    category: "Web Design",
-    title: "UI/UX Design Crazy Course With Harrys",
+    category: "Criptoativos",
+    title: "Criptomoedas - O básico",
     rating: 4.7,
     participants: 600,
-    price: 85,
   },
   {
     id: 5,
     image: courses5,
-    category: "AI Development",
-    title: "AI Development With Python (complete beginner course)",
+    category: "Câmbio",
+    title: "Como investir em euro, dólar e outras moedas internacionais?",
     rating: 4.9,
     participants: 500,
-    price: 105,
   },
   {
     id: 6,
     image: courses6,
-    category: "Web Design",
-    title: "The Complete Web Design Course",
+    category: "Ações",
+    title: "Bolsa de Valores - Iniciantes",
     rating: 4.9,
     participants: 500,
-    price: 105,
   },
   {
     id: 7,
     image: courses7,
-    category: "Web Design",
-    title: "The Complete Web Design Course",
+    category: "Ações",
+    title: "Aprenda a Investir o seu Dinheiro",
     rating: 4.9,
     participants: 500,
-    price: 105,
   },
   {
     id: 8,
     image: courses8,
-    category: "Web Design",
-    title: "The Complete Web Design Course",
+    category: "Fundos de Investimento",
+    title: "Investindo em FIIs na bolsa!",
     rating: 4.9,
     participants: 500,
-    price: 105,
   },
 ];
 
@@ -150,18 +143,18 @@ export const logos = [logo1, logo2, logo3, logo4, logo5, logo6];
 export const accordions = [
   {
     id: 1,
-    title: "What is Skillex?",
+    title: "O que é a U Invest?",
   },
   {
     id: 2,
-    title: "What can I learn from Skillex?",
+    title: "Como faço para aprender com a U Invest?",
   },
   {
     id: 3,
-    title: "Can I teach on Skillex?",
+    title: "O que é o Droid?",
   },
   {
     id: 4,
-    title: "What is included in my Skillex membership?",
+    title: "Posso fazer parte da U Invest?",
   },
 ];

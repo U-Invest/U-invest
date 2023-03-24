@@ -3,7 +3,7 @@ import {
   BsFacebook,
   BsInstagram,
   BsTwitter,
-  BsPinterest,
+  BsLinkedin,
 } from "react-icons/bs";
 import { motion } from "framer-motion";
 
@@ -17,51 +17,51 @@ const Footer = () => {
     >
       <div className="grid md:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 place-items-start gap-8 text-white">
         <div>
-          <div className="font-bold mb-6">Get Started</div>
+          <div className="font-bold mb-6">Vamos Começar!</div>
           <p className="text-sm leading-7">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo neque
             saepe cumque. Veritatis sunt commodi
           </p>
         </div>
         <div>
-          <div className="font-bold mb-6">Services</div>
+          <div className="font-bold mb-6">Serviços</div>
           <div className="flex flex-col gap-4">
             <a href="" className="text-sm hover:underline">
-              Web Design
+              Droid
             </a>
             <a href="" className="text-sm hover:underline">
-              Web Development
+              Cursos
             </a>
             <a href="" className="text-sm hover:underline">
               {" "}
-              Science
+              IPO
             </a>
             <a href="" className="text-sm hover:underline">
-              Digital Marketing
+              Ações
             </a>
           </div>
         </div>
         <div>
-          <div className="font-bold mb-6">Company</div>
+          <div className="font-bold mb-6">U Invest</div>
           <div className="flex flex-col gap-4">
             <a href="" className="text-sm hover:underline">
-              Privacy Policy
+              Home
             </a>
             <a href="" className="text-sm hover:underline">
-              Sitemap
+              Sobre nós
             </a>
             <a href="" className="text-sm hover:underline">
-              Careers
+              Política de Privacidade
             </a>
             <a href="" className="text-sm hover:underline">
-              Terms & Conditions
+              Termos & Condições
             </a>
           </div>
         </div>
         <div>
-          <div className="font-bold mb-6">Follow us</div>
-          <div className="text-sm mb-4">skillexlearning@gmail.com</div>
-          <div className="text-sm">+959883271929</div>
+          <div className="font-bold mb-6">Contato</div>
+          <div className="text-sm mb-4">u_investbrasil@gmail.com</div>
+          <div className="text-sm">(11) 98546-9898</div>
           <div className="flex gap-4 mt-4">
             <a href="" className="hover:scale-110 text-xl">
               <BsFacebook />
@@ -73,7 +73,7 @@ const Footer = () => {
               <BsTwitter />
             </a>
             <a href="" className="hover:scale-110 text-xl">
-              <BsPinterest />
+              <BsLinkedin />
             </a>
           </div>
         </div>
