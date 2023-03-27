@@ -70,7 +70,7 @@ CREATE TABLE modulo (
 
 CREATE TABLE aula (
   tipo_conteudo varchar2(30) NOT NULL, --Questionar esse campo com o professor.
-  duracao varchar2 NOT NULL, -- HHmmss
+  duracao varchar2(6) NOT NULL, -- HHmmss
   nome_aula varchar2(50) NOT NULL,
   id_aula CHAR(8) CONSTRAINT aula_id_pk PRIMARY KEY,
   conteudo varchar2(40) NOT NULL, --Questionar esse campo com o professor.
@@ -80,15 +80,15 @@ CREATE TABLE aula (
 );
 
 insert into usuario  values ('12345678910', 'joao@gmail.com', '99999999999', 'Jo�o Silva', 10000, 'senha123', 'conservador','joaoGamer','10042000');
-insert into usuario  values ('23456789012', 'maria@hotmail.com', '88888888888', 'Maria Souza', 5000, 'abc123', 'moderado','marimari','11042000');
-insert into usuario  values ('34567890123', 'pedro@yahoo.com', '77777777777', 'Pedro Almeida', 20000, 'senha456', 'agressivo','pedroGamer','12042000');
-insert into usuario  values ('45678901234', 'ana@outlook.com', '66666666666', 'Ana Santos', 15000, 'senha789', 'moderado','aninhaDoGrau','13042000');
-insert into usuario  values ('56789012345', 'felipe@gmail.com', '55555555555', 'Felipe Costa', 8000, 'senhaabc', 'conservador','Felps','14042000');
-insert into usuario  values ('67890123456', 'lucas@hotmail.com', '44444444444', 'Lucas Oliveira', 12000, 'senha456', 'agressivo','luqueta','15042000');
-insert into usuario  values ('78901234567', 'carla@yahoo.com', '33333333333', 'Carla Lima', 7000, 'senha789', 'conservador','carlaPeres','16042000');
-insert into usuario values  ('89012345678', 'vitoria@outlook.com', '22222222222', 'Vitoria Pereira', 25000, 'senhaabc', 'moderado', 'vic02', '17042000');
-insert into usuario  values ('90123456789', 'gustavo@gmail.com', '11111111111', 'Gustavo Martins', 18000, 'senha123', 'agressivo','guguiha','18042000');
-insert into usuario  values ('01234567890', 'marcos@hotmail.com', '00000000000', 'Marcos Santos', 9000, 'abc123', 'conservador','marcolas','19042000');
+insert into usuario  values ('12345678911', 'maria@hotmail.com', '88888888888', 'Maria Souza', 5000, 'abc123', 'moderado','marimari','11042000');
+insert into usuario  values ('12345678912', 'pedro@yahoo.com', '77777777777', 'Pedro Almeida', 20000, 'senha456', 'agressivo','pedroGamer','12042000');
+insert into usuario  values ('12345678913', 'ana@outlook.com', '66666666666', 'Ana Santos', 15000, 'senha789', 'moderado','aninhaDoGrau','13042000');
+insert into usuario  values ('12345678914', 'felipe@gmail.com', '55555555555', 'Felipe Costa', 8000, 'senhaabc', 'conservador','Felps','14042000');
+insert into usuario  values ('12345678915', 'lucas@hotmail.com', '44444444444', 'Lucas Oliveira', 12000, 'senha456', 'agressivo','luqueta','15042000');
+insert into usuario  values ('12345678916', 'carla@yahoo.com', '33333333333', 'Carla Lima', 7000, 'senha789', 'conservador','carlaPeres','16042000');
+insert into usuario values  ('12345678917', 'vitoria@outlook.com', '22222222222', 'Vitoria Pereira', 25000, 'senhaabc', 'moderado', 'vic02', '17042000');
+insert into usuario  values ('12345678918', 'gustavo@gmail.com', '11111111111', 'Gustavo Martins', 18000, 'senha123', 'agressivo','guguiha','18042000');
+insert into usuario  values ('12345678919', 'marcos@hotmail.com', '00000000000', 'Marcos Santos', 9000, 'abc123', 'conservador','marcolas','19042000');
 
 INSERT INTO login VALUES ('sessao01', 10, '0802202313', '0803202313', 12345678910);
 INSERT INTO login VALUES ('sessao02', 11, 'DDmmYYYYhh', 'DDmmYYYYhh', 12345678911);
