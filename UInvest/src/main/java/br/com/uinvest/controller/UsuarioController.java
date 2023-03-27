@@ -3,8 +3,6 @@ package br.com.uinvest.controller;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import br.com.uinvest.connection.Conexao;
 import br.com.uinvest.dao.UsuarioDAO;

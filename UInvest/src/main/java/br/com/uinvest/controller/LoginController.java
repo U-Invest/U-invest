@@ -16,8 +16,6 @@ import java.time.Instant;
 import java.util.UUID;
 
 import br.com.uinvest.service.LoginService;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
 
 public class LoginController {
 
@@ -56,9 +54,13 @@ public class LoginController {
 
                 // Compara a senha encriptada fornecida pelo usuário com a senha encriptada armazenada no banco de dados
                 if (senhaEncriptada.equals(usuarioDAO.buscarSenha(senhaEncriptada))) {
-                    registrarTempo("open"); // Inicia o cronômetro da sessao
+                    // inicia a sessão
+                    inicioSessao = Instant.now();
+                    System.out.println("Sessão iniciada para o usuário " + usuario);
+                    Conexao.fecharConexao(con);
                 }
             }
+            Conexao.fecharConexao(con);
             return false; // Autenticação mal-sucedida
         } catch (SQLException e) {
             e.printStackTrace();
@@ -82,6 +84,8 @@ public class LoginController {
         String hrs_plataforma = "Em dev";
         String ultima_sessao = "Em dev";
         String hr_sessao_atual = "Em dev";
+
+        System.out.println(String.valueOf(registrarTempo("close")));
 
         if (loginService.formataDados()) {
             login.setId_sessao(id_sessao);
@@ -110,6 +114,15 @@ public class LoginController {
             System.out.println("Ação inválida.");
             return null;
         }
+    }
+
+    public Duration encerrarSessao() {
+        // finaliza a sessão
+        fimSessao = Instant.now();
+        Duration duracaoSessao = Duration.between(inicioSessao, fimSessao);
+        System.out.println("Sessão encerrada. Tempo de duração: " + duracaoSessao.getSeconds() + " segundos.");
+
+        return duracaoSessao;
     }
 }
 
