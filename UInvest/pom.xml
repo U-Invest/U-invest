@@ -26,16 +26,9 @@
             <version>9.1.22</version>
         </dependency>
         <dependency>
-            <groupId>jakarta.servlet</groupId>
-            <artifactId>jakarta.servlet-api</artifactId>
-            <version>6.0.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.ericsson.research.trap.transports</groupId>
-            <artifactId>http-server-servlet-2.5</artifactId>
-            <version>1.4.2</version>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
         </dependency>
     </dependencies>
-
 </project>

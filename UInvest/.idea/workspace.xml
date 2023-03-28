@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4975ac42-f16b-4c9a-a389-f915efc6a6cc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ce07e6c6-f5fa-4eac-82b7-107e3b8da1b3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ce07e6c6-f5fa-4eac-82b7-107e3b8da1b3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/controller/UsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/certificado.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/~$main Driven Design.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/~WRL3688.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/UInvest.asta" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/UInvest.asta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uinvest/controller/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/controller/UsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uinvest/controller/UsuarioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/certificado.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/certificado.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/certificado.pdf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +60,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -86,9 +81,9 @@
       <recent name="C:\Users\matheus.r.pierro\Documents\Faculdade\TDS\U-invest\UInvest\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.IPOApp">
-    <configuration name="GerarCertificado" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.com.uinvest.view.GerarCertificado" />
+  <component name="RunManager" selected="Application.SSLCertInstaller">
+    <configuration name="HunterEmailValidator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.uinvest.view.HunterEmailValidator" />
       <module name="UInvest" />
       <extension name="coverage">
         <pattern>
@@ -106,19 +101,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="br.com.uinvest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Logar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.com.uinvest.view.Logar" />
-      <module name="UInvest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.uinvest.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -152,13 +134,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SSLCertInstaller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.uinvest.view.SSLCertInstaller" />
+      <module name="UInvest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.uinvest.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SSLCertInstaller" />
+        <item itemvalue="Application.HunterEmailValidator" />
         <item itemvalue="Application.IPOApp" />
         <item itemvalue="Application.OpenEdXApiMain" />
         <item itemvalue="Application.Logout" />
-        <item itemvalue="Application.Logar" />
-        <item itemvalue="Application.GerarCertificado" />
       </list>
     </recent_temporary>
   </component>
@@ -172,6 +167,7 @@
       <updated>1679323601888</updated>
       <workItem from="1679323604852" duration="7859000" />
       <workItem from="1679581966144" duration="37531000" />
+      <workItem from="1680038527595" duration="1839000" />
     </task>
     <servers />
   </component>
