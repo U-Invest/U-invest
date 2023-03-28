@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="IU-223.8836.41">
+  <component name="dataSourceStorageLocal" created-in="IU-222.4459.24">
     <data-source name="UInvest" uuid="ce07e6c6-f5fa-4eac-82b7-107e3b8da1b3">
       <database-info product="Oracle" version="Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production&#10;Version 19.3.0.0.0" jdbc-version="4.3" driver-name="Oracle JDBC driver" driver-version="21.5.0.0.0" dbms="ORACLE" exact-version="19.0.0.0.0" exact-driver-version="21.5">
         <extra-name-characters>$#</extra-name-characters>
@@ -8,7 +8,7 @@
       </database-info>
       <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
-      <user-name>RM96920</user-name>
+      <user-name>rm97136</user-name>
       <schema-mapping>
         <introspection-scope>
           <node kind="schema">
@@ -24,6 +24,22 @@
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="ORACLE" exact-version="0" />
       <secret-storage>master_key</secret-storage>
       <schema-mapping />
+      <introspection-level>3</introspection-level>
+      <load-sources>user_and_system_sources</load-sources>
+    </data-source>
+    <data-source name="@oracle.fiap.com.br" uuid="9ef910f0-23d7-437e-84a8-0097fdd89a20">
+      <database-info product="Oracle" version="Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production&#10;Version 19.3.0.0.0" jdbc-version="4.3" driver-name="Oracle JDBC driver" driver-version="21.5.0.0.0" dbms="ORACLE" exact-version="19.0.0.0.0" exact-driver-version="21.5">
+        <extra-name-characters>$#</extra-name-characters>
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>RM97136</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema" qname="@" />
+        </introspection-scope>
+      </schema-mapping>
       <introspection-level>3</introspection-level>
       <load-sources>user_and_system_sources</load-sources>
     </data-source>

@@ -11,16 +11,15 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.time.Duration;
-import java.time.Instant;
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 import br.com.uinvest.service.LoginService;
 
 public class LoginController {
-
-    private Instant inicioSessao;
-    private Instant fimSessao;
+    private LocalDateTime inicioSessao;
+    private LocalDateTime fimSessao;
 
     // Autentica um usuário com o nome ou email e a senha encriptada
     public boolean autenticarUsuario() {
@@ -55,17 +54,20 @@ public class LoginController {
                 // Compara a senha encriptada fornecida pelo usuário com a senha encriptada armazenada no banco de dados
                 if (senhaEncriptada.equals(usuarioDAO.buscarSenha(senhaEncriptada))) {
                     // inicia a sessão
-                    inicioSessao = Instant.now();
+                    registrarTempo("open");
                     System.out.println("Sessão iniciada para o usuário " + usuario);
+                    System.out.println(inicioSessao);
                     Conexao.fecharConexao(con);
+                } else {
+                    Conexao.fecharConexao(con);
+                    return false; // Autenticação mal-sucedida
                 }
             }
-            Conexao.fecharConexao(con);
-            return false; // Autenticação mal-sucedida
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }
+        return false;
     }
 
     public String criarIdSessao() {
@@ -80,12 +82,16 @@ public class LoginController {
         LoginDAO loginDAO = new LoginDAO(con);
         LoginService loginService = new LoginService();
 
+        String duracaoSessao = registrarTempo("close");
+        if (duracaoSessao == null) {
+            System.out.println("A duração da sessão é nula");
+        }
+
         String id_sessao = criarIdSessao();
         String hrs_plataforma = "Em dev";
         String ultima_sessao = "Em dev";
-        String hr_sessao_atual = "Em dev";
-
-        System.out.println(String.valueOf(registrarTempo("close")));
+        System.out.println(duracaoSessao);
+        String hr_sessao_atual = duracaoSessao;
 
         if (loginService.formataDados()) {
             login.setId_sessao(id_sessao);
@@ -100,29 +106,37 @@ public class LoginController {
         Conexao.fecharConexao(con);
     }
 
-    public Duration registrarTempo(String acao) {
+    public String registrarTempo(String acao) {
         if (acao.equals("open")) {
-            inicioSessao = Instant.now();
+            if (inicioSessao != null) {
+                System.out.println("O cronômetro já foi iniciado.");
+                return null;
+            }
+            inicioSessao = LocalDateTime.now();
             System.out.println("Cronômetro iniciado.");
             return null;
         } else if (acao.equals("close")) {
-            fimSessao = Instant.now();
+            if (inicioSessao == null) {
+                System.out.println("O cronômetro ainda não foi iniciado.");
+                return null;
+            }
+            fimSessao = LocalDateTime.now();
             Duration registro = Duration.between(inicioSessao, fimSessao);
             System.out.println("Cronômetro parado. Tempo registrado: " + registro);
-            return registro;
+
+
+            LocalDateTime referencia = inicioSessao.withHour(0).withMinute(0).withSecond(0).withNano(0); // define uma hora de referência, com os campos de hora, minuto, segundo e nanos zerados
+            LocalDateTime dataHoraRegistro = referencia.plus(registro); // adiciona a duração ao instante de referência, para obter a data e hora final
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd HH:mm:ss");
+            String dataHoraFormatada = formatter.format(dataHoraRegistro);
+            // Reseta a variável para permitir que o cronômetro seja iniciado novamente
+            inicioSessao = null;
+            return dataHoraFormatada;
         } else {
             System.out.println("Ação inválida.");
             return null;
         }
-    }
-
-    public Duration encerrarSessao() {
-        // finaliza a sessão
-        fimSessao = Instant.now();
-        Duration duracaoSessao = Duration.between(inicioSessao, fimSessao);
-        System.out.println("Sessão encerrada. Tempo de duração: " + duracaoSessao.getSeconds() + " segundos.");
-
-        return duracaoSessao;
     }
 }
 

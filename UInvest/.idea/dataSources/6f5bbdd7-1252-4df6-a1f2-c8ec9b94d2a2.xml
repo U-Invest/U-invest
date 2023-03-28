@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@oracle.fiap.com.br">
+  <database-model serializer="dbm" dbms="ORACLE" family-id="ORACLE" format-version="4.43">
+    <root id="1">
+      <IntrospectionLevel>3</IntrospectionLevel>
+      <ServerVersion>19.0.0.0.0</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="APEX_180200"/>
+    <schema id="3" parent="1" name="APEX_190200"/>
+    <schema id="4" parent="1" name="CTXSYS"/>
+    <schema id="5" parent="1" name="DD_SQLA"/>
+    <schema id="6" parent="1" name="DVF"/>
+    <schema id="7" parent="1" name="DVSYS"/>
+    <schema id="8" parent="1" name="GSMADMIN_INTERNAL"/>
+    <schema id="9" parent="1" name="LBACSYS"/>
+    <schema id="10" parent="1" name="MDSYS"/>
+    <schema id="11" parent="1" name="ODMRSYS"/>
+    <schema id="12" parent="1" name="OLAPSYS"/>
+    <schema id="13" parent="1" name="ORDDATA"/>
+    <schema id="14" parent="1" name="ORDPLUGINS"/>
+    <schema id="15" parent="1" name="ORDSYS"/>
+    <schema id="16" parent="1" name="OUTLN"/>
+    <schema id="17" parent="1" name="PF0110"/>
+    <schema id="18" parent="1" name="PF0400"/>
+    <schema id="19" parent="1" name="PF0645"/>
+    <schema id="20" parent="1" name="PF0844"/>
+    <schema id="21" parent="1" name="RM84544"/>
+    <schema id="22" parent="1" name="RM86587"/>
+    <schema id="23" parent="1" name="RM86612"/>
+    <schema id="24" parent="1" name="RM86750"/>
+    <schema id="25" parent="1" name="RM86936"/>
+    <schema id="26" parent="1" name="RM86944"/>
+    <schema id="27" parent="1" name="RM87023"/>
+    <schema id="28" parent="1" name="RM87088"/>
+    <schema id="29" parent="1" name="RM87154"/>
+    <schema id="30" parent="1" name="RM87170"/>
+    <schema id="31" parent="1" name="RM87231"/>
+    <schema id="32" parent="1" name="RM87260"/>
+    <schema id="33" parent="1" name="RM87273"/>
+    <schema id="34" parent="1" name="RM87285"/>
+    <schema id="35" parent="1" name="RM87351"/>
+    <schema id="36" parent="1" name="RM87352"/>
+    <schema id="37" parent="1" name="RM87489"/>
+    <schema id="38" parent="1" name="RM87821"/>
+    <schema id="39" parent="1" name="RM87892"/>
+    <schema id="40" parent="1" name="RM87965"/>
+    <schema id="41" parent="1" name="RM88060"/>
+    <schema id="42" parent="1" name="RM88154"/>
+    <schema id="43" parent="1" name="RM88311"/>
+    <schema id="44" parent="1" name="RM88410"/>
+    <schema id="45" parent="1" name="RM88497"/>
+    <schema id="46" parent="1" name="RM88524"/>
+    <schema id="47" parent="1" name="RM88655"/>
+    <schema id="48" parent="1" name="RM88675"/>
+    <schema id="49" parent="1" name="RM88776"/>
+    <schema id="50" parent="1" name="RM88796"/>
+    <schema id="51" parent="1" name="RM88917"/>
+    <schema id="52" parent="1" name="RM88930"/>
+    <schema id="53" parent="1" name="RM89137"/>
+    <schema id="54" parent="1" name="RM93642"/>
+    <schema id="55" parent="1" name="RM94329"/>
+    <schema id="56" parent="1" name="RM94348"/>
+    <schema id="57" parent="1" name="RM95358"/>
+    <schema id="58" parent="1" name="RM96074"/>
+    <schema id="59" parent="1" name="RM97136">
+      <Current>1</Current>
+    </schema>
+    <schema id="60" parent="1" name="SYS"/>
+    <schema id="61" parent="1" name="SYSTEM"/>
+    <schema id="62" parent="1" name="WMSYS"/>
+    <schema id="63" parent="1" name="XDB"/>
+  </database-model>
+</dataSource>

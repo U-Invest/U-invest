@@ -5,11 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4975ac42-f16b-4c9a-a389-f915efc6a6cc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Database/logico_sprint3.brM3" beforeDir="false" afterPath="$PROJECT_DIR$/../Database/logico_sprint3.brM3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ce07e6c6-f5fa-4eac-82b7-107e3b8da1b3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ce07e6c6-f5fa-4eac-82b7-107e3b8da1b3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/UInvest.asta" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/UInvest.asta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/connection/Conexao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/connection/Conexao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/controller/UsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/dao/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/dao/UsuarioDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/service/UsuarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/view/HunterEmailValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/view/Logar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/view/Logar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/view/Logout.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/view/SSLCertInstaller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/connection/Conexao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uinvest/connection/Conexao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uinvest/controller/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/controller/UsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uinvest/controller/UsuarioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/certificado.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/dao/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uinvest/dao/UsuarioDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uinvest/model/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/service/UsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uinvest/service/UsuarioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/view/HunterEmailValidator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/view/Logar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uinvest/view/Logar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/view/Logout.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,13 +51,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -55,7 +67,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/matheus.r.pierro/Documents/Faculdade/TDS/U-invest/UInvest/src/main/java/uinvest/connection",
+    "last_opened_file_path": "C:/Users/thiag/OneDrive/Documentos/Challenge/GitHub/U-invest/UInvest",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -81,13 +93,13 @@
       <recent name="C:\Users\matheus.r.pierro\Documents\Faculdade\TDS\U-invest\UInvest\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SSLCertInstaller">
+  <component name="RunManager">
     <configuration name="HunterEmailValidator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="br.com.uinvest.view.HunterEmailValidator" />
+      <option name="MAIN_CLASS_NAME" value="br.com.uinvest.controller.HunterEmailValidator" />
       <module name="UInvest" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.uinvest.view.*" />
+          <option name="PATTERN" value="br.com.uinvest.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -113,7 +125,7 @@
       <module name="UInvest" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.uinvest.view.*" />
+          <option name="PATTERN" value="br.com.uinvest.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -126,7 +138,7 @@
       <module name="UInvest" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.uinvest.view.*" />
+          <option name="PATTERN" value="br.com.uinvest.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -139,7 +151,7 @@
       <module name="UInvest" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="br.com.uinvest.view.*" />
+          <option name="PATTERN" value="br.com.uinvest.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -168,6 +180,7 @@
       <workItem from="1679323604852" duration="7859000" />
       <workItem from="1679581966144" duration="37531000" />
       <workItem from="1680038527595" duration="1839000" />
+      <workItem from="1680041735377" duration="11734000" />
     </task>
     <servers />
   </component>

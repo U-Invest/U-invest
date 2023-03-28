@@ -19,12 +19,12 @@ public class UsuarioController {
         UsuarioService usuarioService = new UsuarioService();
 
         String nome = JOptionPane.showInputDialog("Qual é o seu nome?");
-        String email =JOptionPane.showInputDialog("Qual é o seu email?");
+        String email =JOptionPane.showInputDialog("Qual é o seu email? Ex: email@gmail.com");
         String senha = JOptionPane.showInputDialog("Qual é a sua senha?");
-        String user = JOptionPane.showInputDialog("Qual é o seu user?");
-        String celular = JOptionPane.showInputDialog("Qual é o seu celular?");
-        String cpf = JOptionPane.showInputDialog("Qual é o seu cpf?");
-        String nascimento = JOptionPane.showInputDialog("Qual é a sua Data de Nascimento?");
+        String nickName = JOptionPane.showInputDialog("Qual é o seu nick name?");
+        String celular = JOptionPane.showInputDialog("Qual é o seu celular? (Com DDD)");
+        String cpf = JOptionPane.showInputDialog("Qual é o seu cpf? Ex: 12345678910");
+        String nascimento = JOptionPane.showInputDialog("Qual é a sua Data de Nascimento? (DDmmYYYY)");
         String perfil_investidor = JOptionPane.showInputDialog("Qual é o seu nivel de investidor?");
 
         // Cria um objeto MessageDigest para calcular o hash SHA-256 da senha
@@ -47,11 +47,11 @@ public class UsuarioController {
         }
         String senhaEncriptada = hexString.toString();
 
-        if (usuarioService.validarDadosUsuario(cpf, email, celular, nome, senha, perfil_investidor, user, nascimento)) {
+        if (usuarioService.validarDadosUsuario(cpf, email, celular, nome, senha, perfil_investidor, nickName, nascimento)) {
             usuario.setNome(nome);
             usuario.setEmail(email);
             usuario.setSenha(senhaEncriptada);
-            usuario.setUser(user);
+            usuario.setNickName(nickName);
             usuario.setCelular(celular);
             usuario.setCpf(cpf);
             usuario.setNascimento(nascimento);

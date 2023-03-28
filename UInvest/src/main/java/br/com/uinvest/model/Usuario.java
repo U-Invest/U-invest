@@ -4,7 +4,8 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
-    private String user;
+
+    private String nickName;
     private String celular;
     private String cpf;
     private String nascimento;
@@ -13,11 +14,11 @@ public class Usuario {
 
     public Usuario() {}
 
-    public Usuario(String nome, String email, String senha, String user, String celular, String cpf, String nascimento, String perfil_investidor, int saldo) {
+    public Usuario(String nome, String email, String senha, String nickName, String celular, String cpf, String nascimento, String perfil_investidor, int saldo) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
-        this.user = user;
+        this.nickName = nickName;
         this.celular = celular;
         this.cpf = cpf;
         this.nascimento = nascimento;
@@ -49,12 +50,12 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public String getUser() {
-        return user;
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
     public String getCelular() {
@@ -103,7 +104,7 @@ public class Usuario {
                 "nome='" + nome + '\'' +
                 ", email='" + email + '\'' +
                 ", senha='" + senha + '\'' +
-                ", user='" + user + '\'' +
+                ", nickName='" + nickName + '\'' +
                 ", celular='" + celular + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", nascimento='" + nascimento + '\'' +

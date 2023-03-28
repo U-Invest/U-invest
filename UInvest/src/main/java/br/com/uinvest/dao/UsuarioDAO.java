@@ -22,13 +22,13 @@ public class UsuarioDAO {
     }
 
     public String inserir(Usuario usuario) {
-        String sql = "insert into usuario(nome, email, senha, usuario, celular, cpf, nascimento, perfil_investidor, saldo) values (?,?,?,?,?,?,?,?,?)";
+        String sql = "insert into usuario(nome, email, senha, nickName, celular, cpf, nascimento, perfil_investidor, saldo) values (?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
             ps.setString(1, usuario.getNome());
             ps.setString(2, usuario.getEmail());
             ps.setString(3, usuario.getSenha());
-            ps.setString(4, usuario.getUser());
+            ps.setString(4, usuario.getNickName());
             ps.setString(5, usuario.getCelular());
             ps.setString(6, usuario.getCpf());
             ps.setString(7, usuario.getNascimento());
@@ -44,19 +44,19 @@ public class UsuarioDAO {
         }
     }
 
-    public Usuario buscarPorUserOuEmail(String userOuEmail) {
-        String sql = "SELECT * FROM usuario WHERE user = ? OR email = ?";
+    public Usuario buscarPorUserOuEmail(String nickNameOuEmail) {
+        String sql = "SELECT * FROM usuario WHERE nickName = ? OR email = ?";
         try {
             PreparedStatement stmt = con.prepareStatement(sql);
-            stmt.setString(1, userOuEmail);
-            stmt.setString(2, userOuEmail);
+            stmt.setString(1, nickNameOuEmail);
+            stmt.setString(2, nickNameOuEmail);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 Usuario usuario = new Usuario();
                 usuario.setNome(rs.getString("nome"));
                 usuario.setEmail(rs.getString("email"));
                 usuario.setSenha(rs.getString("senha"));
-                usuario.setUser(rs.getString("user"));
+                usuario.setNickName(rs.getString("nickName"));
                 usuario.setCelular(rs.getString("celular"));
                 usuario.setCpf(rs.getString("cpf"));
                 usuario.setNascimento(rs.getString("nascimento"));
