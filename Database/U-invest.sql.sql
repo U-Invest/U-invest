@@ -7,14 +7,14 @@ CREATE TABLE usuario (
     senha varchar2(20) NOT NULL,
     perfil_investidor varchar2(20) NOT NULL,
     nickname varchar2(20) NOT NULL,
-    nascimento varchar2(8) NOT NULL --DDmmYYYY
+    nascimento varchar2(8) NOT NULL 
 );
 
 CREATE TABLE login (
   id_sessao CHAR(8) CONSTRAINT login_id_sessao_pk PRIMARY KEY,
   hrs_plataforma NUMBER(5) NOT NULL,
-  ultima_sessao varchar2(10) NOT NULL, --DDmmYYYYhh
-  hr_sessao_atual varchar2(10) NOT NULL, --DDmmYYYYhh
+  ultima_sessao varchar2(10) NOT NULL, 
+  hr_sessao_atual varchar2(10) NOT NULL, 
   fk_usuario_cpf CHAR(11),
   FOREIGN KEY (fk_usuario_cpf) REFERENCES usuario(cpf)
 );
@@ -30,7 +30,7 @@ CREATE TABLE curso (
 );
 
 -- relacionamento entre usuario e curso
-CREATE TABLE faz ( -- Questionar com professor
+CREATE TABLE faz ( 
     fk_usuario_cpf CHAR(11),
     fk_curso_id_curso CHAR(8),
     FOREIGN KEY (fk_usuario_cpf) REFERENCES usuario(cpf),
@@ -39,7 +39,7 @@ CREATE TABLE faz ( -- Questionar com professor
 
 CREATE TABLE pg_curso (
   progresso_user NUMBER(3) NOT NULL,
-  ultimo_acesso varchar2(10) NOT NULL, --DDmmYYYYhh
+  ultimo_acesso varchar2(10) NOT NULL, 
   u_coins NUMBER(5) NOT NULL,
   fk_usuario_cpf CHAR(11),
   fk_curso_id_curso CHAR(8),
@@ -50,7 +50,7 @@ CREATE TABLE pg_curso (
 CREATE TABLE certificado (
   nome_curso varchar2(50) NOT NULL,
   nome_aluno varchar2(50) NOT NULL,
-  assinatura_plat varchar2(30)NOT NULL, --Questionar com professor
+  assinatura_plat varchar2(30)NOT NULL,
   carga_horaria NUMBER(2) NOT NULL,
   dt_emissao varchar2(8) NOT NULL,
   dt_conclusao varchar2(8) NOT NULL,
@@ -69,104 +69,102 @@ CREATE TABLE modulo (
 );
 
 CREATE TABLE aula (
-  tipo_conteudo varchar2(30) NOT NULL, --Questionar esse campo com o professor.
-  duracao varchar2(6) NOT NULL, -- HHmmss
+  tipo_conteudo varchar2(30) NOT NULL, 
+  duracao varchar2(6) NOT NULL, 
   nome_aula varchar2(50) NOT NULL,
   id_aula CHAR(8) CONSTRAINT aula_id_pk PRIMARY KEY,
-  conteudo varchar2(40) NOT NULL, --Questionar esse campo com o professor.
+  conteudo varchar2(40) NOT NULL,
   avaliacao NUMBER(2) NOT NULL,
   fk_modulo_id_modulo CHAR(8),
   FOREIGN KEY (fk_modulo_id_modulo) REFERENCES modulo(id_modulo)
 );
 
-insert into usuario  values ('12345678910', 'joao@gmail.com', '99999999999', 'Joï¿½o Silva', 10000, 'senha123', 'conservador','joaoGamer','10042000');
-insert into usuario  values ('12345678911', 'maria@hotmail.com', '88888888888', 'Maria Souza', 5000, 'abc123', 'moderado','marimari','11042000');
-insert into usuario  values ('12345678912', 'pedro@yahoo.com', '77777777777', 'Pedro Almeida', 20000, 'senha456', 'agressivo','pedroGamer','12042000');
-insert into usuario  values ('12345678913', 'ana@outlook.com', '66666666666', 'Ana Santos', 15000, 'senha789', 'moderado','aninhaDoGrau','13042000');
-insert into usuario  values ('12345678914', 'felipe@gmail.com', '55555555555', 'Felipe Costa', 8000, 'senhaabc', 'conservador','Felps','14042000');
-insert into usuario  values ('12345678915', 'lucas@hotmail.com', '44444444444', 'Lucas Oliveira', 12000, 'senha456', 'agressivo','luqueta','15042000');
-insert into usuario  values ('12345678916', 'carla@yahoo.com', '33333333333', 'Carla Lima', 7000, 'senha789', 'conservador','carlaPeres','16042000');
-insert into usuario values  ('12345678917', 'vitoria@outlook.com', '22222222222', 'Vitoria Pereira', 25000, 'senhaabc', 'moderado', 'vic02', '17042000');
-insert into usuario  values ('12345678918', 'gustavo@gmail.com', '11111111111', 'Gustavo Martins', 18000, 'senha123', 'agressivo','guguiha','18042000');
-insert into usuario  values ('12345678919', 'marcos@hotmail.com', '00000000000', 'Marcos Santos', 9000, 'abc123', 'conservador','marcolas','19042000');
+INSERT INTO usuario VALUES ('12345678910', 'joao@gmail.com', '99999999999', 'Joï¿½o Silva', 10000, 'senha123', 'conservador','joaoGamer','10042000');
+INSERT INTO usuario VALUES ('12345678911', 'maria@hotmail.com', '88888888888', 'Maria Souza', 5000, 'abc123', 'moderado','marimari','11042000');
+INSERT INTO usuario VALUES ('12345678912', 'pedro@yahoo.com', '77777777777', 'Pedro Almeida', 20000, 'senha456', 'agressivo','pedroGamer','12042000');
+INSERT INTO usuario VALUES ('12345678913', 'ana@outlook.com', '66666666666', 'Ana Santos', 15000, 'senha789', 'moderado','aninhaDoGrau','13042000');
+INSERT INTO usuario VALUES ('12345678914', 'felipe@gmail.com', '55555555555', 'Felipe Costa', 8000, 'senhaabc', 'conservador','Felps','14042000');
+INSERT INTO usuario VALUES ('12345678915', 'lucas@hotmail.com', '44444444444', 'Lucas Oliveira', 12000, 'senha456', 'agressivo','luqueta','15042000');
+INSERT INTO usuario VALUES ('12345678916', 'carla@yahoo.com', '33333333333', 'Carla Lima', 7000, 'senha789', 'conservador','carlaPeres','16042000');
+INSERT INTO usuario VALUES ('12345678917', 'vitoria@outlook.com', '22222222222', 'Vitoria Pereira', 25000, 'senhaabc', 'moderado', 'vic02', '17042000');
+INSERT INTO usuario VALUES ('12345678918', 'gustavo@gmail.com', '11111111111', 'Gustavo Martins', 18000, 'senha123', 'agressivo','guguiha','18042000');
+INSERT INTO usuario VALUES ('12345678919', 'marcos@hotmail.com', '00000000000', 'Marcos Santos', 9000, 'abc123', 'conservador','marcolas','19042000');
 
-INSERT INTO login VALUES ('sessao01', 10, '0802202313', '0803202313', 12345678910);
-INSERT INTO login VALUES ('sessao02', 11, 'DDmmYYYYhh', 'DDmmYYYYhh', 12345678911);
-INSERT INTO login VALUES ('sessao03', 12, 'DDmmYYYYhh', 'DDmmYYYYhh', 12345678912);
-INSERT INTO login VALUES ('sessao04', 13, 'DDmmYYYYhh', 'DDmmYYYYhh', 12345678913);
-INSERT INTO login VALUES ('sessao05', 14, 'DDmmYYYYhh', 'DDmmYYYYhh', 12345678914);
-INSERT INTO login VALUES ('sessao06', 15, 'DDmmYYYYhh', 'DDmmYYYYhh', 12345678915);
-INSERT INTO login VALUES ('sessao07', 16, 'DDmmYYYYhh', 'DDmmYYYYhh', 12345678916);
-INSERT INTO login VALUES ('sessao08', 17, 'DDmmYYYYhh', 'DDmmYYYYhh', 12345678917);
-INSERT INTO login VALUES ('sessao09', 18, 'DDmmYYYYhh', 'DDmmYYYYhh', 12345678918);
-INSERT INTO login VALUES ('sessao10', 19, 'DDmmYYYYhh', 'DDmmYYYYhh', 12345678919);
+INSERT INTO login VALUES ('sessao01', 10, '0102102313', '0803202317', 12345678910);
+INSERT INTO login VALUES ('sessao02', 11, '0202102314', '1003202318', 12345678911);
+INSERT INTO login VALUES ('sessao03', 12, '0302102315', '1803202321', 12345678912);
+INSERT INTO login VALUES ('sessao04', 13, '0402102316', '1403202314', 12345678913);
+INSERT INTO login VALUES ('sessao05', 14, '0502102317', '1503202313', 12345678914);
+INSERT INTO login VALUES ('sessao06', 15, '0602102318', '1603202319', 12345678915);
+INSERT INTO login VALUES ('sessao07', 16, '0702102319', '1703202318', 12345678916);
+INSERT INTO login VALUES ('sessao08', 17, '0802102320', '1803202312', 12345678917);
+INSERT INTO login VALUES ('sessao09', 18, '0902102321', '1903202311', 12345678918);
+INSERT INTO login VALUES ('sessao10', 19, '1002102322', '1903202310', 12345678919);
 
-insert into pg_curso  values ('c001', 50, '22-01-2022', 1000);
-insert into pg_curso  values ('c002', 80, '14-02-2022', 2500);
-insert into pg_curso  values ('c003', 10, '07-03-2022', 500);
-insert into pg_curso  values ('c004', 25, '19-04-2022', 1500);
-insert into pg_curso  values ('c005', 90, '23-05-2022', 3500);
-insert into pg_curso  values ('c006', 75, '08-06-2022', 2000);
-insert into pg_curso  values ('c007', 40, '04-07-2022', 800);
-insert into pg_curso  values ('c008', 70, '12-08-2022', 1800);
-insert into pg_curso  values ('c009', 20, '20-09-2022', 600);
-insert into pg_curso  values ('c010', 100, '31-10-2022', 5000);
+INSERT INTO pg_curso  values (100,'22-01-2022', 1000,'12345678910', 'jsb1');
+INSERT INTO pg_curso  values (70,'14-02-2022', 2500,'12345678911','htmlec1');
+INSERT INTO pg_curso  values (87,'07-03-2022', 500,'12345678912', 'phpi1');
+INSERT INTO pg_curso  values (96,'19-04-2022', 1500,'12345678913','exa1');
+INSERT INTO pg_curso  values (94,'23-05-2022', 3500,'12345678914','aad1');
+INSERT INTO pg_curso  values (78,'08-06-2022', 2000,'12345678915','pyad1');
+INSERT INTO pg_curso  values (87,'04-07-2022', 800,'12345678916','jfx1');
+INSERT INTO pg_curso  values (85,'12-08-2022', 1800,'12345678917','unity1');
+INSERT INTO pg_curso  values (100,'20-09-2022', 600,'12345678918','react1');
+INSERT INTO pg_curso  values (32,'31-10-2022', 5000,'12345678919','prm1');
 
 INSERT INTO faz (fk_usuario_cpf, fk_curso_id_curso) VALUES ('12345678910', 'jsb1');
-INSERT INTO faz (fk_usuario_cpf, fk_curso_id_curso) VALUES ('23456789012', 'htmlec1');
-INSERT INTO faz (fk_usuario_cpf, fk_curso_id_curso) VALUES ('34567890123', 'phpi1');
-INSERT INTO faz (fk_usuario_cpf, fk_curso_id_curso) VALUES ('45678901234', 'exa1');
-INSERT INTO faz (fk_usuario_cpf, fk_curso_id_curso) VALUES ('56789012345', 'aad1');
-INSERT INTO faz (fk_usuario_cpf, fk_curso_id_curso) VALUES ('67890123456', 'pyad1');
-INSERT INTO faz (fk_usuario_cpf, fk_curso_id_curso) VALUES ('78901234567', 'jfx1');
-INSERT INTO faz (fk_usuario_cpf, fk_curso_id_curso) VALUES ('89012345678', 'unity1');
-INSERT INTO faz (fk_usuario_cpf, fk_curso_id_curso) VALUES ('90123456789', 'react1');
-INSERT INTO faz (fk_usuario_cpf, fk_curso_id_curso) VALUES ('01234567890', 'prm1');
+INSERT INTO faz (fk_usuario_cpf, fk_curso_id_curso) VALUES ('12345678911', 'htmlec1');
+INSERT INTO faz (fk_usuario_cpf, fk_curso_id_curso) VALUES ('12345678912', 'phpi1');
+INSERT INTO faz (fk_usuario_cpf, fk_curso_id_curso) VALUES ('12345678913', 'exa1');
+INSERT INTO faz (fk_usuario_cpf, fk_curso_id_curso) VALUES ('12345678914', 'aad1');
+INSERT INTO faz (fk_usuario_cpf, fk_curso_id_curso) VALUES ('12345678915', 'pyad1');
+INSERT INTO faz (fk_usuario_cpf, fk_curso_id_curso) VALUES ('12345678916', 'jfx1');
+INSERT INTO faz (fk_usuario_cpf, fk_curso_id_curso) VALUES ('12345678917', 'unity1');
+INSERT INTO faz (fk_usuario_cpf, fk_curso_id_curso) VALUES ('12345678918', 'react1');
+INSERT INTO faz (fk_usuario_cpf, fk_curso_id_curso) VALUES ('12345678919', 'prm1');
 
--- PARAMOS AQUI
+INSERT INTO curso VALUES (10, 8, 'aprenda os fundamentos do javascript', 'joï¿½o da silva', 'javascript basico', 'jsb1', 50);
+INSERT INTO curso VALUES (15, 9, 'aprenda a construir websites com html e css', 'maria souza', 'html e css essencial', 'htmlec1', 75);
+INSERT INTO curso VALUES (20, 7, 'aprenda a criar aplicacoes web dinï¿½micas com php', 'pedro oliveira', 'php para iniciantes', 'phpi1', 100);
+INSERT INTO curso VALUES (5, 10, 'aprenda a usar ferramentas de anï¿½lise de dados com excel', 'ana santos', 'excel avancado', 'exa1', 150);
+INSERT INTO curso VALUES (30, 8, 'aprenda a desenvolver aplicacoes mï¿½veis para android', 'rafael costa', 'android app development', 'aad1', 200);
+INSERT INTO curso VALUES (25, 6, 'aprenda a programar em python para anï¿½lise de dados', 'juliana fernandes', 'python para analise de dados', 'pyad1', 125);
+INSERT INTO curso VALUES (12, 9, 'aprenda a criar interfaces graficas com javafx', 'lucas mendes', 'javafx para desenvolvedores', 'jfx1', 175);
+INSERT INTO curso VALUES (8, 7, 'aprenda a criar jogos com a unity', 'felipe santos', 'desenvolvimento de jogos com unity', 'unity1', 100);
+INSERT INTO curso VALUES (18, 8, 'aprenda a usar o react para criar aplicacoes web', 'gabriel almeida', 'react para desenvolvedores web', 'react1', 150);
+INSERT INTO curso VALUES (7, 10, 'aprenda a usar ferramentas de edicao de video com adobe premiere', 'paulo roberto', 'edicao de vï¿½deo com adobe premiere', 'prm1', 75);
 
-insert into curso values (10, 8, 'aprenda os fundamentos do javascript', 'joï¿½o da silva', 'javascript bï¿½sico', 'jsb1', 50,90);
-insert into curso values (15, 9, 'aprenda a construir websites com html e css', 'maria souza', 'html e css essencial', 'htmlec1', 75,100);
-insert into curso values (20, 7, 'aprenda a criar aplicaï¿½ï¿½es web dinï¿½micas com php', 'pedro oliveira', 'php para iniciantes', 'phpi1', 100,60);
-insert into curso values (5, 10, 'aprenda a usar ferramentas de anï¿½lise de dados com excel', 'ana santos', 'excel avanï¿½ado', 'exa1', 150,80);
-insert into curso values (30, 8, 'aprenda a desenvolver aplicaï¿½ï¿½es mï¿½veis para android', 'rafael costa', 'android app development', 'aad1', 200,90);
-insert into curso values (25, 6, 'aprenda a programar em python para anï¿½lise de dados', 'juliana fernandes', 'python para anï¿½lise de dados', 'pyad1', 125,30);
-insert into curso values (12, 9, 'aprenda a criar interfaces grï¿½ficas com javafx', 'lucas mendes', 'javafx para desenvolvedores', 'jfx1', 175,100);
-insert into curso values (8, 7, 'aprenda a criar jogos com a unity', 'felipe santos', 'desenvolvimento de jogos com unity', 'unity1', 100,68);
-insert into curso values (18, 8, 'aprenda a usar o react para criar aplicaï¿½ï¿½es web', 'gabriel almeida', 'react para desenvolvedores web', 'react1', 150,90);
-insert into curso values (7, 10, 'aprenda a usar ferramentas de ediï¿½ï¿½o de vï¿½deo com adobe premiere', 'paulo roberto', 'edicao de vï¿½deo com adobe premiere', 'prm1', 75,78);
+INSERT INTO modulo VALUES ('Introducao há programacao', 'mod001', 'Programacao Basica','jsb1');
+INSERT INTO modulo VALUES ('Estrutura de dados', 'mod002', 'Algoritmos e estruturas de dados','htmlec1');
+INSERT INTO modulo VALUES ('Desenvolvimento web', 'mod003', 'Front-end com HTML, CSS e JavaScript','phpi1');
+INSERT INTO modulo VALUES ('linguagem de programacao', 'mod004', 'Logica para iniciantes','exa1');
+INSERT INTO modulo VALUES ('Banco de dados', 'mod005', 'MySQL e SQL Server','aad1');
+INSERT INTO modulo VALUES ('Programacao orientada a objetos', 'mod006', 'POO com Java','pyad1');
+INSERT INTO modulo VALUES ('Desenvolvimento mobile', 'mod007', 'Android Studio','jfx1');
+INSERT INTO modulo VALUES ('Programacao funcional', 'mod008', 'JavaScript avancado','unity1');
+INSERT INTO modulo VALUES ('Data Science', 'mod009', 'Introducao ao R','react1');
+INSERT INTO modulo VALUES ('Redes de computadores', 'mod010', 'Fundamentos de redes','prm1');
 
-insert into modulo values ('Introducao hï¿½ programaï¿½ï¿½o', 'mod001', 'Programaï¿½ï¿½o bï¿½sica');
-insert into modulo values ('Estrutura de dados', 'mod002', 'Algoritmos e estruturas de dados');
-insert into modulo values ('Desenvolvimento web', 'mod003', 'Front-end com HTML, CSS e JavaScript');
-insert into modulo values ('linguagem de programacao', 'mod004', 'Lï¿½gica para iniciantes');
-insert into modulo values ('Banco de dados', 'mod005', 'MySQL e SQL Server');
-insert into modulo values ('Programaï¿½ï¿½o orientada a objetos', 'mod006', 'POO com Java');
-insert into modulo values ('Desenvolvimento mobile', 'mod007', 'Android Studio');
-insert into modulo values ('Programaï¿½ï¿½o funcional', 'mod008', 'JavaScript avanï¿½ado');
-insert into modulo values ('Data Science', 'mod009', 'Introduï¿½ï¿½o ao R');
-insert into modulo values ('Redes de computadores', 'mod010', 'Fundamentos de redes');
+INSERT INTO aula VALUES ('Texto','30h','Introdução ao curso', 'aula001', 'Apresentação do curso',90,'mod001');
+INSERT INTO aula VALUES ('Video','45h','Conceitos basicos', 'aula002', 'O que que é programacao', 85,'mod002');
+INSERT INTO aula VALUES ('Texto','53h','Tipos de dados', 'aula003', 'Numeros, texto, datas e booleanos', 80,'mod003');
+INSERT INTO aula VALUES ('Video','57h','Estruturas de controle', 'aula004', 'If, for, while, switch', 75,'mod004');
+INSERT INTO aula VALUES ('Texto','73h','Funalidades', 'aula005', 'Criando e usando funcionaliddades', 90, 'mod005');
+INSERT INTO aula VALUES ('Video','35h','Arrays', 'aula006', 'Trabalhando com listas de valores', 80,'mod006');
+INSERT INTO aula VALUES ('Texto','78h','Objetos', 'aula007', 'Classes, propriedades', 85,'mod007');
+INSERT INTO aula VALUES ('Video','54h','Herança', 'aula008', 'Compartilhando comportamentos', 90,'mod008');
+INSERT INTO aula VALUES ('Texto','57h','Interfaces', 'aula009', 'Contratos e implementacao', 80,'mod009');
+INSERT INTO aula VALUES ('Texto','75h','Interpretacao da linguagem', 'aula010', 'Entendendo como o codigo e executado', 70,'mod010');
 
-INSERT INTO aula VALUES ('Texto', TO_DATE('2022-03-01', 'YYYY-MM-DD'), 'Introduï¿½ï¿½o ao curso', 'aula001', 'Apresentaï¿½ï¿½o do curso', 90);
-INSERT INTO aula VALUES ('Vï¿½deo', TO_DATE('2022-03-02', 'YYYY-MM-DD'), 'Conceitos bï¿½sicos', 'aula002', 'O que ï¿½ programaï¿½ï¿½o?', 85);
-INSERT INTO aula VALUES ('Texto', TO_DATE('2022-03-03', 'YYYY-MM-DD'), 'Tipos de dados', 'aula003', 'Nï¿½meros, texto, datas e booleanos', 80);
-INSERT INTO aula VALUES ('Vï¿½deo', TO_DATE('2022-03-04', 'YYYY-MM-DD'), 'Estruturas de controle', 'aula004', 'If, for, while, switch', 75);
-INSERT INTO aula VALUES ('Texto', TO_DATE('2022-03-05', 'YYYY-MM-DD'), 'Funï¿½ï¿½es', 'aula005', 'Criando e usando funï¿½ï¿½es', 90);
-INSERT INTO aula VALUES ('Vï¿½deo', TO_DATE('2022-03-06', 'YYYY-MM-DD'), 'Arrays', 'aula006', 'Trabalhando com listas de valores', 80);
-INSERT INTO aula VALUES ('Texto', TO_DATE('2022-03-07', 'YYYY-MM-DD'), 'Objetos', 'aula007', 'Classes, propriedades e mï¿½todos', 85);
-INSERT INTO aula VALUES ('Vï¿½deo', TO_DATE('2022-03-08', 'YYYY-MM-DD'), 'Heranï¿½a', 'aula008', 'Compartilhando comportamentos', 90);
-INSERT INTO aula VALUES ('Texto', TO_DATE('2022-03-09', 'YYYY-MM-DD'), 'Interfaces', 'aula009', 'Contratos e implementaï¿½ï¿½es', 80);
-INSERT INTO aula VALUES ('Texto', TO_DATE('2022-05-09', 'YYYY-MM-DD'), 'Interpretaï¿½ï¿½o da linguagem', 'aula010', 'Entendendo como o cï¿½digo ï¿½ executado', 70);
-
-insert into certificado values ('Introducao hï¿½ Programacao', 'Joao da Silva', 'Digital Signature Inc.', '30h', TO_DATE('2022-03-05', 'YYYY-MM-DD'), TO_DATE('2022-03-01', 'YYYY-MM-DD'), 'cert001', 'Maria Souza');
-insert into certificado values  ('Python para Iniciantes', 'Ana Santos', 'CertSign', '40h', TO_DATE('2022-03-10', 'YYYY-MM-DD'), TO_DATE('2022-03-06', 'YYYY-MM-DD'), 'cert002', 'Paulo Oliveira');
-insert into certificado values  ('Desenvolvimento Web com JavaScript', 'Pedro Alves', 'GlobalSign', '60h', TO_DATE('2022-03-15', 'YYYY-MM-DD'), TO_DATE('2022-03-10', 'YYYY-MM-DD'), 'cert003', 'Lucas Souza');
-insert into certificado values  ('Algoritmos e Logica de Programacao', 'Maria Lima', 'DigiCert', '20h', TO_DATE('2022-03-20', 'YYYY-MM-DD'), TO_DATE('2022-03-15', 'YYYY-MM-DD'), 'cert004', 'Josï¿½ Santos');
-insert into certificado values  ('Java Avancado', 'Luiz Silva', 'Entrust Datacard', '80h', TO_DATE('2022-03-25', 'YYYY-MM-DD'), TO_DATE('2022-03-20', 'YYYY-MM-DD'), 'cert005', 'Roberto Oliveira');
-insert into certificado values  ('PHP Bascio', 'Carla Santos', 'Comodo CA', '30h', TO_DATE('2022-04-01', 'YYYY-MM-DD'), TO_DATE('2022-03-27', 'YYYY-MM-DD'), 'cert006', 'Marcelo Souza');
-insert into certificado values  ('SQL para Iniciantes', 'Fernando Lima', 'Symantec', '20h', TO_DATE('2022-04-05', 'YYYY-MM-DD'), TO_DATE('2022-04-01', 'YYYY-MM-DD'), 'cert007', 'Paula Oliveira');
-insert into certificado values  ('C++ Avancado', 'Gabriela Almeida', 'Thawte', '60h', TO_DATE('2022-01-28', 'YYYY-MM-DD'), TO_DATE('2022-02-28', 'YYYY-MM-DD'), 'cert008', 'Luciano Santos');
-insert into certificado values  ('Java para Desenvolvimento Web', 'Aline Silva', 'Entrust Datacard', '50h', TO_DATE('2022-02-28', 'YYYY-MM-DD'), TO_DATE('2022-02-15', 'YYYY-MM-DD'), 'cert009', 'Andrï¿½ Souza');
-insert into certificado values  ('Python Avancado', 'Felipe Rodrigues', 'CertSign', '70h', TO_DATE('2022-03-01', 'YYYY-MM-DD'), TO_DATE('2022-02-20', 'YYYY-MM-DD'), 'cert010', 'Pedro Oliveira');
+INSERT INTO certificado VALUES ('Introducao há Programacao', 'Joao da Silva', 'Digital Signature Inc.', 30, '20220305', '20220301','cert001','Maria Souza','jsb1');
+INSERT INTO certificado VALUES ('Python para Iniciantes', 'Ana Santos', 'CertSign', 40, '20220310', '20220306','cert002','Paulo Oliveira','htmlec1');
+INSERT INTO certificado VALUES ('Desenvolvimento Web com JavaScript', 'Pedro Alves', 'GlobalSign',60, '20220315', '20220310','cert003','Lucas Souza','phpi1');
+INSERT INTO certificado VALUES ('Algoritmos e Logica de Programacao', 'Maria Lima', 'DigiCert', 20, '20220320', '20220315','cert004','Jose Santos','exa1');
+INSERT INTO certificado VALUES ('Java Avancado', 'Luiz Silva', 'Entrust Datacard', 80 , '20220325', '20220320','cert005','Roberto Oliveira','aad1');
+INSERT INTO certificado VALUES ('PHP Bascio', 'Carla Santos', 'Comodo CA', 30, '20220401', '20220327','cert006','Marcelo Souza','pyad1');
+INSERT INTO certificado VALUES ('SQL para Iniciantes', 'Fernando Lima', 'Symantec', 20, '20220405', '20220401','cert007','Paula Oliveira','jfx1');
+INSERT INTO certificado VALUES ('C++ Avancado', 'Gabriela Almeida', 'Thawte', 60, '20220128', '20220228','cert008','Luciano Santos','unity1');
+INSERT INTO certificado VALUES ('Java para Desenvolvimento Web', 'Aline Silva', 'Entrust Datacard', 50, '20220228', '20220215','cert009','Andrade Souza','react1');
+INSERT INTO certificado VALUES ('Python Avancado', 'Felipe Rodrigues', 'CertSign', 70, '20220301', '20220220','cert010','Pedro Oliveira','prm1');
 
 commit;
