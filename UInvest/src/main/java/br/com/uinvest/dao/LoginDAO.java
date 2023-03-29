@@ -27,7 +27,7 @@ public class LoginDAO {
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
             ps.setString(1, login.getId_sessao());
-            ps.setString(2, login.getHrs_plataforma());
+            ps.setInt(2, login.getHrs_plataforma());
             ps.setString(3, login.getUltima_sessao());
             ps.setString(4, login.getHr_sessao_atual());
             if (ps.executeUpdate() > 0) {
@@ -36,7 +36,6 @@ public class LoginDAO {
                 return "Erro ao inserir.";
             }
         } catch (SQLException e) {
-            System.out.println("Veio pra cá");
             return e.getMessage();
         }
     }

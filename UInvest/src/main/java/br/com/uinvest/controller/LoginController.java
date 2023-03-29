@@ -88,7 +88,7 @@ public class LoginController {
         }
 
         String id_sessao = criarIdSessao();
-        String hrs_plataforma = "Em dev";
+        int hrs_plataforma = 0;
         String ultima_sessao = "Em dev";
         System.out.println(duracaoSessao);
 

@@ -3,13 +3,13 @@ package br.com.uinvest.model;
 public class Login {
 
     private String id_sessao;
-    private String hrs_plataforma;
+    private int hrs_plataforma;
     private String ultima_sessao;
     private String hr_sessao_atual;
 
     public Login() {}
 
-    public Login(String id_sessao, String hrs_plataforma, String ultima_sessao, String hr_sessao_atual) {
+    public Login(String id_sessao, int hrs_plataforma, String ultima_sessao, String hr_sessao_atual) {
         this.id_sessao = id_sessao;
         this.hrs_plataforma = hrs_plataforma;
         this.ultima_sessao = ultima_sessao;
@@ -24,11 +24,11 @@ public class Login {
         this.id_sessao = id_sessao;
     }
 
-    public String getHrs_plataforma() {
+    public int getHrs_plataforma() {
         return hrs_plataforma;
     }
 
-    public void setHrs_plataforma(String hrs_plataforma) {
+    public void setHrs_plataforma(int hrs_plataforma) {
         this.hrs_plataforma = hrs_plataforma;
     }
 
