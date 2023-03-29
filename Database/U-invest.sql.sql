@@ -11,12 +11,12 @@ CREATE TABLE usuario (
 );
 
 CREATE TABLE login (
-  id_sessao CHAR(8) CONSTRAINT login_id_sessao_pk PRIMARY KEY,
-  hrs_plataforma NUMBER(5) NOT NULL,
-  ultima_sessao varchar2(10) NOT NULL, --DDmmYYYYhh
-  hr_sessao_atual varchar2(11) NOT NULL, -- dd HH:mm:ss
-  fk_usuario_cpf CHAR(11),
-  FOREIGN KEY (fk_usuario_cpf) REFERENCES usuario(cpf)
+    id_sessao CHAR(8) CONSTRAINT login_id_sessao_pk PRIMARY KEY,
+    hrs_plataforma NUMBER(5) NOT NULL,
+    ultima_sessao varchar2(10) NOT NULL, --DDmmYYYYhh
+    hr_sessao_atual varchar2(11) NOT NULL, -- dd HH:mm:ss
+    fk_usuario_cpf CHAR(11),
+    FOREIGN KEY (fk_usuario_cpf) REFERENCES usuario(cpf)
 );
 
 CREATE TABLE curso (
