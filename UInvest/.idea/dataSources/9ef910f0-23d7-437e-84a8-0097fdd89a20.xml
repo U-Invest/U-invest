@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="@oracle.fiap.com.br">
-  <database-model serializer="dbm" dbms="ORACLE" family-id="ORACLE" format-version="4.43">
+  <database-model serializer="dbm" dbms="ORACLE" family-id="ORACLE" format-version="4.45">
     <root id="1">
       <IntrospectionLevel>3</IntrospectionLevel>
       <ServerVersion>19.0.0.0.0</ServerVersion>
@@ -57566,37 +57566,37 @@
       <UserSize>655232</UserSize>
     </data-file>
     <column id="14327" parent="14304" name="TIPO_CONTEUDO">
-      <DataType>VARCHAR2(30 byte)|0s</DataType>
+      <DasType>VARCHAR2(30 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="14328" parent="14304" name="DURACAO">
-      <DataType>VARCHAR2(6 byte)|0s</DataType>
+      <DasType>VARCHAR2(6 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="14329" parent="14304" name="NOME_AULA">
-      <DataType>VARCHAR2(50 byte)|0s</DataType>
+      <DasType>VARCHAR2(50 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="14330" parent="14304" name="ID_AULA">
-      <DataType>CHAR(8 byte)|0s</DataType>
+      <DasType>CHAR(8 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="14331" parent="14304" name="CONTEUDO">
-      <DataType>VARCHAR2(40 byte)|0s</DataType>
+      <DasType>VARCHAR2(40 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="14332" parent="14304" name="AVALIACAO">
-      <DataType>NUMBER(2 digit)|0s</DataType>
+      <DasType>NUMBER(2)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="14333" parent="14304" name="FK_MODULO_ID_MODULO">
-      <DataType>CHAR(8 byte)|0s</DataType>
+      <DasType>CHAR(8 byte)|0s</DasType>
       <Position>7</Position>
     </column>
     <foreign-key id="14334" parent="14304" name="SYS_C003717525">
@@ -57622,62 +57622,62 @@
       <UnderlyingIndexName>AULA_ID_PK</UnderlyingIndexName>
     </key>
     <column id="14337" parent="14305" name="MODELO">
-      <DataType>VARCHAR2(40 byte)|0s</DataType>
+      <DasType>VARCHAR2(40 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="14338" parent="14305" name="CAPACIDADECOMBUSTIVEL">
-      <DataType>NUMBER(*)|0s</DataType>
+      <DasType>NUMBER(*)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="14339" parent="14305" name="QUANTIDADEJANELA">
-      <DataType>NUMBER(*)|0s</DataType>
+      <DasType>NUMBER(*)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="14340" parent="14306" name="NOME_CURSO">
-      <DataType>VARCHAR2(50 byte)|0s</DataType>
+      <DasType>VARCHAR2(50 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="14341" parent="14306" name="NOME_ALUNO">
-      <DataType>VARCHAR2(50 byte)|0s</DataType>
+      <DasType>VARCHAR2(50 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="14342" parent="14306" name="ASSINATURA_PLAT">
-      <DataType>VARCHAR2(30 byte)|0s</DataType>
+      <DasType>VARCHAR2(30 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="14343" parent="14306" name="CARGA_HORARIA">
-      <DataType>NUMBER(2 digit)|0s</DataType>
+      <DasType>NUMBER(2)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="14344" parent="14306" name="DT_EMISSAO">
-      <DataType>VARCHAR2(8 byte)|0s</DataType>
+      <DasType>VARCHAR2(8 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="14345" parent="14306" name="DT_CONCLUSAO">
-      <DataType>VARCHAR2(8 byte)|0s</DataType>
+      <DasType>VARCHAR2(8 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="14346" parent="14306" name="ID_CERTIFICADO">
-      <DataType>CHAR(8 byte)|0s</DataType>
+      <DasType>CHAR(8 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="14347" parent="14306" name="PROFESSOR">
-      <DataType>VARCHAR2(50 byte)|0s</DataType>
+      <DasType>VARCHAR2(50 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
     <column id="14348" parent="14306" name="FK_CURSO_ID_CURSO">
-      <DataType>CHAR(8 byte)|0s</DataType>
+      <DasType>CHAR(8 byte)|0s</DasType>
       <Position>9</Position>
     </column>
     <foreign-key id="14349" parent="14306" name="SYS_C003717515">
@@ -57703,37 +57703,37 @@
       <UnderlyingIndexName>CERTIFICADO_ID_PK</UnderlyingIndexName>
     </key>
     <column id="14352" parent="14307" name="DURACAO">
-      <DataType>NUMBER(2 digit)|0s</DataType>
+      <DasType>NUMBER(2)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="14353" parent="14307" name="AVALIACAO">
-      <DataType>NUMBER(2 digit)|0s</DataType>
+      <DasType>NUMBER(2)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="14354" parent="14307" name="RESUMO">
-      <DataType>VARCHAR2(250 byte)|0s</DataType>
+      <DasType>VARCHAR2(250 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="14355" parent="14307" name="PROFESSOR">
-      <DataType>VARCHAR2(50 byte)|0s</DataType>
+      <DasType>VARCHAR2(50 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="14356" parent="14307" name="NOME">
-      <DataType>VARCHAR2(50 byte)|0s</DataType>
+      <DasType>VARCHAR2(50 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="14357" parent="14307" name="ID_CURSO">
-      <DataType>CHAR(8 byte)|0s</DataType>
+      <DasType>CHAR(8 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="14358" parent="14307" name="PONTUACAO">
-      <DataType>NUMBER(5 digit)|0s</DataType>
+      <DasType>NUMBER(5)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
@@ -57752,11 +57752,11 @@
       <UnderlyingIndexName>CURSO_ID_PK</UnderlyingIndexName>
     </key>
     <column id="14361" parent="14308" name="FK_USUARIO_CPF">
-      <DataType>CHAR(11 byte)|0s</DataType>
+      <DasType>CHAR(11 byte)|0s</DasType>
       <Position>1</Position>
     </column>
     <column id="14362" parent="14308" name="FK_CURSO_ID_CURSO">
-      <DataType>CHAR(8 byte)|0s</DataType>
+      <DasType>CHAR(8 byte)|0s</DasType>
       <Position>2</Position>
     </column>
     <foreign-key id="14363" parent="14308" name="SYS_C003717500">
@@ -57776,36 +57776,36 @@
       <RefTableName>CURSO</RefTableName>
     </foreign-key>
     <column id="14365" parent="14309" name="NOME">
-      <DataType>VARCHAR2(40 byte)|0s</DataType>
+      <DasType>VARCHAR2(40 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="14366" parent="14309" name="IDADE">
-      <DataType>NUMBER(*)|0s</DataType>
+      <DasType>NUMBER(*)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="14367" parent="14309" name="MESESGESTACAO">
-      <DataType>NUMBER(*)|0s</DataType>
+      <DasType>NUMBER(*)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="14368" parent="14310" name="RESUMO">
-      <DataType>VARCHAR2(250 byte)|0s</DataType>
+      <DasType>VARCHAR2(250 byte)|0s</DasType>
       <Position>1</Position>
     </column>
     <column id="14369" parent="14310" name="ID_MODULO">
-      <DataType>CHAR(8 byte)|0s</DataType>
+      <DasType>CHAR(8 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="14370" parent="14310" name="NOME">
-      <DataType>VARCHAR2(50 byte)|0s</DataType>
+      <DasType>VARCHAR2(50 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="14371" parent="14310" name="FK_CURSO_ID_CURSO">
-      <DataType>CHAR(8 byte)|0s</DataType>
+      <DasType>CHAR(8 byte)|0s</DasType>
       <Position>4</Position>
     </column>
     <foreign-key id="14372" parent="14310" name="SYS_C003717518">
@@ -57831,41 +57831,41 @@
       <UnderlyingIndexName>MODULO_ID_PK</UnderlyingIndexName>
     </key>
     <column id="14375" parent="14311" name="MODELO">
-      <DataType>VARCHAR2(45 byte)|0s</DataType>
+      <DasType>VARCHAR2(45 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="14376" parent="14311" name="CAPACIDADECOMBUSTIVEL">
-      <DataType>NUMBER(*)|0s</DataType>
+      <DasType>NUMBER(*)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="14377" parent="14311" name="QUANTIDADEADESIVO">
-      <DataType>NUMBER(*)|0s</DataType>
+      <DasType>NUMBER(*)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="14378" parent="14312" name="PROGRESSO_USER">
-      <DataType>NUMBER(3 digit)|0s</DataType>
+      <DasType>NUMBER(3)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="14379" parent="14312" name="ULTIMO_ACESSO">
-      <DataType>VARCHAR2(10 byte)|0s</DataType>
+      <DasType>VARCHAR2(10 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="14380" parent="14312" name="U_COINS">
-      <DataType>NUMBER(5 digit)|0s</DataType>
+      <DasType>NUMBER(5)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="14381" parent="14312" name="FK_USUARIO_CPF">
-      <DataType>CHAR(11 byte)|0s</DataType>
+      <DasType>CHAR(11 byte)|0s</DasType>
       <Position>4</Position>
     </column>
     <column id="14382" parent="14312" name="FK_CURSO_ID_CURSO">
-      <DataType>CHAR(8 byte)|0s</DataType>
+      <DasType>CHAR(8 byte)|0s</DasType>
       <Position>5</Position>
     </column>
     <foreign-key id="14383" parent="14312" name="SYS_C003717505">
@@ -57885,47 +57885,47 @@
       <RefTableName>CURSO</RefTableName>
     </foreign-key>
     <column id="14385" parent="14313" name="CPF">
-      <DataType>CHAR(11 byte)|0s</DataType>
+      <DasType>CHAR(11 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="14386" parent="14313" name="EMAIL">
-      <DataType>VARCHAR2(50 byte)|0s</DataType>
+      <DasType>VARCHAR2(50 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
     <column id="14387" parent="14313" name="CELULAR">
-      <DataType>CHAR(11 byte)|0s</DataType>
+      <DasType>CHAR(11 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="14388" parent="14313" name="NOME">
-      <DataType>VARCHAR2(50 byte)|0s</DataType>
+      <DasType>VARCHAR2(50 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <column id="14389" parent="14313" name="SALDO">
-      <DataType>NUMBER(5 digit)|0s</DataType>
+      <DasType>NUMBER(5)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
     <column id="14390" parent="14313" name="SENHA">
-      <DataType>VARCHAR2(20 byte)|0s</DataType>
+      <DasType>VARCHAR2(20 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <column id="14391" parent="14313" name="PERFIL_INVESTIDOR">
-      <DataType>VARCHAR2(20 byte)|0s</DataType>
+      <DasType>VARCHAR2(20 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
     <column id="14392" parent="14313" name="NICKNAME">
-      <DataType>VARCHAR2(20 byte)|0s</DataType>
+      <DasType>VARCHAR2(20 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
     <column id="14393" parent="14313" name="NASCIMENTO">
-      <DataType>VARCHAR2(8 byte)|0s</DataType>
+      <DasType>VARCHAR2(8 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>

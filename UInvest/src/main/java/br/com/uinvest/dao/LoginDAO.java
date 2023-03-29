@@ -36,6 +36,7 @@ public class LoginDAO {
                 return "Erro ao inserir.";
             }
         } catch (SQLException e) {
+            System.out.println("Veio pra cá");
             return e.getMessage();
         }
     }

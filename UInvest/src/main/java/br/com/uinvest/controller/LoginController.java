@@ -91,13 +91,12 @@ public class LoginController {
         String hrs_plataforma = "Em dev";
         String ultima_sessao = "Em dev";
         System.out.println(duracaoSessao);
-        String hr_sessao_atual = duracaoSessao;
 
         if (loginService.formataDados()) {
             login.setId_sessao(id_sessao);
             login.setHrs_plataforma(hrs_plataforma);
             login.setUltima_sessao(ultima_sessao);
-            login.setHr_sessao_atual(hr_sessao_atual);
+            login.setHr_sessao_atual(duracaoSessao);
 
             System.out.println(loginDAO.inserir(login));
         } else {
@@ -130,8 +129,10 @@ public class LoginController {
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd HH:mm:ss");
             String dataHoraFormatada = formatter.format(dataHoraRegistro);
+
             // Reseta a variável para permitir que o cronômetro seja iniciado novamente
             inicioSessao = null;
+
             return dataHoraFormatada;
         } else {
             System.out.println("Ação inválida.");
