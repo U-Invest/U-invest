@@ -4,23 +4,21 @@ public class Curso {
     private int duracao;
     private int avaliacao;
     private String resumo;
-    private String nome_professor;
+    private String professor;
     private String nome;
     private String id;
-    private int recompensa;
     private int pontuacao;
 
     public Curso() {
     }
 
-    public Curso(int duracao, int avaliacao, String resumo, String nome_professor, String nome, String id, int recompensa, int pontuacao) {
+    public Curso(int duracao, int avaliacao, String resumo, String professor, String nome, String id, int pontuacao) {
         this.duracao = duracao;
         this.avaliacao = avaliacao;
         this.resumo = resumo;
-        this.nome_professor = nome_professor;
+        this.professor = professor;
         this.nome = nome;
         this.id = id;
-        this.recompensa = recompensa;
         this.pontuacao = pontuacao;
     }
 
@@ -48,12 +46,12 @@ public class Curso {
         this.resumo = resumo;
     }
 
-    public String getNome_professor() {
-        return nome_professor;
+    public String getProfessor() {
+        return professor;
     }
 
-    public void setNome_professor(String nome_professor) {
-        this.nome_professor = nome_professor;
+    public void setProfessor(String professor) {
+        this.professor = professor;
     }
 
     public String getNome() {
@@ -68,16 +66,8 @@ public class Curso {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId_curso(String id) {
         this.id = id;
-    }
-
-    public int getRecompensa() {
-        return recompensa;
-    }
-
-    public void setRecompensa(int recompensa) {
-        this.recompensa = recompensa;
     }
 
     public int getPontuacao() {
@@ -94,10 +84,9 @@ public class Curso {
                 "duracao=" + duracao +
                 ", avaliacao=" + avaliacao +
                 ", resumo='" + resumo + '\'' +
-                ", nome_professor='" + nome_professor + '\'' +
+                ", professor='" + professor + '\'' +
                 ", nome='" + nome + '\'' +
                 ", id='" + id + '\'' +
-                ", recompensa=" + recompensa +
                 ", pontuacao=" + pontuacao +
                 '}';
     }

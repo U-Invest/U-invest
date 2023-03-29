@@ -1,13 +1,14 @@
 package br.com.uinvest.model;
 
-public class Pg_curso {
+public class Pg_curso extends Usuario{
     private int progresso_user;
-    private String ultimo_acesso;
+    private String ultimo_acesso; //DDmmYYYYhh
     private int u_coins;
 
     public Pg_curso() {}
 
-    public Pg_curso(int progresso_user, String ultimo_acesso, int u_coins) {
+    public Pg_curso(String nome, String email, String senha, String nickName, String celular, String cpf, String nascimento, String perfil_investidor, int saldo, int progresso_user, String ultimo_acesso, int u_coins) {
+        super(nome, email, senha, nickName, celular, cpf, nascimento, perfil_investidor, saldo);
         this.progresso_user = progresso_user;
         this.ultimo_acesso = ultimo_acesso;
         this.u_coins = u_coins;

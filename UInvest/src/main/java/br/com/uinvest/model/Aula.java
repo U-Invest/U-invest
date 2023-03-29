@@ -3,17 +3,17 @@ package br.com.uinvest.model;
 public class Aula {
     private String tipo_conteudo;
     private String duracao;
-    private String nome_aula;
+    private String nome;
     private String id;
     private String conteudo;
     private int avaliacao;
 
     public Aula() {}
 
-    public Aula(String tipo_conteudo, String duracao, String nome_aula, String id, String conteudo, int avaliacao) {
+    public Aula(String tipo_conteudo, String duracao, String nome, String id, String conteudo, int avaliacao) {
         this.tipo_conteudo = tipo_conteudo;
         this.duracao = duracao;
-        this.nome_aula = nome_aula;
+        this.nome = nome;
         this.id = id;
         this.conteudo = conteudo;
         this.avaliacao = avaliacao;
@@ -35,12 +35,12 @@ public class Aula {
         this.duracao = duracao;
     }
 
-    public String getNome_aula() {
-        return nome_aula;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNome_aula(String nome_aula) {
-        this.nome_aula = nome_aula;
+    public void setNome(String nome_aula) {
+        this.nome = nome;
     }
 
     public String getId() {
@@ -72,7 +72,7 @@ public class Aula {
         return "Aula{" +
                 "tipo_conteudo='" + tipo_conteudo + '\'' +
                 ", duracao='" + duracao + '\'' +
-                ", nome_aula='" + nome_aula + '\'' +
+                ", nome='" + nome + '\'' +
                 ", id='" + id + '\'' +
                 ", conteudo='" + conteudo + '\'' +
                 ", avaliacao=" + avaliacao +

@@ -4,11 +4,10 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
-
     private String nickName;
     private String celular;
     private String cpf;
-    private String nascimento;
+    private String nascimento; //DDmmYYYY
     private String perfil_investidor;
     private int saldo;
 

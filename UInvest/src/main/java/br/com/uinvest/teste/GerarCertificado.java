@@ -1,4 +1,4 @@
-package br.com.uinvest.view;
+package br.com.uinvest.teste;
 
 import br.com.uinvest.controller.CertificadoController;
 import com.lowagie.text.DocumentException;

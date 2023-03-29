@@ -1,15 +1,16 @@
 package br.com.uinvest.model;
 
-public class Login {
+public class Login extends Usuario{
 
     private String id_sessao;
     private int hrs_plataforma;
-    private String ultima_sessao;
-    private String hr_sessao_atual;
+    private String ultima_sessao; //DDmmYYYYhh
+    private String hr_sessao_atual; //dd HH:mm:ss
 
     public Login() {}
 
-    public Login(String id_sessao, int hrs_plataforma, String ultima_sessao, String hr_sessao_atual) {
+    public Login(String nome, String email, String senha, String nickName, String celular, String cpf, String nascimento, String perfil_investidor, int saldo, String id_sessao, int hrs_plataforma, String ultima_sessao, String hr_sessao_atual) {
+        super(nome, email, senha, nickName, celular, cpf, nascimento, perfil_investidor, saldo);
         this.id_sessao = id_sessao;
         this.hrs_plataforma = hrs_plataforma;
         this.ultima_sessao = ultima_sessao;

@@ -21,8 +21,7 @@ public class UsuarioService {
 
         // Validar o e-mail
         if (email == null || email.trim().equals("")) {
-            dadosValidos = false;
-            //dadosValidos = validaEmail(email);
+            dadosValidos = validaEmail(email);
         }
 
         // Validar a senha
@@ -87,6 +86,8 @@ public class UsuarioService {
 
             // Extrai a informação de validação do e-mail do objeto JSON
             String result = jsonObject.get("data").getAsJsonObject().get("result").getAsString();
+
+            System.out.println(result);
 
             // Verifica se o e-mail é válido
             return !result.equals("deliverable");

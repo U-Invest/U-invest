@@ -1,20 +1,23 @@
 package br.com.uinvest.model;
 
 public class Certificado extends Curso{
+
     private String nome_aluno;
     private String assinatura_plat;
-    private String dt_emissao;
-    private String dt_conclusao;
+    private String dt_emissao; //DDmmYYYY
+    private String dt_conclusao; //DDmmYYYY
+    private String id_certificado;
 
     public Certificado() {
     }
 
-    public Certificado(int duracao, int avaliacao, String resumo, String nome_professor, String nome, String id_curso, int recompensa, int pontuacao, String nome_aluno, String assinatura_plat, String dt_emissao, String dt_conclusao) {
-        super(duracao, avaliacao, resumo, nome_professor, nome, id_curso, recompensa, pontuacao);
+    public Certificado(int duracao, int avaliacao, String resumo, String professor, String nome, String id, int pontuacao, String nome_aluno, String assinatura_plat, String dt_emissao, String dt_conclusao, String id_certificado) {
+        super(duracao, avaliacao, resumo, professor, nome, id, pontuacao);
         this.nome_aluno = nome_aluno;
         this.assinatura_plat = assinatura_plat;
         this.dt_emissao = dt_emissao;
         this.dt_conclusao = dt_conclusao;
+        this.id_certificado = id_certificado;
     }
 
     public String getNome_aluno() {
@@ -49,6 +52,14 @@ public class Certificado extends Curso{
         this.dt_conclusao = dt_conclusao;
     }
 
+    public String getId_certificado() {
+        return id_certificado;
+    }
+
+    public void setId_certificado(String id_certificado) {
+        this.id_certificado = id_certificado;
+    }
+
     @Override
     public String toString() {
         return "Certificado{" +
@@ -56,6 +67,7 @@ public class Certificado extends Curso{
                 ", assinatura_plat='" + assinatura_plat + '\'' +
                 ", dt_emissao='" + dt_emissao + '\'' +
                 ", dt_conclusao='" + dt_conclusao + '\'' +
+                ", id_certificado='" + id_certificado + '\'' +
                 '}';
     }
 }
