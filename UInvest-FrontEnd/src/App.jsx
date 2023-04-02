@@ -10,15 +10,17 @@ import {
 
 function App() {
   return (
-    <div className="font-Poppins bg-Solitude">
-      <Navbar />
-      <Home />
-      <About />
-      <Courses />
-      <Teacher />
-      <Contact />
-      <Footer />
-    </div>
+    <>
+      <div className="font-Poppins bg-Solitude">
+        <Navbar />
+        <Home />
+        <About />
+        <Courses />
+        <Teacher />
+        <Contact />
+        <Footer />
+      </div>
+    </>
   );
 }
 

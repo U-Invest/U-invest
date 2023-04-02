@@ -5,6 +5,8 @@ import MobileNavLinks from "./MobileNavLinks";
 import NavLink from "./NavLink";
 import { motion } from "framer-motion";
 import UInvest from "../../assets/UInvest.png";
+import Modal from '../Modal/Modal'
+
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [active, setActive] = useState(null);
@@ -41,8 +43,8 @@ const Navbar = () => {
               return <NavLink key={navLink.id} {...navLink} />;
             })}
           </div>
-          <button className="py-3 px-6 font-bold text-sm border border-solid rounded-lg border-gray">
-            Cadastre-se
+          <button className="btn-gam">
+            <Modal />
           </button>
           {toggle && (
             <motion.div
