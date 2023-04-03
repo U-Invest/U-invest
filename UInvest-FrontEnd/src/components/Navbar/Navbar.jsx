@@ -4,7 +4,7 @@ import { HiMenuAlt1, HiX } from "react-icons/hi";
 import MobileNavLinks from "./MobileNavLinks";
 import NavLink from "./NavLink";
 import { motion } from "framer-motion";
-import UInvest from "../../assets/UInvest.png";
+import UInvest from "../../assets/logonavcerta.png";
 import Modal from '../Modal/Modal'
 
 const Navbar = () => {

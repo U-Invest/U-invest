@@ -27,10 +27,7 @@ const Courses = () => {
           As nossas principais <span className="text-Teal">Categorias</span>
         </div>
         <p className="text-sm text-gray leading-7 max-w-[700px] mx-auto">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-          tempora illo laborum ex cupiditate tenetur doloribus non velit atque
-          amet repudiandae ipsa modi numquam quas odit optio, totam voluptate
-          sit! Lorem ipsum dolor sit amet.
+          Sim! A U Invest possui diversas categorias, que se profundam no assunto investimento, segue as principais categorias que abordamos.
         </p>
       </div>
       <motion.div
@@ -43,7 +40,7 @@ const Courses = () => {
           return <Categories key={category.id} {...category} />;
         })}
       </motion.div>
-      <div className="text-xl font-bold mt-32">Cursos mais populares</div>
+      <div className="text-xl font-bold mt-32">Nossos cursos</div>
       <div className="mt-12 overflow-x-hidden w-full  relative">
         <div className="flex gap-8 md:w-full sm:w-[170%] xs:w-[340%] w-[480%] animate-slide">
           {courses.map((course) => {

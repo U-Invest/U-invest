@@ -19,8 +19,7 @@ const Footer = () => {
         <div>
           <div className="font-bold mb-6">Vamos Começar!</div>
           <p className="text-sm leading-7">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo neque
-            saepe cumque. Veritatis sunt commodi
+            Crie sua conta na U Invest para uma imersão no mundo dos investimentos, relaxa, nós te enchaminharemos para o seu perfil de investidor!
           </p>
         </div>
         <div>

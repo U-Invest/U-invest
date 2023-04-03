@@ -2,8 +2,181 @@ body.active-modal {
     overflow-y: hidden;
 }
 
+/* Extra small devices (phones, 600px and down) */ 
+@media (max-width: 600px) {
+
+    .btn-modal {
+        right: 250px;
+        top: -78px;
+        padding: 10px 20px;
+        display: block;
+        margin: 95px auto 0;
+        font-size: 18px;
+        position: absolute;
+    }
+    
+    .modal, .overlay {
+        width: 100px;
+        height: 100px;
+        top: 300px;
+        left: 900px;
+        right: 0;
+        bottom: 0;
+        position: fixed;
+    }
+
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */ 
+@media (min-width: 600px) {
+
+    .btn-modal {
+        right: 250px;
+        top: -78px;
+        padding: 10px 20px;
+        display: block;
+        margin: 95px auto 0;
+        font-size: 18px;
+        position: absolute;
+    }
+    
+    .modal, .overlay {
+        width: 100px;
+        height: 100px;
+        top: 300px;
+        left: 900px;
+        right: 0;
+        bottom: 0;
+        position: fixed;
+    }
+
+}
+
+ /* Medium devices (landscape tablets, 768px and up) */ 
+@media (min-width: 768px) {
+
+    .btn-modal {
+        right: 250px;
+        top: -78px;
+        padding: 10px 20px;
+        display: block;
+        margin: 95px auto 0;
+        font-size: 18px;
+        position: absolute;
+    }
+    
+    .modal, .overlay {
+        width: 100px;
+        height: 100px;
+        top: 300px;
+        left: 900px;
+        right: 0;
+        bottom: 0;
+        position: fixed;
+    }
+
+}
+
+ /* Large devices (laptops/desktops, 992px and up) */ 
+@media (min-width: 992px) and (max-width: 1199px){
+
+    .btn-modal {
+        right: 250px;
+        top: -78px;
+        padding: 10px 20px;
+        display: block;
+        margin: 95px auto 0;
+        font-size: 18px;
+        position: absolute;
+    }
+    .modal, .overlay {
+        width: 100px;
+        height: 100px;
+        top: 300px;
+        left: 900px;
+        right: 0;
+        bottom: 0;
+        position: fixed;
+    }
+    
+    .overlay {
+        background: #19BCFE;
+    }
+    .modal-content {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 1.4;
+        /* background: #19BCFE; */
+        background: linear-gradient(#19BCFE, #bbe8f8);
+        padding: 14px 28px;
+        border-radius: 20px;
+        max-width: 600px;
+        min-width: 300px;
+    }
+    
+    .modal-content h2 {
+        font-size: 20px;
+        font-weight:bold;
+        margin-bottom: 15px;
+    }
+    
+    .close-modal {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px 7px;
+    }
+    
+    #name, #email, #nickName, #celular, #cpf, #dataNasc, #perfilInvestidor, #senha{
+        width: 550px;
+        height: 40px;
+        border: 2px solid rgb(93, 93, 93);
+    }
+    
+    .btn-cadastrar {
+        font-weight: 700;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        --tw-border-opacity: 1;
+        border-color: rgb(75 75 76 / var(--tw-border-opacity));
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 0.5rem;
+        margin-top: 15px;
+    }
+    
+    .btn-fechar {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px 7px;
+        font-weight: 700;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        --tw-border-opacity: 1;
+        border-color: rgb(75 75 76 / var(--tw-border-opacity));
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 0.5rem;
+    }
+    
+
+    
+
+}
+
 .btn-modal {
-    right: 455px;
+    right: 250px;
     top: -78px;
     padding: 10px 20px;
     display: block;

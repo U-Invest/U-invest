@@ -8,9 +8,7 @@ const Contact = () => {
           Se inscreva no nosso newsletter
         </div>
         <p className="text-sm leading-7 text-gray">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum autem
-          minus doloribus voluptatem illo velit quia eum aperiam! Repudiandae,
-          tempore. Lorem ipsum dolor sit amet.
+          Se inscreva no nosso newsletter! Você receberá notícias atualizadas diariamente do mundo do investimento. E aí, ta esperando o que pra se increver?
         </p>
         <motion.form
           initial={{ scale: 0 }}

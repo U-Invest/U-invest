@@ -1,5 +1,5 @@
 import React from "react";
-import hero from "../../assets/hero.png";
+import hero from "../../assets/personagem3dCERTO.png";
 import { logos } from "../../Data";
 import { motion } from "framer-motion";
 const Home = () => {
@@ -33,8 +33,7 @@ const Home = () => {
             Essa é <br /> a nova maneira <br /> de aprender online.
           </div>
           <p className="text-sm leading-7 text-gray max-w-sm">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero
-            officia sit vitae quo, eum similique?
+            Cadastre-se na U Invest, você terá acesso a cursos imperdíveis e muito mais, venha aprender com a gente!
           </p>
           <div className="mt-6">
             <button className="px-6 py-3 font-bold text-white bg-Teal rounded-lg mr-4 text-sm">
