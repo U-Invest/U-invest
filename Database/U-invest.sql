@@ -168,3 +168,32 @@ INSERT INTO certificado VALUES ('Java para Desenvolvimento Web', 'Aline Silva', 
 INSERT INTO certificado VALUES ('Python Avancado', 'Felipe Rodrigues', 'CertSign', 70, '20220301', '20220220','cert010','Pedro Oliveira','prm1');
 
 commit;
+
+Atualização de dados: /*Atualiza os dados da tabela*/
+UPDATE usuario SET perfil_investidor = 'moderado' WHERE cpf = '12345678910';
+UPDATE certificado SET  professor = 'Carlos Alberto' WHERE id_certificado = 'cert010';
+
+Deletando dados:
+DELETE FROM certificado WHERE  nome_aluno = 'Felipe Rodrigues'; /*Deleta o aluno Felipe Rodrigues*/
+
+Relatório utilizando classificação de dados
+SELECT perfil_investidor, COUNT(*) AS total FROM usuario GROUP BY perfil_investidor; /*Numera a quantidade de investidores de cada tipo */
+ 
+Relatório utilizando alguma função do tipo numérica simples /*Coloca em ordem crescente com base na horas da plataforma*/
+select * from login order by hrs_plataforma asc;
+
+Relatório utilizando alguma função de grupo /*Soma o saldo dos investidores com base no seu perfil de investimento */
+SELECT perfil_investidor, SUM(saldo) AS saldo_total FROM usuario GROUP BY perfil_investidor; 
+
+Relatório utilizando sub consulta. /*Realiza a media das avalições dos usurario que utilizaram o tipo de conteudo Video*/
+SELECT AVG(avaliacao) AS media_avaliacao_videos FROM aula WHERE tipo_conteudo = 'Video';
+
+Relatório utilizando junção de tabela    
+/*  Junção das tabelas
+usuario com colunas: (nome,perfil_investidor ),
+faz com colunas: (fk_usuario_cpf),
+curso com colunas:(nome, professor, curso_name)*/
+SELECT u.nome, u.perfil_investidor, c.nome as curso_nome, c.professor
+FROM usuario u
+INNER JOIN faz f ON u.cpf = f.fk_usuario_cpf
+INNER JOIN curso c ON f.fk_curso_id_curso = c.id_curso;
