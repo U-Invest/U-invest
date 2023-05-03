@@ -5,25 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4975ac42-f16b-4c9a-a389-f915efc6a6cc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../U-invest-py/admin/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/../U-invest-py/admin/controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../U-invest-py/admin/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/../U-invest-py/admin/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/246137e6-3ef8-4862-a64f-fa8cb44531a6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/246137e6-3ef8-4862-a64f-fa8cb44531a6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ef910f0-23d7-437e-84a8-0097fdd89a20.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ef910f0-23d7-437e-84a8-0097fdd89a20/storage_v2/_src_/schema/PUBLIC.aaZQjQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ef910f0-23d7-437e-84a8-0097fdd89a20/storage_v2/_src_/schema/SYS.rUIBAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ef910f0-23d7-437e-84a8-0097fdd89a20/storage_v2/_src_/schema/SYSTEM.L2avkg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ce07e6c6-f5fa-4eac-82b7-107e3b8da1b3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ce07e6c6-f5fa-4eac-82b7-107e3b8da1b3/storage_v2/_src_/schema/SYS.rUIBAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ce07e6c6-f5fa-4eac-82b7-107e3b8da1b3/storage_v2/_src_/schema/SYSTEM.L2avkg.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Aula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Aula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Certificado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Certificado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Curso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Curso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Pg_curso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Pg_curso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/service/UsuarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/view/CadastrarUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/teste/CadastrarUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/view/GerarCertificado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/teste/GerarCertificado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/view/Logar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/teste/Logar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/view/SSLCertInstaller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uinvest/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/service/UsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uinvest/service/UsuarioService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/view/CadastrarUsuario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/view/GerarCertificado.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/view/Logar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/view/SSLCertInstaller$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/view/SSLCertInstaller.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,6 +171,8 @@
       <workItem from="1680038527595" duration="1839000" />
       <workItem from="1680041735377" duration="11734000" />
       <workItem from="1680054986790" duration="16520000" />
+      <workItem from="1682480013266" duration="1440000" />
+      <workItem from="1683077836659" duration="3447000" />
     </task>
     <servers />
   </component>

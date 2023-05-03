@@ -44,7 +44,7 @@ public class UsuarioService {
             dadosValidos = false;
         }
 
-        // Validar o CPF
+        // Validar o Nascimento
         if (nascimento == null || nascimento.trim().equals("")) {
             dadosValidos = false;
         }
