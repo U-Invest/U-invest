@@ -12,11 +12,12 @@ import java.net.URL;
 
 public class UsuarioService {
     public boolean validarDadosUsuario(String cpf, String email, String celular, String nome, String senha, String perfilInvestidor, String nickName, String nascimento) {
+
         boolean dadosValidos = true;
 
         // Validar o nome
         if (nome == null || nome.trim().equals("")) {
-            dadosValidos = false;
+            dadosValidos = validarNome(nome);
         }
 
         // Validar o e-mail
@@ -101,4 +102,21 @@ public class UsuarioService {
         }
         return true;
     }
+
+    public boolean validarNome(String nome) {
+
+        try {
+            for (int i = 0; i < nome.length(); i++) {
+                char c = nome.charAt(i);
+                if (!Character.isLetter(c) && !Character.isWhitespace(c)) {
+                    return true;
+                }
+            }
+        } catch (NullPointerException | IndexOutOfBoundsException e) {
+            System.out.println("Erro: Nome inválido");
+        }
+
+        return false;
+    }
+
 }
