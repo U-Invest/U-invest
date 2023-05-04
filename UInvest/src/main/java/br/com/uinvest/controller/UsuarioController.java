@@ -3,6 +3,7 @@ package br.com.uinvest.controller;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
+import java.util.ArrayList;
 
 import br.com.uinvest.connection.Conexao;
 import br.com.uinvest.dao.UsuarioDAO;
@@ -63,5 +64,27 @@ public class UsuarioController {
             System.out.println("Os dados do usuário não são válidos.");
         }
         Conexao.fecharConexao(con);
+    }
+
+    public void meuPerfil(){
+        Connection con = Conexao.abrirConexao();
+        UsuarioDAO usuariodao = new UsuarioDAO(con);
+        ArrayList<Usuario> lista = usuariodao.exibirDadosUsuario();
+        if(lista != null) {
+            for(Usuario usuario : lista ) {
+                System.out.print(usuario.getNome() + " ");
+                System.out.print(usuario.getEmail() + " ");
+                System.out.print(usuario.getSenha() + " ");
+                System.out.print(usuario.getNickName() + " ");
+                System.out.print(usuario.getCelular() + " ");
+                System.out.print(usuario.getCpf() + " ");
+                System.out.print(usuario.getNascimento() + " ");
+                System.out.print(usuario.getPerfil_investidor() + " ");
+                System.out.println(usuario.getSaldo());
+            }
+        }
+        else {
+            System.out.println();
+        }
     }
 }

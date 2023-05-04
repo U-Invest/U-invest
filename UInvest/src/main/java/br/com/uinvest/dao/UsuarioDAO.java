@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
 import br.com.uinvest.model.Usuario;
 
 public class UsuarioDAO {
@@ -83,5 +85,35 @@ public class UsuarioDAO {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public ArrayList<Usuario> exibirDadosUsuario() {
+        String sql = "select * from usuario";
+        ArrayList<Usuario> retornarUsuario = new ArrayList<Usuario>();
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            if (rs != null) {
+                while (rs.next()) {
+                    Usuario usuario = new Usuario();
+                    usuario.setNome(rs.getString(1));
+                    usuario.setEmail(rs.getString(2));
+                    usuario.setSenha(rs.getString(3));
+                    usuario.setNickName(rs.getString(4));
+                    usuario.setCelular(rs.getString(5));
+                    usuario.setCpf(rs.getString(6));
+                    usuario.setNascimento(rs.getString(7));
+                    usuario.setPerfil_investidor(rs.getString(8));
+                    usuario.setSaldo(rs.getInt(9));
+                    retornarUsuario.add(usuario);
+                }
+                return retornarUsuario;
+            } else {
+                return null;
+            }
+
+        } catch (SQLException e) {
+            return null;
+        }
     }
 }
