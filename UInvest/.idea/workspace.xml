@@ -5,25 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4975ac42-f16b-4c9a-a389-f915efc6a6cc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Aula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Aula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Certificado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Certificado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Curso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Curso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Pg_curso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Pg_curso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/model/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/service/UsuarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/view/CadastrarUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/teste/CadastrarUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/view/GerarCertificado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/teste/GerarCertificado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/view/Logar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/teste/Logar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/view/SSLCertInstaller.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uinvest/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/service/UsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/uinvest/service/UsuarioService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/view/CadastrarUsuario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/view/GerarCertificado.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/view/Logar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/view/SSLCertInstaller$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/uinvest/view/SSLCertInstaller.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,29 +41,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/thiag/OneDrive/Documentos/Challenge/GitHub/U-invest/UInvest&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/thiag/OneDrive/Documentos/Challenge/GitHub/U-invest/UInvest",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;oracle&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "oracle"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\matheus.r.pierro\Documents\Faculdade\TDS\U-invest\UInvest\src\main\java\uinvest\connection" />
@@ -88,7 +72,7 @@
       <recent name="C:\Users\matheus.r.pierro\Documents\Faculdade\TDS\U-invest\UInvest\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TesteInstanciandoClasses">
+  <component name="RunManager" selected="Application.CadastrarUsuario">
     <configuration name="CadastrarUsuario" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.uinvest.teste.CadastrarUsuario" />
       <module name="UInvest" />
@@ -156,8 +140,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TesteInstanciandoClasses" />
         <item itemvalue="Application.CadastrarUsuario" />
+        <item itemvalue="Application.TesteInstanciandoClasses" />
         <item itemvalue="Application.Logar" />
         <item itemvalue="Application.SSLCertInstaller" />
         <item itemvalue="Application.HunterEmailValidator" />
@@ -177,10 +161,27 @@
       <workItem from="1680038527595" duration="1839000" />
       <workItem from="1680041735377" duration="11734000" />
       <workItem from="1680054986790" duration="16520000" />
+      <workItem from="1683074942975" duration="2125000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/UInvest$CadastrarUsuario.ic" NAME="CadastrarUsuario Coverage Results" MODIFIED="1683076434737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>br.com.uinvest.teste.*</FILTER>
+    </SUITE>
   </component>
 </project>
