@@ -7,7 +7,10 @@
     <list default="true" id="4975ac42-f16b-4c9a-a389-f915efc6a6cc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/service/UsuarioService.java" afterDir="false" />
+=======
+>>>>>>> 38a891c54064239dda46f6ed3b3017e3ceb1af92
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +164,12 @@
       <workItem from="1680038527595" duration="1839000" />
       <workItem from="1680041735377" duration="11734000" />
       <workItem from="1680054986790" duration="16520000" />
+<<<<<<< HEAD
       <workItem from="1683074942975" duration="2125000" />
+=======
+      <workItem from="1682480013266" duration="1440000" />
+      <workItem from="1683077836659" duration="4126000" />
+>>>>>>> 38a891c54064239dda46f6ed3b3017e3ceb1af92
     </task>
     <servers />
   </component>

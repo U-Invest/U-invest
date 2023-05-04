@@ -1,31 +1,36 @@
-# from prettytable import PrettyTable
+from prettytable import PrettyTable
 import random
 
-# def PerfilInvestidor():
-#     tabela = PrettyTable()
-#     tabela.field_names = ["Iniciante", "Conservador", "Experiente"]
-#     # Adiciona linhas à tabela
-#     tabela.add_row(["CDB", "CDB", "Ações e Fundos de Ações"])
-#     tabela.add_row(["Tesouro Direto", "Tesouro Direto", "CDB e Tesouro Direto"])
-#     tabela.add_row(["Fundos de Renda Fixa", "Fundos de Renda Fixa e Fundos Multimercado", "Fundos Imobiliários e Fundos Multimercado"])
-#     tabela.add_row([" "," ","Fundos Cambiais e Fundos de Renda Fixa"])
-#     print(tabela)
-#     while True:
-#         print('Qual perfil de investidor você se identificou?')
-#         try:
-#             perfil = int(input("1 - Iniciante \n2 - Conservador \n3 - Experiente\n"))
-#             if (perfil > 0) and (perfil < 4):
-#                 if(perfil == 1):
-#                     perfil = "Iniciante"
-#                 elif (perfil == 2):
-#                     perfil = "Conservador"
-#                 else:
-#                     perfil = "Experiente"
-#                 return perfil
-#             else: 
-#                 print("Error! Digite um perfil de investidor válido.")
-#         except :
-#             print("Error! Digite um perfil de investidor válido.")
+
+def PerfilInvestidor():
+    tabela = PrettyTable()
+    tabela.field_names = ["Iniciante", "Conservador", "Experiente"]
+    # Adiciona linhas à tabela
+    tabela.add_row(["CDB", "CDB", "Ações e Fundos de Ações"])
+    tabela.add_row(
+        ["Tesouro Direto", "Tesouro Direto", "CDB e Tesouro Direto"])
+    tabela.add_row(["Fundos de Renda Fixa", "Fundos de Renda Fixa e Fundos Multimercado",
+                   "Fundos Imobiliários e Fundos Multimercado"])
+    tabela.add_row([" ", " ", "Fundos Cambiais e Fundos de Renda Fixa"])
+    print(tabela)
+    while True:
+        print('Qual perfil de investidor você se identificou?')
+        try:
+            perfil = int(
+                input("1 - Iniciante \n2 - Conservador \n3 - Experiente\n"))
+            if (perfil > 0) and (perfil < 4):
+                if (perfil == 1):
+                    perfil = "Iniciante"
+                elif (perfil == 2):
+                    perfil = "Conservador"
+                else:
+                    perfil = "Experiente"
+                return perfil
+            else:
+                print("Error! Digite um perfil de investidor válido.")
+        except:
+            print("Error! Digite um perfil de investidor válido.")
+
 
 def Nome():
     while True:
@@ -70,6 +75,7 @@ def User():
             continue
         return login.strip(' ')
 
+
 def Celular():
     while True:
         celular = input('Celular (Apenas Números): ')
@@ -84,6 +90,7 @@ def Celular():
                 return celular
             else:
                 print('O número deve ter entre 9 - 11 dígitos.')
+
 
 def Data():
     while True:
@@ -105,6 +112,7 @@ def Data():
         else:
             print('A data deve seguir o padrão dd/mm/aaa')
 
+
 def Cpf():
     while True:
         try:
@@ -114,10 +122,12 @@ def Cpf():
             else:
                 print("Error! Quantidade de caracteres incorreta.")
         except ValueError:
-           print("Error! Digite valores válidos!")
+            print("Error! Digite valores válidos!")
+
 
 def Saldo():
     return 0
+
 
 def Professor():
     while True:
@@ -126,12 +136,14 @@ def Professor():
             print("Error! Digite um nome válido!")
         else:
             return nome
-            
+
+
 def CdCurso():
-    codigo = random.randint(0, 9999)
-    while len(str(codigo)) < 4:
+    codigo = random.randint(0, 99999999)
+    while len(str(codigo)) < 8:
         codigo = '0' + str(codigo)
-    return int(codigo)
+    return str(codigo)
+
 
 def DuracaoCurso():
     while True:
@@ -145,7 +157,9 @@ def DuracaoCurso():
             else:
                 return duracao
         except ValueError:
-            print("Por favor, insira um número inteiro válido para a duração do curso. Tente novamente.")
+            print(
+                "Por favor, insira um número inteiro válido para a duração do curso. Tente novamente.")
+
 
 def NomeCurso():
     while True:
@@ -154,6 +168,7 @@ def NomeCurso():
             print('Error! Entrada Vazia!')
         else:
             return nomeCurso
+
 
 def PontuacaoCurso(duracaoCurso):
     if duracaoCurso < 10:
@@ -164,21 +179,24 @@ def PontuacaoCurso(duracaoCurso):
         pontuacao = duracaoCurso * 1.0
     else:
         pontuacao = duracaoCurso * 1.25
-    return round(pontuacao, 1)
+    return int(pontuacao)
+
 
 def AvaliacaoCurso(avaliacoes):
     if not avaliacoes:
         return 0
-    
-    avaliacoesFiltradas = [nota for nota in avaliacoes if nota >= 0 and nota <= 5]
-    
+
+    avaliacoesFiltradas = [
+        nota for nota in avaliacoes if nota >= 0 and nota <= 5]
+
     if not avaliacoesFiltradas:
         return 0
-    
+
     totalAvaliacoes = sum(avaliacoesFiltradas)
     mediaAvaliacoes = totalAvaliacoes / len(avaliacoesFiltradas)
-    
-    return round(mediaAvaliacoes, 1)
+
+    return int(mediaAvaliacoes)
+
 
 def ResumoCurso():
     while True:

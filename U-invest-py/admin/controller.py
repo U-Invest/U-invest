@@ -1,26 +1,48 @@
+import oracledb
 import sys
 import service
 import datetime
 import os
 from time import sleep
 
+try:
+    dnStr = oracledb.makedsn("oracle.fiap.com.br", "1521", "ORCL")
+    conn = oracledb.connect(user='rm96920', password='080903', dsn=dnStr)
+    inst_SQL = conn.cursor()
+except Exception as e:
+    print("Erro: ", e)
+    conexao = False
+    inst_SQL = ""
+    conn = ""
+else:
+    conexao = True
+
+
 def limpaTerminal():
     return os.system('cls' if os.name == 'nt' else 'clear')
 
+
 def criaBarra():
     return print('-' * 32)
+
 
 data = datetime.datetime.now()
 dia = data.day
 mes = data.month
 ano = data.year
 
+
 def menuInicial():
-    print('=============== <<< ''\033[1;96m''U-Invest''\033[0;0m'' >>> ===============')
-    print('|  [''\033[1;36m''1''\033[0;0m''] Usuários                                |')
-    print('|  [''\033[1;36m''2''\033[0;0m''] Cursos e Aulas                          |')
-    print('|  [''\033[1;36m''3''\033[0;0m''] Documentação Técnica da Plataforma      |')
-    print('|  [''\033[1;36m''0''\033[0;0m''] Sair                                    |')
+    print(
+        '=============== <<< ''\033[1;96m''U-Invest''\033[0;0m'' >>> ===============')
+    print(
+        '|  [''\033[1;36m''1''\033[0;0m''] Usuários                                |')
+    print(
+        '|  [''\033[1;36m''2''\033[0;0m''] Cursos e Aulas                          |')
+    print(
+        '|  [''\033[1;36m''3''\033[0;0m''] Documentação Técnica da Plataforma      |')
+    print(
+        '|  [''\033[1;36m''0''\033[0;0m''] Sair                                    |')
     print('------------------------------------------------')
     try:
         escolha = int(input('\033[1;36m''Insira a opção: ''\033[0;0m'))
@@ -44,6 +66,7 @@ def menuInicial():
         subMenuDocs()
     elif escolha == 0:
         print('\033[1;36m''Fechando administração...''\033[0;0m')
+        conn.close()
         sleep(3)
         sys.exit()
     else:
@@ -52,6 +75,7 @@ def menuInicial():
         print('\033[1;31m''Insira uma opção válida!''\033[0;0m')
         criaBarra()
         menuInicial()
+
 
 def subMenuUsuarios():
     print('========== <<< ''\033[1;96m''U-Invest''\033[0;0m'' >>> ==========')
@@ -77,8 +101,11 @@ def subMenuUsuarios():
         return
     print('--------------------------------------')
     if escolha == 1:
-        cadastro()
-        subMenuUsuarios()
+        if (conexao == True):
+            cadastro()
+            subMenuUsuarios()
+        else:
+            print('\033[1;31m''Database was not connect!''\033[0;0m')
     elif escolha == 2:
         mostraDados()
         subMenuUsuarios()
@@ -101,6 +128,7 @@ def subMenuUsuarios():
         print('\033[1;31m''Insira uma opção válida!''\033[0;0m')
         criaBarra()
         subMenuUsuarios()
+
 
 def subMenuCursos():
     print('========== <<< ''\033[1;96m''U-Invest''\033[0;0m'' >>> ==========')
@@ -151,8 +179,10 @@ def subMenuCursos():
         criaBarra()
         subMenuCursos()
 
+
 def subMenuDocs():
-    print('============== <<< ''\033[1;96m''U-Invest''\033[0;0m'' >>> ==============')
+    print(
+        '============== <<< ''\033[1;96m''U-Invest''\033[0;0m'' >>> ==============')
     print('|  [''\033[1;36m''1''\033[0;0m''] Gerar Documentaçao                    |')
     print('|  [''\033[1;36m''2''\033[0;0m''] Imprimir Documentaçao                 |')
     print('|  [''\033[1;36m''3''\033[0;0m''] Visualizar Documentaçao na Web        |')
@@ -167,46 +197,55 @@ def subMenuDocs():
 ''' Função de Cadastrar / Checar login existente / Adicionar dados no arquivo txt de logins '''
 
 
-def cadastro():
-    limpaTerminal()
-    print('====== < ''\033[1;92m''Cadastrar Usuário''\033[0;0m'' > ======')
-    nome = service.Nome()  # Retorna o nome validado
-    login = service.User()  # Retorna o login validado
+def confereLoginExistente(nome, login):
+    dados = f"""SELECT * FROM usuario WHERE nome = '{nome}' OR nickname = '{login}'"""
+    inst_SQL.execute(dados)
+    listaUsuario = inst_SQL.fetchall()
+    if (len(listaUsuario) != 0):
+        return True
+    else:
+        return False
 
-    # --> Conferir se já existe o login cadastrado
-    lerLogins = open('usuarios.txt', 'r')
-    for linha in lerLogins.readlines():
-        valores = linha.split('-')
-        # Cria lista com valores da linha
-        if login == valores[1].split(':')[1].strip():
-            # Confere se o login cadastrado é igual ao login da linha
-            limpaTerminal()
-            criaBarra()
+
+def cadastro():
+    try:
+        limpaTerminal()
+        print('====== < ''\033[1;92m''Cadastrar Usuário''\033[0;0m'' > ======')
+
+        nome = service.Nome()  # Retorna o nome validado
+        login = service.User()  # Retorna o login validado
+
+        if (confereLoginExistente(nome, login)):
             print('\033[1;31m''Login ja existente!''\033[0;0m')
             criaBarra()
             return
-    lerLogins.close()
 
-    # Retornando valores validados
-    senha = service.Senha()
-    email = service.Email()
-    cpf = service.Cpf()
-    data = service.Data()
-    celular = service.Celular()
-    perfilInvestidor = service.PerfilInvestidor()
-    saldo = service.Saldo()
+        # Retornando valores validados
+        senha = service.Senha()
+        email = service.Email()
+        cpf = service.Cpf()
 
-    limpaTerminal()
-    criaBarra()
-    print('\033[1;32m''Usuario Cadastrado com sucesso!''\033[0;0m')
-    criaBarra()
+        data = ''.join(service.Data().split('/'))
 
-    # --> Adiciona usuário no banco de dados usuarios.txt
-    logins = open('usuarios.txt', 'a')
-    logins.write(
-        f'Nome: {nome} -Login: {login} -Senha: {senha} -Email: {email} -Cpf: {cpf} -Data de Nascimento: {data} -Numero de Celular: {celular} -Perfil de Investidor: {perfilInvestidor} -Saldo: {saldo}\n')
-    logins.close()
-    return
+        celular = service.Celular()
+        perfilInvestidor = service.PerfilInvestidor()
+        saldo = service.Saldo()
+
+        # Executa o insert na tabela do sql
+        cadastro = f"""INSERT INTO usuario (cpf, email, celular, nome, saldo, senha, perfil_investidor, nickname, nascimento) VALUES ('{cpf}','{email}','{celular}','{nome}',{saldo},'{senha}','{perfilInvestidor}','{login}','{data}')"""
+        inst_SQL.execute(cadastro)
+        conn.commit()
+        conn.close()
+
+        limpaTerminal()
+        criaBarra()
+        print('\033[1;32m''Usuario Cadastrado com sucesso!''\033[0;0m')
+        criaBarra()
+        return
+    except ValueError:
+        print("Digite valores numéricos")
+    except:
+        print('\033[1;31m''Erro de transação com o BD''\033[0;0m')
 
 
 ''' Logar um usuário e printar seus dados cadastrados '''
@@ -223,21 +262,29 @@ def mostraDados():
 
     # Variavel de validação do login
     valida = False
-    
-    logins = open('usuarios.txt', 'r')
-    for linha in logins. readlines():
-        valores = linha.split('-')
-        if userLogin == valores[1].split(':')[1].strip() and userSenha in valores[2].split(':')[1].strip():
-            limpaTerminal()
-            criaBarra()
-            print('\033[1;32m''Usuario Logado! Dados do usuário: ''\033[0; 0m')
-            criaBarra()
-            for percorre in range(len(valores)):
-                print(valores[percorre])
-            criaBarra()
-            valida = True
-            logins.close()
-            break
+
+    dados = f"""SELECT * FROM usuario WHERE nickname = '{userLogin}' AND senha = '{userSenha}'"""
+    inst_SQL.execute(dados)
+    listaUsuario = inst_SQL.fetchall()
+    if (len(listaUsuario) != 0):
+        limpaTerminal()
+        criaBarra()
+        print('\033[1;32m''Usuario Logado! Dados do usuário: ''\033[0; 0m')
+        criaBarra()
+        # Dados do usuario
+        for usuario in listaUsuario:
+            print(f'''\033[1;36mNome: \033[0;0m{usuario[3]}''')
+            print(f'''\033[1;36mEmail: \033[0;0m{usuario[1]}''')
+            print(f'''\033[1;36mLogin: \033[0;0m{usuario[7]}''')
+            print(f'''\033[1;36mCelular: \033[0;0m{usuario[2]}''')
+            print(f'''\033[1;36mCpf: \033[0;0m{usuario[0]}''')
+            print(f'''\033[1;36mData de Nascimento: \033[0;0m{usuario[8]}''')
+            print(f'''\033[1;36mNível de Investidor: \033[0;0m{usuario[6]}''')
+            print(f'''\033[1;36mSaldo: \033[0;0m{usuario[4]}''')
+        criaBarra()
+        valida = True
+    else:
+        valida = False
 
     if not valida:
         limpaTerminal()
@@ -249,37 +296,42 @@ def mostraDados():
 
 def usuariosCadastrados():
     limpaTerminal()
-    print('=== Usuarios Cadastrados ===')
-    logins = open('usuarios.txt', 'r')
-    for linha in logins.readlines():
-        l = linha.split('-')
-        print('\033[1;92m'f'{l[0]} | {l[1]}''\033[0;0m')
+    print('''\033[1;36m=== Usuarios Cadastrados ===\033[0;0m''')
+    # Usuarios
+    dados = f"""SELECT * FROM usuario"""
+    inst_SQL.execute(dados)
+    listaUsuario = inst_SQL.fetchall()
+    for usuario in listaUsuario:
+        nome = usuario[3]
+        user = usuario[7]
+        print(
+            f'''\033[1;36mNome: \033[0;0m{nome} | \033[1;36mLogin: \033[0;0m{user}''')
     criaBarra()
     return
 
+
 def relatorio():
-    countUsers = 0
-    nomess = []
-    
-    logins = open('usuarios.txt', 'r')
-    for linhas in logins.readlines():
-        l = linhas.split('-')
-        nomess.append(l[0])
-        countUsers += 1
-        
     limpaTerminal()
     arquivo = open('relatorio.txt', 'w+')
     arquivo.write('Relatorio de Usuarios \n')
     arquivo.write('\n')
+
+    # Consulta SQL para obter os nomes dos usuários
+    dados = """SELECT nome FROM usuario"""
+    inst_SQL.execute(dados)
+    listaNomes = inst_SQL.fetchall()
+
+    countUsers = len(listaNomes)
     arquivo.write(f'A U-Invest possui {countUsers} usuarios \n')
-    for i in range(len(nomess)):
-        arquivo.write(str(f'{i + 1}.{nomess[i].split(":")[1]} \n'))
+    for i, nome in enumerate(listaNomes, start=1):
+        arquivo.write(f'{i}.{nome[0]} \n')
     arquivo.write(f'{dia}/{mes}/{ano}')
-    criaBarra( )
+    criaBarra()
     print('\033[1;32m'"Relatorio gerado em 'relatorio.txt'"'\033[0;0m')
     criaBarra()
     arquivo.close()
     return
+
 
 def removerUsuario():
     limpaTerminal()
@@ -293,28 +345,24 @@ def removerUsuario():
     # Variavel de validação do login
     valida = False
 
-    logins = open('usuarios.txt', 'r')
-    for linha in logins.readlines():
-        valores = linha.split('-')
-        if userLogin == valores[1].split(':')[1].strip() and userSenha in valores[2].split(':')[1].strip():
-            limpaTerminal()
-            criaBarra()
-            print('\033[1;32m''Usuario Logado! Excluindo... ''\033[0; 0m')
-            criaBarra()
-            sleep(5)
-            
-            with open('usuarios.txt', 'r+') as arquivo:
-                newLinhas = arquivo.readlines()
-                arquivo.seek(0)
-                for newLinha in newLinhas:
-                    if newLinha != linha:
-                        arquivo.write(newLinha)
-                arquivo.truncate()
-
-            print('\033[1;32m''Usuario Excluido! ''\033[0; 0m')
-            criaBarra()
-            valida = True
-            break
+    dados = f"""SELECT * FROM usuario WHERE nickname = '{userLogin}' AND senha = '{userSenha}'"""
+    inst_SQL.execute(dados)
+    listaUsuario = inst_SQL.fetchall()
+    if (len(listaUsuario) != 0):
+        limpaTerminal()
+        criaBarra()
+        print('\033[1;32m''Usuario Logado! Excluindo... ''\033[0; 0m')
+        criaBarra()
+        sleep(5)
+        # Excluir usuario que logou
+        delete_query = f"""DELETE FROM usuario WHERE nickname = '{userLogin}'"""
+        inst_SQL.execute(delete_query)
+        conn.commit()
+        print('\033[1;32m''Usuario Excluido! ''\033[0; 0m')
+        criaBarra()
+        valida = True
+    else:
+        valida = False
 
     if not valida:
         limpaTerminal()
@@ -322,7 +370,8 @@ def removerUsuario():
         print('\033[1;31m''Erro! Login ou senha invalidos''\033[0; 0m')
         criaBarra()
         subMenuUsuarios()
-    
+
+
 def userAdminValidate():
     limpaTerminal()
     criaBarra()
@@ -341,7 +390,8 @@ def userAdminValidate():
         if userLogin == valores[0].split(':')[1].strip() and userSenha in valores[1].split(':')[1].strip():
             limpaTerminal()
             criaBarra()
-            print('\033[1;32m''Administrador Logado! Carregando dados...''\033[0; 0m')
+            print(
+                '\033[1;32m''Administrador Logado! Carregando dados...''\033[0; 0m')
             criaBarra()
             sleep(3)
             valida = True
@@ -355,27 +405,40 @@ def userAdminValidate():
 
     return valida
 
+
 def cadastroCurso():
-    limpaTerminal()
-    print('====== < ''\033[1;92m''Cadastrar Curso''\033[0;0m'' > ======')
-    nome = service.NomeCurso()
-    nomeProfessor = service.Professor() 
-    duracao = service.DuracaoCurso()
-    resumo = service.ResumoCurso()
-    pontuacao = service.PontuacaoCurso(duracao)
-    avaliacao = service.AvaliacaoCurso([5, 4, 3, 5, 2, 5, 6, 7, -1])
-    cdCurso = service.CdCurso()  
+    try:
+        limpaTerminal()
+        print('====== < ''\033[1;92m''Cadastrar Curso''\033[0;0m'' > ======')
+        nome = service.NomeCurso()
+        nomeProfessor = service.Professor()
+        duracao = service.DuracaoCurso()
+        resumo = service.ResumoCurso()
+        pontuacao = service.PontuacaoCurso(duracao)
+        avaliacao = service.AvaliacaoCurso([5, 4, 3, 5, 2, 5, 6, 7, -1])
+        cdCurso = service.CdCurso()
 
-    limpaTerminal()
-    criaBarra()
-    print('\033[1;32m''Curso Cadastrado com sucesso!''\033[0;0m')
-    criaBarra()
+        print(duracao, avaliacao, resumo,
+              nomeProfessor, nome, cdCurso, pontuacao)
+        print(type(duracao), type(avaliacao), type(resumo), type(
+            nomeProfessor), type(nome), type(cdCurso), type(pontuacao))
 
-    Cursos = open('cursos.txt', 'a')
-    Cursos.write(
-        f'Curso: {nome} -Professor: {nomeProfessor} -Duração: {duracao} -Resumo: {resumo} -Pontuação: {pontuacao} -Avaliação: {avaliacao} -Identitificação: {cdCurso}\n')
-    Cursos.close()
-    subMenuCursos()
+        # Executa o insert na tabela do sql
+        cadastro = f"""INSERT INTO curso (duracao, avaliacao, resumo, professor, nome, id_curso, pontuacao) VALUES ({duracao},{avaliacao},'{resumo}','{nomeProfessor}','{nome}','{cdCurso}',{pontuacao})"""
+        inst_SQL.execute(cadastro)
+        conn.commit()
+        conn.close()
+
+        limpaTerminal()
+        criaBarra()
+        print('\033[1;32m''Curso Cadastrado com sucesso!''\033[0;0m')
+        criaBarra()
+        subMenuCursos()
+    except ValueError:
+        print("Digite valores numéricos")
+    except:
+        print('\033[1;31m''Erro de transação com o BD''\033[0;0m')
+
 
 def dadosCurso():
     limpaTerminal()
@@ -385,23 +448,29 @@ def dadosCurso():
     criaBarra()
     codigo = input('Código: ')
 
-    # Variavel de validação do codigo
+    # Variavel de validação do login
     valida = False
-    
-    cursos = open('cursos.txt', 'r')
-    for linha in cursos. readlines():
-        valores = linha.split('-')
-        if codigo == valores[6].split(':')[1].strip():
-            limpaTerminal()
-            criaBarra()
-            print('\033[1;32m''Curso encontrado! Dados do Curso: ''\033[0; 0m')
-            criaBarra()
-            for percorre in range(len(valores)):
-                print(valores[percorre])
-            criaBarra()
-            valida = True
-            cursos.close()
-            subMenuCursos()
+
+    dados = f"""SELECT * FROM curso WHERE id_curso = '{codigo}'"""
+    inst_SQL.execute(dados)
+    listaCurso = inst_SQL.fetchall()
+    if (len(listaCurso) != 0):
+        limpaTerminal()
+        criaBarra()
+        print('\033[1;32m''Curso encontrado! Dados do Curso: ''\033[0; 0m')
+        criaBarra()
+        for curso in listaCurso:
+            print(f'''\033[1;36mNome: \033[0;0m{curso[4]}''')
+            print(f'''\033[1;36mProfessor: \033[0;0m{curso[3]}''')
+            print(f'''\033[1;36mDuração: \033[0;0m{curso[0]}''')
+            print(f'''\033[1;36mAvaliação: \033[0;0m{curso[1]}''')
+            print(f'''\033[1;36mResumo: \033[0;0m{curso[2]}''')
+            print(f'''\033[1;36mPontuação: \033[0;0m{curso[6]}''')
+            print(f'''\033[1;36mCódigo: \033[0;0m{curso[5]}''')
+
+        criaBarra()
+        valida = True
+        subMenuCursos()
 
     if not valida:
         limpaTerminal()
@@ -410,43 +479,76 @@ def dadosCurso():
         criaBarra()
         subMenuCursos()
 
+
 def mostrarCursos():
     limpaTerminal()
     print('=== Cursos Cadastrados ===')
-    cursos = open('cursos.txt', 'r')
-    for linha in cursos.readlines():
-        l = linha.split('-')
-        print('\033[1;92m'f'{l[0]} | {l[1]}''\033[0;0m')
+    dados = f"""SELECT * FROM curso"""
+    inst_SQL.execute(dados)
+    listaCursos = inst_SQL.fetchall()
+    for curso in listaCursos:
+        nome = curso[4]
+        professor = curso[3]
+        duracao = curso[0]
+        print(
+            f'''\033[1;36mNome: \033[0;0m{nome} | \033[1;36mProfessor: \033[0;0m{professor} | \033[1;36mDuração: \033[0;0m{duracao}''')
     criaBarra()
-    subMenuCursos()
+    return
 
 def relatorioCurso():
-    countUsers = 0
-    nomess = []
-    
-    cursos = open('cursos.txt', 'r')
-    for linhas in cursos.readlines():
-        l = linhas.split('-')
-        nomess.append(l[0])
-        countUsers += 1
-        
     limpaTerminal()
-    arquivo = open('relatorioCursos.txt', 'w+')
+    arquivo = open('relatorioCursos.txt', 'w+', encoding='utf-8')
     arquivo.write('Relatorio de Cursos \n')
     arquivo.write('\n')
+
+    # Consulta SQL para obter os nomes dos usuários
+    dados = """SELECT nome FROM curso"""
+    inst_SQL.execute(dados)
+    listaNomes = inst_SQL.fetchall()
+
+    countUsers = len(listaNomes)
     arquivo.write(f'A U-Invest possui {countUsers} cursos \n')
-    for i in range(len(nomess)):
-        arquivo.write(str(f'{i + 1}.{nomess[i].split(":")[1]} \n'))
-    criaBarra( )
+    for i, nome in enumerate(listaNomes, start=1):
+        arquivo.write(f'{i}.{nome[0]} \n')
+    criaBarra()
     print('\033[1;32m'"Relatorio gerado em 'relatorioCursos.txt'"'\033[0;0m')
     criaBarra()
     arquivo.close()
-    subMenuCursos()
+    return
 
 def gerenciarCurso():
     limpaTerminal()
-    print("Em desenvolvimento!")
+    lista_dados = []
+    id = int(input(f'''\033[1;36mDigite o código do curso que deseja gerenciar: \033[0;0m'''))
+    consulta = f"""SELECT * FROM curso WHERE id_curso = '{id}'"""
+    inst_SQL.execute(consulta)
+    dados = inst_SQL.fetchall()
+
+    for dado in dados:
+        lista_dados.append(dado)
+
+        if (len(lista_dados) == 0):
+            print('\033[1;31m''Erro! Código não encontrado ou inexistente.''\033[0; 0m')
+        else:
+            try:
+                nome = input(f'''\033[1;36mDigite o novo nome do curso: \033[0;0m''')
+                professor = input(f'''\033[1;36mDigite o nome do novo professor: \033[0;0m''')
+                duracao = int(input(f'''\033[1;36mDigite a nova duração do curso: \033[0;0m'''))
+                resumo = input(f'''\033[1;36mDigite a nova descrição do curso: \033[0;0m''')
+                pontuacao = int(input(f'''\033[1;36mDigite a nova pontuação para o curso: \033[0;0m'''))
+            except ValueError:
+                print('\033[1;31m''Digite valores numericos''\033[0; 0m')
+            else:
+                try:
+                    str_update = f"""UPDATE curso SET nome='{nome}',professor='{professor}',duracao={duracao},resumo='{resumo}',pontuacao={pontuacao} WHERE id_curso='{id}'"""
+                    inst_SQL.execute(str_update)
+                    conn.commit()
+                except:
+                    print('\033[1;31m''Erro de transacao com o BD''\033[0; 0m')
+                else:
+                    print(f'''\033[1;32mDados alterados com sucesso\033[0;0m''')
     subMenuCursos()
+
 
 def removeCurso():
     limpaTerminal()
@@ -455,35 +557,31 @@ def removeCurso():
     print('\033[1;33m''Digite o código do Curso para excluir''\033[0; 0m')
     criaBarra()
     codigo = input('Código: ')
-    
+
     valida = False
 
-    cursos = open('cursos.txt', 'r')
-    for linha in cursos.readlines():
-        valores = linha.split('-')
-        if codigo == valores[6].split(':')[1].strip():
-            limpaTerminal()
-            criaBarra()
-            print('\033[1;32m''Curso encontrado! Excluindo... ''\033[0; 0m')
-            criaBarra()
-            sleep(5)
-            
-            with open('cursos.txt', 'r+') as arquivo:
-                newLinhas = arquivo.readlines()
-                arquivo.seek(0)
-                for newLinha in newLinhas:
-                    if newLinha != linha:
-                        arquivo.write(newLinha)
-                arquivo.truncate()
-
-            print('\033[1;32m''Curso Excluido! ''\033[0; 0m')
-            criaBarra()
-            valida = True
-            subMenuCursos()
+    dados = f"""SELECT * FROM curso WHERE id_curso = '{codigo}'"""
+    inst_SQL.execute(dados)
+    listaCurso = inst_SQL.fetchall()
+    if (len(listaCurso) != 0):
+        limpaTerminal()
+        criaBarra()
+        print('\033[1;32m''Curso encontrado! Excluindo... ''\033[0; 0m')
+        criaBarra()
+        sleep(5)
+        # Excluir curso
+        delete_query = f"""DELETE FROM curso WHERE id_curso = '{codigo}'"""
+        inst_SQL.execute(delete_query)
+        conn.commit()
+        print('\033[1;32m''Curso Excluido! ''\033[0; 0m')
+        criaBarra()
+        valida = True
+    else:
+        valida = False
 
     if not valida:
         limpaTerminal()
         criaBarra()
-        print('\033[1;31m''Erro! Código não encontrado ou inexistente.''\033[0; 0m')
+        print('\033[1;31m''Erro! Código inválido ou inexistente''\033[0; 0m')
         criaBarra()
         subMenuCursos()

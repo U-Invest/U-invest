@@ -1,2 +1,0 @@
-Nome: Matheus Pierro -Login: matpierro -Senha: 123 -Email: mat@mail.com -Cpf: 12345678910 -Data de Nascimento: 08/09/2003 -Numero de Celular: 11961064545 -Perfil de Investidor: Conservador -Saldo: 0
-Nome: Thiago Castro -Login: castro -Senha: 123 -Email: thiago@mail.com -Cpf: 12345678910 -Data de Nascimento: 27/02/2004 -Numero de Celular: 11974102004 -Perfil de Investidor: Experiente -Saldo: 0
