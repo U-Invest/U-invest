@@ -1,4 +1,0 @@
-Curso: React -Professor: Luiz tadeu -Duraï¿½ï¿½o: 40 -Resumo: Components -Pontuaï¿½ï¿½o: 50.0 -Avaliaï¿½ï¿½o: 4.0 -Identitificaï¿½ï¿½o: 8887
-Curso: testes -Professor: Matheus -Duração: 40 -Resumo:  -Pontuação: 50.0 -Avaliação: 4.0 -Identitificação: 4944
-Curso: java -Professor: matheus -Duração: 80 -Resumo: None -Pontuação: 100.0 -Avaliação: 4.0 -Identitificação: 9225
-Curso: DTD -Professor: matheus -Duração: 50 -Resumo: blablabla -Pontuação: 62.5 -Avaliação: 4.0 -Identitificação: 6459

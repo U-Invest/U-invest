@@ -483,41 +483,70 @@ def dadosCurso():
 def mostrarCursos():
     limpaTerminal()
     print('=== Cursos Cadastrados ===')
-    cursos = open('cursos.txt', 'r')
-    for linha in cursos.readlines():
-        l = linha.split('-')
-        print('\033[1;92m'f'{l[0]} | {l[1]}''\033[0;0m')
+    dados = f"""SELECT * FROM curso"""
+    inst_SQL.execute(dados)
+    listaCursos = inst_SQL.fetchall()
+    for curso in listaCursos:
+        nome = curso[4]
+        professor = curso[3]
+        duracao = curso[0]
+        print(
+            f'''\033[1;36mNome: \033[0;0m{nome} | \033[1;36mProfessor: \033[0;0m{professor} | \033[1;36mDuração: \033[0;0m{duracao}''')
     criaBarra()
-    subMenuCursos()
-
+    return
 
 def relatorioCurso():
-    countUsers = 0
-    nomess = []
-
-    cursos = open('cursos.txt', 'r')
-    for linhas in cursos.readlines():
-        l = linhas.split('-')
-        nomess.append(l[0])
-        countUsers += 1
-
     limpaTerminal()
-    arquivo = open('relatorioCursos.txt', 'w+')
+    arquivo = open('relatorioCursos.txt', 'w+', encoding='utf-8')
     arquivo.write('Relatorio de Cursos \n')
     arquivo.write('\n')
+
+    # Consulta SQL para obter os nomes dos usuários
+    dados = """SELECT nome FROM curso"""
+    inst_SQL.execute(dados)
+    listaNomes = inst_SQL.fetchall()
+
+    countUsers = len(listaNomes)
     arquivo.write(f'A U-Invest possui {countUsers} cursos \n')
-    for i in range(len(nomess)):
-        arquivo.write(str(f'{i + 1}.{nomess[i].split(":")[1]} \n'))
+    for i, nome in enumerate(listaNomes, start=1):
+        arquivo.write(f'{i}.{nome[0]} \n')
     criaBarra()
     print('\033[1;32m'"Relatorio gerado em 'relatorioCursos.txt'"'\033[0;0m')
     criaBarra()
     arquivo.close()
-    subMenuCursos()
-
+    return
 
 def gerenciarCurso():
     limpaTerminal()
-    print("Em desenvolvimento!")
+    lista_dados = []
+    id = int(input(f'''\033[1;36mDigite o código do curso que deseja gerenciar: \033[0;0m'''))
+    consulta = f"""SELECT * FROM curso WHERE id_curso = '{id}'"""
+    inst_SQL.execute(consulta)
+    dados = inst_SQL.fetchall()
+
+    for dado in dados:
+        lista_dados.append(dado)
+
+        if (len(lista_dados) == 0):
+            print('\033[1;31m''Erro! Código não encontrado ou inexistente.''\033[0; 0m')
+        else:
+            try:
+                nome = input(f'''\033[1;36mDigite o novo nome do curso: \033[0;0m''')
+                professor = input(f'''\033[1;36mDigite o nome do novo professor: \033[0;0m''')
+                duracao = int(input(f'''\033[1;36mDigite a nova duração do curso: \033[0;0m'''))
+                resumo = input(f'''\033[1;36mDigite a nova descrição do curso: \033[0;0m''')
+                pontuacao = int(input(f'''\033[1;36mDigite a nova pontuação para o curso: \033[0;0m'''))
+            except ValueError:
+                print('\033[1;31m''Digite valores numericos''\033[0; 0m')
+            else:
+                try:
+                    str_update = f"""UPDATE curso SET nome='{nome}',professor='{professor}',duracao={duracao},resumo='{resumo}',pontuacao={pontuacao} WHERE id_curso='{id}'"""
+                    inst_SQL.execute(str_update)
+                    conn.commit()
+                except:
+                    print('\033[1;31m''Erro de transacao com o BD''\033[0; 0m')
+                else:
+                    print(f'''\033[1;32mDados alterados com sucesso\033[0;0m''')
     subMenuCursos()
 
 
@@ -531,32 +560,28 @@ def removeCurso():
 
     valida = False
 
-    cursos = open('cursos.txt', 'r')
-    for linha in cursos.readlines():
-        valores = linha.split('-')
-        if codigo == valores[6].split(':')[1].strip():
-            limpaTerminal()
-            criaBarra()
-            print('\033[1;32m''Curso encontrado! Excluindo... ''\033[0; 0m')
-            criaBarra()
-            sleep(5)
-
-            with open('cursos.txt', 'r+') as arquivo:
-                newLinhas = arquivo.readlines()
-                arquivo.seek(0)
-                for newLinha in newLinhas:
-                    if newLinha != linha:
-                        arquivo.write(newLinha)
-                arquivo.truncate()
-
-            print('\033[1;32m''Curso Excluido! ''\033[0; 0m')
-            criaBarra()
-            valida = True
-            subMenuCursos()
+    dados = f"""SELECT * FROM curso WHERE id_curso = '{codigo}'"""
+    inst_SQL.execute(dados)
+    listaCurso = inst_SQL.fetchall()
+    if (len(listaCurso) != 0):
+        limpaTerminal()
+        criaBarra()
+        print('\033[1;32m''Curso encontrado! Excluindo... ''\033[0; 0m')
+        criaBarra()
+        sleep(5)
+        # Excluir curso
+        delete_query = f"""DELETE FROM curso WHERE id_curso = '{codigo}'"""
+        inst_SQL.execute(delete_query)
+        conn.commit()
+        print('\033[1;32m''Curso Excluido! ''\033[0; 0m')
+        criaBarra()
+        valida = True
+    else:
+        valida = False
 
     if not valida:
         limpaTerminal()
         criaBarra()
-        print('\033[1;31m''Erro! Código não encontrado ou inexistente.''\033[0; 0m')
+        print('\033[1;31m''Erro! Código inválido ou inexistente''\033[0; 0m')
         criaBarra()
         subMenuCursos()
