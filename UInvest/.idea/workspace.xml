@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4975ac42-f16b-4c9a-a389-f915efc6a6cc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../U-invest-py/admin/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/../U-invest-py/admin/controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../U-invest-py/admin/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/../U-invest-py/admin/service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/246137e6-3ef8-4862-a64f-fa8cb44531a6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/246137e6-3ef8-4862-a64f-fa8cb44531a6.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ef910f0-23d7-437e-84a8-0097fdd89a20.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ef910f0-23d7-437e-84a8-0097fdd89a20/storage_v2/_src_/schema/PUBLIC.aaZQjQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ef910f0-23d7-437e-84a8-0097fdd89a20/storage_v2/_src_/schema/SYS.rUIBAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9ef910f0-23d7-437e-84a8-0097fdd89a20/storage_v2/_src_/schema/SYSTEM.L2avkg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ce07e6c6-f5fa-4eac-82b7-107e3b8da1b3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ce07e6c6-f5fa-4eac-82b7-107e3b8da1b3/storage_v2/_src_/schema/SYS.rUIBAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ce07e6c6-f5fa-4eac-82b7-107e3b8da1b3/storage_v2/_src_/schema/SYSTEM.L2avkg.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/uinvest/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/uinvest/service/UsuarioService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +160,7 @@
       <workItem from="1680041735377" duration="11734000" />
       <workItem from="1680054986790" duration="16520000" />
       <workItem from="1682480013266" duration="1440000" />
-      <workItem from="1683077836659" duration="3447000" />
+      <workItem from="1683077836659" duration="4126000" />
     </task>
     <servers />
   </component>
