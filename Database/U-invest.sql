@@ -172,9 +172,12 @@ commit;
 Atualização de dados: /*Atualiza os dados da tabela*/
 UPDATE usuario SET perfil_investidor = 'moderado' WHERE cpf = '12345678910';
 UPDATE certificado SET  professor = 'Carlos Alberto' WHERE id_certificado = 'cert010';
+UPDATE aula SET conteudo = 'Aula introdutória  de programação.' WHERE id_aula = 'aula001';
 
 Deletando dados:
-DELETE FROM certificado WHERE  nome_aluno = 'Felipe Rodrigues'; /*Deleta o aluno Felipe Rodrigues*/
+DELETE FROM certificado WHERE nome_aluno = 'Felipe Rodrigues'; -- deleta registros com nome_aluno igual a 'Felipe Rodrigues'
+DELETE FROM certificado WHERE nome_curso = 'PHP Bascio'; -- deleta registros com nome_curso igual a 'PHP Bascio'
+DELETE FROM certificado WHERE nome_aluno = 'Luiz Silva'; -- deleta registros com nome_aluno igual a 'Luiz Silva'
 
 Relatório utilizando classificação de dados
 SELECT perfil_investidor, COUNT(*) AS total FROM usuario GROUP BY perfil_investidor; /*Numera a quantidade de investidores de cada tipo */
