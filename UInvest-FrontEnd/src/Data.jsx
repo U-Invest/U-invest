@@ -2,7 +2,7 @@ import { AiFillBank } from "react-icons/ai";
 import { AiFillGold } from "react-icons/ai";
 import { BsBarChartLine } from "react-icons/bs";
 import { AiFillReconciliation } from "react-icons/ai";
-
+import axios from 'axios';
 
 import courses1 from "./assets/courses1.jpg";
 import courses2 from "./assets/courses2.jpg";
@@ -70,6 +70,15 @@ export const categories = [
     category: "Criptos",
   },
 ];
+
+export async function getDadosCursos() {
+  try {
+    const response = await axios.get('http://localhost:8000/UInvest/');
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 export const courses = [
   {
@@ -158,3 +167,5 @@ export const accordions = [
     title: "Posso fazer parte da U Invest?",
   },
 ];
+
+
