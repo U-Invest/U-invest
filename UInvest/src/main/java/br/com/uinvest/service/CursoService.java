@@ -1,7 +1,9 @@
 package br.com.uinvest.service;
 
-public class LoginService {
+public class CursoService {
+
     public Boolean validarDadosCurso(){
         return true;
     }
+
 }
