@@ -13,7 +13,7 @@ import br.com.uinvest.connection.Conexao;
 import br.com.uinvest.dao.UsuarioDAO;
 
 
-@Path("/usuario")
+@Path("/usuarios")
 public class UserResource {
 
     @GET

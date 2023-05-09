@@ -73,7 +73,7 @@ export const categories = [
 
 export async function getDadosCursos() {
   try {
-    const response = await axios.get('http://localhost:8080/UInvest/usuarios');
+    const response = await axios.get('http://localhost:8080/UInvest/cursos');
     console.log(response.data);
   } catch (error) {
     console.error(error);
@@ -84,66 +84,66 @@ export const courses = [
   {
     id: 1,
     image: courses1,
-    category: "Criptoativos",
     title: "Criptomoedas: tudo o que você precisa saber sobre elas",
+    subtitle: "Criptoativos",
     rating: 4.9,
-    participants: 500,
+    ucoins: 500,
   },
   {
     id: 2,
     image: courses2,
-    category: "Fundos de Investimento",
+    subtitle: "Fundos de Investimento",
     title: "Investindo em Fundos Imobiliários - Do Básico ao Avançado",
     rating: 4.8,
-    participants: 700,
+    ucoins: 700,
   },
   {
     id: 3,
     image: courses3,
-    category: "Ações",
+    subtitle: "Ações",
     title: "Aprenda a investir em ações",
     rating: 4.9,
-    participants: 300,
+    ucoins: 300,
   },
   {
     id: 4,
     image: courses4,
-    category: "Criptoativos",
+    subtitle: "Criptoativos",
     title: "Criptomoedas - O básico",
     rating: 4.7,
-    participants: 600,
+    ucoins: 600,
   },
   {
     id: 5,
     image: courses5,
-    category: "Câmbio",
+    subtitle: "Câmbio",
     title: "Como investir em euro, dólar e outras moedas internacionais?",
     rating: 4.9,
-    participants: 500,
+    ucoins: 500,
   },
   {
     id: 6,
     image: courses6,
-    category: "Ações",
+    subtitle: "Ações",
     title: "Bolsa de Valores - Iniciantes",
     rating: 4.9,
-    participants: 500,
+    ucoins: 500,
   },
   {
     id: 7,
     image: courses7,
-    category: "Ações",
+    subtitle: "Ações",
     title: "Aprenda a Investir o seu Dinheiro",
     rating: 4.9,
-    participants: 500,
+    ucoins: 500,
   },
   {
     id: 8,
     image: courses8,
-    category: "Fundos de Investimento",
+    subtitle: "Fundos de Investimento",
     title: "Investindo em FIIs na bolsa!",
     rating: 4.9,
-    participants: 500,
+    ucoins: 500,
   },
 ];
 

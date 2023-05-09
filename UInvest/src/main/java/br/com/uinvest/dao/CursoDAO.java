@@ -1,7 +1,6 @@
 package br.com.uinvest.dao;
 
 import br.com.uinvest.model.Curso;
-import br.com.uinvest.model.Usuario;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -55,7 +54,7 @@ public class CursoDAO {
      * @return Uma lista de objetos Curso representando os cursos registrados, ou null se nenhum curso for encontrado.
      */
     public ArrayList<Curso> exibirDadosCursos() {
-        String sql = "select * from cursos";
+        String sql = "select * from curso";
         ArrayList<Curso> cursos = new ArrayList<>();
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
