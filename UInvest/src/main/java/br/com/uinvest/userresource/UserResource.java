@@ -1,0 +1,28 @@
+package br.com.uinvest.userresource;
+
+import java.sql.Connection;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import com.google.gson.Gson;
+
+import br.com.uinvest.connection.Conexao;
+import br.com.uinvest.dao.UsuarioDAO;
+
+
+@Path("/usuario")
+public class UserResource {
+
+	@GET
+	@Produces(MediaType.APPLICATION_JSON_PATCH_JSON)
+	public String buscar() {
+		Connection con = Conexao.abrirConexao();
+		UsuarioDAO usuariodao = new UsuarioDAO(con);
+		Gson gson = new Gson();
+		String json = gson.toJson(usuariodao.exibirDadosUsuario());
+		return json;		
+	}
+}

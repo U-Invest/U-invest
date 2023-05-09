@@ -30,38 +30,192 @@ public class UsuarioService {
 
         // Validar a senha
         if (senha == null || senha.trim().equals("")) {
-            dadosValidos = false;
+            dadosValidos = validarSenha(senha);
         }
 
         // Validar o user
         if (nickName == null || nickName.trim().equals("")) {
-            dadosValidos = false;
+            dadosValidos = validarUser(nickName);
         }
 
         // Validar o celular
         if (celular == null || celular.trim().equals("")) {
-            dadosValidos = false;
+            dadosValidos = validarCelular(celular);
         }
 
         // Validar o CPF
         if (cpf == null || cpf.trim().equals("")) {
-            dadosValidos = false;
+            dadosValidos = validarCpf(cpf);
         }
 
         // Validar o Nascimento
         if (nascimento == null || nascimento.trim().equals("")) {
-            dadosValidos = false;
+            dadosValidos = validarNascimento(nascimento);
         }
 
         // Validar o perfil do investidor
         if (perfilInvestidor == null || perfilInvestidor.trim().equals("")) {
-            dadosValidos = false;
+            dadosValidos = validarPerfilInvestidor(perfilInvestidor);
         }
 
         return dadosValidos;
     }
 
-    public boolean validaEmail(String email) {
+    private boolean validarPerfilInvestidor(String perfilInvestidor) {
+    if (perfilInvestidor.equalsIgnoreCase("Iniciante") || perfilInvestidor.equalsIgnoreCase("Conservador")
+            || perfilInvestidor.equalsIgnoreCase("Experiente")) {
+        return false;
+    }
+    return true;
+}
+
+
+	private boolean validarNascimento(String nascimento) {
+    if (nascimento.length() != 8) {
+        return true;
+    }
+    
+    for (char c : nascimento.toCharArray()) {
+        if (!Character.isDigit(c)) {
+            return true;
+        }
+    }
+    
+    int dia = Integer.parseInt(nascimento.substring(0, 2));
+    int mes = Integer.parseInt(nascimento.substring(2, 4));
+    int ano = Integer.parseInt(nascimento.substring(4, 8));
+    if (dia < 1 || dia > 31 || mes < 1 || mes > 12 || ano < 1900 || ano > 2100) {
+        return true;
+    }
+    if ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30) {
+        return true;
+    }
+    if (mes == 2) {
+        boolean bissexto = (ano % 4 == 0 && ano % 100 != 0) || ano % 400 == 0;
+        if (bissexto && dia > 29) {
+            return true;
+        } else if (!bissexto && dia > 28) {
+            return true;
+        }
+    }
+    
+    return false;
+}
+
+
+	private boolean validarCpf(String cpf) {
+    if (cpf.length() != 11) {
+        return true;
+    }
+    
+    for (char c : cpf.toCharArray()) {
+        if (!Character.isDigit(c)) {
+            return true;
+        }
+    }
+    
+    int[] numeros = new int[11];
+    for (int i = 0; i < 11; i++) {
+        numeros[i] = Character.getNumericValue(cpf.charAt(i));
+    }
+    int soma = 0;
+    for (int i = 0; i < 9; i++) {
+        soma += numeros[i] * (10 - i);
+    }
+    int resto = soma % 11;
+    if (resto == 10 || resto == 11) {
+        resto = 0;
+    }
+    if (resto != numeros[9]) {
+        return true;
+    }
+    soma = 0;
+    for (int i = 0; i < 10; i++) {
+        soma += numeros[i] * (11 - i);
+    }
+    resto = soma % 11;
+    if (resto == 10 || resto == 11) {
+        resto = 0;
+    }
+    if (resto != numeros[10]) {
+        return true;
+    }
+    
+    return false;
+}
+
+	private boolean validarCelular(String celular) {
+    if (celular.length() != 11 && celular.length() != 12) {
+        return true;
+    }
+    
+    for (char c : celular.toCharArray()) {
+        if (!Character.isDigit(c)) {
+            return true;
+        }
+    }
+    
+    return false;
+}
+
+
+	private boolean validarUser(String nickName) {
+    if (nickName.length() < 5 || nickName.length() > 20) {
+        return true;
+    }
+    
+    for (char c : nickName.toCharArray()) {
+        if (!Character.isLetterOrDigit(c) && c != '_') {
+            return true;
+        }
+    }
+    
+    return false;
+}
+
+	private boolean validarSenha(String senha) {
+	    if (senha.length() < 8) {
+	        return true;
+	    }
+	    
+	    if (!senha.matches(".*[A-Z].*")) {
+	        return true;
+	    }
+	    
+	    if (!senha.matches(".*[a-z].*")) {
+	        return true;
+	    }
+	    
+	    if (!senha.matches(".*[0-9].*")) {
+	        return true;
+	    }
+	    
+	    if (!senha.matches(".*[@#$%^&+=].*")) {
+	        return true;
+	    }
+	    
+	    return false;
+	}
+
+	private boolean validarNome(String nome) {
+        if (!nome.matches("[a-zA-Z]+")) {
+            return true;
+        }
+        
+        int minimoCaracteres = 3;
+        if (nome.length() < minimoCaracteres) {
+            return true;
+        }
+        
+        if (!nome.matches("[A-Z][a-z]+ [A-Z][a-z]+")) {
+            return true;
+        }
+        
+        return false;
+    }
+
+
+	public boolean validaEmail(String email) {
 
         String apiKey = "92ddd0010a9620726efc46de85fb711291b86214";
 
@@ -103,136 +257,6 @@ public class UsuarioService {
                 e.printStackTrace();
             }
         }
-        return true;
-    }
-
-    public boolean validarNome(String nome) {
-
-        try {
-            for (int i = 0; i < nome.length(); i++) {
-                char c = nome.charAt(i);
-                if (!Character.isLetter(c) && !Character.isWhitespace(c)) {
-                    return true;
-                }
-            }
-        } catch (NullPointerException | IndexOutOfBoundsException e) {
-            System.out.println("Erro: Nome inválido");
-        }
-
-        return false;
-    }
-
-    public static boolean validaData(String dataNascimento) {
-        SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
-        sdf.setLenient(false);
-
-        try {
-            Date data = sdf.parse(dataNascimento);
-            return true;
-        } catch (ParseException e) {
-            return false;
-        }
-    }
-
-    public static boolean validaCpf(String cpf) {
-        cpf = cpf.replaceAll("[^0-9]", ""); // Remove caracteres não numéricos
-
-        if (cpf.length() != 11) {
-            return false;
-        }
-
-        int[] digitos = new int[11];
-
-        for (int i = 0; i < 11; i++) {
-            digitos[i] = Character.getNumericValue(cpf.charAt(i));
-        }
-
-        // Verifica se todos os dígitos são iguais
-        boolean todosDigitosIguais = true;
-
-        for (int i = 1; i < 11; i++) {
-            if (digitos[i] != digitos[0]) {
-                todosDigitosIguais = false;
-                break;
-            }
-        }
-
-        if (todosDigitosIguais) {
-            return false;
-        }
-
-        // Verifica o primeiro dígito verificador
-        int soma = 0;
-
-        for (int i = 0; i < 9; i++) {
-            soma += digitos[i] * (10 - i);
-        }
-
-        int primeiroDigitoVerificador = 11 - (soma % 11);
-
-        if (primeiroDigitoVerificador >= 10) {
-            primeiroDigitoVerificador = 0;
-        }
-
-        if (primeiroDigitoVerificador != digitos[9]) {
-            return false;
-        }
-
-        // Verifica o segundo dígito verificador
-        soma = 0;
-
-        for (int i = 0; i < 10; i++) {
-            soma += digitos[i] * (11 - i);
-        }
-
-        int segundoDigitoVerificador = 11 - (soma % 11);
-
-        if (segundoDigitoVerificador >= 10) {
-            segundoDigitoVerificador = 0;
-        }
-
-        if (segundoDigitoVerificador != digitos[10]) {
-            return false;
-        }
-
-        return true;
-    }
-
-    public static boolean isCelularValido(String numeroCelular) {
-        // Remover caracteres não numéricos
-        String numeroApenasDigitos = numeroCelular.replaceAll("[^0-9]", "");
-
-        // Verificar o tamanho mínimo do número de celular com DDD
-        if (numeroApenasDigitos.length() < 10) {
-            return false;
-        }
-
-        // Extrair o DDD e o número do celular
-        String ddd = numeroApenasDigitos.substring(0, 2);
-        String numero = numeroApenasDigitos.substring(2);
-
-        // Verificar se o DDD é válido (exemplo: DDDs do Brasil)
-        String[] dddsValidos = { "11", "12", "13", "14", "15", "16", "17", "18", "19" }; // Adicione outros DDDs válidos conforme necessário
-
-        boolean dddValido = false;
-        for (String dddValidu : dddsValidos) {
-            if (ddd.equals(dddValidu)) {
-                dddValido = true;
-                break;
-            }
-        }
-
-        if (!dddValido) {
-            return false;
-        }
-
-        // Verificar se o número do celular possui apenas dígitos (exemplo: sem caracteres especiais)
-        if (!numero.matches("[0-9]+")) {
-            return false;
-        }
-
-        // Verificar outras regras específicas, se necessário
-
         return true;
     }
 }

@@ -22,7 +22,13 @@ public class UsuarioDAO {
     public UsuarioDAO(Connection con) {
         setCon(con);
     }
-
+    
+    /**
+     * Insere um novo usuário no banco de dados.
+     * 
+     * @param usuario O usuário a ser inserido
+     * @return Uma mensagem indicando se a inserção foi bem-sucedida ou não
+     */
     public String inserir(Usuario usuario) {
         String sql = "insert into usuario(nome, email, senha, nickName, celular, cpf, nascimento, perfil_investidor, saldo) values (?,?,?,?,?,?,?,?,?)";
         try {
@@ -46,6 +52,12 @@ public class UsuarioDAO {
         }
     }
 
+    /**
+     * Busca um usuário no banco de dados pelo seu nome de usuário (nickName) ou email.
+     * 
+     * @param nickNameOuEmail O nome de usuário ou email do usuário a ser buscado
+     * @return O usuário encontrado, ou null se nenhum usuário correspondente for encontrado
+     */
     public Usuario buscarPorUserOuEmail(String nickNameOuEmail) {
         String sql = "SELECT * FROM usuario WHERE nickName = ? OR email = ?";
         try {
@@ -72,6 +84,12 @@ public class UsuarioDAO {
         return null;
     }
 
+    /**
+     * Busca uma senha no banco de dados.
+     * 
+     * @param senha A senha a ser buscada
+     * @return A senha encontrada, ou null se não foi encontrada
+     */
     public String buscarSenha(String senha) {
         String sql = "SELECT * FROM usuario WHERE senha = ?";
         try {
@@ -87,31 +105,35 @@ public class UsuarioDAO {
         return null;
     }
 
+    /**
+     * Retorna uma lista de todos os usuários registrados no banco de dados.
+     * 
+     * @return Uma lista de objetos Usuario representando os usuários registrados, ou null se nenhum usuário for encontrado.
+     */
     public ArrayList<Usuario> exibirDadosUsuario() {
         String sql = "select * from usuario";
-        ArrayList<Usuario> retornarUsuario = new ArrayList<Usuario>();
+        ArrayList<Usuario> usuarios = new ArrayList<>();
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             if (rs != null) {
                 while (rs.next()) {
                     Usuario usuario = new Usuario();
-                    usuario.setNome(rs.getString(1));
+                    usuario.setNome(rs.getString(4));
                     usuario.setEmail(rs.getString(2));
-                    usuario.setSenha(rs.getString(3));
-                    usuario.setNickName(rs.getString(4));
-                    usuario.setCelular(rs.getString(5));
-                    usuario.setCpf(rs.getString(6));
-                    usuario.setNascimento(rs.getString(7));
-                    usuario.setPerfil_investidor(rs.getString(8));
-                    usuario.setSaldo(rs.getInt(9));
-                    retornarUsuario.add(usuario);
+                    usuario.setSenha(rs.getString(6));
+                    usuario.setNickName(rs.getString(8));
+                    usuario.setCelular(rs.getString(3));
+                    usuario.setCpf(rs.getString(1));
+                    usuario.setNascimento(rs.getString(9));
+                    usuario.setPerfil_investidor(rs.getString(7));
+                    usuario.setSaldo(rs.getInt(5));
+                    usuarios.add(usuario);
                 }
-                return retornarUsuario;
+                return usuarios;
             } else {
                 return null;
             }
-
         } catch (SQLException e) {
             return null;
         }

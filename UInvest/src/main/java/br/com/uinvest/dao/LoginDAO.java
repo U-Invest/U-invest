@@ -22,6 +22,12 @@ public class LoginDAO {
         setCon(con);
     }
 
+    /**
+     * Insere um novo registro na tabela "login".
+     * 
+     * @param login objeto contendo as informações do login a ser inserido.
+     * @return mensagem de sucesso ou erro ao inserir.
+     */
     public String inserir(Login login) {
         String sql = "insert into login(id_sessao, hrs_plataforma, ultima_sessao, hr_sessao_atual) values (?,?,?,?)";
         try {
