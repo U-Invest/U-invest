@@ -73,7 +73,7 @@ export const categories = [
 
 export async function getDadosCursos() {
   try {
-    const response = await axios.get('http://localhost:8000/UInvest/');
+    const response = await axios.get('http://localhost:8080/UInvest/usuarios');
     console.log(response.data);
   } catch (error) {
     console.error(error);
@@ -153,18 +153,22 @@ export const accordions = [
   {
     id: 1,
     title: "O que é a U Invest?",
+    content: "A U Invest é uma plataforma de investimentos online..."
   },
   {
     id: 2,
     title: "Como faço para aprender com a U Invest?",
+    content: "Você pode aprender com a U Invest através de nossos cursos online..."
   },
   {
     id: 3,
     title: "O que é o Droid?",
+    content: "O Droid é uma ferramenta de investimento automatizada..."
   },
   {
     id: 4,
     title: "Posso fazer parte da U Invest?",
+    content: "Sim, você pode fazer parte da U Invest..."
   },
 ];
 
