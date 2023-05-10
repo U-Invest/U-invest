@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { AiOutlineUser, AiOutlineStar } from "react-icons/ai";
 import { getDadosCursos } from "../../../Data";
 
+import courses0 from "../../../assets/courses0.jpg";
 import courses1 from "../../../assets/courses1.jpg";
 import courses2 from "../../../assets/courses2.jpg";
 import courses3 from "../../../assets/courses3.jpg";
@@ -12,6 +13,7 @@ import courses7 from "../../../assets/courses7.jpg";
 import courses8 from "../../../assets/courses8.jpg";
 
 const images = {
+  0: courses0,
   1: courses1,
   2: courses2,
   3: courses3,
