@@ -81,7 +81,6 @@ export async function getDadosCursos() {
       const objetoComId = { ...objeto, idCarrosel: index };
       cursosManipulados.push(objetoComId);
     });
-    console.log(cursosManipulados)
     return cursosManipulados
   } catch (error) {
     console.error(error);

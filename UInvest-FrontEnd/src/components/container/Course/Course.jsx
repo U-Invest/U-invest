@@ -2,9 +2,28 @@ import React, { useState, useEffect } from "react";
 import { AiOutlineUser, AiOutlineStar } from "react-icons/ai";
 import { getDadosCursos } from "../../../Data";
 
+import courses1 from "../../../assets/courses1.jpg";
+import courses2 from "../../../assets/courses2.jpg";
+import courses3 from "../../../assets/courses3.jpg";
+import courses4 from "../../../assets/courses4.jpg";
+import courses5 from "../../../assets/courses5.jpg";
+import courses6 from "../../../assets/courses6.jpg";
+import courses7 from "../../../assets/courses7.jpg";
+import courses8 from "../../../assets/courses8.jpg";
 
-const Course = ({ image, idCarrosel }) => {
-  
+const images = {
+  1: courses1,
+  2: courses2,
+  3: courses3,
+  4: courses4,
+  5: courses5,
+  6: courses6,
+  7: courses7,
+  8: courses8,
+};
+
+const Course = ({ idCarrosel }) => {
+
   const [curso, setCurso] = useState({});
 
   useEffect(() => {
@@ -19,7 +38,7 @@ const Course = ({ image, idCarrosel }) => {
 
   return (
     <div className="p-2 shadow-lg min-w-[15rem] bg-white rounded-md">
-      <img src={image} alt="" />
+      <img src={images[idCarrosel]} alt="" />
       <div className="mt-2 text-xs text-Teal">{curso.resumo}</div>
       <div className="text-sm mt-2 font-bold">{curso.nome}</div>
       <div className="flex items-center justify-between">
