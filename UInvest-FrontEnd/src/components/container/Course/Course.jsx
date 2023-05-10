@@ -1,24 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { AiOutlineUser, AiOutlineStar } from "react-icons/ai";
+import { getDadosCursos } from "../../../Data";
 
-const Course = ({ image, subtitle, title, ucoins, rating, price }) => {
+
+const Course = ({ image, idCarrosel }) => {
+  
+  const [curso, setCurso] = useState({});
+
+  useEffect(() => {
+    async function fetchData() {
+      const dadosCursos = await getDadosCursos();
+      const cursoEncontrado = dadosCursos.find(curso => curso.idCarrosel === idCarrosel);
+      setCurso(cursoEncontrado || {});
+    }
+
+    fetchData();
+  }, [idCarrosel]);
+
   return (
     <div className="p-2 shadow-lg min-w-[15rem] bg-white rounded-md">
       <img src={image} alt="" />
-      <div className="mt-2 text-xs text-Teal">{subtitle}</div>
-      <div className="text-sm mt-2 font-bold">{title}</div>
+      <div className="mt-2 text-xs text-Teal">{curso.resumo}</div>
+      <div className="text-sm mt-2 font-bold">{curso.nome}</div>
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="bg-Solitude p-1 rounded-full">
             <AiOutlineUser className="text-Teal" />
           </div>
-          <div className="text-sm font-bold">{ucoins}</div>
+          <div className="text-sm font-bold">{curso.pontuacao}</div>
         </div>
         <div className="flex items-center gap-2">
           <div className="bg-Solitude p-1 rounded-full">
             <AiOutlineStar className="text-yellow" />
           </div>
-          <div className="text-sm font-bold">{rating}</div>
+          <div className="text-sm font-bold">{curso.avaliacao}</div>
         </div>
       </div>
     </div>

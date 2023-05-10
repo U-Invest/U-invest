@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { categories } from "../../../Data";
-import { courses } from "../../../Data";
 import Categories from "./Categories";
 import Course from "./Course";
 import { motion } from "framer-motion";
+import { getDadosCursos } from "../../../Data";
 
 const Courses = () => {
   const container = {
@@ -20,6 +20,22 @@ const Courses = () => {
       },
     },
   };
+
+  const [cursos, setCursos] = useState([]);
+
+  useEffect(() => {
+    async function fetchCursos() {
+      try {
+        const data = await getDadosCursos();
+        setCursos(data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    fetchCursos();
+  }, []);
+
   return (
     <div className="section" id="cursos">
       <div className="text-center">
@@ -43,8 +59,8 @@ const Courses = () => {
       <div className="text-xl font-bold mt-32">Nossos cursos</div>
       <div className="mt-12 overflow-x-hidden w-full  relative">
         <div className="flex gap-8 md:w-full sm:w-[170%] xs:w-[340%] w-[480%] animate-slide">
-          {courses.map((course) => {
-            return <Course key={course.id} {...course} />;
+          {cursos.map((curso) => {
+            return <Course key={curso.idCarrosel} {...curso} />;
           })}
         </div>
       </div>

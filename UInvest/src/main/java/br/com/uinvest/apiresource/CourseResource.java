@@ -21,6 +21,7 @@ public class CourseResource {
         CursoDAO cursodao = new CursoDAO(con);
         Gson gson = new Gson();
         String json = gson.toJson(cursodao.exibirDadosCursos());
-        return json;
+        Conexao.fecharConexao(con);
+        return json; 
     }
 }

@@ -74,78 +74,19 @@ export const categories = [
 export async function getDadosCursos() {
   try {
     const response = await axios.get('http://localhost:8080/UInvest/cursos');
-    console.log(response.data);
+    const cursosJson = response.data;
+    const cursosManipulados = [];
+    
+    cursosJson.forEach((objeto, index) => {
+      const objetoComId = { ...objeto, idCarrosel: index };
+      cursosManipulados.push(objetoComId);
+    });
+    console.log(cursosManipulados)
+    return cursosManipulados
   } catch (error) {
     console.error(error);
   }
 }
-
-export const courses = [
-  {
-    id: 1,
-    image: courses1,
-    title: "Criptomoedas: tudo o que você precisa saber sobre elas",
-    subtitle: "Criptoativos",
-    rating: 4.9,
-    ucoins: 500,
-  },
-  {
-    id: 2,
-    image: courses2,
-    subtitle: "Fundos de Investimento",
-    title: "Investindo em Fundos Imobiliários - Do Básico ao Avançado",
-    rating: 4.8,
-    ucoins: 700,
-  },
-  {
-    id: 3,
-    image: courses3,
-    subtitle: "Ações",
-    title: "Aprenda a investir em ações",
-    rating: 4.9,
-    ucoins: 300,
-  },
-  {
-    id: 4,
-    image: courses4,
-    subtitle: "Criptoativos",
-    title: "Criptomoedas - O básico",
-    rating: 4.7,
-    ucoins: 600,
-  },
-  {
-    id: 5,
-    image: courses5,
-    subtitle: "Câmbio",
-    title: "Como investir em euro, dólar e outras moedas internacionais?",
-    rating: 4.9,
-    ucoins: 500,
-  },
-  {
-    id: 6,
-    image: courses6,
-    subtitle: "Ações",
-    title: "Bolsa de Valores - Iniciantes",
-    rating: 4.9,
-    ucoins: 500,
-  },
-  {
-    id: 7,
-    image: courses7,
-    subtitle: "Ações",
-    title: "Aprenda a Investir o seu Dinheiro",
-    rating: 4.9,
-    ucoins: 500,
-  },
-  {
-    id: 8,
-    image: courses8,
-    subtitle: "Fundos de Investimento",
-    title: "Investindo em FIIs na bolsa!",
-    rating: 4.9,
-    ucoins: 500,
-  },
-];
 
 export const logos = [logo1, logo2, logo3, logo4, logo5, logo6];
 
