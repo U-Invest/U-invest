@@ -1,28 +1,61 @@
-from chatterbot import ChatBot
-from chatterbot.trainers import ListTrainer
-from spacy.cli import download
+import nltk
+from nltk.chat.util import Chat, reflections
+from nltk.corpus import stopwords
+from nltk.stem import SnowballStemmer
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
-download("pt_core_news_sm")
+nltk.download('stopwords')
+nltk.download('punkt')
 
-class PTSM:
-    ISO_639_1 = 'pt_core_news_sm'
+stemmer = SnowballStemmer('portuguese')
+stop_words = stopwords.words('portuguese')
 
-chatbot = ChatBot("Droid", tagger_language=PTSM)
+with open('ipo.txt', 'r') as f:
+    raw_data = f.read()
 
-IPO = [
-"Você sabe o que é um IPO?",
-"Sim, IPO é o processo pelo qual uma empresa se torna pública pela primeira vez, vendendo ações para investidores em um mercado de ações.",
-"Quais são as vantagens de fazer um IPO?",
-"Fazer um IPO pode fornecer à empresa acesso a mais capital, aumentar a visibilidade e a credibilidade da empresa, e permitir que os acionistas existentes vendam suas ações.",
-"Quais são as desvantagens de fazer um IPO?",
-"Fazer um IPO pode ser caro e demorado, requerer maior divulgação e transparência financeira, e pode resultar em uma perda de controle da empresa pelos fundadores.",
-"Como é determinado o preço das ações em um IPO?",
-"O preço das ações é geralmente determinado por meio de um processo de bookbuilding, no qual os bancos de investimento que administram o IPO coletam as ofertas dos investidores e determinam o preço que maximiza a arrecadação de fundos para a empresa."
-]
+pairs = [pair.split('\n') for pair in raw_data.split('\n\n')]
+pairs = [(pair[0], pair[1]) for pair in pairs if len(pair) > 1]
 
-trainer = ListTrainer(chatbot)
-trainer.train(IPO)
+# Adiciona mensagem de boas-vindas
+pairs.insert(0, ("iniciar", "Olá, eu sou um chatbot sobre IPOs. Como posso ajudá-lo?"))
 
-pergunta = "O que é (IPO)?"
-resposta = chatbot.get_response(pergunta)
-print(resposta)
+def preprocess(text):
+    # Tokenização
+    tokens = nltk.word_tokenize(text.lower())
+
+    # Remoção de stop words
+    tokens = [token for token in tokens if token not in stop_words]
+
+    # Stemming
+    stemmed_tokens = [stemmer.stem(token) for token in tokens]
+
+    return " ".join(stemmed_tokens)
+
+# Pré-processa as perguntas e respostas
+preprocessed_pairs = [(preprocess(pair[0]), pair[1]) for pair in pairs]
+
+# Cria o modelo TF-IDF
+vectorizer = TfidfVectorizer()
+corpus = [pair[0] for pair in preprocessed_pairs]
+X = vectorizer.fit_transform(corpus)
+
+# Cria o chatbot
+def chatbot_response(user_input):
+    response = None
+    user_input = preprocess(user_input)
+    input_vec = vectorizer.transform([user_input])
+    sim_scores = cosine_similarity(input_vec, X)
+    idx = sim_scores.argmax()
+    if sim_scores[0][idx] > 0:
+        response = preprocessed_pairs[idx][1]
+    return response
+
+# Função de resposta padrão
+def default_response(user_input):
+    return "Desculpe, não entendi. Pode reformular a pergunta?"
+
+chatbot = Chat(pairs, reflections)
+chatbot.respond = chatbot_response
+chatbot.default_response = default_response
+chatbot.converse()
