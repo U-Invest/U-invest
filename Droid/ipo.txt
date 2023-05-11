@@ -81,3 +81,84 @@ R: As etapas do roadshow em um IPO incluem reuniões com investidores potenciais
 
 P: Qual é a diferença entre um IPO e uma listagem direta?
 R: Em um IPO, a empresa emite novas ações para arrecadar capital, enquanto em uma listagem direta, a empresa simplesmente lista suas ações existentes no mercado de ações.
+
+P: O que é um investimento?
+R: Investimento é o ato de aplicar dinheiro em algum tipo de ativo, com o objetivo de obter lucro no futuro.
+
+P: Quais são os tipos de investimentos mais comuns?
+R: Os tipos mais comuns são: poupança, renda fixa, ações, fundos imobiliários, fundos de investimento e criptomoedas.
+
+P: Como funciona a poupança como investimento?
+R: A poupança é um tipo de investimento de renda fixa, onde o investidor empresta dinheiro ao banco, que paga juros em troca.
+
+P: O que é a renda fixa?
+R: Renda fixa é um tipo de investimento onde a remuneração é pré-fixada ou pós-fixada, com baixo risco e previsibilidade de rendimento.
+
+P: O que é ações?
+R: Ações são títulos que representam uma parcela do capital social de uma empresa, dando ao investidor o direito de participação nos lucros e na tomada de decisões.
+
+P: Como funciona um fundo de investimento?
+R: Um fundo de investimento é uma aplicação financeira onde o dinheiro de diversos investidores é reunido e gerido por um profissional, com o objetivo de obter lucro.
+
+P: O que é um fundo imobiliário?
+R: Fundos imobiliários são fundos de investimento que investem em empreendimentos imobiliários, como prédios comerciais, shoppings, hospitais, entre outros.
+
+P: Qual é a diferença entre investir em ações e em fundos de investimento?
+R: Investir em ações é mais arriscado, mas também pode ter um retorno maior. Já os fundos de investimento são mais seguros, mas com um retorno menor.
+
+P: O que é um robô de investimento?
+R: Um robô de investimento é um software que utiliza algoritmos para fazer análises do mercado financeiro e tomar decisões de investimento.
+
+P: Qual é a diferença entre criptomoedas e moedas tradicionais?
+R: Criptomoedas são digitais e descentralizadas, não sendo controladas por nenhum governo ou instituição financeira. Já as moedas tradicionais são emitidas e controladas pelos governos.
+
+P: O que é diversificação de investimentos?
+R: Diversificação é a estratégia de investir em diferentes tipos de ativos, com o objetivo de reduzir o risco e aumentar o potencial de retorno.
+
+P: Qual é o melhor momento para começar a investir?
+R: O melhor momento para começar a investir é o mais cedo possível, para ter mais tempo de acumular rendimentos e aproveitar o poder dos juros compostos.
+
+P: O que é o Tesouro Direto?
+R: O Tesouro Direto é um programa do governo brasileiro que permite investir em títulos públicos de forma simples e acessível.
+
+O que é um prospecto?
+R: Um prospecto é um documento que contém informações detalhadas sobre uma oferta pública de ações, incluindo informações financeiras e de negócios da empresa.
+
+Quais informações financeiras são geralmente incluídas no prospecto?
+R: O prospecto geralmente inclui informações sobre a situação financeira da empresa, incluindo seus lucros, despesas e fluxo de caixa.
+
+O que é uma oferta pública inicial?
+R: Uma oferta pública inicial, ou IPO, é quando uma empresa vende ações ao público pela primeira vez.
+
+O que é uma oferta subsequente?
+R: Uma oferta subsequente é quando uma empresa emitiu ações anteriormente em um IPO e decide emitir mais ações no mercado.
+
+O que é um roadshow?
+R: Um roadshow é uma série de reuniões e apresentações feitas por uma empresa para investidores em potencial antes de uma oferta pública de ações.
+
+Como posso acessar o prospecto de uma empresa?
+R: O prospecto geralmente está disponível no site da Comissão de Valores Mobiliários (CVM) ou da Bolsa de Valores em que a empresa está listada.
+
+O que é um cronograma de IPO?
+R: Um cronograma de IPO é um cronograma que descreve o processo de IPO e os prazos associados a cada etapa do processo.
+
+Quais são os riscos associados a investir em um IPO?
+R: Os riscos associados a investir em um IPO incluem a possibilidade de a empresa não atender às expectativas dos investidores, bem como flutuações no mercado de ações.
+
+O que é uma folha de termos?
+R: Uma folha de termos é um documento que contém detalhes sobre a oferta pública de ações, incluindo a quantidade de ações a serem oferecidas e o preço das ações.
+
+Quais são as vantagens de investir em um IPO?
+R: As vantagens de investir em um IPO incluem a possibilidade de obter um retorno significativo sobre o investimento inicial e a oportunidade de investir em uma empresa em crescimento.
+
+Como as empresas determinam o preço das ações em um IPO?
+R: As empresas geralmente contratam bancos de investimento para ajudá-las a determinar o preço das ações em um IPO, com base na oferta e demanda do mercado.
+
+Quais são as obrigações contínuas das empresas após a conclusão de um IPO?
+R: As obrigações contínuas das empresas após a conclusão de um IPO incluem divulgar regularmente informações financeiras e de negócios aos investidores e manter a conformidade com as regulamentações da CVM e da bolsa de valores.
+
+O que é um underwriter?
+R: Um underwriter é um banco de investimento ou corretora de valores mobiliários que ajuda a empresa a emitir e vender suas ações ao público.
+
+O que é um prospecto preliminar?
+R: Um prospecto preliminar é um rascunho do prospecto que é arquivado com a CVM antes de um IPO, para dar aos investidores em potencial uma ideia geral das informações que serão incluídas no prospecto final.
