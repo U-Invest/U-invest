@@ -1,63 +1,61 @@
-import fitz
-from nltk.tokenize import sent_tokenize
-from heapq import nlargest
-import nltk
-from nltk.corpus import stopwords
-stop_words = set(stopwords.words('portuguese'))
+import PyPDF2
+import re
+import datetime
+import tkinter as tk
+from tkinter import messagebox
 
-def summarize_pdf(input_file, output_file, summary_ratio=0.1):
-    # Abrir o arquivo PDF
-    with fitz.open(input_file) as pdf:
-        num_pages = pdf.page_count
-        text = ""
+# Ler o prospecto
+try:
+    with open('prospecto.pdf', 'rb') as pdf_file:
+        pdf_reader = PyPDF2.PdfReader(pdf_file)
+        prospecto_text = ''
+        for page in pdf_reader.pages:
+            prospecto_text += page.extract_text()
+except FileNotFoundError:
+    print('O arquivo do prospecto não foi encontrado')
+    exit()
 
-        # Extrair texto de todas as páginas
-        for i in range(num_pages):
-            page = pdf.load_page(i)
-            text += page.get_text()
+# Identificar as informações
+preco_oferta = re.findall(r'Preço\s+por\s+ação\s*:? *R?\$? *([\d,.]+)\s*', prospecto_text)
+quantidade_oferta = re.findall(r'Quantidade\s+de\s+ações\s+ofertadas\s*:? *([\d,.]+)\s*', prospecto_text)
+valor_total_oferta = re.findall(r'Valor\s+total\s+da\s+oferta\s*:? *R?\$? *([\d,.]+)\s*', prospecto_text)
+data_inicio_oferta = re.findall(r'Data\s+de\s+início\s+da\s+oferta\s*:? *([\d/]+)\s*', prospecto_text)
+data_fim_oferta = re.findall(r'Data\s+de\s+término\s+da\s+oferta\s*:? *([\d/]+)\s*', prospecto_text)
+objetivo_oferta = re.findall(r'Objetivo\s+da\s+oferta\s*:? *(.+?)\s*(?=Caracter|Riscos|Informa|\Z)', prospecto_text,
+                             re.DOTALL)
+garantias_oferta = re.findall(
+    r'Garantias\s+oferecidas\s+aos\s+investidores\s*:? *(.+?)\s*(?=Objetivo|Caracter|Riscos|Informa|\Z)',
+    prospecto_text, re.DOTALL)
+riscos_oferta = re.findall(
+    r'Riscos\s+envolvidos\s+na\s+oferta\s*:? *(.+?)\s*(?=Objetivo|Caracter|Garantias|Informa|\Z)', prospecto_text,
+    re.DOTALL)
+informacoes_oferta = re.findall(
+    r'Informações\s+sobre\s+a\s+empresa\s+e\s+a\s+oferta\s*:? *(.+?)\s*(?=Objetivo|Caracter|Garantias|Riscos|\Z)',
+    prospecto_text, re.DOTALL)
 
-        # Tokenização das sentenças
-        sentences = sent_tokenize(text)
+# Criar arquivo de texto e salvar informações
+try:
+    with open('informacoes_prospecto.txt', 'w') as txt_file:
+        if preco_oferta:
+            txt_file.write('Preço por ação: R$ {}\n\n'.format(preco_oferta[0]))
+        if quantidade_oferta:
+            txt_file.write('Quantidade de ações ofertadas: {}\n\n'.format(quantidade_oferta[0]))
+        if valor_total_oferta:
+            txt_file.write('Valor total da oferta: R$ {}\n\n'.format(valor_total_oferta[0]))
+        if data_inicio_oferta:
+            txt_file.write('Data de início da oferta: {}\n\n'.format(data_inicio_oferta[0]))
+        if data_fim_oferta:
+            txt_file.write('Data de término da oferta: {}\n\n'.format(data_fim_oferta[0]))
+        if objetivo_oferta:
+            txt_file.write('Objetivo da oferta: {}\n\n'.format(objetivo_oferta[0].strip()))
+        if garantias_oferta:
+            txt_file.write('Garantias oferecidas aos investidores: {}\n\n'.format(garantias_oferta[0].strip()))
+        if riscos_oferta:
+            txt_file.write('Riscos envolvidos na oferta: {}\n\n'.format(riscos_oferta[0].strip()))
+        if informacoes_oferta:
+            txt_file.write('Informações sobre a empresa e a oferta: {}\n\n'.format(informacoes_oferta[0].strip()))
+    messagebox.showinfo(title='Sucesso', message='As informações foram salvas no arquivo "informacoes_prospecto.txt"')
+except:
+    messagebox.showerror(title='Erro', message='Ocorreu um erro ao criar o arquivo de texto')
 
-        # Criar dicionário de frequência de palavras
-        word_freq = {}
-        for sentence in sentences:
-            words = nltk.word_tokenize(sentence.lower())
-            for word in words:
-                if word not in stop_words:
-                    if word not in word_freq.keys():
-                        word_freq[word] = 1
-                    else:
-                        word_freq[word] += 1
 
-        # Normalizar a frequência de palavras
-        max_freq = max(word_freq.values())
-        for word in word_freq.keys():
-            word_freq[word] = word_freq[word]/max_freq
-
-        # Calcular pontuação de cada sentença
-        sentence_scores = {}
-        for sentence in sentences:
-            for word in nltk.word_tokenize(sentence.lower()):
-                if word in word_freq.keys():
-                    if len(sentence.split(' ')) < 30:
-                        if sentence not in sentence_scores.keys():
-                            sentence_scores[sentence] = word_freq[word]
-                        else:
-                            sentence_scores[sentence] += word_freq[word]
-
-        # Selecionar as N sentenças mais importantes
-        num_sentences = int(len(sentences)*summary_ratio)
-        summary_sentences = nlargest(num_sentences, sentence_scores, key=sentence_scores.get)
-        summary = ' '.join(summary_sentences)
-
-        # Salvar o resultado em um arquivo PDF
-        with open(output_file, 'wb') as f:
-            pdf_writer = fitz.open()
-            pdf_writer.insert_pdf(pdf)
-            page = pdf_writer[-1]
-            page.insert_text((0, 0), summary)
-            pdf_writer.save(f)
-
-        # Fechar o arquivo
-        pdf_writer.close()

@@ -7,6 +7,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from nltk.tokenize import sent_tokenize
 from heapq import nlargest
 
+
 stemmer = SnowballStemmer('portuguese')
 stop_words = stopwords.words('portuguese')
 
@@ -19,7 +20,7 @@ pairs = [(pair[0], pair[1]) for pair in pairs if len(pair) > 1]
 # Adiciona mensagem de boas-vindas
 print("\033[1;34m" + "-" * 89)
 print("-" * 89 + "\033[m")
-print("\033[1;32mBem-vindo ao Droid! Eu sou um chatbot sobre IPOs. Como posso ajudá-lo?\033[m")
+print("\033[1;32;7mBem-vindo ao Droid! Eu sou um chatbot sobre IPOs. Como posso ajudá-lo?\033[m")
 print("\033[1;34m" + "-" * 89)
 print("-" * 89 + "\033[m")
 
@@ -45,16 +46,20 @@ X = vectorizer.fit_transform(corpus)
 
 # Cria o chatbot
 def chatbot_response(user_input):
-    response = None
-    user_input = preprocess(user_input)
-    input_vec = vectorizer.transform([user_input])
-    sim_scores = cosine_similarity(input_vec, X)
-    idx = sim_scores.argmax()
-    if sim_scores[0][idx] > 0:
-        response = preprocessed_pairs[idx][1]
-    else:
-        response = default_response(user_input)
-    return response
+    try:
+        response = None
+        user_input = preprocess(user_input)
+        input_vec = vectorizer.transform([user_input])
+        sim_scores = cosine_similarity(input_vec, X)
+        idx = sim_scores.argmax()
+        if sim_scores[0][idx] > 0:
+            response = preprocessed_pairs[idx][1]
+        else:
+            response = default_response(user_input)
+        return response
+    except Exception as e:
+        print(f"\033[1;31mErro ao processar a entrada do usuário: {e}\033[m")
+        return None
 
 # Função de resposta padrão
 def default_response(user_input):
@@ -73,7 +78,7 @@ def handle_choice(choice):
         response = chatbot_response(question)
         print(response)
     elif choice == "2":
-        print("Em desenvolvimento")
+        print("em desenvolvimento")
     elif choice == "3":
         print("Até mais!")
         exit()
