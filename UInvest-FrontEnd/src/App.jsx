@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import {
   Navbar,
   MainHome,
-  Footer,
   Cursos,
   Login,
   Cadastro,
@@ -18,8 +17,9 @@ function App() {
 
   return (
     <div className="font-Poppins bg-Solitude">
-      <Navbar />
+      
       <BrowserRouter>
+       <Navbar />
         <Routes>
           <Route path="/" element={<MainHome />} />
           <Route path="/cursos" element={<Cursos />} />
@@ -29,6 +29,8 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
+
+    
   );
 }
 

@@ -1,5 +1,4 @@
 import {
-    Navbar,
     Home,
     About,
     Courses,
@@ -13,7 +12,6 @@ import {
     return (
       <>
       <div className="font-Poppins bg-Solitude">
-        <Navbar />
         <Home />
         <About />
         <Courses/>
