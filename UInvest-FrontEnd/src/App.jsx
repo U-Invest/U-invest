@@ -1,27 +1,38 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import {
   Navbar,
-  Home,
-  About,
-  Teacher,
-  Contact,
-  Courses,
+  MainHome,
   Footer,
+  Cursos,
+  Login,
+  Cadastro,
+  AreaUsuario,
+
 } from "./components/index";
 
+
+
+
+
 function App() {
+
   return (
-    <>
-      <div className="font-Poppins bg-Solitude">
-        <Navbar />
-        <Home />
-        <About />
-        <Courses />
-        <Teacher />
-        <Contact />
-        <Footer />
-      </div>
-    </>
+    <div className="font-Poppins bg-Solitude">
+      <Navbar />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainHome />} />
+          <Route path="/cursos" element={<Cursos />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/cadastro" element={<Cadastro />} />
+          <Route path="/areausuario" element={<AreaUsuario />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
 export default App;
+
+
+

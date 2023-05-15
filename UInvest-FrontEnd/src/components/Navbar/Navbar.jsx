@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { navLinks } from "../../Data";
 import { HiMenuAlt1, HiX } from "react-icons/hi";
 import MobileNavLinks from "./MobileNavLinks";
@@ -43,9 +44,13 @@ const Navbar = () => {
               return <NavLink key={navLink.id} {...navLink} />;
             })}
           </div>
+
           <button className="btn-gam">
             <Modal />
           </button>
+
+
+          
           {toggle && (
             <motion.div
               initial={{ x: -500, opacity: 0 }}
@@ -71,6 +76,8 @@ const Navbar = () => {
         </div>
       </div>
     </div>
+
+    
   );
 };
 
