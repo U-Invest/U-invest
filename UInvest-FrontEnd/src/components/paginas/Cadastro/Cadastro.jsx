@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import "./Cadastro.css";
 import { useState } from 'react';
+import {enviarDadosCadastro} from '../../../Data'; // Importe a função enviarDadosCadastro aqui
 
 const Cadastro = () => {
   const [name, setName] = useState("");
@@ -11,14 +12,38 @@ const Cadastro = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [birthdate, setBirthdate] = useState("");
   const [phone, setPhone] = useState("");
-  const [perfil, setPerfil] = useState("not-investor");
+  const [profileType, setProfileType] = useState("not-investor");
   const [CPF, setCPF] = useState("");
   const handlePerfilChange = (event) => {
-    setPerfil(event.target.value);
+    setProfileType(event.target.value);
   };
   
 
   const handleSubmit = (event) => {
+    let usuario = {
+      nome: name,
+      username: username,
+      email: email,
+      password: password,
+      confirmPassword: confirmPassword,
+      birthdate: birthdate,
+      phone: phone,
+      profileType: profileType
+    };
+
+
+    enviarDadosCadastro(usuario)
+    .then(data => {
+      // Tratar a resposta da solicitação POST
+      console.log(data);
+    })
+    .catch(error => {
+      // Lidar com erros, se houver
+      console.error(error);
+    });
+
+
+
     event.preventDefault();
     console.log("Nome:", name);
     console.log("Username:", username);
@@ -27,7 +52,8 @@ const Cadastro = () => {
     console.log("Confirm Password:", confirmPassword);
     console.log("Data de nascimento:", birthdate);
     console.log("Telefone:", phone);
-    console.log("Perfil de investidor:", perfil);
+    console.log("Perfil de investidor:", profileType);
+    console.log("Usuario: ", usuario)
     
   };
 
@@ -55,7 +81,7 @@ const Cadastro = () => {
           <label htmlFor="name">Username:</label>
           <input
             type="name"
-            id="name"
+            id="username"
             placeholder="  Digite seu username"
             value={username}
             onChange={(event) => setUserName(event.target.value)}
@@ -79,7 +105,7 @@ const Cadastro = () => {
           <label htmlFor="email">Senha:</label>
           <input
             type="password"
-            id="email"
+            id="password"
             placeholder="  Digite sua senha: "
             value={password}
             onChange={(event) => setPassword(event.target.value)}
@@ -90,7 +116,7 @@ const Cadastro = () => {
           <label htmlFor="confirmPassword">Confirme:</label>
           <input
             type="password"
-            id="email"
+            id="confirmpassword"
             placeholder="  Confirme sua senha:"
             value={confirmPassword}
             onChange={(event) => setConfirmPassword(event.target.value)}
@@ -101,15 +127,13 @@ const Cadastro = () => {
       {/* Input do perfil do investidor */}
       <div>
       <h2>Perfil de investidor</h2>
-      <form>
         <label htmlFor="perfil">Selecione seu perfil de investidor:</label>
-        <select id="perfil" value={perfil} onChange={handlePerfilChange}>
+        <select id="perfil" value={profileType} onChange={handlePerfilChange}>
           <option value="nao-investidor">Não Investidor</option>
           <option value="iniciante">Iniciante</option>
           <option value="conservador">Conservador</option>
           <option value="moderado">Moderado</option>
         </select>
-      </form>
     </div>
 
         {/* Input do telefone */}
@@ -126,13 +150,13 @@ const Cadastro = () => {
 
           {/* Input do CPF */}
           <div className="input-group">
-          <label htmlFor="phone">CPF:</label>
+          <label htmlFor="cpf">CPF:</label>
           <input
-            type="tel"
+            type="text"
             id="CPF"
             placeholder="Digite seu CPF"
             value={CPF}
-            onChange={(event) => setPhone(event.target.value)}
+            onChange={(event) => setCPF(event.target.value)}
           />
         </div>
 

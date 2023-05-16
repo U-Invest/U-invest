@@ -71,6 +71,35 @@ export const categories = [
   },
 ];
 
+
+/* GET consultando os dados de login no banco de dados */
+export async function fazerLogin(email, password) {
+  try {
+    const response = await axios.get('http://localhost:8080/UInvest/usuario', {
+      params: {
+        email: email,
+        password: password
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+/* POST inserindo dados de cadastro */
+export const enviarDadosCadastro = async(dadosCadastro) => {
+  try {
+    const dadosJSON = JSON.stringify(dadosCadastro);
+    const response = await axios.post('http://localhost:8080/UInvest/usuario', dadosJSON);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+
+/* GET consultando os dados de cursos */ 
 export async function getDadosCursos() {
   try {
     const response = await axios.get('http://localhost:8080/UInvest/cursos');
@@ -86,6 +115,7 @@ export async function getDadosCursos() {
     console.error(error);
   }
 }
+
 
 export const logos = [logo1, logo2, logo3, logo4, logo5, logo6];
 

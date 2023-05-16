@@ -1,23 +1,40 @@
 import React from 'react';
 import "./Login.css";
 import { useState } from 'react';
+import { fazerLogin } from '../../../Data';
 
 const Login = () => {
-  const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (event) => {
+    let usuario = {
+      email: email,
+      password: password,
+    };
+
+    fazerLogin(usuario)
+      .then(data => {
+        // Tratar a resposta da solicitação GET
+        console.log(data);
+      })
+      .catch(error => {
+        // Lidar com erros, se houver
+        console.error(error);
+      });
+ 
+
+
     event.preventDefault();
-    console.log("Username:", username);
     console.log("Email:", email);
     console.log("Password:", password);
+    console.log("Usuario: ", usuario)
   };
 
   return (
 
     // Container da caixa de cadastro
-    <div className="signup-container">
+    <div className="login-container">
       <form onSubmit={handleSubmit}>
         <h1>Login</h1>
 
@@ -35,14 +52,14 @@ const Login = () => {
         </div>
 
         <div className="input-group">
-          <label htmlFor="email">Senha:</label>
+          <label htmlFor="password">Senha:</label>
           <input
-            type="email"
-            id="email"
+            type="password"
+            id="password"
             placeholder="  Digite sua senha: "
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+         />
         </div>
 
 
