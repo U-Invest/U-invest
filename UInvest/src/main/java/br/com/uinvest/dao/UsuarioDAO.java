@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import br.com.uinvest.model.Usuario;
 
-public class UsuarioDAO {
+public class    UsuarioDAO {
     private Connection con;
 
     public final Connection getCon() {
@@ -30,6 +30,7 @@ public class UsuarioDAO {
      * @return Uma mensagem indicando se a inserção foi bem-sucedida ou não
      */
     public String inserir(Usuario usuario) {
+
         String sql = "insert into usuario(nome, email, senha, nickName, celular, cpf, nascimento, perfil_investidor, saldo) values (?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
