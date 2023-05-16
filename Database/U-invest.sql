@@ -1,12 +1,12 @@
 CREATE TABLE usuario (
     cpf CHAR(11) CONSTRAINT us_cpf_pk PRIMARY KEY,
-    email varchar2(50) NOT NULL,
+    email varchar2(50) UNIQUE NOT NULL,
     celular CHAR(11) UNIQUE NOT NULL,
     nome varchar2(50) NOT NULL,
     saldo NUMBER(5) NOT NULL,
     senha varchar2(20) NOT NULL,
     perfil_investidor varchar2(20) NOT NULL,
-    nickname varchar2(20) NOT NULL,
+    nickname varchar2(20) UNIQUE NOT NULL,
     nascimento varchar2(8) NOT NULL --DDmmYYYY
 );
 
@@ -169,30 +169,30 @@ INSERT INTO certificado VALUES ('Python Avancado', 'Felipe Rodrigues', 'CertSign
 
 commit;
 
-Atualização de dados: /*Atualiza os dados da tabela*/
+Atualizaï¿½ï¿½o de dados: /*Atualiza os dados da tabela*/
 UPDATE usuario SET perfil_investidor = 'moderado' WHERE cpf = '12345678910';
 UPDATE certificado SET  professor = 'Carlos Alberto' WHERE id_certificado = 'cert010';
-UPDATE aula SET conteudo = 'Aula introdutória  de programação.' WHERE id_aula = 'aula001';
+UPDATE aula SET conteudo = 'Aula introdutï¿½ria  de programaï¿½ï¿½o.' WHERE id_aula = 'aula001';
 
 Deletando dados:
 DELETE FROM certificado WHERE nome_aluno = 'Felipe Rodrigues'; -- deleta registros com nome_aluno igual a 'Felipe Rodrigues'
 DELETE FROM certificado WHERE nome_curso = 'PHP Bascio'; -- deleta registros com nome_curso igual a 'PHP Bascio'
 DELETE FROM certificado WHERE nome_aluno = 'Luiz Silva'; -- deleta registros com nome_aluno igual a 'Luiz Silva'
 
-Relatório utilizando classificação de dados
+Relatï¿½rio utilizando classificaï¿½ï¿½o de dados
 SELECT perfil_investidor, COUNT(*) AS total FROM usuario GROUP BY perfil_investidor; /*Numera a quantidade de investidores de cada tipo */
  
-Relatório utilizando alguma função do tipo numérica simples /*Coloca em ordem crescente com base na horas da plataforma*/
+Relatï¿½rio utilizando alguma funï¿½ï¿½o do tipo numï¿½rica simples /*Coloca em ordem crescente com base na horas da plataforma*/
 select * from login order by hrs_plataforma asc;
 
-Relatório utilizando alguma função de grupo /*Soma o saldo dos investidores com base no seu perfil de investimento */
+Relatï¿½rio utilizando alguma funï¿½ï¿½o de grupo /*Soma o saldo dos investidores com base no seu perfil de investimento */
 SELECT perfil_investidor, SUM(saldo) AS saldo_total FROM usuario GROUP BY perfil_investidor; 
 
-Relatório utilizando sub consulta. /*Realiza a media das avalições dos usurario que utilizaram o tipo de conteudo Video*/
+Relatï¿½rio utilizando sub consulta. /*Realiza a media das avaliï¿½ï¿½es dos usurario que utilizaram o tipo de conteudo Video*/
 SELECT AVG(avaliacao) AS media_avaliacao_videos FROM aula WHERE tipo_conteudo = 'Video';
 
-Relatório utilizando junção de tabela    
-/*  Junção das tabelas
+Relatï¿½rio utilizando junï¿½ï¿½o de tabela    
+/*  Junï¿½ï¿½o das tabelas
 usuario com colunas: (nome,perfil_investidor ),
 faz com colunas: (fk_usuario_cpf),
 curso com colunas:(nome, professor, curso_name)*/

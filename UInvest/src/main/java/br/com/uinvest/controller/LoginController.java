@@ -22,14 +22,11 @@ public class LoginController {
     private LocalDateTime fimSessao;
 
     // Autentica um usuário com o nome ou email e a senha encriptada
-    public boolean autenticarUsuario() {
+    public boolean autenticarUsuario(String nickNameOuEmail, String senha) {
         try (Connection con = Conexao.abrirConexao()) {
             UsuarioDAO usuarioDAO = new UsuarioDAO(con);
 
-            String userOuEmail = JOptionPane.showInputDialog("Digite seu Nome de Usuario ou Email");
-            String senha = JOptionPane.showInputDialog("Digite sua senha");
-
-            Usuario usuario = usuarioDAO.buscarPorUserOuEmail(userOuEmail);
+            Usuario usuario = usuarioDAO.buscarPorUserOuEmail(nickNameOuEmail);
             if (usuario != null) {
                 // Cria um objeto MessageDigest para calcular o hash SHA-256 da senha fornecida pelo usuário
                 MessageDigest digest;
@@ -58,6 +55,7 @@ public class LoginController {
                     System.out.println("Sessão iniciada para o usuário " + usuario);
                     System.out.println(inicioSessao);
                     Conexao.fecharConexao(con);
+                    return true;
                 } else {
                     Conexao.fecharConexao(con);
                     return false; // Autenticação mal-sucedida

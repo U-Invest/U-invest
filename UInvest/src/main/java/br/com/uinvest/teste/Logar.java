@@ -5,7 +5,7 @@ import br.com.uinvest.controller.LoginController;
 public class Logar {
     public static void main(String[] args) throws InterruptedException {
         LoginController loginController = new LoginController();
-        loginController.autenticarUsuario();
+        loginController.autenticarUsuario("Teste", "Teste");
 
         Thread.sleep(10000);
         loginController.logout();

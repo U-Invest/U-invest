@@ -7,8 +7,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import br.com.uinvest.model.Usuario;
+import com.google.gson.Gson;
+import org.json.simple.JSONObject;
 
-public class    UsuarioDAO {
+public class UsuarioDAO {
     private Connection con;
 
     public final Connection getCon() {
@@ -22,10 +24,10 @@ public class    UsuarioDAO {
     public UsuarioDAO(Connection con) {
         setCon(con);
     }
-    
+
     /**
      * Insere um novo usuário no banco de dados.
-     * 
+     *
      * @param usuario O usuário a ser inserido
      * @return Uma mensagem indicando se a inserção foi bem-sucedida ou não
      */
@@ -55,7 +57,7 @@ public class    UsuarioDAO {
 
     /**
      * Busca um usuário no banco de dados pelo seu nome de usuário (nickName) ou email.
-     * 
+     *
      * @param nickNameOuEmail O nome de usuário ou email do usuário a ser buscado
      * @return O usuário encontrado, ou null se nenhum usuário correspondente for encontrado
      */
@@ -87,7 +89,7 @@ public class    UsuarioDAO {
 
     /**
      * Busca uma senha no banco de dados.
-     * 
+     *
      * @param senha A senha a ser buscada
      * @return A senha encontrada, ou null se não foi encontrada
      */
@@ -108,7 +110,7 @@ public class    UsuarioDAO {
 
     /**
      * Retorna uma lista de todos os usuários registrados no banco de dados.
-     * 
+     *
      * @return Uma lista de objetos Usuario representando os usuários registrados, ou null se nenhum usuário for encontrado.
      */
     public ArrayList<Usuario> exibirDadosUsuario() {
@@ -137,6 +139,24 @@ public class    UsuarioDAO {
             }
         } catch (SQLException e) {
             return null;
+        }
+    }
+
+    public JsonDataLoggedIn login(String json) {
+        Gson gson = new Gson();
+        JsonDataLoggedIn data = gson.fromJson(json, JsonDataLoggedIn.class);
+        return data;
+    }
+    public static class JsonDataLoggedIn {
+        private String nickNameOuEmail;
+        private String senha;
+
+        public String getNickNameOuEmail() {
+            return nickNameOuEmail;
+        }
+
+        public String getSenha() {
+            return senha;
         }
     }
 }

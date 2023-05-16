@@ -1,5 +1,8 @@
 package br.com.uinvest.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Usuario {
     private String nome;
     private String email;
