@@ -65,7 +65,7 @@ const Cadastro = () => {
         <h1>Cadastre-se</h1>
 
         {/* Input do nome */}
-        <div className="input-group">
+        <div className="form-input">
           <label htmlFor="name">Nome completo:</label>
           <input
             type="name"
@@ -77,7 +77,7 @@ const Cadastro = () => {
         </div>
 
         {/* Input do username */}
-        <div className="input-group">
+        <div className="form-input">
           <label htmlFor="name">Username:</label>
           <input
             type="name"
@@ -90,7 +90,7 @@ const Cadastro = () => {
 
 
         {/* Input do email */}
-        <div className="input-group">
+        <div className="form-input">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -101,7 +101,7 @@ const Cadastro = () => {
           />
         </div>
 
-        <div className="input-group">
+        <div className="form-input">
           <label htmlFor="email">Senha:</label>
           <input
             type="password"
@@ -112,7 +112,7 @@ const Cadastro = () => {
           />
         </div>
 
-        <div className="input-group">
+        <div className="form-input">
           <label htmlFor="confirmPassword">Confirme:</label>
           <input
             type="password"
@@ -137,7 +137,7 @@ const Cadastro = () => {
     </div>
 
         {/* Input do telefone */}
-        <div className="input-group">
+        <div className="form-input">
           <label htmlFor="phone">Telefone:</label>
           <input
             type="tel"
@@ -149,7 +149,7 @@ const Cadastro = () => {
         </div>
 
           {/* Input do CPF */}
-          <div className="input-group">
+          <div className="form-input">
           <label htmlFor="cpf">CPF:</label>
           <input
             type="text"
@@ -161,7 +161,7 @@ const Cadastro = () => {
         </div>
 
           {/* Input da data de nascimento */}
-          <div className="input-group">
+          <div className="form-input">
           <label htmlFor="birthdate">Data de nascimento:</label>
           <input
             type="date"

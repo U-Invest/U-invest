@@ -1,57 +1,62 @@
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #ffffff;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  h1 {
-    color: #19BCFE;
-    margin-bottom: 20px;
-    font-size: 50px;
-  }
-  
-  .input-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-  }
-  
-  label {
-    margin-bottom: 5px;
-    color: #333;
-  }
-  
-  input {
-    padding: 10px;
-    border-radius: 5px;
-    border:#333 ;
-    background-color: #faf7f7;
-    font-size: 16px;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin-top: -120px;
+}
 
-  }
-  
-  button[type="submit"] {
-    background-color: #19BCFE;
-    color: #fff;
-    padding-right: 18px;
-    padding-left: 18px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border-radius: 11px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }  
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px rgba(29, 255, 251, 0.2);
+}
 
+.email-input-group input {
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #faf7f7;
+  font-size: 16px;
+  width: 100%;
+}
+
+.password-input-group input {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #faf7f7;
+  font-size: 16px;
+  width: 100%;
+}
+
+h1 {
+  color: #19BCFE;
+  margin-bottom: 20px;
+  font-size: 50px;
+}
+
+label {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+button[type="submit"] {
+  background-color: #19BCFE;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 11px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

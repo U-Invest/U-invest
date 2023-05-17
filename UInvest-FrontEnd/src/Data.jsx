@@ -72,23 +72,39 @@ export const categories = [
 ];
 
 
-/* GET consultando os dados de login no banco de dados */
-export async function fazerLogin(email, password) {
-  try {
-    const response = await axios.get('http://localhost:8080/UInvest/usuario', {
-      params: {
-        email: email,
-        password: password
-      }
-    });
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
-}
+/* @POST consultando os dados de login no banco de dados */
+// export const enviarDadosLogin = async (dadosLogin) => {
+//   try {
+//     const dadosJSON = JSON.stringify(dadosLogin);
+//     console.log(dadosJSON + "Victor")
+//     const response = await axios.post('http://localhost:8080/UInvest/login', dadosJSON, {
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       body:JSON.stringify(dadosLogin)
+//     });
+//     console.log(response.data)
+//     return response.data;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+
+// const handleSubmit = e => {
+// //   e.preventDefault()
+// //   fetch(`http://localhost:8080/UInvest/login`, {
+// //     method: post,
+// //     headers: {
+// //       "Content-Type": "application/json"
+// //     },
+// //     body: JSON.stringify(dadosLogin)
+// //   }).then(() => {
+// //     window.location = "/"
+// //   })
+// // }
 
 /* POST inserindo dados de cadastro */
-export const enviarDadosCadastro = async(dadosCadastro) => {
+export const enviarDadosCadastro = async (dadosCadastro) => {
   try {
     const dadosJSON = JSON.stringify(dadosCadastro);
     const response = await axios.post('http://localhost:8080/UInvest/usuario', dadosJSON);
@@ -99,13 +115,13 @@ export const enviarDadosCadastro = async(dadosCadastro) => {
 }
 
 
-/* GET consultando os dados de cursos */ 
+/* GET consultando os dados de cursos */
 export async function getDadosCursos() {
   try {
     const response = await axios.get('http://localhost:8080/UInvest/cursos');
     const cursosJson = response.data;
     const cursosManipulados = [];
-    
+
     cursosJson.forEach((objeto, index) => {
       const objetoComId = { ...objeto, idCarrosel: index };
       cursosManipulados.push(objetoComId);

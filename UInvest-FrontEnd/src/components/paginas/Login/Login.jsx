@@ -1,35 +1,54 @@
 import React from 'react';
-import "./Login.css";
+import "./Login.css"
 import { useState } from 'react';
-import { fazerLogin } from '../../../Data';
+// import { enviarDadosLogin } from '../../../Data';
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (event) => {
-    let usuario = {
+
+      let usuario = {
       email: email,
       password: password,
     };
 
-    fazerLogin(usuario)
-      .then(data => {
-        // Tratar a resposta da solicitação GET
-        console.log(data);
-      })
-      .catch(error => {
-        // Lidar com erros, se houver
-        console.error(error);
-      });
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    fetch(`http://localhost:8080/UInvest/login`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(usuario)
+    }).then(() => {
+      window.location = "/"
+    })
+  
+  };
+
+  
+
+
+
+
+    // enviarDadosLogin(usuario)
+    // .then(data => {
+    //   // Tratar a resposta da solicitação POST
+    //   console.log(data);
+    // })
+    // .catch(error => {
+    //   // Lidar com erros, se houver
+    //   console.error(error);
+    // });
  
 
 
-    event.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
-    console.log("Usuario: ", usuario)
-  };
+  //   event.preventDefault();
+  //   console.log("Email:", email);
+  //   console.log("Password:", password);
+  //   console.log("Usuario: ", usuario)
+  
 
   return (
 
@@ -40,23 +59,23 @@ const Login = () => {
 
 
         {/* Input do email */}
-        <div className="input-group">
+        <div className="email-input-group">
           <label htmlFor="email">Username:</label>
           <input
-            type="email"
+            type="text"
             id="email"
-            placeholder="  Digite seu e-mail ou username:"
+            placeholder=" Digite seu e-mail ou username:"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
           />
         </div>
 
-        <div className="input-group">
+        <div className="password-input-group">
           <label htmlFor="password">Senha:</label>
           <input
             type="password"
             id="password"
-            placeholder="  Digite sua senha: "
+            placeholder="Digite sua senha: "
             value={password}
             onChange={(event) => setPassword(event.target.value)}
          />
