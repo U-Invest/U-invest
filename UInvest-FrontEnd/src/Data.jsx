@@ -71,38 +71,6 @@ export const categories = [
   },
 ];
 
-
-/* @POST consultando os dados de login no banco de dados */
-// export const enviarDadosLogin = async (dadosLogin) => {
-//   try {
-//     const dadosJSON = JSON.stringify(dadosLogin);
-//     console.log(dadosJSON + "Victor")
-//     const response = await axios.post('http://localhost:8080/UInvest/login', dadosJSON, {
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body:JSON.stringify(dadosLogin)
-//     });
-//     console.log(response.data)
-//     return response.data;
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
-
-// const handleSubmit = e => {
-// //   e.preventDefault()
-// //   fetch(`http://localhost:8080/UInvest/login`, {
-// //     method: post,
-// //     headers: {
-// //       "Content-Type": "application/json"
-// //     },
-// //     body: JSON.stringify(dadosLogin)
-// //   }).then(() => {
-// //     window.location = "/"
-// //   })
-// // }
-
 /* POST inserindo dados de cadastro */
 export const enviarDadosCadastro = async (dadosCadastro) => {
   try {

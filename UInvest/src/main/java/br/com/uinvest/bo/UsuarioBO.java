@@ -19,6 +19,7 @@ public class UsuarioBO {
         ud = new UsuarioDAO(con);
         Gson gson = new Gson();
         String json = gson.toJson(ud.exibirDadosUsuario());
+        Conexao.fecharConexao(con);
         return json;
     }
 
@@ -33,6 +34,7 @@ public class UsuarioBO {
             Usuario usuario = new Usuario();
             usuario = ud.buscarPorUserOuEmail(dadosAutenticar.getNickNameOuEmail());
             System.out.println(usuario);
+            Conexao.fecharConexao(con);
             return usuario;
         }
         return null;

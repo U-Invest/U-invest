@@ -18,6 +18,7 @@ public class LoginResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response logar(String json, @Context UriInfo uriInfo) {
 //        String jsonTeste = "{\"nickNameOuEmail\": \"sasaOri\", \"senha\":\"matheus9\"}";
+        System.out.println(json);
         Usuario logando = usuarioBO.loginBo(json);
         UriBuilder builder = uriInfo.getAbsolutePathBuilder();
         builder.path((logando.getNickName()));
