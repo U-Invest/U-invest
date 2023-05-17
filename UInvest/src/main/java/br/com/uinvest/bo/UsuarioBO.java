@@ -28,7 +28,8 @@ public class UsuarioBO {
         lc = new LoginController();
         UsuarioDAO.JsonDataLoggedIn dadosAutenticar = ud.login(json);
         Boolean responseAuth = lc.autenticarUsuario(dadosAutenticar.getNickNameOuEmail(), dadosAutenticar.getSenha());
-        if(responseAuth != null){
+
+        if(responseAuth){
             Usuario usuario = new Usuario();
             usuario = ud.buscarPorUserOuEmail(dadosAutenticar.getNickNameOuEmail());
             System.out.println(usuario);
