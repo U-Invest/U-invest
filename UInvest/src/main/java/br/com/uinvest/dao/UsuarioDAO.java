@@ -142,11 +142,22 @@ public class UsuarioDAO {
         }
     }
 
+
+    /**
+     * Faz o login de um usuário a partir dos dados JSON fornecidos.
+     *
+     * @param json uma string contendo os dados de login no formato JSON
+     * @return um objeto do tipo JsonDataLoggedIn contendo os dados de login convertidos
+     */
     public JsonDataLoggedIn login(String json) {
         Gson gson = new Gson();
         JsonDataLoggedIn data = gson.fromJson(json, JsonDataLoggedIn.class);
         return data;
     }
+
+    /**
+     * Classe que representa os dados de login de um usuário no formato JSON (Usado apenas para manipulação).
+     */
     public static class JsonDataLoggedIn {
         private String nickNameOuEmail;
         private String senha;
