@@ -40,22 +40,12 @@ public class UsuarioBO {
         return null;
     }
 
-    public boolean cadastrarUsuarioBo(Usuario usuario) {
-        String mockJson = "{" +
-                "'nome': 'Nome do Usuário'," +
-                "'email': 'email@example.com'," +
-                "'senha': 'senha123'," +
-                "'nickName': 'Apelido'," +
-                "'celular': '1234567890'," +
-                "'cpf': '12345678901'," +
-                "'nascimento': '01012000'," +
-                "'perfil_investidor': 'Conservador'," +
-                "'saldo': 1000" +
-                "}";
+    public Usuario cadastrarUsuarioBo(String json) {
         Connection con = Conexao.abrirConexao();
+        ud = new UsuarioDAO(con);
         uc = new UsuarioController();
-
-        return uc.cadastrarUsuarioFront(mockJson);
+        Usuario dadosUsuario = ud.cadastro(json);
+        return uc.cadastrarUsuarioFront(dadosUsuario);
     }
 
 

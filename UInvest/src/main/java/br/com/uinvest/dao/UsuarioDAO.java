@@ -151,8 +151,12 @@ public class UsuarioDAO {
      */
     public JsonDataLoggedIn login(String json) {
         Gson gson = new Gson();
-        JsonDataLoggedIn data = gson.fromJson(json, JsonDataLoggedIn.class);
-        return data;
+        return gson.fromJson(json, JsonDataLoggedIn.class);
+    }
+
+    public Usuario cadastro(String json) {
+        Gson gson = new Gson();
+        return gson.fromJson(json, Usuario.class);
     }
 
     /**

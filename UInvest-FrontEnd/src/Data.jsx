@@ -2,7 +2,7 @@ import { AiFillBank } from "react-icons/ai";
 import { AiFillGold } from "react-icons/ai";
 import { BsBarChartLine } from "react-icons/bs";
 import { AiFillReconciliation } from "react-icons/ai";
-import axios from 'axios';
+import axios from "axios";
 
 import courses1 from "./assets/courses1.jpg";
 import courses2 from "./assets/courses2.jpg";
@@ -71,22 +71,10 @@ export const categories = [
   },
 ];
 
-/* POST inserindo dados de cadastro */
-export const enviarDadosCadastro = async (dadosCadastro) => {
-  try {
-    const dadosJSON = JSON.stringify(dadosCadastro);
-    const response = await axios.post('http://localhost:8080/UInvest/usuario', dadosJSON);
-    return response.data;
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-
 /* GET consultando os dados de cursos */
 export async function getDadosCursos() {
   try {
-    const response = await axios.get('http://localhost:8080/UInvest/cursos');
+    const response = await axios.get("http://localhost:8080/UInvest/cursos");
     const cursosJson = response.data;
     const cursosManipulados = [];
 
@@ -94,12 +82,11 @@ export async function getDadosCursos() {
       const objetoComId = { ...objeto, idCarrosel: index };
       cursosManipulados.push(objetoComId);
     });
-    return cursosManipulados
+    return cursosManipulados;
   } catch (error) {
     console.error(error);
   }
 }
-
 
 export const logos = [logo1, logo2, logo3, logo4, logo5, logo6];
 
@@ -107,22 +94,23 @@ export const accordions = [
   {
     id: 1,
     title: "O que é a U Invest?",
-    content: "A U Invest é uma plataforma de investimentos online..."
+    content: "A U Invest é uma plataforma de investimentos online...",
   },
   {
     id: 2,
     title: "Como faço para aprender com a U Invest?",
-    content: "Você pode aprender com a U Invest através de nossos cursos online..."
+    content:
+      "Você pode aprender com a U Invest através de nossos cursos online...",
   },
   {
     id: 3,
     title: "O que é o Droid?",
-    content: "O Droid é uma ferramenta de investimento automatizada..."
+    content: "O Droid é uma ferramenta de investimento automatizada...",
   },
   {
     id: 4,
     title: "Posso fazer parte da U Invest?",
-    content: "Sim, você pode fazer parte da U Invest..."
+    content: "Sim, você pode fazer parte da U Invest...",
   },
 ];
 
@@ -130,22 +118,22 @@ export const accordionsCursos = [
   {
     id: 1,
     title: "O que é a U Invest?",
-    content: "A U Invest é uma plataforma de investimentos online..."
+    content: "A U Invest é uma plataforma de investimentos online...",
   },
   {
     id: 2,
     title: "Como faço para aprender com a U Invest?",
-    content: "Você pode aprender com a U Invest através de nossos cursos online..."
+    content:
+      "Você pode aprender com a U Invest através de nossos cursos online...",
   },
   {
     id: 3,
     title: "O que é o Droid?",
-    content: "O Droid é uma ferramenta de investimento automatizada..."
+    content: "O Droid é uma ferramenta de investimento automatizada...",
   },
   {
     id: 4,
     title: "Posso fazer parte da U Invest?",
-    content: "Sim, você pode fazer parte da U Invest..."
+    content: "Sim, você pode fazer parte da U Invest...",
   },
 ];
-

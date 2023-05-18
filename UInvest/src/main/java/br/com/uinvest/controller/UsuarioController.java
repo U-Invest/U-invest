@@ -67,12 +67,10 @@ public class UsuarioController {
         Conexao.fecharConexao(con);
     }
 
-    public boolean cadastrarUsuarioFront(String json){
+    public Usuario cadastrarUsuarioFront(Usuario usuario){
         Connection con = Conexao.abrirConexao();
         UsuarioDAO usuarioDAO = new UsuarioDAO(con);
         UsuarioService usuarioService = new UsuarioService();
-        Gson gson = new Gson();
-        Usuario usuario = gson.fromJson(json, Usuario.class);
 
         String nome = usuario.getNome();
         String email = usuario.getEmail();
@@ -89,7 +87,7 @@ public class UsuarioController {
             digest = MessageDigest.getInstance("SHA-256");
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
-            return false;
+            return null;
         }
 
         // Encripta a senha usando o hash SHA-256
@@ -118,10 +116,10 @@ public class UsuarioController {
 
         } else {
             System.out.println("Os dados do usuário não são válidos.");
-            return false;
+            return null;
         }
         Conexao.fecharConexao(con);
-        return true;
+        return usuario;
     }
 
     public void meuPerfil(){

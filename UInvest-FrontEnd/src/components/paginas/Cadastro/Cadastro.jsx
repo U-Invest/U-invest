@@ -1,8 +1,7 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Cadastro.css";
-import { useState } from 'react';
-import {enviarDadosCadastro} from '../../../Data'; // Importe a função enviarDadosCadastro aqui
+import { useState } from "react";
 
 const Cadastro = () => {
   const [name, setName] = useState("");
@@ -17,48 +16,36 @@ const Cadastro = () => {
   const handlePerfilChange = (event) => {
     setProfileType(event.target.value);
   };
-  
+
+  const parts = birthdate.split("-");
+  const birthdateFormatted = `${parts[2]}${parts[1]}${parts[0]}`;
+
+  let usuario = {
+    cpf: CPF,
+    email: email,
+    celular: phone,
+    nome: name,
+    saldo: 0,
+    senha: password,
+    perfil_investidor: profileType,
+    nickName: username,
+    nascimento: birthdateFormatted,
+  };
 
   const handleSubmit = (event) => {
-    let usuario = {
-      nome: name,
-      username: username,
-      email: email,
-      password: password,
-      confirmPassword: confirmPassword,
-      birthdate: birthdate,
-      phone: phone,
-      profileType: profileType
-    };
-
-
-    enviarDadosCadastro(usuario)
-    .then(data => {
-      // Tratar a resposta da solicitação POST
-      console.log(data);
-    })
-    .catch(error => {
-      // Lidar com erros, se houver
-      console.error(error);
-    });
-
-
-
     event.preventDefault();
-    console.log("Nome:", name);
-    console.log("Username:", username);
-    console.log("Email:", email);
-    console.log("Password:", password);
-    console.log("Confirm Password:", confirmPassword);
-    console.log("Data de nascimento:", birthdate);
-    console.log("Telefone:", phone);
-    console.log("Perfil de investidor:", profileType);
-    console.log("Usuario: ", usuario)
-    
+    fetch(`http://localhost:8080/UInvest/usuario`, {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(usuario),
+    }).then(() => {
+      window.location = "/";
+    });
   };
 
   return (
-
     // Container da caixa de cadastro
     <div className="signup-container">
       <form onSubmit={handleSubmit}>
@@ -87,7 +74,6 @@ const Cadastro = () => {
             onChange={(event) => setUserName(event.target.value)}
           />
         </div>
-
 
         {/* Input do email */}
         <div className="form-input">
@@ -122,19 +108,18 @@ const Cadastro = () => {
             onChange={(event) => setConfirmPassword(event.target.value)}
           />
         </div>
-      
 
-      {/* Input do perfil do investidor */}
-      <div>
-      <h2>Perfil de investidor</h2>
-        <label htmlFor="perfil">Selecione seu perfil de investidor:</label>
-        <select id="perfil" value={profileType} onChange={handlePerfilChange}>
-          <option value="nao-investidor">Não Investidor</option>
-          <option value="iniciante">Iniciante</option>
-          <option value="conservador">Conservador</option>
-          <option value="moderado">Moderado</option>
-        </select>
-    </div>
+        {/* Input do perfil do investidor */}
+        <div>
+          <h2>Perfil de investidor</h2>
+          <label htmlFor="perfil">Selecione seu perfil de investidor:</label>
+          <select id="perfil" value={profileType} onChange={handlePerfilChange}>
+            <option value="nao-investidor">Não Investidor</option>
+            <option value="iniciante">Iniciante</option>
+            <option value="conservador">Conservador</option>
+            <option value="moderado">Moderado</option>
+          </select>
+        </div>
 
         {/* Input do telefone */}
         <div className="form-input">
@@ -148,8 +133,8 @@ const Cadastro = () => {
           />
         </div>
 
-          {/* Input do CPF */}
-          <div className="form-input">
+        {/* Input do CPF */}
+        <div className="form-input">
           <label htmlFor="cpf">CPF:</label>
           <input
             type="text"
@@ -160,8 +145,8 @@ const Cadastro = () => {
           />
         </div>
 
-          {/* Input da data de nascimento */}
-          <div className="form-input">
+        {/* Input da data de nascimento */}
+        <div className="form-input">
           <label htmlFor="birthdate">Data de nascimento:</label>
           <input
             type="date"
@@ -172,10 +157,13 @@ const Cadastro = () => {
           />
         </div>
 
-
         <button type="submit">Cadastre-se</button>
         <p>
-          Já possui uma conta? <Link to="/login"> Faça<span id="palavraLogin"> Login </span> </Link>
+          Já possui uma conta?{" "}
+          <Link to="/login">
+            {" "}
+            Faça<span id="palavraLogin"> Login </span>{" "}
+          </Link>
         </p>
       </form>
     </div>
