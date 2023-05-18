@@ -10,21 +10,19 @@
   box-sizing: border-box; /* Garante que o padding seja incluído na largura total */
 }
 
-form {
-  margin-top: 8px;
-  margin-bottom: 8px;
+.signup-form {
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   align-items: center;
-  padding: 25px;
+  width: 400px;
+  padding: 40px;
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: 0px 0px 20px rgba(58, 169, 255, 0.2);
-  width: 400px; /* Ajusta a largura total do formulário */
+  box-shadow: 0px 0px 20px rgba(29, 255, 251, 0.2);
 }
 
-.input-group input {
-  padding: 40px;
+.name-inputgroup input{
+  padding: 10px;
   border-radius: 5px;
   border: 1px solid #333;
   background-color: #faf7f7;
@@ -32,15 +30,11 @@ form {
   width: 100%;
 }
 
-.form-input {
-  width: 100%;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  max-width: 400px; /* Defina o tamanho máximo desejado para os inputs */
-}
-
-.input-group input {
-  padding: 12px;
+.username-inputgroup input {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border-radius: 5px;
   border: 1px solid #333;
   background-color: #faf7f7;
@@ -48,7 +42,101 @@ form {
   width: 100%;
 }
 
-button[type="submit"] {
+.email-inputgroup input {
+  padding-left: 37px;
+  padding-right: 37px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #faf7f7;
+  font-size: 16px;
+  width: 100%;
+}
+
+.password-inputgroup input {
+  padding-left: 37px;
+  padding-right: 37px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #faf7f7;
+  font-size: 16px;
+  width: 100%;
+}
+
+.confirm-password-inputgroup input{
+  padding-left: 37px;
+  padding-right: 37px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #faf7f7;
+  font-size: 16px;
+  width: 100%;
+}
+
+.form-input input{
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #faf7f7;
+  font-size: 16px;
+  width: 100%;
+}
+
+.profile {
+  padding-left: 37px;
+  padding-right: 37px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #a9dbff;
+  margin: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.phone-inputgroup input{
+  padding-left: 37px;
+  padding-right: 37px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #faf7f7;
+  font-size: 16px;
+  width: 100%;
+}
+
+.cpf-inputgroup input{
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: #faf7f7;
+  font-size: 16px;
+  width: 100%;
+}
+
+h1 {
+  color: #19BCFE;
+  margin-bottom: 20px;
+  font-size: 50px;
+}
+
+label {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+
+
+  .signup-button{
   background-color: #19BCFE;
   color: #fff;
   padding-right: 18px;
@@ -58,4 +146,15 @@ button[type="submit"] {
   border-radius: 11px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+#login-link{
+  color: #19BCFE;
+}
+
+.background-image {
+  background-image: url('../../../assets/login-page.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 50px;
 }

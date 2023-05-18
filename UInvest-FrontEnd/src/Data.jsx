@@ -137,3 +137,19 @@ export const accordionsCursos = [
     content: "Sim, você pode fazer parte da U Invest...",
   },
 ];
+
+export const cursos = [
+  {
+    id: 1,
+    title: "Curso 1",
+    description: "Descrição do Curso 1",
+    image: courses1,
+  },
+  {
+    id: 2,
+    title: "Curso 2",
+    description: "Descrição do Curso 2",
+    image: courses2,
+  },
+  // Adicione mais cursos aqui
+];

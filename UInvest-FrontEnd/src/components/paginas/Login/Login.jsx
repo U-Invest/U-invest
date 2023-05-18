@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Login.css";
 import { useState } from "react";
 // import { enviarDadosLogin } from '../../../Data';
@@ -27,8 +28,8 @@ const Login = () => {
 
   return (
     // Container da caixa de cadastro
-    <div className="login-container">
-      <form onSubmit={handleSubmit}>
+    <div className="login-container background-image">
+      <form className="login-form" onSubmit={handleSubmit}>
         <h1>Login</h1>
 
         {/* Input do email */}
@@ -54,7 +55,14 @@ const Login = () => {
           />
         </div>
 
-        <button type="submit">Login</button>
+        <button className="login-button" type="submit">Login</button>
+        <p>
+          Se não possui uma conta,{" "}
+          <Link to="/cadastro">
+            {" "}
+            <span id="signup-link"> Cadastre-se </span>{" "}
+          </Link>
+        </p>
       </form>
     </div>
   );

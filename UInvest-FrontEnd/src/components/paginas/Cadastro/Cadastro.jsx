@@ -41,54 +41,54 @@ const Cadastro = () => {
       },
       body: JSON.stringify(usuario),
     }).then(() => {
-      window.location = "/";
+      window.location = "/login";
     });
   };
 
   return (
     // Container da caixa de cadastro
-    <div className="signup-container">
-      <form onSubmit={handleSubmit}>
+    <div className="signup-container background-image">
+      <form className="signup-form" onSubmit={handleSubmit}>
         <h1>Cadastre-se</h1>
 
         {/* Input do nome */}
-        <div className="form-input">
+        <div className="name-inputgroup">
           <label htmlFor="name">Nome completo:</label>
           <input
             type="name"
             id="name"
-            placeholder="  Digite seu nome:"
+            placeholder="    Digite seu nome:"
             value={name}
             onChange={(event) => setName(event.target.value)}
           />
         </div>
 
         {/* Input do username */}
-        <div className="form-input">
+        <div className="username-inputgroup">
           <label htmlFor="name">Username:</label>
           <input
             type="name"
             id="username"
-            placeholder="  Digite seu username"
+            placeholder="Digite seu username:"
             value={username}
             onChange={(event) => setUserName(event.target.value)}
           />
         </div>
 
         {/* Input do email */}
-        <div className="form-input">
+        <div className="email-inputgroup">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
             id="email"
-            placeholder="  Digite seu e-mail"
+            placeholder="Digite seu e-mail: "
             value={email}
             onChange={(event) => setEmail(event.target.value)}
           />
         </div>
 
-        <div className="form-input">
-          <label htmlFor="email">Senha:</label>
+        <div className="password-inputgroup">
+          <label htmlFor="password">Senha:</label>
           <input
             type="password"
             id="password"
@@ -98,7 +98,7 @@ const Cadastro = () => {
           />
         </div>
 
-        <div className="form-input">
+        <div className="confirm-password-inputgroup">
           <label htmlFor="confirmPassword">Confirme:</label>
           <input
             type="password"
@@ -110,7 +110,7 @@ const Cadastro = () => {
         </div>
 
         {/* Input do perfil do investidor */}
-        <div>
+        <div className="profile">
           <h2>Perfil de investidor</h2>
           <label htmlFor="perfil">Selecione seu perfil de investidor:</label>
           <select id="perfil" value={profileType} onChange={handlePerfilChange}>
@@ -122,7 +122,7 @@ const Cadastro = () => {
         </div>
 
         {/* Input do telefone */}
-        <div className="form-input">
+        <div className="phone-inputgroup">
           <label htmlFor="phone">Telefone:</label>
           <input
             type="tel"
@@ -134,12 +134,12 @@ const Cadastro = () => {
         </div>
 
         {/* Input do CPF */}
-        <div className="form-input">
+        <div className="cpf-inputgroup">
           <label htmlFor="cpf">CPF:</label>
           <input
             type="text"
             id="CPF"
-            placeholder="Digite seu CPF"
+            placeholder="Digite seu CPF:"
             value={CPF}
             onChange={(event) => setCPF(event.target.value)}
           />
@@ -157,12 +157,12 @@ const Cadastro = () => {
           />
         </div>
 
-        <button type="submit">Cadastre-se</button>
+        <button className="signup-button" type="submit" >Cadastre-se</button>
         <p>
           Já possui uma conta?{" "}
           <Link to="/login">
             {" "}
-            Faça<span id="palavraLogin"> Login </span>{" "}
+            Faça<span id="login-link"> Login </span>{" "}
           </Link>
         </p>
       </form>
