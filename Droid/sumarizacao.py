@@ -12,45 +12,44 @@ except FileNotFoundError:
     print('O arquivo do prospecto não foi encontrado')
     exit()
 
-# Identificar as informações
-capital_social = re.findall(r'Capital\s+Social\s*:? *([\d,.]+)\s*', prospecto_text, re.IGNORECASE)
-data_liquidacao = re.findall(r'Data\s+de\s+Liquidação\s*:? *([\d/]+)\s*', prospecto_text, re.IGNORECASE)
-corretora = re.findall(r'Corretora\s*:? *(.+?)\s*(?=Aviso\s+ao\s+Mercado|\Z)', prospecto_text, re.DOTALL | re.IGNORECASE)
-aviso_ao_mercado = re.findall(r'Aviso\s+ao\s+Mercado\s*:? *(.+?)\s*(?=Capital\s+Social|Data\s+de\s+Liquidação|\Z)', prospecto_text, re.DOTALL | re.IGNORECASE)
+# Nomes possíveis
+nomes_possiveis = ['PRIVALIA BRASIL', 'CFL', 'AÇU PETRÓLEO', 'PRIVALIA BRASIL',
+                   "ENTALPIA PARTICIPAÇÕES", "YUNY", "EZ INC", "LIVETECH DA BAHIA INDÚSTRIA E COMÉRCIO",
+                   "NORTIS", "LABORATÓRIO TEUTO BRASILEIRO", "GRANBIO", "GRUPO MPR"]
 
-# Salvar as informações em um arquivo de texto
-with open('informacoes.txt', 'w', encoding='utf-8') as txt_file:
-    if capital_social:
-        txt_file.write('**Capital Social:** R$' + capital_social[0].replace(',', '') + '\n')
-        txt_file.write('\n')
-    if data_liquidacao:
-        txt_file.write('**Data de Liquidação:** ' + data_liquidacao[0] + '\n')
-        txt_file.write('\n')
-    if corretora:
-        txt_file.write('**Corretora:** ' + corretora[0] + '\n')
-        txt_file.write('\n')
-    if aviso_ao_mercado:
-        aviso_resumido = aviso_ao_mercado[0][:100] + '...' if len(aviso_ao_mercado[0]) > 100 else aviso_ao_mercado[0]
-        txt_file.write('**Aviso ao Mercado:** ' + aviso_resumido + '\n')
-        txt_file.write('\n')
+# CNPJs possíveis
+cnpjs_possiveis = ['12345678000123', '98765432000198', '87654321000145']
 
-print('As informações foram salvas no arquivo informacoes.txt')
+# Identificar o nome da empresa
+nome_empresa_encontrado = None
+for nome in nomes_possiveis:
+    if re.search(r'\b' + re.escape(nome) + r'\b', prospecto_text, re.IGNORECASE):
+        nome_empresa_encontrado = nome
+        break
 
-# Sumarizar as informações
-summary = ''
+# Identificar possíveis CNPJs
+cnpjs_encontrados = []
+for cnpj in cnpjs_possiveis:
+    if re.search(cnpj, prospecto_text):
+        cnpjs_encontrados.append(cnpj)
 
-if capital_social:
-    summary += f"**Capital Social:** R${capital_social[0].replace(',', '')[:50]}...\n\n"
+# Salvar o nome da empresa e os CNPJs encontrados em um arquivo de texto
+with open('nome_cnpj.txt', 'w', encoding='utf-8') as txt_file:
+    if nome_empresa_encontrado:
+        txt_file.write(f'Nome da empresa: {nome_empresa_encontrado}\n\n')
+    if cnpjs_encontrados:
+        txt_file.write('CNPJs encontrados:\n')
+        for cnpj in cnpjs_encontrados:
+            txt_file.write(cnpj + '\n')
 
-if data_liquidacao:
-    summary += f"**Data de Liquidação:** {data_liquidacao[0][:50]}...\n\n"
+if nome_empresa_encontrado:
+    print(f'Nome da empresa: "{nome_empresa_encontrado}"')
+else:
+    print('Nenhum dos nomes possíveis foi encontrado no prospecto.')
 
-if corretora:
-    summary += f"**Corretora:** {corretora[0][:50]}...\n\n"
-
-if aviso_ao_mercado:
-    aviso_resumido = aviso_ao_mercado[0][:100] + '...' if len(aviso_ao_mercado[0]) > 100 else aviso_ao_mercado[0]
-    summary += f"**Aviso ao Mercado:** {aviso_resumido[:50]}...\n\n"
-
-print("Resumo das informações:")
-print(summary)
+if cnpjs_encontrados:
+    print('CNPJs encontrados:')
+    for cnpj in cnpjs_encontrados:
+        print(cnpj)
+else:
+    print('Nenhum dos CNPJs possíveis foi encontrado no prospecto.')

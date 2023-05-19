@@ -1,0 +1,7 @@
+# Nomes possíveis
+nomes_possiveis = ['PRIVALIA BRASIL', 'CFL', 'AÇU PETRÓLEO', 'PRIVALIA BRASIL',
+                   "ENTALPIA PARTICIPAÇÕES", "YUNY", "EZ INC", "LIVETECH DA BAHIA INDÚSTRIA E COMÉRCIO",
+                   "NORTIS", "LABORATÓRIO TEUTO BRASILEIRO", "GRANBIO", "GRUPO MPR"]
+
+# CNPJs possíveis
+cnpjs_possiveis = ['10.464.223/0001-63 ', '08.117.803/0001-32']
