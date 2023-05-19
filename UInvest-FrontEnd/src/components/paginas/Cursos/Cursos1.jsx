@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Cursos.css';
+import './Cursos1.css';
 
 const Accordion = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,14 +35,14 @@ const Cursos = () => {
 
       <div className="inpage">
         <VideoAccordion
-          title="Aula 01 - Introdução ao mercado de ações"
-          videoId="yHuNhkntc-I"
-          description="Descrição do vídeo 1."
+          title="Aula 01 - Introdução"
+          videoId="BdVlty5wQ5Y"
+          description="Intrudução ao curso de investimentos"
         />
         <VideoAccordion
-          title="Aula 02"
-          videoId="7SK8R0obmu0"
-          description="Descrição do vídeo 2."
+          title="Aula 02 - Mudança de Mentalidade"
+          videoId="G3aHNaR-BeM"
+          description="Segundo vídeo do curso, voltado para uma área mais mental"
         />
         <VideoAccordion
           title="Aula 03"

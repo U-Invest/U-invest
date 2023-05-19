@@ -5,7 +5,7 @@ import Courses from "./container/Course/Courses";
 import Contact from "./container/Contact";
 import Footer from "./container/Footer";
 import Navbar from "./Navbar/Navbar";
-import Cursos from "./paginas/Cursos/Cursos.jsx";
+import Cursos1 from "./paginas/Cursos/Cursos1.jsx";
 import MainHome from "./paginas/MainHome";
 import Login from "./paginas/Login/Login";
 import Cadastro from "./paginas/Cadastro/Cadastro.jsx";
@@ -22,7 +22,7 @@ export {
   Courses,
   Teacher,
   Footer,
-  Cursos,
+  Cursos1,
   MainHome,
   Login,
   Cadastro,
