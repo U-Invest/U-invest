@@ -158,3 +158,13 @@ label {
   background-repeat: no-repeat;
   margin-top: 50px;
 }
+
+.check-icon {
+  margin-left: 5px;
+  font-size: 12px;
+  transition: color 0.2s ease-in-out;
+}
+
+.check-icon.checked {
+  color: green;
+}

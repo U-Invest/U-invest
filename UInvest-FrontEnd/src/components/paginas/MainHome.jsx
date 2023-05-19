@@ -4,7 +4,6 @@ import {
     Courses,
     Teacher,
     Contact,
-    Footer,
   } from "../index";
   
   
@@ -17,7 +16,6 @@ import {
         <Courses/>
         <Teacher />
         <Contact />
-        <Footer />
       </div>
       </>
     );

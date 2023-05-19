@@ -5,6 +5,7 @@ import {
   Cursos,
   Login,
   Teacher,
+  Footer,
   Cadastro,
   AreaUsuario,
   CatalogoCursos,
@@ -33,6 +34,7 @@ function App() {
           <Route path="/catalogocursos" element={<CatalogoCursos />} />
           <Route path="/curso/1" element={<Cursos />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
 

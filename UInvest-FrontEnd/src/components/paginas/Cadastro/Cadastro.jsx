@@ -2,8 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Cadastro.css";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const Cadastro = () => {
+  const [termsChecked, setTermsChecked] = useState(false);
   const [name, setName] = useState("");
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
@@ -43,6 +46,10 @@ const Cadastro = () => {
     }).then(() => {
       window.location = "/login";
     });
+  };
+
+  const handleTermsChange = () => {
+    setTermsChecked(!termsChecked);
   };
 
   return (
@@ -156,6 +163,23 @@ const Cadastro = () => {
             onChange={(event) => setBirthdate(event.target.value)}
           />
         </div>
+
+        {/* Input do check de termo */}
+        <div className="termos-inputgroup">
+      <input
+        type="checkbox"
+        id="terms"
+        checked={termsChecked}
+        onChange={handleTermsChange}
+      />
+      <label htmlFor="terms">
+         Eu concordo com os termos e condições
+        <FontAwesomeIcon
+          icon={faCheck}
+          className={termsChecked ? "check-icon checked" : "check-icon"}
+        />
+      </label>
+    </div>
 
         <button className="signup-button" type="submit" >Cadastre-se</button>
         <p>
