@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./AreaUsuario.css";
 import profile_picture from "../../../assets/foto_usuraio.png";
 
 const AreaUsuario = () => {
-  return (
+  const navigate = useNavigate();
+  const sessionEmail = sessionStorage.getItem("sessao");
 
-    
+  useEffect(() => {
+    if (!sessionEmail) {
+      navigate("/login");
+    }
+  }, [navigate, sessionEmail]);
+
+  return (
     <div className="area-usuario">
       <h2>Seus dados pessoais</h2>
       <form>
         <div className="form-group">
-          
-        <img className="profile-picture" src={profile_picture} alt="" />
+          <img className="profile-picture" src={profile_picture} alt="" />
           <label htmlFor="nome">Nome completo</label>
           <input type="text" id="nome" name="nome" required />
         </div>
