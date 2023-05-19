@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import {
   Navbar,
   MainHome,
-  Cursos,
+  Cursos1,
   Login,
   Teacher,
   Footer,
@@ -32,7 +32,7 @@ function App() {
           <Route path="/contato" element={<Contato />} />
           <Route path="/areausuario" element={<AreaUsuario />} />
           <Route path="/catalogocursos" element={<CatalogoCursos />} />
-          <Route path="/curso/1" element={<Cursos />} />
+          <Route path="/curso/1" element={<Cursos1 />} />
         </Routes>
         <Footer/>
       </BrowserRouter>

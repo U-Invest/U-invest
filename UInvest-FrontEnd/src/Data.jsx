@@ -4,7 +4,7 @@ import { BsBarChartLine } from "react-icons/bs";
 import { AiFillReconciliation } from "react-icons/ai";
 import axios from "axios";
 
-import courses1 from "./assets/courses1.jpg";
+import courses1 from "./assets/curso-1-photo.webp";
 import courses2 from "./assets/courses2.jpg";
 import courses3 from "./assets/courses3.jpg";
 import courses4 from "./assets/courses4.jpg";
@@ -141,8 +141,8 @@ export const accordionsCursos = [
 export const cursos = [
   {
     id: 1,
-    title: "Curso 1",
-    description: "Descrição do Curso 1",
+    title: "Curso de Investimentos (Introdução)",
+    description: "Curso voltado para os iniciantes no investimento, que não possui nenhuma experiência na área.",
     image: courses1,
   },
   {
@@ -151,5 +151,28 @@ export const cursos = [
     description: "Descrição do Curso 2",
     image: courses2,
   },
-  // Adicione mais cursos aqui
+  {
+    id: 3,
+    title: "Curso 2",
+    description: "Descrição do Curso 2",
+    image: courses2,
+  },
+  {
+    id: 4,
+    title: "Curso 2",
+    description: "Descrição do Curso 2",
+    image: courses2,
+  },
+  {
+    id: 5,
+    title: "Curso 2",
+    description: "Descrição do Curso 2",
+    image: courses2,
+  },
+  {
+    id: 6,
+    title: "Curso 2",
+    description: "Descrição do Curso 2",
+    image: courses2,
+  },
 ];
