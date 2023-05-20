@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import UInvestLogo from "../../assets/logonavcerta.png";
 import "./Navbar.css";
 import { AuthContext } from "./AuthContext";
+import profile_picture from "../../assets/foto_usuraio.png"
 
 const Navbar = () => {
   const { isAuthenticated, handleLogout } = useContext(AuthContext);
@@ -38,12 +39,16 @@ const Navbar = () => {
         {isAuthenticated ? (
           <>
             <li>
-              <Link to="/areausuario" className="nav-link2">
-                Meu Perfil
+              <Link to="/areausuario">
+              <div className="profile-picture">
+                <img src={profile_picture} alt="Logo" />
+                </div>
               </Link>
             </li>
+
+
             <li>
-              <button onClick={handleLogout} className="nav-link2">
+              <button onClick={handleLogout} className="nav-link3">
                 Logout
               </button>
             </li>

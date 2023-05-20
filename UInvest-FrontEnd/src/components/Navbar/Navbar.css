@@ -19,7 +19,7 @@
 .nav-links {
   list-style-type: none;
   display: flex;
-  gap: 10px;
+  gap: 25px;
 }
 
 .nav-link1 {
@@ -39,6 +39,15 @@
   padding: 5px 10px;
   border-radius: 5px;
 }
+
+.nav-link3 {
+  text-decoration: none;
+  color: #00e1ff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: -10px;
+}
+
 
 .nav-link2:hover {
   background-color: #2bd4fa;
@@ -74,4 +83,10 @@
   .nav-link2:last-child {
     margin-bottom: 0;
   }
+}
+
+.profile-picture img{
+  width: 35px;
+  margin-left: 890px;
+  margin-top: -160px;
 }

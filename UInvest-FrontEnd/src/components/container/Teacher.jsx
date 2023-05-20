@@ -7,6 +7,13 @@ const Teacher = () => {
     <div className="section" id="droid">
       <div className="grid sm:grid-cols-2 place-items-center gap-8">
         <div className="pl-5">
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+
           <div className="font-bold sm:text-[1.875rem] text-[1.5rem] mb-5">
             Conheça <span className="text-Teal">um instrutor</span> <br /> diferente
             em nossa plataforma... <span className="text-Teal">DROID!</span> 
@@ -24,6 +31,14 @@ const Teacher = () => {
           <img src={droid} alt="" />
         </div>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      
+
       <div className="text-center my-8 font-bold sm:text-[1.875rem] text-[1.5rem]">
         <span className="text-Teal"> Perguntas </span> Frequentes
       </div>

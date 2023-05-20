@@ -121,44 +121,51 @@ R: O melhor momento para começar a investir é o mais cedo possível, para ter 
 P: O que é o Tesouro Direto?
 R: O Tesouro Direto é um programa do governo brasileiro que permite investir em títulos públicos de forma simples e acessível.
 
-O que é um prospecto?
+P: O que é um prospecto?
 R: Um prospecto é um documento que contém informações detalhadas sobre uma oferta pública de ações, incluindo informações financeiras e de negócios da empresa.
 
-Quais informações financeiras são geralmente incluídas no prospecto?
+P: Quais informações financeiras são geralmente incluídas no prospecto?
 R: O prospecto geralmente inclui informações sobre a situação financeira da empresa, incluindo seus lucros, despesas e fluxo de caixa.
 
-O que é uma oferta pública inicial?
+P: O que é uma oferta pública inicial?
 R: Uma oferta pública inicial, ou IPO, é quando uma empresa vende ações ao público pela primeira vez.
 
-O que é uma oferta subsequente?
+P; O que é uma oferta subsequente?
 R: Uma oferta subsequente é quando uma empresa emitiu ações anteriormente em um IPO e decide emitir mais ações no mercado.
 
-O que é um roadshow?
+P: O que é um roadshow?
 R: Um roadshow é uma série de reuniões e apresentações feitas por uma empresa para investidores em potencial antes de uma oferta pública de ações.
 
-Como posso acessar o prospecto de uma empresa?
+P: Como posso acessar o prospecto de uma empresa?
 R: O prospecto geralmente está disponível no site da Comissão de Valores Mobiliários (CVM) ou da Bolsa de Valores em que a empresa está listada.
 
-O que é um cronograma de IPO?
+P: O que é um cronograma de IPO?
 R: Um cronograma de IPO é um cronograma que descreve o processo de IPO e os prazos associados a cada etapa do processo.
 
-Quais são os riscos associados a investir em um IPO?
+P: Quais são os riscos associados a investir em um IPO?
 R: Os riscos associados a investir em um IPO incluem a possibilidade de a empresa não atender às expectativas dos investidores, bem como flutuações no mercado de ações.
 
-O que é uma folha de termos?
+P: O que é uma folha de termos?
 R: Uma folha de termos é um documento que contém detalhes sobre a oferta pública de ações, incluindo a quantidade de ações a serem oferecidas e o preço das ações.
 
-Quais são as vantagens de investir em um IPO?
+P: Quais são as vantagens de investir em um IPO?
 R: As vantagens de investir em um IPO incluem a possibilidade de obter um retorno significativo sobre o investimento inicial e a oportunidade de investir em uma empresa em crescimento.
 
-Como as empresas determinam o preço das ações em um IPO?
+P: Como as empresas determinam o preço das ações em um IPO?
 R: As empresas geralmente contratam bancos de investimento para ajudá-las a determinar o preço das ações em um IPO, com base na oferta e demanda do mercado.
 
-Quais são as obrigações contínuas das empresas após a conclusão de um IPO?
+P: Quais são as obrigações contínuas das empresas após a conclusão de um IPO?
 R: As obrigações contínuas das empresas após a conclusão de um IPO incluem divulgar regularmente informações financeiras e de negócios aos investidores e manter a conformidade com as regulamentações da CVM e da bolsa de valores.
 
-O que é um underwriter?
+P: O que é um underwriter?
 R: Um underwriter é um banco de investimento ou corretora de valores mobiliários que ajuda a empresa a emitir e vender suas ações ao público.
 
-O que é um prospecto preliminar?
+P: O que é um prospecto preliminar?
 R: Um prospecto preliminar é um rascunho do prospecto que é arquivado com a CVM antes de um IPO, para dar aos investidores em potencial uma ideia geral das informações que serão incluídas no prospecto final.
+
+P: Porque abrir o capital da sua empresqa?
+R:Abrir o capital de uma empresa permite a captação de recursos financeiros por meio da emissão de ações no mercado de capitais, o que possibilita financiar projetos de expansão e investimentos. Além disso, uma empresa de capital aberto geralmente desfruta de maior visibilidade e reputação no mercado financeiro e na mídia.
+
+P: Porque fazer o processo de IPO na sua empresa?
+R:Realizar um IPO pode trazer diversos benefícios para uma empresa, como a captação de capital significativo, melhoria da liquidez das ações, aumento da visibilidade e reputação, utilização das ações como moeda de troca em aquisições, atração de talentos e incentivos, além de prestação de contas e melhor governança corporativa. Esses são alguns dos motivos pelos quais uma empresa pode optar por passar pelo processo de IPO.
+

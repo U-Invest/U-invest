@@ -6,7 +6,9 @@ import "./CatalogoCursos.css";
 const CatalogoCursos = () => {
   return (
     <div className="course-catalog">
+
       <h1>Catálogo de Cursos</h1>
+
       {cursos.map((cursos) => (
   <Link to={`/curso/${cursos.id}`} key={cursos.id} className="course-link">
     <div className="course-card">
