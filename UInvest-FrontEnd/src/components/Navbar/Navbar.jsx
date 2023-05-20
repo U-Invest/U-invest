@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import UInvestLogo from "../../assets/logonavcerta.png";
 import "./Navbar.css";
 import { AuthContext } from "./AuthContext";
-import profile_picture from "../../assets/foto_usuraio.png"
+import profile_picture from "../../assets/foto_usuraio.png";
+import ucoin from "../../assets/u-coins.png";
 
 const Navbar = () => {
   const { isAuthenticated, handleLogout } = useContext(AuthContext);
@@ -14,6 +15,11 @@ const Navbar = () => {
         <div className="logo">
           <img src={UInvestLogo} alt="Logo" />
         </div>
+
+        <div className="ucoin">
+          <img src={ucoin} alt="ucoin" />
+        </div>
+
       </Link>
       <ul className="nav-links">
         <li>

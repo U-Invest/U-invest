@@ -11,6 +11,12 @@
   z-index: 999;
 }
 
+.ucoin img {
+  width: 80px;
+  margin-left: 950px;
+  margin-top: -42px;
+}
+
 .logo img {
   width: 130px;
   height: 35px;
@@ -19,7 +25,7 @@
 .nav-links {
   list-style-type: none;
   display: flex;
-  gap: 25px;
+  gap: 10px;
 }
 
 .nav-link1 {
@@ -87,6 +93,6 @@
 
 .profile-picture img{
   width: 35px;
-  margin-left: 890px;
+  margin-left: 550px;
   margin-top: -160px;
 }
