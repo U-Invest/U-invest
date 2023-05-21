@@ -1,16 +1,23 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext} from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./Login.css";
 import { AuthContext } from "../../Navbar/AuthContext";
+
+
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { handleLogin } = useContext(AuthContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    setLoading(true); // Inicia o carregamento
 
     let usuario = {
       nickNameOuEmail: email,
@@ -23,10 +30,24 @@ const Login = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(usuario),
-    }).then(() => {
-      handleLogin(email);
-      navigate("/");
-    });
+    })
+      .then(() => {
+        handleLogin(email);
+        navigate("/");
+        toast.success("Login realizado com sucesso", {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 3000,
+        });
+      })
+      .catch((error) => {
+        toast.error("Senha incorreta!", {
+          position: toast.POSITION.TOP_CENTER,
+          autoClose: 3000,
+        });
+      })
+      .finally(() => {
+        setLoading(false); // Finaliza o carregamento
+      });
   };
 
   const handleLogout = () => {
@@ -42,6 +63,8 @@ const Login = () => {
 
   return (
     <div className="login-container background-image">
+      <ToastContainer />
+      {loading && <div className="loading-overlay">Carregando...</div>}
       <form className="login-form" onSubmit={handleSubmit}>
         <h1>Login</h1>
 

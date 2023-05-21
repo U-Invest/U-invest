@@ -1,4 +1,7 @@
 import React from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.min.css';
 import { Link } from "react-router-dom";
 import "./Cadastro.css";
 import { useState } from "react";
@@ -16,13 +19,18 @@ const Cadastro = () => {
   const [phone, setPhone] = useState("");
   const [profileType, setProfileType] = useState("not-investor");
   const [CPF, setCPF] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+
   const handlePerfilChange = (event) => {
     setProfileType(event.target.value);
   };
 
   const parts = birthdate.split("-");
   const birthdateFormatted = `${parts[2]}${parts[1]}${parts[0]}`;
-
+  
+  
   let usuario = {
     cpf: CPF,
     email: email,
@@ -35,27 +43,52 @@ const Cadastro = () => {
     nascimento: birthdateFormatted,
   };
 
+  const handleTermsChange = (event) => {
+    setTermsChecked(event.target.checked);
+  };
+  
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if (!termsChecked) {
+      setError("Por favor, aceite os termos e condições.");
+      return;
+    }
+
+    setLoading(true);
+    setError("");
+
+
     fetch(`http://localhost:8080/UInvest/usuario`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(usuario),
-    }).then(() => {
-      window.location = "/login";
-    });
+    })
+      .then(() => {
+        toast.success("Cadastro feito com sucesso!");
+        setTimeout(() => {
+          window.location = "/login";
+        }, 2000);
+      })
+      .catch((error) => {
+        setError("Ocorreu um erro ao cadastrar. Por favor, tente novamente.");
+        console.error(error); 
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
-
-  const handleTermsChange = () => {
-    setTermsChecked(!termsChecked);
-  };
-
+  
   return (
     // Container da caixa de cadastro
-    <div className="signup-container background-image">
-      <form className="signup-form" onSubmit={handleSubmit}>
+  <div className="signup-container background-image">
+    <div className="form-wrapper">
+    {loading && <div className="loading-indicator">Carregando...</div>} {/* Exibe o indicador de carregamento se o estado de carregamento for true */}
+    {error && <div className="error-message">{error}</div>}
+    <ToastContainer />
+    <form className="signup-form" onSubmit={handleSubmit}>
         <h1>Cadastre-se</h1>
 
         {/* Input do nome */}
@@ -64,7 +97,7 @@ const Cadastro = () => {
           <input
             type="name"
             id="name"
-            placeholder="    Digite seu nome:"
+            placeholder="        Digite seu nome:"
             value={name}
             onChange={(event) => setName(event.target.value)}
           />
@@ -76,7 +109,7 @@ const Cadastro = () => {
           <input
             type="name"
             id="username"
-            placeholder="Digite seu username:"
+            placeholder="   Digite seu username:"
             value={username}
             onChange={(event) => setUserName(event.target.value)}
           />
@@ -88,7 +121,7 @@ const Cadastro = () => {
           <input
             type="email"
             id="email"
-            placeholder="Digite seu e-mail: "
+            placeholder="  Digite seu e-mail: "
             value={email}
             onChange={(event) => setEmail(event.target.value)}
           />
@@ -134,7 +167,7 @@ const Cadastro = () => {
           <input
             type="tel"
             id="phone"
-            placeholder="Digite seu telefone"
+            placeholder=" Digite seu telefone"
             value={phone}
             onChange={(event) => setPhone(event.target.value)}
           />
@@ -190,6 +223,8 @@ const Cadastro = () => {
           </Link>
         </p>
       </form>
+      {error && <div className="error-message">{error}</div>}
+    </div>
     </div>
   );
 };
