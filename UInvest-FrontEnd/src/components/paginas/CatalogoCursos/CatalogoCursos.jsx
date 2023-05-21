@@ -6,7 +6,7 @@ import "./CatalogoCursos.css";
 const CatalogoCursos = () => {
   return (
     <div className="course-catalog">
-      <div className="title">
+      <div className="titlee">
         <h1>Catálogo de Cursos</h1>
       </div>
 
