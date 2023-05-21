@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2"),
+       url("../fonts/Roboto-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.pagina-modulos {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin-top: 100px;
+  }
+  
+ .title h1 {
+    text-align: center;
+    color: black;
+    font-size: 50px;
+    margin-bottom: 15px;
+    font-family: "Roboto", Arial, sans-serif;
+
+  }
+  
+  .lista-modulos {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .modulo-link {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  .modulo {
+    background-color: #f5f5f5;
+    border: black;
+    padding: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .modulo:hover {
+    background-color: #eee;
+  }
+  
+  .modulo h2 {
+    font-family: "Roboto", Arial, sans-serif;
+    color:#19BCFE;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .modulo p {
+    color: black;
+  }
+  
+  .modulo-conteudo {
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 10 14px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modulo-botao {
+    background-color: #19BCFE;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    align-items: center;
+  }
+  
+  .modulo-botao:hover {
+    background-color: #555;
+  }
+  
+  .active .modulo {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .lista-modulos {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .modulo-link {
+      width: 100%;
+      max-width: 400px;
+    }
+  
+    .modulo {
+      text-align: center;
+    }
+  
+    .modulo-conteudo {
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  

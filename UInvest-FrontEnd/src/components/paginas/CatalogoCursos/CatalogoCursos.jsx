@@ -6,22 +6,24 @@ import "./CatalogoCursos.css";
 const CatalogoCursos = () => {
   return (
     <div className="course-catalog">
+      <div className="title">
+        <h1>Catálogo de Cursos</h1>
+      </div>
 
-      <h1>Catálogo de Cursos</h1>
-
-      {cursos.map((cursos) => (
-  <Link to={`/curso/${cursos.id}`} key={cursos.id} className="course-link">
-    <div className="course-card">
-      <img src={cursos.image} alt={cursos.title} />
-      <h2>{cursos.title}</h2>
-      <p>{cursos.description}</p>
-    </div>
-  </Link>
-))}
-
+      {cursos.map((curso) => (
+        <Link to={`/descricaocurso/${curso.id}`} key={curso.id} className="course-link">
+          <div className="course-card">
+            <img src={curso.image} alt={curso.title} />
+            <h2>{curso.title}</h2>
+            <p>{curso.description}</p>
+            <div className="button-container">
+              <button className="course-button">Ver detalhes</button>
+            </div>
+          </div>
+        </Link>
+      ))}
     </div>
   );
 };
 
 export default CatalogoCursos;
-
