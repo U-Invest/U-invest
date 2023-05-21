@@ -16,10 +16,6 @@ const Navbar = () => {
           <img src={UInvestLogo} alt="Logo" />
         </div>
 
-        <div className="ucoin">
-          <img src={ucoin} alt="ucoin" />
-        </div>
-
       </Link>
       <ul className="nav-links">
         <li>
@@ -51,14 +47,20 @@ const Navbar = () => {
                 </div>
               </Link>
             </li>
-
-
             <li>
               <button onClick={handleLogout} className="nav-link3">
                 Logout
               </button>
             </li>
+            <li>
+          <Link to="/">
+            <div className="ucoin">
+             <img src={ucoin} alt="ucoin" />
+            </div>
+            </Link>
+          </li>
           </>
+
         ) : (
           <>
             <li>

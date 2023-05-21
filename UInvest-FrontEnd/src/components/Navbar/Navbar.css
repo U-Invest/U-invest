@@ -11,10 +11,17 @@
   z-index: 999;
 }
 
-.ucoin img {
+
+.profile-picture img{
+  width: 35px;
+  margin-left: 430px;
+  margin-top: -88px;
+}
+
+.ucoin {
   width: 80px;
-  margin-left: 950px;
-  margin-top: -42px;
+  margin-left: 20px;
+  margin-top: -8px;
 }
 
 .logo img {
@@ -89,10 +96,4 @@
   .nav-link2:last-child {
     margin-bottom: 0;
   }
-}
-
-.profile-picture img{
-  width: 35px;
-  margin-left: 550px;
-  margin-top: -160px;
 }
