@@ -1,4 +1,8 @@
-.login-container {
+.login-container.background-image{
+  background-image: url('../../../assets/login-page.svg');
+  background-size: 100%;
+  margin-top: 55px;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
