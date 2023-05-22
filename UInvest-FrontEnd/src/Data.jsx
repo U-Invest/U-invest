@@ -5,7 +5,7 @@ import { AiFillReconciliation } from "react-icons/ai";
 import axios from "axios";
 
 import courses1 from "./assets/curso-1-photo.webp";
-import courses2 from "./assets/courses2.jpg";
+import courses2 from "./assets/curso-2-photo.webp";
 import courses3 from "./assets/courses3.jpg";
 import courses4 from "./assets/courses4.jpg";
 import courses5 from "./assets/courses5.jpg";
@@ -147,32 +147,8 @@ export const cursos = [
   },
   {
     id: 2,
-    title: "Curso 2",
-    description: "Descrição do Curso 2",
-    image: courses2,
-  },
-  {
-    id: 3,
-    title: "Curso 2",
-    description: "Descrição do Curso 2",
-    image: courses2,
-  },
-  {
-    id: 4,
-    title: "Curso 2",
-    description: "Descrição do Curso 2",
-    image: courses2,
-  },
-  {
-    id: 5,
-    title: "Curso 2",
-    description: "Descrição do Curso 2",
-    image: courses2,
-  },
-  {
-    id: 6,
-    title: "Curso 2",
-    description: "Descrição do Curso 2",
+    title: "Curso de IPOs",
+    description: "Curso focado em aprendizado sobre o processo de IPOs",
     image: courses2,
   },
 ];

@@ -6,6 +6,7 @@ import {
   BsLinkedin,
 } from "react-icons/bs";
 import { motion } from "framer-motion";
+import {Link} from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -24,38 +25,31 @@ const Footer = () => {
         </div>
         <div>
           <div className="font-bold mb-6">Serviços</div>
-          <div className="flex flex-col gap-4">
-            <a href="" className="text-sm hover:underline">
-              Droid
-            </a>
-            <a href="" className="text-sm hover:underline">
-              Cursos
-            </a>
-            <a href="" className="text-sm hover:underline">
-              {" "}
-              IPO
-            </a>
-            <a href="" className="text-sm hover:underline">
-              Ações
-            </a>
-          </div>
+            <ul className="flex flex-col gap-4">
+              <li className="text-sm hover:underline">
+                <Link to="/teacher">Droid</Link>
+              </li>
+              <li className="text-sm hover:underline">
+                <Link to="/catalogocursos">Cursos</Link>
+              </li>
+            </ul>
         </div>
         <div>
           <div className="font-bold mb-6">U Invest</div>
-          <div className="flex flex-col gap-4">
-            <a href="" className="text-sm hover:underline">
-              Home
-            </a>
-            <a href="" className="text-sm hover:underline">
-              Sobre nós
-            </a>
-            <a href="" className="text-sm hover:underline">
-              Política de Privacidade
-            </a>
-            <a href="" className="text-sm hover:underline">
-              Termos & Condições
-            </a>
-          </div>
+            <ul className="flex flex-col gap-4">
+              <li className="text-sm hover:underline">
+                <Link to="/">Home</Link>
+              </li>
+              <li className="text-sm hover:underline">
+                <Link to="/about">Sobre nós</Link>
+              </li>
+              <li className="text-sm hover:underline"> 
+                <Link to="/">Política de Privacidade</Link>
+              </li>
+              <li className="text-sm hover:underline">
+                <Link to="/">Termos & Condições</Link>
+              </li>
+            </ul>
         </div>
         <div>
           <div className="font-bold mb-6">Contato</div>

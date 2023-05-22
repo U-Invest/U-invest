@@ -18,6 +18,7 @@ const Accordion = ({ title, children }) => {
 const VideoAccordion = ({ title, videoId, description }) => {
   return (
     <Accordion title={title}>
+      <h2>{title}</h2> {/* Novo elemento h2 para o título */}
       <div className="video-wrapper">
         <iframe
           title={title}
@@ -34,35 +35,40 @@ const Cursos = () => {
   return (
 
       <div className="inpage">
+        <div className='title'>
+          <h1>Curso - Módulo 1</h1>
+        </div>
         <VideoAccordion
           title="Aula 01 - Introdução"
           videoId="BdVlty5wQ5Y"
-          description="Intrudução ao curso de investimentos"
+          description="Esse curso de investimentos foi montado com o objetivo de te ensinar a investir de forma independente. Aqui teremos 18 aulas abordando os conceitos e práticas que te auxiliarão a entrar no mundo dos investimentos. Qualquer dúvida estou à disposição."
         />
         <VideoAccordion
           title="Aula 02 - Mudança de Mentalidade"
           videoId="G3aHNaR-BeM"
-          description="Segundo vídeo do curso, voltado para uma área mais mental"
+          description="A mudança de mentalidade é muito importante pra que você se torne um investidor de sucesso. Existem algumas ideias pre concebidas que muitas vezes temos sobre investimentos, que precisam ser repensadas por nós. Você se identificou com alguma dessas falas que mencionei na aula de hoje?"
         />
         <VideoAccordion
-          title="Aula 03"
-          videoId="pRpeEdMmmQ0"
-          description="Descrição do vídeo 3."
+          title="Aula 03 - Renda Fixa e Renda Variável"
+          videoId="8xWPEdW6-vo"
+          description="Na nossa terceira aula serão abordados os tipos de investimentos e a importância de se investir. O que é renda fixa? O que é renda variável? Mecanismo da poupança. Confira tudo isso na aula de hoje.."
         />
         <VideoAccordion
-          title="Aula 04"
-          videoId="u9Dg-g7t2l4"
-          description="Descrição do vídeo 4."
+          title="Aula 04 - Planejamento Financeiro"
+          videoId="elBjWsdZSDo"
+          description="Se planejar financeiramente é crucial pra que você tenha sucesso nos investimentos. Qualquer dúvida estou à disposição!"
         />
         <VideoAccordion
-          title="Aula 05"
-          videoId="RgKAFK5djSk"
-          description="Descrição do vídeo 5."
+          title="Aula 05 - Abrir conta na corretora"
+          videoId="ZajUwcv05R0"
+          description="As corretoras são como pontes que ligam o investidor ao investimento. É através das corretoras que você será capaz de investir nos ativos que serão tratados ao longo desse curso. Atenção às taxas, existem ótimas corretoras que ofertam serviços de qualidade gratuitamente."
         />
         <VideoAccordion
-          title="Aula 06"
-          videoId="zNcPql2KwDA"
-          description="Descrição do vídeo 6."
+          title="Aula 06 - Indicadores Financeiros (IPCA, Selic, CDI)"
+          videoId="Gn_wgRTG-b0"
+          description="Você sabe como esses indicadores financeiros influenciam nos seus investimentos?
+
+          Ao investir, precisamos descontar os efeitos inflacionários, o ganho real, de forma simples, pode ser obtido pela fórmula rendimento - inflação. Suponha que o seu investimento rendeu 5%, mas a inflação do período foi de 3%, logo o seu ganho real foi de 2%. Essa é a fórmula rápida e simples de saber o ganho real, porém, a rentabilidade real do investimento se dá pela fórmula (((1+rendimento/(1+inflação))-1)*100, ou seja, a rentabilidade real, no exemplo acima, seria de ((1,05/1,03)-1)*100 = 1,94%."
         />
       </div>
 

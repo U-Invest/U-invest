@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import UInvestLogo from "../../assets/logonavcerta.png";
-import UInvest from "../../assets/UInvest.png";
 import "./Navbar.css";
 import { AuthContext } from "./AuthContext";
 import profile_picture from "../../assets/foto_usuraio.png";
 import ucoin from "../../assets/u-coins.png";
+import ucoin2 from "../../assets/ucoin tentativa.png";
 import { AiFillHome } from "react-icons/ai";
 import { FaRobot } from "react-icons/fa";
 import { BsFillBookFill } from "react-icons/bs";
@@ -51,9 +51,6 @@ const Navbar = () => {
           <div className="logo">
             <img src={UInvestLogo} alt="Logo" />
           </div>
-          <div className="logo2">
-            <img src={UInvest} alt="logo_simples" />
-          </div>
         </Link>
         <ul className="nav-links">
           <li>
@@ -93,7 +90,7 @@ const Navbar = () => {
               <li>
                 <Link to="/">
                   <div className="ucoin">
-                    <img src={ucoin} alt="ucoin" />
+                    <img src={ucoin2} alt="ucoin" />
                   </div>
                 </Link>
               </li>
@@ -152,7 +149,8 @@ const Navbar = () => {
               <li>
                 <Link to="/">
                   <div className="ucoin">
-                    <img src={ucoin} alt="ucoin" />
+                    <img src={ucoin2} alt="ucoin" />
+                    <p>0.00</p>
                   </div>
                 </Link>
               </li>
