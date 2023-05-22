@@ -176,7 +176,7 @@ const Cadastro = () => {
             <input
               type="tel"
               id="phone"
-              placeholder=" Digite seu telefone:"
+              placeholder="Digite seu telefone:"
               value={phone}
               onChange={(event) => setPhone(event.target.value)}
             />

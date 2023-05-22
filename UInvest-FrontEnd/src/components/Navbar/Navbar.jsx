@@ -136,15 +136,10 @@ const Navbar = () => {
             <>
               <li>
                 <Link to="/areausuario">
-                  <div className="profile-picture">
+                  <div className="profile-picture-nav">
                     <img src={profile_picture} alt="Foto de perfil" />
                   </div>
                 </Link>
-              </li>
-              <li>
-                <button onClick={handleLogoutClick} className="nav-link3">
-                  Logout
-                </button>
               </li>
               <li>
                 <Link to="/">
@@ -153,6 +148,11 @@ const Navbar = () => {
                     <p>0.00</p>
                   </div>
                 </Link>
+              </li>
+              <li>
+                <button onClick={handleLogoutClick} className="nav-link3">
+                  Logout
+                </button>
               </li>
             </>
           ) : (

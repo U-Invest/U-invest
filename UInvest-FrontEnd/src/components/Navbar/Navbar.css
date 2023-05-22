@@ -11,16 +11,22 @@
   z-index: 999;
 }
 
-.profile-picture img {
-  width: 35px;
-  margin-left: 570px;
-  margin-top: -88px;
+.profile-picture-nav{
+  width: 47px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .ucoin {
-  width: 30px;
-  margin-top: 5px;
+  width: 52px;
+  margin-top: 3px;
   display: inline-flex;
+  margin-right: 30px;
+}
+
+.ucoin p {
+  padding-top: 12px;
 }
 
 .logo img {
@@ -31,7 +37,7 @@
 
 .nav-links2 {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -48,8 +54,9 @@
 .nav-link1 {
   text-decoration: none;
   color: #000000;
-  padding: 5px 10px;
+  padding: 4px 10px;
   border-radius: 5px;
+  margin-right: 15px;
 }
 
 .nav-link1:hover {
@@ -69,11 +76,17 @@
   padding: 5px 10px;
   border-radius: 5px;
   margin-top: -2px;
+  margin-left: 20px;
 }
 
 .nav-link2:hover {
   background-color: #2bd4fa;
   color: white;
+}
+
+.nav-link3:hover {
+  background-color: black;
+  color: #2bd4fa;
 }
 
 .nav-link1.active {

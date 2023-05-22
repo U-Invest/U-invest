@@ -18,7 +18,7 @@ const AreaUsuario = () => {
       <h2>Seus dados pessoais</h2>
       <form>
         <div className="form-group">
-          <img className="profile-picture" src={profile_picture} alt="" />
+          <img className="profile-picture-user" src={profile_picture} alt="" />
           <label htmlFor="nome">Nome completo</label>
           <input type="text" id="nome" name="nome" required />
         </div>
