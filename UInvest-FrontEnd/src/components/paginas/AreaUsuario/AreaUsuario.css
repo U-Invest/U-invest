@@ -72,13 +72,10 @@ button[type="submit"]:hover {
   position: relative;
 }
 
-.profile-picture {
-  position: absolute;
-  top: 0;
-  left: 0;
+.profile-picture-user {
   width: 50px;
-  margin-left: 500px;
-  margin-top: 95px;
+  margin-left: 0px;
+  margin-top: -60px;
   margin-bottom: 15px;
   height: auto;
   z-index: 1;

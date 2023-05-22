@@ -31,20 +31,15 @@
 }
 
 .signup-form input {
-
   border-radius: 5px;
   border: 1px solid #333;
   background-color: #faf7f7;
   font-size: 16px;
-
 }
 
 
 .name-inputgroup input{
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   border-radius: 5px;
   border: 1px solid #333;
   background-color: #faf7f7;
@@ -53,10 +48,7 @@
 }
 
 .username-inputgroup input {
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   border-radius: 5px;
   border: 1px solid #333;
   background-color: #faf7f7;
@@ -65,10 +57,7 @@
 }
 
 .email-inputgroup input {
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   border-radius: 5px;
   border: 1px solid #333;
   background-color: #faf7f7;
@@ -77,10 +66,7 @@
 }
 
 .password-inputgroup input {
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   border-radius: 5px;
   border: 1px solid #333;
   background-color: #faf7f7;
@@ -89,10 +75,7 @@
 }
 
 .confirm-password-inputgroup input{
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   border-radius: 5px;
   border: 1px solid #333;
   background-color: #faf7f7;
@@ -110,21 +93,17 @@
 }
 
 .profile {
-  padding-left: 57px;
-  padding-right: 32px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   background-color: #a9dbff;
-  margin: 10px;
   border-radius: 10px;
   font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 5px;
 }
 
 .phone-inputgroup input{
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   border-radius: 5px;
   border: 1px solid #333;
   background-color: #faf7f7;
@@ -133,10 +112,7 @@
 }
 
 .cpf-inputgroup input{
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   border-radius: 5px;
   border: 1px solid #333;
   background-color: #faf7f7;
@@ -224,8 +200,6 @@ label {
 }
 
 .error-message {
-  margin-top: 10px;
-  font-size: 30px;
   color: red;
 }
 
@@ -237,3 +211,20 @@ label {
   margin-top: 50px;
 }
 
+.signup-form p{
+  padding-left: 80px;
+}
+
+#perfil {
+  background-color: #a9dbff;
+}
+
+.termos-inputgroup {
+  padding: 10px;
+  font-size: 16px;
+  margin-left: -8px;
+}
+
+.termos-inputgroup label{
+  padding-left: 5px;
+}

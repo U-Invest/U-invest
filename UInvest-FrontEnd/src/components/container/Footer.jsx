@@ -2,8 +2,7 @@ import React from "react";
 import {
   BsFacebook,
   BsInstagram,
-  BsTwitter,
-  BsLinkedin,
+  BsTiktok,
 } from "react-icons/bs";
 import { motion } from "framer-motion";
 import {Link} from "react-router-dom";
@@ -53,20 +52,17 @@ const Footer = () => {
         </div>
         <div>
           <div className="font-bold mb-6">Contato</div>
-          <div className="text-sm mb-4">u_investbrasil@gmail.com</div>
-          <div className="text-sm">(11) 98546-9898</div>
+          <div className="text-sm mb-4"><a href="mailto:u_investbrasil@gmail.com" target="_blank">u_investbrasil@gmail.com</a></div>
+          <div className="text-sm"><a href="https://api.whatsapp.com/send?phone=5511987654321&text=Ol%C3%A1%21%20Seja%20bem-vindo%28a%29%20%C3%A0%20U%20Invest%21%20Como%20posso%20ser%20%C3%BAtil%3F" target="_blank">(11) 98546-9898</a></div>
           <div className="flex gap-4 mt-4">
             <a href="" className="hover:scale-110 text-xl">
               <BsFacebook />
             </a>
-            <a href="" className="hover:scale-110 text-xl">
+            <a href="https://instagram.com/u_investbrasil" className="hover:scale-110 text-xl">
               <BsInstagram />
             </a>
-            <a href="" className="hover:scale-110 text-xl">
-              <BsTwitter />
-            </a>
-            <a href="" className="hover:scale-110 text-xl">
-              <BsLinkedin />
+            <a href="https://www.tiktok.com/@uinvestbrasil" className="hover:scale-110 text-xl">
+              <BsTiktok />
             </a>
           </div>
         </div>

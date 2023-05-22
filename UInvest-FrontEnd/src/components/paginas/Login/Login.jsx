@@ -73,7 +73,7 @@ const Login = () => {
           <input
             type="text"
             id="email"
-            placeholder="   Digite seu e-mail ou username:"
+            placeholder="Digite seu e-mail ou username:"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
           />
