@@ -16,7 +16,8 @@ import {
   DescCurso1,
   DescCurso2,
   ModuloCurso1,
-  ModuloCurso2
+  ModuloCurso2,
+  About
 } from "./components/index";
 import { AuthProvider } from "./components/Navbar/AuthContext";
 
@@ -42,6 +43,7 @@ function App() {
             <Route path="/curso/4" element={<Curso4 />} />
             <Route path="/modulocurso1" element={<ModuloCurso1 />} />
             <Route path="/modulocurso2" element={<ModuloCurso2 />} />
+            <Route path="/about" element={<About/>} />
           </Routes>
           <Footer/>
         </AuthProvider>
