@@ -3,7 +3,7 @@ import about from "../../assets/cursos-onlinecerto.jpg";
 
 const About = () => {
   return (
-    <div className="section" id="sobre" style={{ height: 73.6 + "vh" }}>
+    <div className="section" id="sobre">
       <div className="grid md:grid-cols-2 gap-8 place-items-center">
         <div className="border-[3px] border-solid border-Teal rounded-lg">
           <img src={about} alt="" className="p-4" />
