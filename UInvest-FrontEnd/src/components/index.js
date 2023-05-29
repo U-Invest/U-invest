@@ -16,10 +16,11 @@ import AreaUsuario from "./paginas/AreaUsuario/AreaUsuario";
 import CatalogoCursos from "./paginas/CatalogoCursos/CatalogoCursos";
 import Contato from "./paginas/Contato/contato";
 import { AuthProvider } from "./Navbar/AuthContext";
-import DescCurso1  from "./paginas/DescricaoCursos/DescCurso1";
-import DescCurso2  from "./paginas/DescricaoCursos/DescCurso2";
-import ModuloCurso1 from "./paginas/Modulos/ModuloCurso1"
+import DescCurso1 from "./paginas/DescricaoCursos/DescCurso1";
+import DescCurso2 from "./paginas/DescricaoCursos/DescCurso2";
+import ModuloCurso1 from "./paginas/Modulos/ModuloCurso1";
 import ModuloCurso2 from "./paginas/Modulos/ModuloCurso2";
+import Droid from "./droid/Droid";
 
 export {
   Navbar,
@@ -43,5 +44,6 @@ export {
   DescCurso1,
   DescCurso2,
   ModuloCurso1,
-  ModuloCurso2
+  ModuloCurso2,
+  Droid,
 };

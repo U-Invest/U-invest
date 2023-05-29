@@ -1,9 +1,10 @@
-import { Home, About, Courses, Teacher, Contact } from "../index";
+import { Home, About, Courses, Teacher, Contact, Droid } from "../index";
 
 function MainHome() {
   return (
     <>
       <div className="font-Poppins bg-Solitude">
+        <Droid />
         <Home />
         <About />
         <Courses />
