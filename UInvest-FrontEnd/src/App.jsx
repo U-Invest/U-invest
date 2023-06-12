@@ -7,6 +7,7 @@ import {
   Cursos3,
   Curso4,
   Login,
+  ForgotPassword,
   Teacher,
   Footer,
   Cadastro,
@@ -30,6 +31,7 @@ function App() {
           <Routes>
             <Route path="/" element={<MainHome />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/senha" element={<ForgotPassword />} />
             <Route path="/cadastro" element={<Cadastro />} />
             <Route path="/teacher" element={<Teacher />} />
             <Route path="/contato" element={<Contato />} />

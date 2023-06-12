@@ -99,6 +99,12 @@ const Login = () => {
             <span id="signup-link"> Cadastre-se </span>
           </Link>
         </p>
+        <p>
+          Esqueci minha senha,{" "}
+          <Link to="/senha">
+            <span id="signup-link"> Recuperar</span>
+          </Link>
+        </p>
       </form>
     </div>
   );

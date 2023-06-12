@@ -21,6 +21,7 @@ import DescCurso2 from "./paginas/DescricaoCursos/DescCurso2";
 import ModuloCurso1 from "./paginas/Modulos/ModuloCurso1";
 import ModuloCurso2 from "./paginas/Modulos/ModuloCurso2";
 import Droid from "./droid/Droid";
+import ForgotPassword from "./paginas/Senha/Senha"
 
 export {
   Navbar,
@@ -36,6 +37,7 @@ export {
   Curso4,
   MainHome,
   Login,
+  ForgotPassword,
   Cadastro,
   AreaUsuario,
   CatalogoCursos,
