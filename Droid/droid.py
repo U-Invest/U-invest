@@ -1,16 +1,22 @@
-import nltk
+import json
+import os
 import textwrap
 import webbrowser
-import json
-from nltk.chat.util import Chat, reflections
+
+import nltk
+# from nltk.chat.util import Chat, reflections
 from nltk.corpus import stopwords
 from nltk.stem import SnowballStemmer
+# from nltk.tokenize import sent_tokenize
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from nltk.tokenize import sent_tokenize
-from heapq import nlargest
+
 import sumarizacao
-import os
+
+# from heapq import nlargest
+
+
+
 nltk.download('stopwords')
 nltk.download('punkt')   
 
@@ -62,6 +68,7 @@ def chatbot_response(user_input):
         print('\033[1;31m'f'Erro ao processar a entrada do usuário: {e}''\033[0; 0m')
         return None
     
+     
 def default_response(user_input):
     return '\033[1;31m''Desculpe, não entendi. Pode reformular a pergunta?''\033[0; 0m'
 
@@ -121,6 +128,8 @@ def open_google():
      show_menu()
      choice = input('\033[1;96m''Digite sua escolha: ''\033[0;0m')
      handle_choice(choice)
+
+
 
 while True:
     show_menu()

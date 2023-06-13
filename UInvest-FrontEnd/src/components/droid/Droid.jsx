@@ -3,6 +3,9 @@ import Modal from "react-modal";
 import { FaTimes } from "react-icons/fa";
 import "./Droid.css";
 import droidIcon from "../../assets/droidIcon.png";
+// Importando a biblioteca para consumir a API.
+import axios from 'axios';
+
 
 Modal.setAppElement("#root");
 
@@ -50,12 +53,33 @@ const Droid = () => {
     }
   };
 
+  // Antiga handeSend
+  // const handleSend = () => {
+  //   if (message.trim() !== "") {
+  //     sendMessage(message, "user");
+  //     setMessage("");
+  //   }
+  // };
+
+  // Utilizando a api
   const handleSend = () => {
     if (message.trim() !== "") {
+      // Faz a chamada da API
+      axios.get('/api')
+        .then(response => {
+          // Aqui você pode tratar a resposta da API
+          console.log(response.data);
+        })
+        .catch(error => {
+          // Aqui você pode tratar erros na chamada da API
+          console.error(error);
+        });
+  
       sendMessage(message, "user");
       setMessage("");
     }
   };
+  
 
   useEffect(() => {
     if (chatContainerRef.current) {
