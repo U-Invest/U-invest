@@ -13,7 +13,9 @@ const Droid = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [chatHistory, setChatHistory] = useState([]);
   const [defaultMessageSent, setDefaultMessageSent] = useState(false);
+  const [lastUserMessage, setLastUserMessage] = useState("");
   const chatContainerRef = useRef(null);
+  const [selectedOption, setSelectedOption] = useState("");
 
   const openChat = () => {
     setIsChatOpen(true);
@@ -23,14 +25,74 @@ const Droid = () => {
     setIsChatOpen(false);
   };
 
-  const sendMessage = (msg, sender) => {
-    const newMessage = {
-      text: msg,
-      sender: sender,
-    };
+  let isFirstUserMessage = true;
 
-    setChatHistory((prevChatHistory) => [...prevChatHistory, newMessage]);
+  function handleChoice(choice) {
+    if (choice === "1") {
+      setSelectedOption(choice);
+      const msg = "Digite sua dúvida:";
+      sendMessage(msg, "bot");
+    }
+  }
+
+  const sendMessage = (msg, sender) => {
+  const newMessage = {
+    text: msg,
+    sender: sender,
   };
+
+  setChatHistory((prevChatHistory) => [...prevChatHistory, newMessage]);
+
+  if (sender === "user") {
+    if (isFirstUserMessage) {
+      isFirstUserMessage = false;
+      handleChoice(msg);
+    }
+    setLastUserMessage(msg);
+  }
+
+  if (!isFirstUserMessage) {
+    if (selectedOption === "1") {
+      if (lastUserMessage === "Digite sua dúvida:") { // Verifica se a mensagem atual é a resposta esperada do usuário
+        fetch("http://127.0.0.1:5000/droid", {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ message: lastUserMessage }),
+        })
+          .then((response) => {
+            // Handle the response here
+          })
+          .catch((error) => {
+            setError("Ocorreu um erro ao processar sua mensagem. Por favor, tente novamente.");
+            console.error(error);
+          })
+          .finally(() => {
+            setLoading(false);
+          });
+      }
+    } else {
+      fetch("http://127.0.0.1:5000/droid", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message: msg }),
+      })
+        .then((response) => {
+          // Handle the response here
+        })
+        .catch((error) => {
+          setError("Ocorreu um erro ao processar sua mensagem. Por favor, tente novamente.");
+          console.error(error);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    }
+  }
+};
 
   useEffect(() => {
     if (isChatOpen && !defaultMessageSent) {
