@@ -8,17 +8,12 @@ Modal.setAppElement("#root");
 
 const Droid = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
-  const [message, setMessage] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
-  const [isDefaultMessageSent, setIsDefaultMessageSent] = useState(false);
+  const [defaultMessageSent, setDefaultMessageSent] = useState(false);
   const chatContainerRef = useRef(null);
 
   const openChat = () => {
     setIsChatOpen(true);
-    if (!isDefaultMessageSent) {
-      sendDefaultMessage();
-      setIsDefaultMessageSent(true);
-    }
   };
 
   const closeChat = () => {
@@ -34,40 +29,30 @@ const Droid = () => {
     setChatHistory((prevChatHistory) => [...prevChatHistory, newMessage]);
   };
 
+  useEffect(() => {
+    if (isChatOpen && !defaultMessageSent) {
+      sendDefaultMessage();
+      setDefaultMessageSent(true);
+    }
+  }, [isChatOpen, defaultMessageSent]);
+
   const sendDefaultMessage = () => {
-    sendMessage("Olá! Como posso ajudar?", "bot");
-  };
-
-  const handleInputChange = (e) => {
-    setMessage(e.target.value);
-  };
-
-  const handleInputKeyPress = (e) => {
-    if (e.key === "Enter" && message.trim() !== "") {
-      e.preventDefault();
-      sendMessage(message, "user");
-      setMessage("");
-    }
-  };
-
-  const handleSend = () => {
-    if (message.trim() !== "") {
-      sendMessage(message, "user");
-      setMessage("");
-    }
+    sendMessage("Bem-vindo ao Droid! Eu sou um chatbot sobre IPOs. Como posso ajudá-lo?", "bot");
+    sendMessage("Escolha uma das opções abaixo:", "bot");
+    sendMessage("1 - Tirar dúvidas sobre IPO", "bot");
+    sendMessage("2 - Sumarizar o prospecto", "bot");
+    sendMessage("3 - Abrir pagina com prospectos", "bot");
   };
 
   useEffect(() => {
     if (chatContainerRef.current) {
-      chatContainerRef.current.scrollTop =
-        chatContainerRef.current.scrollHeight;
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
     }
   }, [chatHistory]);
 
   useEffect(() => {
     if (isChatOpen && chatContainerRef.current) {
-      chatContainerRef.current.scrollTop =
-        chatContainerRef.current.scrollHeight;
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
     }
   }, [isChatOpen]);
 
@@ -89,49 +74,64 @@ const Droid = () => {
     </div>
   );
 
-  const ChatInput = ({ message, onInputChange, onInputKeyPress, onSend }) => (
-    <div className="chat-input">
-      <input
-        type="text"
-        value={message}
-        onChange={onInputChange}
-        onKeyPress={onInputKeyPress}
-        placeholder="Digite uma mensagem"
-      />
-      <button onClick={onSend}>Enviar</button>
-    </div>
-  );
+  const ChatInput = ({ onSendMessage }) => {
+    const [message, setMessage] = useState("");
 
-  const chatContainerClass =
-    chatHistory.length > 10 ? "chat-messages chat-scrollable" : "chat-messages";
+    const handleInputChange = (e) => {
+      setMessage(e.target.value);
+    };
+
+    const handleInputKeyPress = (e) => {
+      if (e.key === "Enter" && message.trim() !== "") {
+        e.preventDefault();
+        onSendMessage(message, "user");
+        setMessage("");
+      }
+    };
+
+    const handleSend = () => {
+      if (message.trim() !== "") {
+        onSendMessage(message, "user");
+        setMessage("");
+      }
+    };
+
+    return (
+      <div className="chat-input">
+        <input
+          type="text"
+          value={message}
+          onChange={handleInputChange}
+          onKeyPress={handleInputKeyPress}
+          placeholder="Digite uma mensagem"
+        />
+        <button onClick={handleSend}>Enviar</button>
+      </div>
+    );
+  };
 
   return (
-    <>
+    <div>
+      <div className="chat-icon" onClick={openChat}>
+        <img src={droidIcon} alt="Chat Icon" />
+      </div>
       <Modal
         isOpen={isChatOpen}
         onRequestClose={closeChat}
         className="chat-modal"
         overlayClassName="chat-overlay"
       >
-        <div className="chat-container">
-          <ChatHeader onClose={closeChat} />
-          <div className={chatContainerClass} ref={chatContainerRef}>
-            {chatHistory.slice(-10).map((chat, index) => (
+        <ChatHeader onClose={closeChat} />
+        <div className="chat-container" ref={chatContainerRef}>
+          <div className="chat-messages">
+            {chatHistory.map((chat, index) => (
               <ChatMessage key={index} chat={chat} />
             ))}
           </div>
-          <ChatInput
-            message={message}
-            onInputChange={handleInputChange}
-            onInputKeyPress={handleInputKeyPress}
-            onSend={handleSend}
-          />
+          <ChatInput onSendMessage={sendMessage} />
         </div>
       </Modal>
-      <div className="chat-icon" onClick={openChat}>
-        <img src={droidIcon} alt="Chat Icon" />
-      </div>
-    </>
+    </div>
   );
 };
 
