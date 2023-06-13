@@ -3,9 +3,7 @@ import Modal from "react-modal";
 import { FaTimes } from "react-icons/fa";
 import "./Droid.css";
 import droidIcon from "../../assets/droidIcon.png";
-// Importando a biblioteca para consumir a API.
 import axios from 'axios';
-
 
 Modal.setAppElement("#root");
 
@@ -108,19 +106,23 @@ const Droid = () => {
     sendMessage("2 - Sumarizar o prospecto", "bot");
     sendMessage("3 - Abrir pagina com prospectos", "bot");
   };
-  
 
   useEffect(() => {
     if (chatContainerRef.current) {
       chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
     }
   }, [chatHistory]);
-
+  
   useEffect(() => {
-    if (isChatOpen && chatContainerRef.current) {
-      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    if (isChatOpen) {
+      setTimeout(() => {
+        if (chatContainerRef.current) {
+          chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+        }
+      }, 0);
     }
   }, [isChatOpen]);
+  
 
   const ChatHeader = ({ onClose }) => (
     <div className="chat-header">
@@ -190,9 +192,11 @@ const Droid = () => {
         <ChatHeader onClose={closeChat} />
         <div className="chat-container" ref={chatContainerRef}>
           <div className="chat-messages">
-            {chatHistory.map((chat, index) => (
-              <ChatMessage key={index} chat={chat} />
-            ))}
+            <div className="chat-scrollable">
+              {chatHistory.map((chat, index) => (
+                <ChatMessage key={index} chat={chat} />
+              ))}
+            </div>
           </div>
           <ChatInput onSendMessage={sendMessage} />
         </div>

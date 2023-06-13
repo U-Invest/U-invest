@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {
+  Droid,
   Navbar,
   MainHome,
   Cursos1,
@@ -27,6 +28,7 @@ function App() {
     <div className="font-Poppins bg-Solitude">
       <BrowserRouter>
         <AuthProvider>
+          <Droid />
           <Navbar />
           <Routes>
             <Route path="/" element={<MainHome />} />
