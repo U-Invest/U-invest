@@ -1,5 +1,5 @@
 import textwrap
-from droid import chatbot_response
+from duvidas import chatbot_response
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
