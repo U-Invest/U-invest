@@ -23,17 +23,6 @@ with open('ipo.txt', 'r' ,encoding= "UTF8") as f:
 pairs = [pair.split('\n') for pair in raw_data.split('\n\n')]
 pairs = [(pair[0], pair[1]) for pair in pairs if len(pair) > 1]
 
-def limpaTerminal():
-    return os.system('cls' if os.name == 'nt' else 'clear')
-
-def criaBarra():
-    return print('-' * 32)
-
-limpaTerminal()
-criaBarra()
-print('\033[1;96m''Bem-vindo ao Droid! Eu sou um chatbot sobre IPOs. Como posso ajudá-lo?''\033[0;0m')
-criaBarra()
-
 def preprocess(text):
     tokens = nltk.word_tokenize(text.lower())
     tokens = [token for token in tokens if token not in stop_words]
@@ -65,16 +54,9 @@ def chatbot_response(user_input):
 def default_response(user_input):
     return '\033[1;31m''Desculpe, não entendi. Pode reformular a pergunta?''\033[0; 0m'
 
-def show_menu():
-    print('\033[1;96m''Escolha uma das opções abaixo:''\033[0;0m')
-    print("\033[1m1 - Tirar dúvidas sobre IPO\033[m")
-    print("\033[1m2 - Sumarizar o prospecto\033[m")
-    print("\033[1m3 - Abrir pagina com prospectos\033[m")
-    print("\033[1m4 - Sair\033[m")
-
 def handle_choice(choice):
     if choice == "1":
-        limpaTerminal()
+        
         question = input('\033[1;96m''Digite sua dúvida: ''\033[0;0m')
         response = chatbot_response(question)
         wrapped_response = textwrap.wrap(response, width=50)
@@ -121,8 +103,3 @@ def open_google():
      show_menu()
      choice = input('\033[1;96m''Digite sua escolha: ''\033[0;0m')
      handle_choice(choice)
-
-while True:
-    show_menu()
-    choice = input('\033[1;96m''Digite sua escolha: ''\033[0;0m')
-    handle_choice(choice)
