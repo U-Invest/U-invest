@@ -91,9 +91,8 @@ const Droid = () => {
       axios
         .get("http://127.0.0.1:5000/introducao")
         .then((response) => {
-          const { boas_vindas, opcoes } = response.data;
-          sendMessage(boas_vindas, "bot");
-          opcoes.forEach((opcao) => sendMessage(opcao, "bot"));
+          const { mensagem } = response.data;
+          sendMessage(mensagem, "bot");
         })
         .catch((error) => {
           console.error(error);
