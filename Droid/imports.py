@@ -51,4 +51,4 @@ def chatbot_response(user_input):
 
 
 def default_response(user_input):
-    return '\033[1;31m''Desculpe, não entendi. Pode reformular a pergunta?''\033[0; 0m'
+    return 'Desculpe, não entendi. Pode reformular a pergunta?'
