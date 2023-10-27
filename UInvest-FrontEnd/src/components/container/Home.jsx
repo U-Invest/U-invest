@@ -35,10 +35,10 @@ const Home = () => {
             Cadastre-se na U Invest, você terá acesso a cursos imperdíveis e muito mais, venha aprender com a gente!
           </p>
           <div className="mt-6">
-            <button onClick={getDadosCursos} className="px-6 py-3 font-bold text-white bg-Teal rounded-lg mr-4 text-sm">
+            <button onClick={getDadosCursos} className="px-6 py-3 font-bold text-white bg-Teal rounded-lg mr-4 text-sm button-styled-vm">
               Vamos começar!
             </button>
-            <button className="px-6 py-3 font-bold border border-solid border-gray rounded-lg text-sm">
+            <button className="px-6 py-3 font-bold border border-solid border-gray rounded-lg text-sm button-styled">
               Descubra
             </button>
           </div>

@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className="section" id="sobre">
       <div className="grid md:grid-cols-2 gap-8 place-items-center">
-        <div className="border-[3px] border-solid border-Teal rounded-lg">
+        <div className="">
           <img src={about} alt="" className="p-4" />
         </div>
         <div>
@@ -13,7 +13,7 @@ const About = () => {
             Vamos proporcionar os
             <br /> melhores <span className="text-Teal">cursos online!</span>
           </div>
-          <p className="text-sm text-gray leading-7 mb-4">
+          <p className="text-sm text-gray leading-6 mb-3">
             A U Invest chegou no mercado para mudar o cenário de investimento.
             Com uma proposta inovadora unindo tecnnologia e investimento, com a
             proposta de multiplicar os acionistas brasileiros, venha nos
@@ -22,7 +22,7 @@ const About = () => {
             suas dúvidas, e te ensinar muito, vale a pena ver. Eai, Bora
             Investir?
           </p>
-          <button className="py-3 px-6 text-sm border border-solid border-gray rounded-lg font-bold">
+          <button className="py-3 px-6 text-sm border border-solid border-gray rounded-lg font-bold button-styled">
             Saiba mais
           </button>
         </div>

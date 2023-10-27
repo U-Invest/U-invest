@@ -16,3 +16,41 @@
     animation-play-state: paused;
   }
 }
+
+
+.button-styled {
+  transition: background-color 0.3s;
+}
+
+.button-styled-vm {
+  transition: background-color 0.3s;
+}
+
+.button-styled:hover {
+  background-color: #86d9f5;
+  color: white;
+  border-color: lightslategray;
+}
+
+.button-styled-vm:hover {
+  background-color: #86d9f5;
+  color: rgb(0, 0, 0);
+}
+
+.category-item {
+  transition: background-color 0.3s; 
+}
+
+.category-item:hover {
+  background-color: #e2e2e2; 
+}
+
+.course-item {
+  transition: background-color 0.3s; 
+
+}
+
+.course-item:hover {
+  background-color: #e2e2e2; 
+
+}

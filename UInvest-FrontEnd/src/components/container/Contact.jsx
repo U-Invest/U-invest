@@ -13,7 +13,7 @@ const Contact = () => {
         <motion.form
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.15 }}
           className="mt-5"
         >
           <input
@@ -21,7 +21,7 @@ const Contact = () => {
             placeholder="E-Mail"
             className="sm:p-3 p-2 outline-none text-sm shadow-md sm:w-72 w-60"
           />
-          <button className="text-sm text-white bg-Teal sm:p-3 p-2 shadow-md font-bold">
+          <button className="text-sm text-white bg-Teal sm:p-3 p-2 shadow-md font-bold button-styled">
             Inscrever-se
           </button>
         </motion.form>
