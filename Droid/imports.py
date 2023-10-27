@@ -1,8 +1,22 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem import SnowballStemmer
+
+nltk.download('stopwords')
+nltk.download('punkt')
+
+stemmer = SnowballStemmer('portuguese')
+stop_words = stopwords.words('portuguese')
+
+with open('ipo.txt', 'r', encoding="UTF8") as f:
+    raw_data = f.read()
+
 pairs = [pair.split('\n') for pair in raw_data.split('\n\n')]
 pairs = [(pair[0], pair[1]) for pair in pairs if len(pair) > 1]
+
 
 def preprocess(text):
     tokens = nltk.word_tokenize(text.lower())
@@ -10,11 +24,13 @@ def preprocess(text):
     stemmed_tokens = [stemmer.stem(token) for token in tokens]
     return " ".join(stemmed_tokens)
 
+
 preprocessed_pairs = [(preprocess(pair[0]), pair[1]) for pair in pairs]
 
 vectorizer = TfidfVectorizer()
 corpus = [pair[0] for pair in preprocessed_pairs]
 X = vectorizer.fit_transform(corpus)
+
 
 def chatbot_response(user_input):
     try:
@@ -29,8 +45,10 @@ def chatbot_response(user_input):
             response = default_response(user_input)
         return response
     except Exception as e:
-        print('\033[1;31m'f'Erro ao processar a entrada do usuário: {e}''\033[0; 0m')
+        print(
+            '\033[1;31m'f'Erro ao processar a entrada do usuário: {e}''\033[0; 0m')
         return None
-    
+
+
 def default_response(user_input):
     return '\033[1;31m''Desculpe, não entendi. Pode reformular a pergunta?''\033[0; 0m'
