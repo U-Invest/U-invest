@@ -12,7 +12,7 @@ const Footer = () => {
     <motion.div
       initial={{ height: 0 }}
       whileInView={{ height: "auto" }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0 }}
       className="bg-Teal p-10"
     >
       <div className="grid md:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 grid-cols-1 place-items-start gap-8 text-white">
