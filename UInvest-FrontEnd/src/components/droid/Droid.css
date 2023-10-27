@@ -130,3 +130,17 @@
   margin-right: 10px;
   resize: vertical; 
 }
+.limpar {
+  background-color: #19bcfe;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: calc(33.33% - 10px);
+  height: calc(10px + 1.2em); 
+  margin: 15px auto 5px auto; 
+}
+
+
+
+

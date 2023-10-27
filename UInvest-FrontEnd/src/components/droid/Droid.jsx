@@ -10,7 +10,6 @@ Modal.setAppElement("#root");
 const Droid = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [chatHistory, setChatHistory] = useState([]);
-  const [defaultMessageSent, setDefaultMessageSent] = useState(false);
   const [lastUserMessage, setLastUserMessage] = useState("");
   const chatContainerRef = useRef(null);
   const [selectedOption, setSelectedOption] = useState("");
@@ -23,7 +22,29 @@ const Droid = () => {
     setIsChatOpen(false);
   };
 
-  let isFirstUserMessage = true;
+
+  const clearChatHistory = () => {
+    setChatHistory([]);
+    sendInitialMessage();
+  };
+
+  const sendInitialMessage = () => {
+    axios
+      .get("http://127.0.0.1:5000/introducao")
+      .then((response) => {
+        const { mensagem } = response.data;
+        sendMessage(mensagem, "bot");
+        scrollToBottom();
+      })
+      .catch((error) => {
+        console.error(error);
+        sendMessage(
+          "Ocorreu um erro ao carregar as opções. Por favor, tente novamente.",
+          "bot"
+        );
+        scrollToBottom();
+      });
+  };
 
   const sendMessage = (msg, sender) => {
     setChatHistory((prevChatHistory) => [
@@ -51,6 +72,7 @@ const Droid = () => {
             sender: "bot",
           };
           setChatHistory((prevChatHistory) => [...prevChatHistory, botMessage]);
+          scrollToBottom();
         })
         .catch((error) => {
           const errorMessage = {
@@ -62,6 +84,7 @@ const Droid = () => {
             errorMessage,
           ]);
           console.error(error);
+          scrollToBottom();
         });
     }
   };
@@ -72,6 +95,7 @@ const Droid = () => {
       .then((data) => {
         const mensagem = data.mensagem;
         sendMessage(mensagem, "bot");
+        scrollToBottom();
 
         if (choice === "1") {
           setSelectedOption("1");
@@ -83,44 +107,25 @@ const Droid = () => {
           "Ocorreu um erro ao processar sua escolha. Por favor, tente novamente.",
           "bot"
         );
+        scrollToBottom();
       });
   }
 
-  useEffect(() => {
-    if (isChatOpen) {
-      axios
-        .get("http://127.0.0.1:5000/introducao")
-        .then((response) => {
-          const { mensagem } = response.data;
-          sendMessage(mensagem, "bot");
-        })
-        .catch((error) => {
-          console.error(error);
-          sendMessage(
-            "Ocorreu um erro ao carregar as opções. Por favor, tente novamente.",
-            "bot"
-          );
-        });
-    }
-  }, [isChatOpen]);
-
-  useEffect(() => {
+  const scrollToBottom = () => {
     if (chatContainerRef.current) {
-      chatContainerRef.current.scrollTop =
-        chatContainerRef.current.scrollHeight;
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
     }
-  }, [chatHistory]);
+  };
 
   useEffect(() => {
     if (isChatOpen) {
-      setTimeout(() => {
-        if (chatContainerRef.current) {
-          chatContainerRef.current.scrollTop =
-            chatContainerRef.current.scrollHeight;
-        }
-      }, 0);
+      sendInitialMessage();
     }
   }, [isChatOpen]);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [chatHistory]);
 
   const ChatHeader = ({ onClose }) => (
     <div className="chat-header">
@@ -136,7 +141,9 @@ const Droid = () => {
       {chat.sender === "bot" && (
         <img src={droidIcon} alt="Bot Icon" className="message-icon" />
       )}
-      {chat.text}
+      <div
+        dangerouslySetInnerHTML={{ __html: chat.text.replace(/\n/g, "<br>") }}
+      />
     </div>
   );
 
@@ -197,6 +204,7 @@ const Droid = () => {
             </div>
           </div>
           <ChatInput onSendMessage={sendMessage} />
+          <button className="limpar" onClick={clearChatHistory}>Limpar Chat</button>
         </div>
       </Modal>
     </div>
