@@ -7,13 +7,6 @@ const Teacher = () => {
     <div className="section" id="droid">
       <div className="grid sm:grid-cols-2 place-items-center gap-8">
         <div className="pl-5">
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-
           <div className="font-bold sm:text-[1.875rem] text-[1.5rem] mb-5">
             Conheça <span className="text-Teal">um instrutor</span> <br /> diferente
             em nossa plataforma... <span className="text-Teal">DROID!</span> 
@@ -23,7 +16,7 @@ const Teacher = () => {
             Sua principal funcionalidade de filtrar um prospecto de mercado, logo dismistificando IPOS.
             
           </p>
-          <button className="py-3 px-4 bg-Teal text-white rounded-lg text-sm font-bold ">
+          <button className="py-3 px-4 bg-Teal text-white rounded-lg text-sm font-bold button-styled">
             Tire suas dúvidas!
           </button>
         </div>
