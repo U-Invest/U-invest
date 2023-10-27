@@ -50,7 +50,7 @@ def escolha():
         return jsonify({"error": f"Um erro ocorreu: {e}"})
 
 
-@app.route('/ask', methods=['POST'])
+@app.route('/duvida', methods=['POST'])
 def ask():
     data = request.get_json()
     question = data.get('question')
