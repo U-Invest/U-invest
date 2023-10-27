@@ -30,14 +30,14 @@ const Droid = () => {
       ...prevChatHistory,
       { text: msg, sender: sender },
     ]);
-  
+
     if (sender === "user" && (msg === "1" || msg === "2" || msg === "3")) {
       handleChoice(msg);
       return;
     }
-  
+
     if (sender === "user" && selectedOption === "1") {
-      fetch("http://127.0.0.1:5000/ask", {
+      fetch("http://127.0.0.1:5000/duvida", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,10 +50,7 @@ const Droid = () => {
             text: data.response,
             sender: "bot",
           };
-          setChatHistory((prevChatHistory) => [
-            ...prevChatHistory,
-            botMessage,
-          ]);
+          setChatHistory((prevChatHistory) => [...prevChatHistory, botMessage]);
         })
         .catch((error) => {
           const errorMessage = {
@@ -68,35 +65,42 @@ const Droid = () => {
         });
     }
   };
-  
+
   function handleChoice(choice) {
     fetch(`http://127.0.0.1:5000/escolha?valor=${choice}`)
       .then((response) => response.json())
       .then((data) => {
         const mensagem = data.mensagem;
         sendMessage(mensagem, "bot");
-  
+
         if (choice === "1") {
           setSelectedOption("1");
         }
       })
       .catch((error) => {
         console.error(error);
-        sendMessage("Ocorreu um erro ao processar sua escolha. Por favor, tente novamente.", "bot");
+        sendMessage(
+          "Ocorreu um erro ao processar sua escolha. Por favor, tente novamente.",
+          "bot"
+        );
       });
   }
 
   useEffect(() => {
     if (isChatOpen) {
-      axios.get('http://127.0.0.1:5000/introducao')
+      axios
+        .get("http://127.0.0.1:5000/introducao")
         .then((response) => {
           const { boas_vindas, opcoes } = response.data;
-          sendMessage(boas_vindas, 'bot');
-          opcoes.forEach(opcao => sendMessage(opcao, 'bot'));
+          sendMessage(boas_vindas, "bot");
+          opcoes.forEach((opcao) => sendMessage(opcao, "bot"));
         })
         .catch((error) => {
           console.error(error);
-          sendMessage("Ocorreu um erro ao carregar as opções. Por favor, tente novamente.", "bot");
+          sendMessage(
+            "Ocorreu um erro ao carregar as opções. Por favor, tente novamente.",
+            "bot"
+          );
         });
     }
   }, [isChatOpen]);
