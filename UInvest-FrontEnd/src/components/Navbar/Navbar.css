@@ -58,7 +58,8 @@
 }
 
 .nav-link1:hover {
-  background-color: #2bd4fa;
+  background-color: #86d9f5;
+  color: white;
 }
 
 .nav-link2 {
@@ -78,12 +79,12 @@
 }
 
 .nav-link2:hover {
-  background-color: #2bd4fa;
+  background-color: #86d9f5;
   color: white;
 }
 
 .nav-link3:hover {
-  background-color: #2bd4fa;
+  background-color: #86d9f5;
   color: white;
 }
 
