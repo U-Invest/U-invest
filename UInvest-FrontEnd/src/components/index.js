@@ -14,7 +14,7 @@ import Login from "./paginas/Login/Login";
 import Cadastro from "./paginas/Cadastro/Cadastro.jsx";
 import AreaUsuario from "./paginas/AreaUsuario/AreaUsuario";
 import CatalogoCursos from "./paginas/CatalogoCursos/CatalogoCursos";
-import Contato from "./paginas/Contato/contato";
+import Contato from "./paginas/Contato/Contato";
 import { AuthProvider } from "./Navbar/AuthContext";
 import DescCurso1 from "./paginas/DescricaoCursos/DescCurso1";
 import DescCurso2 from "./paginas/DescricaoCursos/DescCurso2";

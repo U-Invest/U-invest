@@ -3,7 +3,7 @@ import Modal from "react-modal";
 import { FaTimes } from "react-icons/fa";
 import "./Droid.css";
 import droidIcon from "../../assets/droidIcon.png";
-import axios from 'axios';
+import axios from "axios";
 
 Modal.setAppElement("#root");
 
@@ -25,104 +25,99 @@ const Droid = () => {
 
   let isFirstUserMessage = true;
 
-  function handleChoice(choice) {
-    if (choice === "1") {
-      setSelectedOption(choice);
-      const msg = "Digite sua dúvida:";
-      sendMessage(msg, "bot");
-    }
-  }
-
   const sendMessage = (msg, sender) => {
-  const newMessage = {
-    text: msg,
-    sender: sender,
-  };
-
-  setChatHistory((prevChatHistory) => [...prevChatHistory, newMessage]);
-
-  if (sender === "user") {
-    if (isFirstUserMessage) {
-      isFirstUserMessage = false;
+    setChatHistory((prevChatHistory) => [
+      ...prevChatHistory,
+      { text: msg, sender: sender },
+    ]);
+  
+    if (sender === "user" && (msg === "1" || msg === "2" || msg === "3")) {
       handleChoice(msg);
+      return;
     }
-    setLastUserMessage(msg);
-  }
-
-  if (!isFirstUserMessage) {
-    if (selectedOption === "1") {
-      if (lastUserMessage === "Digite sua dúvida:") { // Verifica se a mensagem atual é a resposta esperada do usuário
-        fetch("http://127.0.0.1:5000/droid", {
-          method: "post",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ message: lastUserMessage }),
-        })
-          .then((response) => {
-            // Handle the response here
-          })
-          .catch((error) => {
-            setError("Ocorreu um erro ao processar sua mensagem. Por favor, tente novamente.");
-            console.error(error);
-          })
-          .finally(() => {
-            setLoading(false);
-          });
-      }
-    } else {
-      fetch("http://127.0.0.1:5000/droid", {
-        method: "post",
+  
+    if (sender === "user" && selectedOption === "1") {
+      fetch("http://127.0.0.1:5000/ask", {
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message: msg }),
+        body: JSON.stringify({ question: msg }),
       })
-        .then((response) => {
-          // Handle the response here
+        .then((response) => response.json())
+        .then((data) => {
+          const botMessage = {
+            text: data.response,
+            sender: "bot",
+          };
+          setChatHistory((prevChatHistory) => [
+            ...prevChatHistory,
+            botMessage,
+          ]);
         })
         .catch((error) => {
-          setError("Ocorreu um erro ao processar sua mensagem. Por favor, tente novamente.");
+          const errorMessage = {
+            text: "Ocorreu um erro ao processar sua mensagem. Por favor, tente novamente.",
+            sender: "bot",
+          };
+          setChatHistory((prevChatHistory) => [
+            ...prevChatHistory,
+            errorMessage,
+          ]);
           console.error(error);
-        })
-        .finally(() => {
-          setLoading(false);
         });
     }
+  };
+  
+  function handleChoice(choice) {
+    fetch(`http://127.0.0.1:5000/escolha?valor=${choice}`)
+      .then((response) => response.json())
+      .then((data) => {
+        const mensagem = data.mensagem;
+        sendMessage(mensagem, "bot");
+  
+        if (choice === "1") {
+          setSelectedOption("1");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        sendMessage("Ocorreu um erro ao processar sua escolha. Por favor, tente novamente.", "bot");
+      });
   }
-};
 
   useEffect(() => {
-    if (isChatOpen && !defaultMessageSent) {
-      sendDefaultMessage();
-      setDefaultMessageSent(true);
+    if (isChatOpen) {
+      axios.get('http://127.0.0.1:5000/introducao')
+        .then((response) => {
+          const { boas_vindas, opcoes } = response.data;
+          sendMessage(boas_vindas, 'bot');
+          opcoes.forEach(opcao => sendMessage(opcao, 'bot'));
+        })
+        .catch((error) => {
+          console.error(error);
+          sendMessage("Ocorreu um erro ao carregar as opções. Por favor, tente novamente.", "bot");
+        });
     }
-  }, [isChatOpen, defaultMessageSent]);
-
-  const sendDefaultMessage = () => {
-    sendMessage("Bem-vindo ao Droid! Eu sou um chatbot sobre IPOs. Como posso ajudá-lo?", "bot");
-    sendMessage("Escolha uma das opções abaixo:", "bot");
-    sendMessage("1 - Tirar dúvidas sobre IPO", "bot");
-    sendMessage("2 - Sumarizar o prospecto", "bot");
-    sendMessage("3 - Abrir pagina com prospectos", "bot");
-  };
+  }, [isChatOpen]);
 
   useEffect(() => {
     if (chatContainerRef.current) {
-      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+      chatContainerRef.current.scrollTop =
+        chatContainerRef.current.scrollHeight;
     }
   }, [chatHistory]);
-  
+
   useEffect(() => {
     if (isChatOpen) {
       setTimeout(() => {
         if (chatContainerRef.current) {
-          chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+          chatContainerRef.current.scrollTop =
+            chatContainerRef.current.scrollHeight;
         }
       }, 0);
     }
   }, [isChatOpen]);
-  
 
   const ChatHeader = ({ onClose }) => (
     <div className="chat-header">

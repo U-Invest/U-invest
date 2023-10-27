@@ -8,11 +8,9 @@ const Contato = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Lógica para enviar o formulário de contato
     console.log("Nome:", name);
     console.log("Email:", email);
     console.log("Mensagem:", message);
-    // Limpar o formulário após o envio
     setName("");
     setEmail("");
     setMessage("");
