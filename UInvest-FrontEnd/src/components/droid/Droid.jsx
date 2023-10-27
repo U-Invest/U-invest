@@ -25,23 +25,18 @@ const Droid = () => {
 
   let isFirstUserMessage = true;
 
-  function handleChoice(choice) {
-    if (choice === "1") {
-      setSelectedOption(choice);
-      const msg = "Digite sua dúvida:";
-      sendMessage(msg, "bot");
-    }
-  }
-
   const sendMessage = (msg, sender) => {
-    const newMessage = {
-      text: msg,
-      sender: sender,
-    };
+    setChatHistory((prevChatHistory) => [
+      ...prevChatHistory,
+      { text: msg, sender: sender },
+    ]);
   
-    setChatHistory((prevChatHistory) => [...prevChatHistory, newMessage]);
+    if (sender === "user" && (msg === "1" || msg === "2" || msg === "3")) {
+      handleChoice(msg);
+      return;
+    }
   
-    if (sender === "user") {
+    if (sender === "user" && selectedOption === "1") {
       fetch("http://127.0.0.1:5000/ask", {
         method: "POST",
         headers: {
@@ -51,23 +46,45 @@ const Droid = () => {
       })
         .then((response) => response.json())
         .then((data) => {
-          
           const botMessage = {
             text: data.response,
             sender: "bot",
           };
-          setChatHistory((prevChatHistory) => [...prevChatHistory, botMessage]);
+          setChatHistory((prevChatHistory) => [
+            ...prevChatHistory,
+            botMessage,
+          ]);
         })
         .catch((error) => {
           const errorMessage = {
             text: "Ocorreu um erro ao processar sua mensagem. Por favor, tente novamente.",
             sender: "bot",
           };
-          setChatHistory((prevChatHistory) => [...prevChatHistory, errorMessage]);
+          setChatHistory((prevChatHistory) => [
+            ...prevChatHistory,
+            errorMessage,
+          ]);
           console.error(error);
         });
     }
   };
+  
+  function handleChoice(choice) {
+    fetch(`http://127.0.0.1:5000/escolha?valor=${choice}`)
+      .then((response) => response.json())
+      .then((data) => {
+        const mensagem = data.mensagem;
+        sendMessage(mensagem, "bot");
+  
+        if (choice === "1") {
+          setSelectedOption("1");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        sendMessage("Ocorreu um erro ao processar sua escolha. Por favor, tente novamente.", "bot");
+      });
+  }
 
   useEffect(() => {
     if (isChatOpen) {
