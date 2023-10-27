@@ -127,6 +127,11 @@ const Cadastro = () => {
       return;
     }
 
+    if (password !== confirmPassword) {
+      setError("A senha e a confirmação de senha não coincidem.");
+      return;
+    }
+
     if (!isValidPhone(phone)) {
       setError("Telefone inválido.");
       return;
@@ -134,6 +139,11 @@ const Cadastro = () => {
 
     if (!isValidCPF(CPF)) {
       setError("CPF inválido.");
+      return;
+    }
+
+    if (!birthdate) {
+      setError("Selecione uma data de nascimento válida.");
       return;
     }
 
