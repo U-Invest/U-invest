@@ -12,27 +12,31 @@ from heapq import nlargest
 import sumarizacao
 import os
 nltk.download('stopwords')
-nltk.download('punkt')   
+nltk.download('punkt')
 
 stemmer = SnowballStemmer('portuguese')
 stop_words = stopwords.words('portuguese')
 
-with open('ipo.txt', 'r' ,encoding= "UTF8") as f:
+with open('ipo.txt', 'r', encoding="UTF8") as f:
     raw_data = f.read()
 
 pairs = [pair.split('\n') for pair in raw_data.split('\n\n')]
 pairs = [(pair[0], pair[1]) for pair in pairs if len(pair) > 1]
 
+
 def limpaTerminal():
     return os.system('cls' if os.name == 'nt' else 'clear')
 
+
 def criaBarra():
     return print('-' * 32)
+
 
 limpaTerminal()
 criaBarra()
 print('\033[1;96m''Bem-vindo ao Droid! Eu sou um chatbot sobre IPOs. Como posso ajudá-lo?''\033[0;0m')
 criaBarra()
+
 
 def preprocess(text):
     tokens = nltk.word_tokenize(text.lower())
@@ -40,11 +44,13 @@ def preprocess(text):
     stemmed_tokens = [stemmer.stem(token) for token in tokens]
     return " ".join(stemmed_tokens)
 
+
 preprocessed_pairs = [(preprocess(pair[0]), pair[1]) for pair in pairs]
 
 vectorizer = TfidfVectorizer()
 corpus = [pair[0] for pair in preprocessed_pairs]
 X = vectorizer.fit_transform(corpus)
+
 
 def chatbot_response(user_input):
     try:
@@ -59,11 +65,14 @@ def chatbot_response(user_input):
             response = default_response(user_input)
         return response
     except Exception as e:
-        print('\033[1;31m'f'Erro ao processar a entrada do usuário: {e}''\033[0; 0m')
+        print(
+            '\033[1;31m'f'Erro ao processar a entrada do usuário: {e}''\033[0; 0m')
         return None
-    
+
+
 def default_response(user_input):
     return '\033[1;31m''Desculpe, não entendi. Pode reformular a pergunta?''\033[0; 0m'
+
 
 def show_menu():
     print('\033[1;96m''Escolha uma das opções abaixo:''\033[0;0m')
@@ -72,34 +81,31 @@ def show_menu():
     print("\033[1m3 - Abrir pagina com prospectos\033[m")
     print("\033[1m4 - Sair\033[m")
 
+
 def handle_choice(choice):
     if choice == "1":
-        limpaTerminal()
-        question = input('\033[1;96m''Digite sua dúvida: ''\033[0;0m')
-        response = chatbot_response(question)
-        wrapped_response = textwrap.wrap(response, width=50)
-        for line in wrapped_response:
-            print(line)
-        print()
+        print("ja foi")
     elif choice == "2":
         limpaTerminal()
         caminho_pasta = "prospectos"
         caminho_pasta_txt = "indices"
         caminho_pasta_saida = "paginas"
-        sumarizacao.selecionar_arquivo(caminho_pasta, caminho_pasta_txt, caminho_pasta_saida)
+        sumarizacao.selecionar_arquivo(
+            caminho_pasta, caminho_pasta_txt, caminho_pasta_saida)
     elif choice == "3":
         limpaTerminal()
         open_google()
     elif choice == "4":
         print('\033[1;96m''Até mais!''\033[0;0m')
-        avaliacoes = [] 
+        avaliacoes = []
         try:
             with open("avaliacoes.json", "r") as file:
                 avaliacoes = json.load(file)
         except FileNotFoundError:
             pass
         while True:
-            print('\033[1;96m''Por favor, avalie o chatbot. Digite uma nota de 1 a 5 (sendo 1 a pior e 5 a melhor):''\033[0;0m')
+            print(
+                '\033[1;96m''Por favor, avalie o chatbot. Digite uma nota de 1 a 5 (sendo 1 a pior e 5 a melhor):''\033[0;0m')
             rating = input("\033[1;32mSua avaliação: \033[m")
             if rating.isdigit() and 1 <= int(rating) <= 5:
                 avaliacoes.append(int(rating))
@@ -108,7 +114,8 @@ def handle_choice(choice):
                     json.dump(avaliacoes, file)
                 exit()
             else:
-                print("\033[1;31mAvaliação inválida. Por favor, digite uma nota de 1 a 5.\033[m")
+                print(
+                    "\033[1;31mAvaliação inválida. Por favor, digite uma nota de 1 a 5.\033[m")
     elif choice.isdigit() and 1 <= int(choice) <= 4:
         print("Opção em desenvolvimento")
     elif choice.isdigit():
@@ -116,11 +123,13 @@ def handle_choice(choice):
     else:
         print("\033[1;31mEntrada inválida. Por favor, tente novamente.\033[m")
 
+
 def open_google():
-     webbrowser.open('https://statusinvest.com.br/ipo/acoes')
-     show_menu()
-     choice = input('\033[1;96m''Digite sua escolha: ''\033[0;0m')
-     handle_choice(choice)
+    webbrowser.open('https://statusinvest.com.br/ipo/acoes')
+    show_menu()
+    choice = input('\033[1;96m''Digite sua escolha: ''\033[0;0m')
+    handle_choice(choice)
+
 
 while True:
     show_menu()
