@@ -12,6 +12,7 @@ import courses5 from "./assets/courses5.jpg";
 import courses6 from "./assets/courses6.jpg";
 import courses7 from "./assets/courses7.jpg";
 import courses8 from "./assets/courses8.jpg";
+import courses9 from "./assets/courses9.jpg"
 
 import logo1 from "./assets/logo1.png";
 import logo2 from "./assets/logo2.png";
