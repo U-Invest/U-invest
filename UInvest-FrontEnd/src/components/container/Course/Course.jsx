@@ -11,6 +11,8 @@ import courses5 from "../../../assets/courses5.jpg";
 import courses6 from "../../../assets/courses6.jpg";
 import courses7 from "../../../assets/courses7.jpg";
 import courses8 from "../../../assets/courses8.jpg";
+import courses9 from "../../../assets/courses9.jpg";
+
 
 const images = {
   0: courses0,
@@ -22,6 +24,7 @@ const images = {
   6: courses6,
   7: courses7,
   8: courses8,
+  9: courses9
 };
 
 const Course = ({ idCarrosel }) => {
@@ -39,7 +42,7 @@ const Course = ({ idCarrosel }) => {
   }, [idCarrosel]);
 
   return (
-    <div className="p-2 shadow-lg min-w-[15rem] bg-white rounded-md">
+    <div className="p-2 shadow-lg min-w-[15rem] bg-white rounded-md course-item">
       <img src={images[idCarrosel]} alt="" />
       <div className="mt-2 text-xs text-Teal">{curso.resumo}</div>
       <div className="text-sm mt-2 font-bold">{curso.nome}</div>

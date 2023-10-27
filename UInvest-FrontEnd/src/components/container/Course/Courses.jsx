@@ -15,8 +15,8 @@ const Courses = () => {
       opacity: 1,
       scale: 1,
       transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2,
+        delayChildren: 0.05,
+        staggerChildren: 0.1,
       },
     },
   };
@@ -57,8 +57,8 @@ const Courses = () => {
         })}
       </motion.div>
       <div className="text-xl font-bold mt-32">Nossos cursos</div>
-      <div className="mt-12 overflow-x-hidden w-full  relative">
-        <div className="flex gap-8 md:w-full sm:w-[170%] xs:w-[340%] w-[480%] animate-slide">
+      <div className="mt-12 overflow-x-hidden w-full relative">
+        <div className="flex md:w-full md:w-[120%] xs:w-[340%] w-[480%] animate-slide">
           {cursos.map((curso) => {
             return <Course key={curso.idCarrosel} {...curso} />;
           })}
