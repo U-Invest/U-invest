@@ -23,6 +23,25 @@ const Cadastro = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  const isValidFullName = (fullName) => {
+    return /^[A-Za-z\s]+$/.test(fullName);
+  };
+
+  const isValidEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const isValidPassword = (password) => {
+    return /^(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}$/.test(password);
+  };
+
+  const isValidPhone = (phone) => {
+    return /^\(\d{2}\)\d{5}-\d{4}$/.test(phone);
+  };
+
+  const isValidCPF = (cpf) => {
+    return /^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(cpf);
+  };
 
   const handlePerfilChange = (event) => {
     setProfileType(event.target.value);
@@ -30,7 +49,6 @@ const Cadastro = () => {
 
   const parts = birthdate.split("-");
   const birthdateFormatted = `${parts[2]}${parts[1]}${parts[0]}`;
-
 
   let usuario = {
     cpf: CPF,
@@ -48,12 +66,74 @@ const Cadastro = () => {
     setTermsChecked(event.target.checked);
   };
 
+  const formatPhoneNumber = (input) => {
+    const phoneNumber = input.replace(/\D/g, "");
+
+    if (phoneNumber.length >= 10) {
+      const formattedPhoneNumber =
+        `(${phoneNumber.slice(0, 2)})${phoneNumber.slice(2, 7)}-${phoneNumber.slice(7, 11)}`;
+      setPhone(formattedPhoneNumber);
+    } else {
+      setPhone(phoneNumber);
+    }
+  };
+
+  const handlePhoneChange = (event) => {
+    formatPhoneNumber(event.target.value);
+  };
+
+  const formatCPF = (input) => {
+    const cpf = input.replace(/\D/g, "");
+
+    if (cpf.length >= 11) {
+      const formattedCPF =
+        `${cpf.slice(0, 3)}.${cpf.slice(3, 6)}.${cpf.slice(6, 9)}-${cpf.slice(9, 11)}`;
+      setCPF(formattedCPF);
+    } else {
+      setCPF(cpf);
+    }
+  };
+
+  const handleCPFChange = (event) => {
+    formatCPF(event.target.value);
+  };
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     if (!termsChecked) {
       setError("Por favor, aceite os termos e condições.");
+      return;
+    }
+
+    if (!isValidFullName(name)) {
+      setError("Nome completo inválido. Não pode conter caracteres especiais, números ou estar em branco.");
+      return;
+    }
+
+    if (!username) {
+      setError("Username não pode estar em branco.");
+      return;
+    }
+
+    if (!isValidEmail(email)) {
+      setError("Email inválido. Deve conter um formato válido (ex: example@example.com).");
+      return;
+    }
+
+    if (!isValidPassword(password)) {
+      setError("Senha inválida. Deve ter pelo menos 8 caracteres, uma letra maiúscula, um número e um caractere especial.");
+      return;
+    }
+
+    if (!isValidPhone(phone)) {
+      setError("Telefone inválido.");
+      return;
+    }
+
+    if (!isValidCPF(CPF)) {
+      setError("CPF inválido.");
       return;
     }
 
@@ -84,7 +164,6 @@ const Cadastro = () => {
   };
 
   return (
-    // Container da caixa de cadastro
 
     <div className="signup-container background-image">
       <div className="form-wrapper">
@@ -170,7 +249,6 @@ const Cadastro = () => {
             </select>
           </div>
 
-          {/* Input do telefone */}
           <div className="phone-inputgroup">
             <label htmlFor="phone">Telefone:</label>
             <input
@@ -178,7 +256,7 @@ const Cadastro = () => {
               id="phone"
               placeholder="Digite seu telefone:"
               value={phone}
-              onChange={(event) => setPhone(event.target.value)}
+              onChange={handlePhoneChange}
             />
           </div>
 
@@ -190,14 +268,7 @@ const Cadastro = () => {
               id="CPF"
               placeholder="Digite seu CPF:"
               value={CPF}
-              onChange={(event) => {
-                const value = event.target.value;
-                if (value.length <= 11) {
-                  setCPF(value);
-                }
-              }}
-              minLength={11} // Adição do atributo minLength com valor 11
-              maxLength={11} // Adição do atributo maxLength com valor 11
+              onChange={handleCPFChange} 
             />
           </div>
 
