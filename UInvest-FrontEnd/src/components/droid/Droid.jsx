@@ -159,10 +159,10 @@ const Droid = () => {
   }
   
   const scrollToBottom = () => {
-    if (chatContainerRef.current) {
-      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    if (chatScrollableRef.current) {
+        chatScrollableRef.current.scrollTop = chatScrollableRef.current.scrollHeight;
     }
-  };
+};
 
   useEffect(() => {
     if (isChatOpen) {
@@ -185,9 +185,6 @@ const Droid = () => {
 
   const ChatMessage = ({ chat }) => (
     <div className={`message ${chat.sender}`}>
-      {chat.sender === "bot" && (
-        <img src={droidIcon} alt="Bot Icon" className="message-icon" />
-      )}
       <div
         dangerouslySetInnerHTML={{ __html: chat.text.replace(/\n/g, "<br>") }}
       />
@@ -230,6 +227,8 @@ const Droid = () => {
     );
   };
 
+  const chatScrollableRef = useRef(null);
+
   return (
     <div>
       <div className="chat-icon" onClick={openChat}>
@@ -244,7 +243,7 @@ const Droid = () => {
         <ChatHeader onClose={closeChat} />
         <div className="chat-container" ref={chatContainerRef}>
           <div className="chat-messages">
-            <div className="chat-scrollable">
+          <div className="chat-scrollable" ref={chatScrollableRef}>
               {chatHistory.map((chat, index) => (
                 <ChatMessage key={index} chat={chat} />
               ))}
@@ -252,7 +251,7 @@ const Droid = () => {
           </div>
           <ChatInput onSendMessage={sendMessage} />
           <button className="button-container" onClick={clearChatHistory}>
-        <img className="clear-icon" src={clearIMG}/>
+{/*         <img className="clear-icon" src={clearIMG}/> */}
         </button>
         </div>
       </Modal>

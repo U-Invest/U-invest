@@ -24,6 +24,7 @@
   max-width: 90%;
   padding: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
 }
 
 .chat-overlay {
@@ -50,8 +51,8 @@
 }
 
 .header-icon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   margin-right: 10px;
 }
 
@@ -61,6 +62,8 @@
   font-size: 20px;
   cursor: pointer;
   color: #000;
+  margin-left: 385px;
+  margin-top: -46px;
 }
 
 .chat-messages {
@@ -74,6 +77,7 @@
 .chat-scrollable {
   max-height: 300px;
   overflow-y: auto;
+  
 }
 
 .message {
@@ -112,7 +116,7 @@
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
-  padding-left: 20px;
+  padding-left: 10px;
   cursor: pointer;
 }
 
@@ -131,16 +135,15 @@
   resize: vertical; 
 }
 .clear-icon {
-  width: 25px;
-  height: 25px;
-  margin-top: -27px; 
-  margin-right: 70px;
+  width: 20px;
+  height: 20px;
+  margin-top: -285px; 
+  margin-right: 25px;
 }
 
 .button-container {
   display: flex;
   justify-content: flex-end; 
-  margin-left: -100px; 
 }
 
 
