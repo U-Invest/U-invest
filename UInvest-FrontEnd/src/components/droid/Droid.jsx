@@ -112,44 +112,44 @@ const Droid = () => {
   
   function handleChoice(choice) {
     if (choice === "3") {
-        axios.get('http://127.0.0.1:5000/pagina')
-            .then(response => {
-                const message = response.data.message;
-                sendMessage(message, "bot");
-                scrollToBottom();
-            })
-            .catch(error => {
-                console.error(error);
-                sendMessage(
-                    "Ocorreu um erro ao tentar abrir o site. Por favor, tente novamente.",
-                    "bot"
-                );
-                scrollToBottom();
-            });
+      axios.get('http://127.0.0.1:5000/pagina')
+        .then(response => {
+          const message = response.data.message;
+          sendMessage(message, "bot");
+          scrollToBottom();
+        })
+        .catch(error => {
+          console.error(error);
+          sendMessage(
+            "Ocorreu um erro ao tentar abrir o site. Por favor, tente novamente.",
+            "bot"
+          );
+          scrollToBottom();
+        });
     } else {
-        fetch(`http://127.0.0.1:5000/escolha?valor=${choice}`)
-            .then((response) => response.json())
-            .then((data) => {
-                const mensagem = data.mensagem;
-                sendMessage(mensagem, "bot");
-                scrollToBottom();
-
-                if (choice === "1") {
-                    setSelectedOption("1");
-                } else if (choice === "2") {
-                    prospectos();
-                }
-            })
-            .catch((error) => {
-                console.error(error);
-                sendMessage(
-                    "Ocorreu um erro ao processar sua escolha. Por favor, tente novamente.",
-                    "bot"
-                );
-                scrollToBottom();
-            });
+      fetch(`http://127.0.0.1:5000/escolha?valor=${choice}`)
+        .then((response) => response.json())
+        .then((data) => {
+          const mensagem = data.mensagem;
+          sendMessage(mensagem, "bot");
+          scrollToBottom();
+  
+          if (choice === "1") {
+            setSelectedOption("1");
+          } else if (choice === "2") {
+            prospectos();
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+          sendMessage(
+            "Ocorreu um erro ao processar sua escolha. Por favor, tente novamente.",
+            "bot"
+          );
+          scrollToBottom();
+        });
     }
-}
+  }
   
   const prospectos = () => {
     fetch("http://127.0.0.1:5000/prospectos")

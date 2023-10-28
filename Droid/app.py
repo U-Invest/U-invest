@@ -36,7 +36,7 @@ def escolha():
         valor = int(valor)
         mensagens = {
             1: "Você escolheu tirar dúvidas sobre IPO. Como podemos ajudá-lo hoje?",
-            2: "Você escolheu sumarizar o prospecto. Por favor, aguarde enquanto processamos...",
+            2: "Você escolheu sumarizar o prospecto. Por favor, insira o ID do prospecto que deseja sumarizar.",
             3: "Você escolheu abrir a página com prospectos. O navegador será aberto com a página desejada.",
         }
 
