@@ -4,6 +4,7 @@ import { FaTimes } from "react-icons/fa";
 import "./Droid.css";
 import droidIcon from "../../assets/droidIcon.png";
 import axios from "axios";
+import clearIMG from "../../assets/clear.png";
 
 Modal.setAppElement("#root");
 
@@ -138,6 +139,24 @@ const Droid = () => {
         scrollToBottom();
       });
   };
+  const Sumarizar = () => {
+    const id = idRef.current.value;
+    fetch(`/sumarizar?id=${id}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Erro na solicitação: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setResultado(data);
+        setError(null);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setResultado(null);
+      });
+  }
   
   const scrollToBottom = () => {
     if (chatContainerRef.current) {
@@ -232,7 +251,9 @@ const Droid = () => {
             </div>
           </div>
           <ChatInput onSendMessage={sendMessage} />
-          <button className="limpar" onClick={clearChatHistory}>Limpar Chat</button>
+          <button className="button-container" onClick={clearChatHistory}>
+        <img className="clear-icon" src={clearIMG}/>
+        </button>
         </div>
       </Modal>
     </div>
