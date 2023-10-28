@@ -90,7 +90,7 @@ const Droid = () => {
         });
     }
   };
-
+  
   function handleChoice(choice) {
     fetch(`http://127.0.0.1:5000/escolha?valor=${choice}`)
       .then((response) => response.json())
@@ -101,7 +101,9 @@ const Droid = () => {
 
         if (choice === "1") {
           setSelectedOption("1");
-        }
+        }else if (choice === "2") {
+        prospectos(); 
+      }
       })
       .catch((error) => {
         console.error(error);
@@ -112,7 +114,31 @@ const Droid = () => {
         scrollToBottom();
       });
   }
-
+  
+  const prospectos = () => {
+    fetch("http://127.0.0.1:5000/prospectos")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Erro ao carregar a lista de prospectos");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        const { prospectos } = data;
+        const prospectosMessage = prospectos.join("\n");
+        sendMessage(`Lista de Prospectos:\n${prospectosMessage}`, "bot");
+        scrollToBottom();
+      })
+      .catch((error) => {
+        console.error(error);
+        sendMessage(
+          "Ocorreu um erro ao carregar a lista de prospectos. Por favor, tente novamente.",
+          "bot"
+        );
+        scrollToBottom();
+      });
+  };
+  
   const scrollToBottom = () => {
     if (chatContainerRef.current) {
       chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
