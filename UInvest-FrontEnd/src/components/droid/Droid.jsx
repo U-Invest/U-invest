@@ -128,7 +128,7 @@ const Droid = () => {
             setSelectedOption("1");
           } else if (choice === "2") {
             prospectos();
-            setContext("choose_prospect"); // Configurando o contexto para escolher um prospecto
+            setContext("choose_prospect");
           }
         })
         .catch((error) => {
