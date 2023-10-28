@@ -76,29 +76,23 @@ def listar_prospectos():
 @app.route('/sumarizar', methods=['GET'])
 def sumarizar():
     try:
-        # Obtendo o ID do prospecto da requisição
         id_prospecto = request.args.get('id')
 
-        # Validando o ID do prospecto
         if id_prospecto is None or not id_prospecto.isdigit():
             return jsonify({"error": "ID inválido."})
 
         id_prospecto = int(id_prospecto)
 
-        # Definindo os caminhos das pastas
         caminho_pasta = "prospectos"
         caminho_pasta_txt = "indices"
         caminho_pasta_saida = "paginas"
 
-        # Chamando a função selecionar_arquivo_por_id e obtendo o resultado
         resultado = selecionar_arquivo_por_id(
             id_prospecto, caminho_pasta, caminho_pasta_txt, caminho_pasta_saida)
 
-        # Retornando o resultado como uma resposta JSON
         return jsonify(resultado)
 
     except Exception as e:
-        # Caso ocorra algum erro, retornar uma mensagem de erro como uma resposta JSON
         return jsonify({"error": f"Um erro ocorreu: {e}"})
 
 @app.route('/pagina', methods=['GET'])

@@ -14,6 +14,8 @@ const Droid = () => {
   const [lastUserMessage, setLastUserMessage] = useState("");
   const chatContainerRef = useRef(null);
   const [selectedOption, setSelectedOption] = useState("");
+  const idRef = useRef();
+  const [context, setContext] = useState(null);
 
   const openChat = () => {
     setIsChatOpen(true);
@@ -49,33 +51,21 @@ const Droid = () => {
       });
   };
 
-  const sumarizeProspect = (id) => {
-    axios.get(`http://127.0.0.1:5000/sumarizar?id=${id}`)
-      .then(response => {
-        const { resultado } = response.data;
-        sendMessage(`Prospecto Sumarizado:\n${resultado}`, "bot");
-        scrollToBottom();
-      })
-      .catch(error => {
-        console.error(error);
-        sendMessage(
-          "Ocorreu um erro ao tentar sumarizar o prospecto. Por favor, tente novamente.",
-          "bot"
-        );
-        scrollToBottom();
-      });
-  };
-  
-
   const sendMessage = (msg, sender) => {
     setChatHistory((prevChatHistory) => [
       ...prevChatHistory,
       { text: msg, sender: sender },
     ]);
 
-    if (sender === "user" && (msg === "1" || msg === "2" || msg === "3")) {
-      handleChoice(msg);
-      return;
+    if (sender === "user") {
+      if (context === "choose_prospect" && /^[0-9]+$/.test(msg)) {
+        fetchProspectDetail(msg);
+        setContext(null);
+        return;
+      } else if (msg === "1" || msg === "2" || msg === "3") {
+        handleChoice(msg);
+        return;
+      }
     }
 
     if (sender === "user" && selectedOption === "1") {
@@ -133,11 +123,12 @@ const Droid = () => {
           const mensagem = data.mensagem;
           sendMessage(mensagem, "bot");
           scrollToBottom();
-  
+
           if (choice === "1") {
             setSelectedOption("1");
           } else if (choice === "2") {
             prospectos();
+            setContext("choose_prospect"); // Configurando o contexto para escolher um prospecto
           }
         })
         .catch((error) => {
@@ -174,29 +165,28 @@ const Droid = () => {
         scrollToBottom();
       });
   };
-  const Sumarizar = () => {
-    const id = idRef.current.value;
-    fetch(`/sumarizar?id=${id}`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Erro na solicitação: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setResultado(data);
-        setError(null);
-      })
-      .catch((error) => {
-        setError(error.message);
-        setResultado(null);
-      });
-  }
   
   const scrollToBottom = () => {
     if (chatScrollableRef.current) {
         chatScrollableRef.current.scrollTop = chatScrollableRef.current.scrollHeight;
     }
+};
+
+const fetchProspectDetail = (id) => {
+  fetch(`http://127.0.0.1:5000/sumarizar?id=${id}`)
+    .then((response) => response.json())
+    .then((data) => {
+      sendMessage(`Detalhes do Prospecto ${id}:\n${JSON.stringify(data)}`, "bot");
+      scrollToBottom();
+    })
+    .catch((error) => {
+      console.error(error);
+      sendMessage(
+        "Ocorreu um erro ao buscar os detalhes do prospecto. Por favor, tente novamente.",
+        "bot"
+      );
+      scrollToBottom();
+    });
 };
 
   useEffect(() => {
