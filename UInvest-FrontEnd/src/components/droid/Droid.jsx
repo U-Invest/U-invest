@@ -19,6 +19,8 @@ const Droid = () => {
   };
 
   const closeChat = () => {
+    setChatHistory([]);
+    setSelectedOption("");
     setIsChatOpen(false);
   };
 
