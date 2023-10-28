@@ -1,4 +1,5 @@
 import os
+import webbrowser
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import PyPDF2
@@ -274,5 +275,10 @@ def encontrar_publico_alvo(palavra_chave, nome_arquivo):
                 # Atribui o parágrafo encontrado à variável publico_alvo
                 publico_alvo = proximo_paragrafo.strip()
                 break
+
+def open_google():
+    url = 'https://statusinvest.com.br/ipo/acoes'
+    webbrowser.open(url)
+    return 'Site aberto no navegador!'
 
     return publico_alvo  # Retorna o público-alvo encontrado

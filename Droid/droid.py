@@ -130,7 +130,6 @@ def open_google():
     choice = input('\033[1;96m''Digite sua escolha: ''\033[0;0m')
     handle_choice(choice)
 
-
 while True:
     show_menu()
     choice = input('\033[1;96m''Digite sua escolha: ''\033[0;0m')

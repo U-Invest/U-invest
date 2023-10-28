@@ -3,6 +3,7 @@ import textwrap
 from flask import Flask, jsonify, request
 from imports import chatbot_response, selecionar_arquivo_por_id
 from flask_cors import CORS
+from imports import open_google
 
 app = Flask(__name__)
 
@@ -100,6 +101,10 @@ def sumarizar():
         # Caso ocorra algum erro, retornar uma mensagem de erro como uma resposta JSON
         return jsonify({"error": f"Um erro ocorreu: {e}"})
 
+@app.route('/pagina', methods=['GET'])
+def abrir_site():
+    message = open_google()
+    return jsonify({"message": message})
 
 if __name__ == '__main__':
     app.run(debug=True)
