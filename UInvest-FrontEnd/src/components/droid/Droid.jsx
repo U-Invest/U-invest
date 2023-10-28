@@ -49,6 +49,24 @@ const Droid = () => {
       });
   };
 
+  const sumarizeProspect = (id) => {
+    axios.get(`http://127.0.0.1:5000/sumarizar?id=${id}`)
+      .then(response => {
+        const { resultado } = response.data;
+        sendMessage(`Prospecto Sumarizado:\n${resultado}`, "bot");
+        scrollToBottom();
+      })
+      .catch(error => {
+        console.error(error);
+        sendMessage(
+          "Ocorreu um erro ao tentar sumarizar o prospecto. Por favor, tente novamente.",
+          "bot"
+        );
+        scrollToBottom();
+      });
+  };
+  
+
   const sendMessage = (msg, sender) => {
     setChatHistory((prevChatHistory) => [
       ...prevChatHistory,
@@ -94,16 +112,13 @@ const Droid = () => {
   
   function handleChoice(choice) {
     if (choice === "3") {
-        // Se a escolha for "3", faça uma requisição GET à rota '/pagina'
         axios.get('http://127.0.0.1:5000/pagina')
             .then(response => {
-                // Processa a resposta do servidor e envia a mensagem como o bot
                 const message = response.data.message;
                 sendMessage(message, "bot");
                 scrollToBottom();
             })
             .catch(error => {
-                // Trata qualquer erro que possa ocorrer durante a requisição
                 console.error(error);
                 sendMessage(
                     "Ocorreu um erro ao tentar abrir o site. Por favor, tente novamente.",
